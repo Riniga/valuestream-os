@@ -1,95 +1,42 @@
-# Aktiviteter i fasen
+Ta bort rollbeskrivningar från SOP:arna
+- Låt SOP:arna endast peka på roller — inte beskriva dem.
 
-## Backlog refinement
-**Roller:** Produktägare, utvecklingsteam, Business Analyst
+Vad menar du, SOP:er pekar väll bara på roller, så här ser det ut som exempel
+## 2. Primär roll
+- Produktägare
 
-Aktiviteter:
-- förtydliga user stories
-- bryta ned funktionalitet
-- definiera acceptance criteria
-- uppskatta arbetsinsats
+## 3. Stödroller
+- Business Analyst
+- Utvecklingsteam
 
----
 
-## Sprintplanering
-**Roller:** Produktägare, utvecklingsteam, Scrum Master
 
-Aktiviteter:
-- välja stories från backlog
-- definiera sprintmål
-- planera genomförande
+Ok så jag skall på Delproceesser radera raden **Roller:** Produktägare, verksamhetsrepresentanter...
 
----
 
-## Utveckling
-**Roller:** Utvecklare
+**4.3. Sätt relationen, menar du att vi på något vis skall lägga till SOP relation i Delprocessstegen
+Här kan jag känna att delprocess ÄR SOP, men det kanske är bättre at skilja på vaför och vem vi relaterar istället?
 
-Aktiviteter:
-- implementera funktionalitet
-- skriva kod
-- implementera integrationer
-- uppdatera tekniska komponenter
 
----
 
-## Kodgranskning
-**Roller:** Utvecklare
 
-Aktiviteter:
-- granska kod
-- säkerställa kodkvalitet
-- säkerställa arkitekturprinciper
-- identifiera förbättringar
+4.4. Arkitekten får två roller som bör förenas. 
+I Rollkatalogen saknas rollen integratinsspecialist, men integration ligger med på lösningsarkitekten.
+Alltså skall jag bara tillse att vi inte refererar till integrationsspecialist i någon SOP utan istället hänvisa till Teknisk Lead (eller lösningsarkitekt?)
 
----
 
-## Test
-**Roller:** Testare / QA, utvecklare
 
-Aktiviteter:
-- genomföra tester
-- verifiera funktionalitet
-- automatisera tester
-- rapportera och hantera buggar
+På SOP lägga till 
+Consulted → Roll som ger input
+Involved → Roll som aktivt deltar
 
----
+Ahh.. intressant borde vi inte ha RACI kompett per SOP? 
 
-## Integration och bygg
-**Roller:** DevOps, utvecklare
 
-Aktiviteter:
-- bygga systemet
-- köra CI/CD-pipelines
-- verifiera integrationer
+Nästa steg 
+Output används i i SOP X/Y/Z
+Du menar  synliggöra var output används som input
 
----
+Jag förstår inte Output kräver aktivitet A i nästa steg”
+output skall väll aldrig kräva något, den nyttjas väll bara...
 
-## Demo
-**Roller:** Utvecklingsteam, produktägare, verksamhetsrepresentanter
-
-Aktiviteter:
-- demonstrera funktionalitet
-- samla feedback
-- identifiera förbättringar
-
----
-
-## Release
-**Roller:** DevOps, produktägare, team lead
-
-Aktiviteter:
-- paketera release
-- skapa release notes
-- genomföra deployment
-
----
-
----
-
-## Uppföljning och förbättring
-**Roller:** Scrum Master / Team Lead, utvecklingsteam
-
-Aktiviteter:
-- analysera genomförd iteration
-- identifiera förbättringar
-- justera arbetssätt
