@@ -1,31 +1,36 @@
-# SOP: <Namn på aktivitet eller delprocess>
+# SOP X: [Namn]
 
 ## 1. Syfte
-Kort beskrivning av varför aktiviteten finns och vilket värde den skapar.
+Definiera varför denna aktivitet genomförs och vilket värde den skapar.
 
-## 2. Primär roll (ansvarig)
-- <Roll>
+## 2. Kontext
+- Processteg: [t.ex. Kravställning]
+- Delprocess: [t.ex. Vision & målbild]
 
-## 3. Stödroller (medverkande)
-- <Roll 1>
-- <Roll 2>
-- <Roll 3>
+## 3. Trigger
+När denna SOP startar
 
-## 4. Input (måste finnas innan start)
-- <Input 1>
-- <Input 2>
-- <Input 3>
+## 4. Input
+- ...
 
-## 5. Arbetssteg (SOP-flöde)
-1. <Steg 1>
-2. <Steg 2>
-3. <Steg 3>
-4. …
+## 5. Output
+- ...
 
-## 6. Output (resultat)
-- <Output 1>
-- <Output 2>
+## 6. RACI
+- R (Responsible): [Roll(er) som utför arbetet]
+- A (Accountable): [En roll som äger beslutet]
+- C (Consulted): [Roller som bidrar aktivt]
+- I (Informed): [Roller som ska informeras]
 
-## 7. Outputen lämnas till
-- Roll: <Roll>
-- Processteg: <Kravställning / Målarkitektur / Roadmap / Leverans / Repeat>
+## 7. Arbetssteg
+1. ...
+2. ...
+3. ...
+
+## 8. Definition of Done
+- [Vad måste vara uppfyllt för att detta ska anses klart]
+
+## 9. Nästa steg
+- Lämnas till:
+  - Roll: [Roller]
+  - Processteg: [Nästa steg i processen]
