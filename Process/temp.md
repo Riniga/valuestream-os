@@ -40,3 +40,8 @@ Du menar  synliggöra var output används som input
 Jag förstår inte Output kräver aktivitet A i nästa steg”
 output skall väll aldrig kräva något, den nyttjas väll bara...
 
+
+
+🎛 Roll→process‑matris (enkel nivå)
+Visar översiktligt vilken roll är involverad var.
+Var skall denna matris finnas?
