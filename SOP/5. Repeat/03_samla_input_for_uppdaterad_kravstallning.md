@@ -1,37 +1,35 @@
 # SOP 3: Samla input för uppdaterad kravställning
 
 ## 1. Syfte
-Samla och strukturera input som ska tas vidare till nästa Kravställning utan att ändra krav i detta steg.
-
-
+Samla och strukturera relevant input inför nästa kravställning utan att förändra krav i detta steg.
 
 ## 2. Kontext
-- Processteg: 5. Repeat
-- Delprocess: 3: Samla input för uppdaterad kravställning
+- Processteg: Repeat
+- Delprocess: Samla input för uppdaterad kravställning
 
-
-## 4. Input
-- Utvärdering av leveransresultat
+## 3. Input
+- Sammanställd utvärdering av leveransen
 - Retrospektivrapport
 - Verksamhetsfeedback
 - Ej levererade funktioner
 - Nya behov från användare
 - Lista på revideringsbehov av krav
 
+## 4. Output
+- Input-paket till Kravställning
 
-## 5. Output
-
-
-## 6. RACI
-- R: Produktägare
+## 5. RACI
+- R: Business Analyst
 - A: Produktägare
-- C: Business Analyst
-- I: 
+- C: Verksamhetsexperter
+- I: Utvecklare
 
-
-## 7. Arbetssteg
-1. Dokumentera användar- och verksamhetsfeedback.
-2. Identifiera behov av nya eller ändrade krav.
-3. Markera backlog‑poster som ska revideras i nästa cykel.
-4. Notera funktioner som behöver omformuleras eller prioriteras om.
-5. Skapa en sammanställning för nästa kravställningsfas.
+## 6. Arbetssteg
+1. Samla och strukturera input från utvärdering och retrospektiv.  
+2. Sammanställ verksamhetsfeedback och nya behov från användare.  
+3. Identifiera krav som behöver revideras eller prioriteras om.  
+4. Identifiera ej levererade funktioner som ska tas vidare.  
+5. Strukturera input i ett tydligt och spårbart format.  
+6. Säkerställ att inga krav förändras i detta steg (endast insamling).  
+7. Validera input med produktägare.  
+8. Fastställ input-paket till nästa kravställning (beslut av A).

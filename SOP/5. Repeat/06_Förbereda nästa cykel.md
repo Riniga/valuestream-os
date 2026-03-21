@@ -1,34 +1,33 @@
 # SOP 6: Förbereda nästa cykel
 
 ## 1. Syfte
-Säkerställa att nästa processcykel kan startas utan hinder med rätt underlag. 
-
+Säkerställa att nästa cykel kan startas effektivt med rätt underlag, tydlig riktning och alignment mellan alla roller.
 
 ## 2. Kontext
-- Processteg: 5. Repeat
-- Delprocess: 6: Förbereda nästa cykel
+- Processteg: Repeat
+- Delprocess: Förbereda nästa cykel
 
-
-## 4. Input
+## 3. Input
 - Arkitekturinsikter
-- Roadmap‑input
+- Roadmap-input
 - Förbättringsförslag från retrospektiv
 
-
-## 5. Output
+## 4. Output
 - Startunderlag för Kravställning
-- Sammanställd ”cykelstart”brief
+- Sammanställd cykelstart-brief
 
-
-## 6. RACI
-- R: Produktägare
+## 5. RACI
+- R: Business Analyst
 - A: Produktägare
-- C: Verksamhetsrepresentanter, Utvecklingsteam, Lösningsarkitekt
-- I: 
+- C: Lösningsarkitekt, Verksamhetsexperter
+- I: Utvecklare
 
-
-## 7. Arbetssteg
-1. Definiera övergripande mål för nästa cykel.
-2. Kommunicera insikter och ändringar till alla roller.
-3. Säkerställa alignment mellan verksamhet, arkitektur och team.
-4. Bekräfta att allt material är redo för nästa Kravställning.
+## 6. Arbetssteg
+1. Sammanställ input från arkitektur, roadmap och förbättringsförslag.  
+2. Definiera övergripande mål och fokus för nästa cykel.  
+3. Säkerställ alignment mellan verksamhet, arkitektur och team.  
+4. Strukturera startunderlag för nästa kravställning.  
+5. Ta fram en sammanställd cykelstart-brief.  
+6. Kommunicera mål, förändringar och förutsättningar till relevanta roller.  
+7. Verifiera att allt underlag är komplett och redo.  
+8. Fastställ startunderlag (beslut av A).

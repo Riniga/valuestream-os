@@ -1,39 +1,37 @@
 # SOP 11: Dokumentera målarkitektur
 
 ## 1. Syfte
-Sammanställa alla arkitekturartefakter till en sammanhängande målbild.
-
-
+Sammanställa och strukturera alla arkitekturartefakter till en tydlig och kommunicerbar målarkitektur.
 
 ## 2. Kontext
-- Processteg: 2. Målarkitektur
-- Delprocess: 11: Dokumentera målarkitektur
+- Processteg: Målarkitektur
+- Delprocess: Dokumentera målarkitektur
 
-
-## 4. Input
+## 3. Input
 - Systemlandskap
 - Domänmodell
 - Integrationsarkitektur
-- API‑struktur
+- API-struktur
 - Datamodell
 - Säkerhetsarkitektur
 - Teknisk plattform
 
-
-## 5. Output
+## 4. Output
 - Dokumenterad målarkitektur
 - Arkitekturrapport
 
-
-## 6. RACI
+## 5. RACI
 - R: Lösningsarkitekt
-- A: Lösningsarkitekt
-- C: Dataarkitekt, Integrationsspecialist, Säkerhetsarkitekt
-- I: 
+- A: Enterprise Arkitekt
+- C: Dataarkitekt, Teknisk Lead
+- I: Produktägare
 
-
-## 7. Arbetssteg
-1. Sammanställa alla arkitekturkomponenter.
-2. Dokumentera målbild och arkitekturprinciper.
-3. Säkerställa att allt följer organisationens riktlinjer.
-4. Kommunicera målarkitekturen till utvecklingsteam och verksamhet.
+## 6. Arbetssteg
+1. Sammanställ alla arkitekturartefakter i en helhetsbild.  
+2. Strukturera målarkitekturen i ett tydligt och sammanhängande format.  
+3. Säkerställ att arkitekturen följer definierade principer och riktlinjer.  
+4. Säkerställ spårbarhet mellan arkitektur och kravbild.  
+5. Kvalitetssäkra innehållet tillsammans med relevanta arkitekturroller.  
+6. Dokumentera målarkitektur och arkitekturrapport.  
+7. Kommunicera målarkitekturen till utveckling och verksamhet.  
+8. Fastställ målarkitektur (beslut av A).

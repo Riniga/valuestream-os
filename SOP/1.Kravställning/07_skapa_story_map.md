@@ -1,36 +1,33 @@
 # SOP 7: Skapa Story Map
 
 ## 1. Syfte
-Skapa en strukturerad funktionell karta över produkten som grund för MVP och leveranspaket.
-
-
+Strukturera produktens funktionalitet i en sammanhängande story map som speglar användarflöden och utgör grund för prioritering och leverans.
 
 ## 2. Kontext
-- Processteg: 1.Kravställning
-- Delprocess: 7: Skapa Story Map
+- Processteg: Kravställning
+- Delprocess: Skapa Story Map
 
-
-## 4. Input
+## 3. Input
 - User Journeys
 - Domänanalys
-- Funktionella behov
+- Identifierade funktionella behov
 
-
-## 5. Output
+## 4. Output
 - Story Map
 - Funktionella block
 
-
-## 6. RACI
+## 5. RACI
 - R: Business Analyst
-- A: Business Analyst
-- C: UX / Service Designer, Produktägare, Verksamhetsrepresentanter
-- I: 
+- A: Produktägare
+- C: UX / Service Designer, Verksamhetsexperter
+- I: Utvecklare
 
-
-## 7. Arbetssteg
-1. Strukturera produktens aktiviteter och användarsteg.
-2. Placera user stories under respektive steg.
-3. Säkerställa full täckning av användarflöden.
-4. Identifiera logiska grupperingar av funktionalitet.
-5. Förankra story map med produktägare och team.
+## 6. Arbetssteg
+1. Identifiera övergripande aktiviteter baserat på user journeys.  
+2. Bryt ner aktiviteter i användarsteg (user steps).  
+3. Placera funktionella behov och user stories under respektive steg.  
+4. Säkerställ att hela användarflöden täcks i story mapen.  
+5. Identifiera och gruppera funktionalitet i logiska funktionella block.  
+6. Strukturera story map i ett tydligt och visuellt format.  
+7. Validera story map och funktionella block med verksamhet och UX.  
+8. Fastställ story map (beslut av A).

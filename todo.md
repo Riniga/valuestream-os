@@ -15,3 +15,10 @@
 [ ] Artefaktmodell - Vad är det vi producerar, i vilket format, och hur hänger det ihop? i katalogen Artifakter -> Många    som saknas och är fel, detta får vi jobba med ett lite tag ....   
 [X] Splitta upp Roller i seprata filer   
 [ ] Länka till roller och artifakter  
+[ ] Visualisera
+    - Vilka SOP:er skapar eller uppdaterar en artifakt
+    - Vilka SOP:er har behov av en artifakt
+    - Vilka SOP:er är en Roll involverad i
+    - Vika artifakter ansvarar en roll för att ta fram SOP -> Roll -> Artifakt
+
+

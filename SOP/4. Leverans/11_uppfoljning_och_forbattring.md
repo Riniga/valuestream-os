@@ -1,36 +1,34 @@
 # SOP 11: Uppföljning & förbättring
 
 ## 1. Syfte
-Utvärdera iterationen och identifiera förbättringar inför nästa cykel.
-
-
+Utvärdera genomförd iteration och identifiera förbättringar för att öka kvalitet, effektivitet och värde i kommande cykler.
 
 ## 2. Kontext
-- Processteg: 4. Leverans
-- Delprocess: 11: Uppföljning & förbättring
+- Processteg: Leverans
+- Delprocess: Uppföljning & förbättring
 
-
-## 4. Input
+## 3. Input
 - Deployments
-- Dokumentation
+- Uppdaterad dokumentation
 - Demofeedback
 - Sprintresultat
 
-
-## 5. Output
+## 4. Output
 - Förbättringsförslag
 - Sammanfattning från retro
 
-
-## 6. RACI
+## 5. RACI
 - R: Scrum Master
-- A: Scrum Master
-- C: Utvecklingsteam, Produktägare
-- I: 
+- A: Produktägare
+- C: Utvecklare
+- I: Business Analyst
 
-
-## 7. Arbetssteg
-1. Genomföra retrospektiv.
-2. Identifiera process- eller kvalitetsproblem.
-3. Dokumentera förbättringsförslag.
-4. Kommunicera förbättringar till produktägare.
+## 6. Arbetssteg
+1. Samla in input från leveransen (demo, deployment, sprintresultat).  
+2. Genomför retrospektiv med teamet.  
+3. Identifiera process-, kvalitets- och samarbetsproblem.  
+4. Formulera konkreta förbättringsförslag.  
+5. Prioritera förbättringar tillsammans med produktägare.  
+6. Dokumentera och strukturera förbättringsförslag.  
+7. Kommunicera förbättringar till relevanta intressenter.  
+8. Säkerställ att förbättringar tas med i nästa cykel.

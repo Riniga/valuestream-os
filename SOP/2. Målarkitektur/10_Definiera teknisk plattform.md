@@ -1,35 +1,33 @@
 # SOP 10: Definiera teknisk plattform
 
 ## 1. Syfte
-Fastställa den tekniska plattformen för utveckling, drift och deployment.
-
-
+Fastställa en teknisk plattform som möjliggör utveckling, integration och drift i linje med arkitekturprinciper och kvalitetskrav.
 
 ## 2. Kontext
-- Processteg: 2. Målarkitektur
-- Delprocess: 10: Definiera teknisk plattform
+- Processteg: Målarkitektur
+- Delprocess: Definiera teknisk plattform
 
-
-## 4. Input
+## 3. Input
 - Arkitekturprinciper
 - NFR
 - Integrationsbehov
 
-
-## 5. Output
+## 4. Output
 - Teknisk plattform
 - Arkitekturval (hög nivå)
 
-
-## 6. RACI
+## 5. RACI
 - R: Lösningsarkitekt
-- A: Lösningsarkitekt
-- C: DevOps, Teknisk lead
-- I: 
+- A: Enterprise Arkitekt
+- C: DevOps, Teknisk Lead
+- I: Produktägare
 
-
-## 7. Arbetssteg
-1. Välja teknologier och ramverk.
-2. Definiera driftplattform (moln, on‑prem etc.).
-3. Definiera CI/CD‑principer och miljöstruktur.
-4. Verifiera tekniska val med utvecklingsteam och drift.
+## 6. Arbetssteg
+1. Identifiera tekniska behov baserat på arkitekturprinciper och NFR.  
+2. Välj teknologier och ramverk för utveckling och integration.  
+3. Definiera driftplattform (t.ex. moln, on-prem, hybrid).  
+4. Definiera principer för CI/CD och miljöstruktur.  
+5. Säkerställ att tekniska val stödjer integrationsbehov och skalbarhet.  
+6. Strukturera teknisk plattform och arkitekturval i ett tydligt format.  
+7. Validera tekniska val med DevOps och teknisk lead.  
+8. Fastställ teknisk plattform (beslut av A).

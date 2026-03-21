@@ -1,36 +1,34 @@
 # SOP 6: User Journeys / huvudflöden
 
 ## 1. Syfte
-Beskriva hur användare når sina mål och vilka steg som krävs i deras interaktion med lösningen.
-
-
+Beskriva användarnas huvudsakliga flöden och interaktioner för att tydliggöra hur funktionaliteten ska stödja deras mål.
 
 ## 2. Kontext
-- Processteg: 1.Kravställning
-- Delprocess: 6: User Journeys / huvudflöden
+- Processteg: Kravställning
+- Delprocess: User Journeys / huvudflöden
 
-
-## 4. Input
+## 3. Input
 - Domänanalys
 - Scope & user stories
 - Stakeholderkarta
 
-
-## 5. Output
+## 4. Output
 - User Journeys
 - Identifierade funktionella behov
 
-
-## 6. RACI
+## 5. RACI
 - R: UX / Service Designer
-- A: UX / Service Designer
-- C: Verksamhetsrepresentanter, Produktägare
-- I: 
+- A: Produktägare
+- C: Verksamhetsexperter, Användarrepresentanter
+- I: Business Analyst
 
-
-## 7. Arbetssteg
-1. Identifiera användartyper.
-2. Kartlägga deras huvudsakliga flöden.
-3. Dokumentera stegvis vilka interaktioner som krävs.
-4. Identifiera smärtpunkter och förbättringsmöjligheter.
-5. Validera flödena med användarrepresentanter.
+## 6. Arbetssteg
+1. Identifiera relevanta användartyper baserat på stakeholderkarta.  
+2. Definiera användarnas huvudsakliga mål och scenarier.  
+3. Kartlägg stegvisa flöden (user journeys) för respektive scenario.  
+4. Identifiera interaktioner, beslutspunkter och beroenden i varje flöde.  
+5. Identifiera smärtpunkter och förbättringsmöjligheter i flödena.  
+6. Härled och dokumentera funktionella behov från user journeys.  
+7. Strukturera user journeys i ett tydligt och kommunicerbart format.  
+8. Validera user journeys och behov med användar- och verksamhetsrepresentanter.  
+9. Fastställ user journeys (beslut av A).

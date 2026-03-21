@@ -1,38 +1,34 @@
 # SOP 3: Scope & avgränsningar
 
 ## 1. Syfte
-Definiera vad som ingår och inte ingår i produktens första versioner för att undvika scope creep och skapa tydlighet.
-
-
+Definiera ett tydligt och avgränsat scope för produkten samt identifiera vilka behov som ska ingå respektive exkluderas.
 
 ## 2. Kontext
-- Processteg: 1.Kravställning
-- Delprocess: 3: Scope & avgränsningar
+- Processteg: Kravställning
+- Delprocess: Scope & avgränsningar
 
-
-## 4. Input
+## 3. Input
 - Affärsmål & värdebild
-- Produktvision
+- Vision & målbild
 - Identifierade behov från verksamheten
 
-
-## 5. Output
+## 4. Output
 - Dokumenterat scope
 - Identifierade user stories (hög nivå)
 - Avgränsningar
 
-
-## 6. RACI
-- R: Produktägare
+## 5. RACI
+- R: Business Analyst
 - A: Produktägare
-- C: Business Analyst, Utvecklingsrepresentanter, Verksamhetsexperter
-- I: 
+- C: Verksamhetsexperter, Utvecklare
+- I: Initiativledare
 
-
-## 7. Arbetssteg
-1. Samla in funktionella behov.
-2. Formulera user stories på hög nivå.
-3. Identifiera vad som uttryckligen inte ingår.
-4. Definiera acceptance criteria på hög nivå.
-5. Förtydliga gränssnitt och beroenden.
-6. Förankra scope med verksamhetsrepresentanter.
+## 6. Arbetssteg
+1. Samla och strukturera identifierade behov från verksamheten.  
+2. Identifiera vilka behov som bidrar till affärsmål och värdebild.  
+3. Formulera user stories på hög nivå baserat på prioriterade behov.  
+4. Identifiera och dokumentera vad som uttryckligen inte ingår (avgränsningar).  
+5. Identifiera centrala beroenden och gränssnitt på hög nivå.  
+6. Strukturera scope i ett tydligt och kommunicerbart format.  
+7. Validera scope och avgränsningar med verksamhetsexperter.  
+8. Fastställ scope (beslut av A).

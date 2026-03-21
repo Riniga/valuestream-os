@@ -1,34 +1,31 @@
 # SOP 9: Deployments
 
 ## 1. Syfte
-Installera och verifiera releaser i olika miljöer (dev, test, stage, prod).
-
-
+Genomföra deployment av releaser och säkerställa att funktionalitet fungerar korrekt i respektive miljö.
 
 ## 2. Kontext
-- Processteg: 4. Leverans
-- Delprocess: 9: Deployments
+- Processteg: Leverans
+- Delprocess: Deployments
 
-
-## 4. Input
+## 3. Input
 - Releasepaket
 - Infrastrukturkonfiguration
 
-
-## 5. Output
+## 4. Output
 - Driftsatt funktionalitet i miljöer
-- Deployment‑loggar
+- Deployment-loggar
 
-
-## 6. RACI
+## 5. RACI
 - R: DevOps
-- A: DevOps
-- C: Utvecklingsteam
-- I: 
+- A: Teknisk Lead
+- C: Utvecklare
+- I: Produktägare
 
-
-## 7. Arbetssteg
-1. Genomföra deployment enligt standardiserad rutin.
-2. Verifiera att miljön fungerar efter deployment.
-3. Säkerställa automatiserade driftsättningar där det är möjligt.
-4. Dokumentera eventuella problem.
+## 6. Arbetssteg
+1. Genomför deployment enligt definierad process och miljö.  
+2. Verifiera att system och integrationer fungerar efter deployment.  
+3. Säkerställ att automatiserade deployments fungerar korrekt.  
+4. Identifiera och hantera eventuella fel eller avvikelser.  
+5. Dokumentera deployment-loggar och resultat.  
+6. Bekräfta att funktionalitet är korrekt driftsatt.  
+7. Markera deployment som genomförd.

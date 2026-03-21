@@ -1,30 +1,32 @@
 # SOP 8: Fastställ arkitekturprinciper
 
 ## 1. Syfte
-Ta fram övergripande principer som styr hur lösningen ska designas, utvecklas och underhållas.
+Definiera övergripande arkitekturprinciper som styr design, utveckling och vidareutveckling av lösningen.
 
 ## 2. Kontext
-- Processteg: 2. Målarkitektur
-- Delprocess: 8: Fastställ arkitekturprinciper
+- Processteg: Målarkitektur
+- Delprocess: Fastställ arkitekturprinciper
 
-## 4. Input
+## 3. Input
 - Arkitekturmål
 - Säkerhetsarkitektur
 - Integrationsarkitektur
 - Datamodell
 - API-struktur
 
-## 5. Output
+## 4. Output
 - Arkitekturprinciper
 
-## 6. RACI
+## 5. RACI
 - R: Lösningsarkitekt
-- A: Lösningsarkitekt
-- C: Enterprise‑arkitekt, Teknisk lead, Produktägare
-- I: 
+- A: Enterprise Arkitekt
+- C: Teknisk Lead, Produktägare
+- I: Utvecklare
 
-## 7. Arbetssteg
-1. Identifiera behov av vägledande principer.
-2. Formulera tydliga principer (t.ex. löskopplat, säkerhet som standard).
-3. Justera och konsolidera principer efter dialog med team.
-4. Godkänna principerna i arkitekturstyrning.
+## 6. Arbetssteg
+1. Identifiera behov av arkitekturprinciper baserat på arkitekturmål och lösningens komplexitet.  
+2. Formulera tydliga och generella arkitekturprinciper (t.ex. löskoppling, säkerhet som standard).  
+3. Säkerställ att principerna stödjer säkerhets-, integrations- och datamodell.  
+4. Konsolidera och strukturera principerna i ett enhetligt format.  
+5. Validera principerna med teknisk lead och produktägare.  
+6. Fastställ arkitekturprinciper (beslut av A).

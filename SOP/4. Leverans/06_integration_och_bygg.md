@@ -1,35 +1,33 @@
 # SOP 6: Integration & bygg (CI/CD)
 
 ## 1. Syfte
-Säkerställa att koden byggs, integreras och fungerar i CI/CD‑kedjan.
-
-
+Säkerställa att kod byggs, integreras och paketeras korrekt i CI/CD-flödet för vidare leverans.
 
 ## 2. Kontext
-- Processteg: 4. Leverans
-- Delprocess: 6: Integration & bygg (CI/CD)
+- Processteg: Leverans
+- Delprocess: Integration & bygg (CI/CD)
 
-
-## 4. Input
+## 3. Input
 - Verifierad funktionalitet
-- CI/CDpipelines
+- CI/CD-pipelines
 - Miljökonfiguration
 
-
-## 5. Output
+## 4. Output
 - Byggt och integrerat system
 - Artefakter redo för demo
 
-
-## 6. RACI
+## 5. RACI
 - R: DevOps
-- A: DevOps
+- A: Teknisk Lead
 - C: Utvecklare
-- I: 
+- I: Produktägare
 
-
-## 7. Arbetssteg
-1. Köra CI/CD‑pipeline för bygg och integration.
-2. Säkerställa att integrationer fungerar.
-3. Hantera eventuella byggfel och loggar.
-4. Publicera byggresultat.
+## 6. Arbetssteg
+1. Initiera CI/CD-pipeline för bygg och integration.  
+2. Bygg och paketera applikationen enligt definierad pipeline.  
+3. Verifiera att integrationer fungerar i byggmiljön.  
+4. Identifiera och hantera byggfel och loggar.  
+5. Säkerställ att artefakter genereras korrekt.  
+6. Publicera byggresultat och artefakter.  
+7. Validera att systemet är redo för demo.  
+8. Markera bygg som klar.

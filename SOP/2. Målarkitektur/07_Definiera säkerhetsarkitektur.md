@@ -1,36 +1,34 @@
 # SOP 7: Definiera säkerhetsarkitektur
 
 ## 1. Syfte
-Definiera hur lösningen skyddar information, användare och system genom säkerhetsprinciper och kontroller.
-
-
+Definiera en säkerhetsarkitektur som skyddar information, användare och system genom tydliga principer och kontroller.
 
 ## 2. Kontext
-- Processteg: 2. Målarkitektur
-- Delprocess: 7: Definiera säkerhetsarkitektur
+- Processteg: Målarkitektur
+- Delprocess: Definiera säkerhetsarkitektur
 
-
-## 4. Input
+## 3. Input
 - Datamodell
 - Integrationsarkitektur
 - Arkitekturmål
 
-
-## 5. Output
+## 4. Output
 - Säkerhetsarkitektur
 - Säkerhetsprinciper
 
+## 5. RACI
+- R: Lösningsarkitekt
+- A: Enterprise Arkitekt
+- C: Teknisk Lead, DevOps
+- I: Produktägare
 
-## 6. RACI
-- R: Säkerhetsarkitekt
-- A: Säkerhetsarkitekt
-- C: Lösningsarkitekt, Teknisk lead
-- I: 
-
-
-## 7. Arbetssteg
-1. Definiera autentiseringsmodell (SSO, IAM).
-2. Definiera auktorisation (RBAC/ABAC).
-3. Definiera identitetshantering för tjänster/system.
-4. Dokumentera dataskydd (kryptering, retention, PII).
-5. Definiera säkerhetsprinciper och riktlinjer.
+## 6. Arbetssteg
+1. Identifiera säkerhetskrav baserat på datamodell och arkitekturmål.  
+2. Definiera autentiseringsmodell (t.ex. SSO, IAM).  
+3. Definiera auktorisationsmodell (t.ex. RBAC, ABAC).  
+4. Definiera identitetshantering för system och tjänster.  
+5. Definiera dataskydd (t.ex. kryptering, retention, hantering av känslig data).  
+6. Fastställ säkerhetsprinciper och riktlinjer för lösningen.  
+7. Säkerställ att säkerhetsarkitekturen stödjer integrationsarkitektur och datamodell.  
+8. Validera säkerhetsarkitektur med teknisk lead och DevOps.  
+9. Fastställ säkerhetsarkitektur (beslut av A).

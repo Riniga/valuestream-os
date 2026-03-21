@@ -1,36 +1,34 @@
 # SOP 2: Sprintplanering
 
 ## 1. Syfte
-Planera vilket arbete teamet ska leverera i den kommande iterationen baserat på prioritet och kapacitet.
-
-
+Planera sprintens innehåll så att teamet arbetar med rätt saker baserat på prioritet, kapacitet och mål.
 
 ## 2. Kontext
-- Processteg: 4. Leverans
-- Delprocess: 2: Sprintplanering
+- Processteg: Leverans
+- Delprocess: Sprintplanering
 
-
-## 4. Input
-- Ready‑backlog
+## 3. Input
+- Ready-backlog
 - Teamkapacitet
 - Prioriteringar
 
-
-## 5. Output
+## 4. Output
 - Sprintmål
 - Sprint backlog
 
-
-## 6. RACI
+## 5. RACI
 - R: Scrum Master
-- A: Scrum Master
-- C: Produktägare, Utvecklingsteam
-- I: 
+- A: Produktägare
+- C: Utvecklare
+- I: Business Analyst
 
-
-## 7. Arbetssteg
-1. Välja vilka stories som ska ingå i sprinten.
-2. Definiera sprintmål.
-3. Bedöma teamets kapacitet och justera innehållet.
-4. Planera arbetsuppgifter för varje story.
-5. Dokumentera sprintens backlog.
+## 6. Arbetssteg
+1. Gå igenom ready-backlog och identifiera kandidater för sprinten.  
+2. Bedöm teamets kapacitet för kommande sprint.  
+3. Välj user stories baserat på prioritet och kapacitet.  
+4. Definiera ett tydligt sprintmål.  
+5. Bryt ner stories i konkreta arbetsuppgifter.  
+6. Säkerställ att beroenden och risker är hanterade.  
+7. Strukturera sprint backlog i ett tydligt format.  
+8. Bekräfta sprintplan med teamet.  
+9. Fastställ sprintplan (beslut av A).

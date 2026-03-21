@@ -1,36 +1,34 @@
 # SOP 9: Definiera NFR
 
 ## 1. Syfte
-Fastställa tekniska kvalitetskrav som lösningen måste uppfylla — prestanda, tillgänglighet, driftbarhet m.m.
-
-
+Definiera icke-funktionella krav (NFR) som säkerställer att lösningen uppfyller krav på kvalitet, prestanda, säkerhet och driftbarhet.
 
 ## 2. Kontext
-- Processteg: 2. Målarkitektur
-- Delprocess: 9: Definiera NFR
+- Processteg: Målarkitektur
+- Delprocess: Definiera NFR
 
-
-## 4. Input
+## 3. Input
 - Arkitekturprinciper
 - Datamodell
 - Säkerhetsarkitektur
 
-
-## 5. Output
-- NFR‑lista
+## 4. Output
+- NFR-lista
 - Tekniska kvalitetskrav
 
-
-## 6. RACI
+## 5. RACI
 - R: Lösningsarkitekt
-- A: Lösningsarkitekt
-- C: DevOps, Säkerhetsarkitekt
-- I: 
+- A: Enterprise Arkitekt
+- C: DevOps, Teknisk Lead
+- I: Produktägare
 
-
-## 7. Arbetssteg
-1. Identifiera krav på prestanda och svarstider.
-2. Definiera skalnings- och kapacitetskrav.
-3. Definiera loggning och observability‑krav.
-4. Dokumentera driftbarhetskrav.
-5. Förankra NFR med teknik och verksamhet.
+## 6. Arbetssteg
+1. Identifiera relevanta kvalitetsområden (t.ex. prestanda, tillgänglighet, säkerhet).  
+2. Definiera konkreta krav för varje kvalitetsområde.  
+3. Definiera krav på skalbarhet och kapacitet.  
+4. Definiera krav på loggning, monitorering och observability.  
+5. Definiera krav på driftbarhet och hanterbarhet.  
+6. Strukturera NFR och kvalitetskrav i ett tydligt format.  
+7. Säkerställ att NFR stödjer arkitekturprinciper och säkerhetsarkitektur.  
+8. Validera NFR med DevOps och teknisk lead.  
+9. Fastställ NFR (beslut av A).

@@ -1,37 +1,34 @@
 # SOP 2: Utvärdera process & arbetssätt
 
 ## 1. Syfte
-Reflektera över hur teamet har arbetat och identifiera förbättringar inför nästa cykel. 
-
-
+Utvärdera arbetssätt och processer för att identifiera förbättringar som ökar effektivitet och kvalitet i kommande cykler.
 
 ## 2. Kontext
-- Processteg: 5. Repeat
-- Delprocess: 2: Utvärdera process & arbetssätt
+- Processteg: Repeat
+- Delprocess: Utvärdera process & arbetssätt
 
-
-## 4. Input
+## 3. Input
 - Sprintresultat
 - Retrospektivdata
 - Tekniska hinder och flaskhalsar
-- Utvärdering från SOP 1
+- Sammanställd utvärdering av leveransen
 
-
-## 5. Output
+## 4. Output
 - Retrospektivrapport
 - Lista på förbättringar i arbetssätt
 
-
-## 6. RACI
+## 5. RACI
 - R: Scrum Master
-- A: Scrum Master
-- C: Utvecklingsteam
-- I: 
+- A: Produktägare
+- C: Utvecklare
+- I: Business Analyst
 
-
-## 7. Arbetssteg
-1. Genomföra retrospektiv med teamet.
-2. Identifiera hinder, flaskhalsar och kvalitetsproblem.
-3. Prioritera förbättringsåtgärder.
-4. Dokumentera förbättringsförslag.
-5. Kommunicera åtgärder som kräver produkt- eller arkitekturändring.
+## 6. Arbetssteg
+1. Samla in data från sprintresultat och tidigare retrospektiv.  
+2. Genomför retrospektiv med teamet.  
+3. Identifiera hinder, flaskhalsar och kvalitetsproblem.  
+4. Identifiera förbättringsområden i arbetssätt och process.  
+5. Prioritera förbättringsåtgärder tillsammans med teamet.  
+6. Strukturera och dokumentera retrospektivrapport.  
+7. Kommunicera förbättringar till relevanta intressenter.  
+8. Säkerställ att förbättringar tas med i nästa cykel.

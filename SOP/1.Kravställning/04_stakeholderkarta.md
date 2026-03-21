@@ -1,35 +1,31 @@
 # SOP 4: Stakeholder-karta
 
 ## 1. Syfte
-Identifiera alla berörda aktörer och tydliggöra deras ansvar, påverkan och roll i produkten.
-
-
+Identifiera och strukturera alla relevanta intressenter samt tydliggöra deras påverkan, ansvar och relationer till produkten.
 
 ## 2. Kontext
-- Processteg: 1.Kravställning
-- Delprocess: 4: Stakeholder-karta
+- Processteg: Kravställning
+- Delprocess: Stakeholder-karta
 
-
-## 4. Input
-- Scope och avgränsningar
+## 3. Input
+- Scope & avgränsningar
 - Vision & målbild
 
-
-## 5. Output
+## 4. Output
 - Stakeholderkarta
 - Beroendekarta på aktörsnivå
 
-
-## 6. RACI
-- R: Produktägare
+## 5. RACI
+- R: Business Analyst
 - A: Produktägare
-- C: Initiativledare, Verksamhetsrepresentanter
-- I: 
+- C: Verksamhetsexperter, Initiativledare
+- I: Utvecklare
 
-
-## 7. Arbetssteg
-1. Identifiera alla organisationer och roller som påverkas.
-2. Definiera ansvar (RACI-liknande).
-3. Dokumentera intressen och förväntningar.
-4. Identifiera beroenden mellan parter.
-5. Verifiera stakeholderanalysen med verksamheten.
+## 6. Arbetssteg
+1. Identifiera alla relevanta intressenter (organisationer, roller, användargrupper).  
+2. Klassificera intressenter utifrån påverkan, intresse och ansvar.  
+3. Dokumentera varje intressents behov, förväntningar och målbild.  
+4. Identifiera beroenden och relationer mellan intressenter.  
+5. Strukturera stakeholderkarta och beroendekarta i ett tydligt format.  
+6. Validera stakeholderanalysen med verksamhetsexperter.  
+7. Fastställ stakeholderkarta (beslut av A).

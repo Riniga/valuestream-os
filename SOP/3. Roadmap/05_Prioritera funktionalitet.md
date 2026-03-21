@@ -1,36 +1,33 @@
 # SOP 5: Prioritera funktionalitet
 
 ## 1. Syfte
-Fastställa vad som ska byggas först baserat på värde, risk, tekniska förutsättningar och verksamhetsnytta.
-
-
+Prioritera funktionalitet för att säkerställa att rätt saker byggs i rätt ordning baserat på värde, risk och tekniska förutsättningar.
 
 ## 2. Kontext
-- Processteg: 3. Roadmap
-- Delprocess: 5: Prioritera funktionalitet
+- Processteg: Roadmap
+- Delprocess: Prioritera funktionalitet
 
-
-## 4. Input
+## 3. Input
 - Leveranspaket
 - Tekniska beroenden
-- MVP‑definition
+- MVP
 - Affärsvärdemått
 
-
-## 5. Output
+## 4. Output
 - Prioriterad funktionalitet (epics/features)
 
-
-## 6. RACI
-- R: Produktägare
+## 5. RACI
+- R: Business Analyst
 - A: Produktägare
-- C: Verksamhetsrepresentanter, Business Analyst, Lösningsarkitekt
-- I: 
+- C: Lösningsarkitekt, Verksamhetsexperter
+- I: Utvecklare
 
-
-## 7. Arbetssteg
-1. Bedöma affärsvärde för varje leveranspaket.
-2. Identifiera riskreducerande funktionalitet.
-3. Prioritera utifrån värde, risk och beroenden.
-4. Validera prioriteringen med verksamheten.
-5. Uppdatera backloggens prioritet.
+## 6. Arbetssteg
+1. Analysera leveranspaket och identifiera tillhörande funktionalitet.  
+2. Bedöm affärsvärde och påverkan för varje epic/feature.  
+3. Identifiera funktionalitet som reducerar risk eller möjliggör vidare leverans.  
+4. Ta hänsyn till tekniska beroenden i prioriteringen.  
+5. Prioritera funktionalitet baserat på värde, risk och beroenden.  
+6. Strukturera prioriteringen i ett tydligt och spårbart format.  
+7. Validera prioritering med verksamhet och arkitektur.  
+8. Fastställ prioriterad funktionalitet (beslut av A).

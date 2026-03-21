@@ -1,35 +1,32 @@
 # SOP 2: Strukturera story map till leveranspaket
 
 ## 1. Syfte
-Bryta ner funktionaliteten i logiska och leveransbara paket som kan byggas successivt.
-
-
+Bryta ner funktionaliteten i strukturerade och leveransbara paket som möjliggör stegvis värdeleverans.
 
 ## 2. Kontext
-- Processteg: 3. Roadmap
-- Delprocess: 2: Strukturera story map till leveranspaket
+- Processteg: Roadmap
+- Delprocess: Strukturera story map till leveranspaket
 
-
-## 4. Input
-- Story map
-- MVP‑definition
+## 3. Input
+- Story Map
+- MVP-definition
 - Epics & capabilities
 
+## 4. Output
+- Leveranspaket (feature packages)
 
-## 5. Output
-- Leveranspaket (”feature packages”)
-
-
-## 6. RACI
+## 5. RACI
 - R: Business Analyst
-- A: Business Analyst
-- C: Produktägare, Lösningsarkitekt
-- I: 
+- A: Produktägare
+- C: Lösningsarkitekt
+- I: Utvecklare
 
-
-## 7. Arbetssteg
-1. Identifiera funktionella grupper i story map.
-2. Paketera stories och funktioner i logiska leveranspaket.
-3. Säkerställa att varje paket ger självständigt värde.
-4. Kontrollera teknisk genomförbarhet med arkitekt.
-5. Dokumentera leveranspaket med korta beskrivningar.
+## 6. Arbetssteg
+1. Identifiera funktionella grupper i story map baserat på användarflöden.  
+2. Bryt ner epics och capabilities till logiska leveranspaket.  
+3. Säkerställ att varje leveranspaket ger självständigt värde.  
+4. Identifiera beroenden mellan leveranspaket.  
+5. Verifiera teknisk genomförbarhet med lösningsarkitekt.  
+6. Strukturera leveranspaket i ett tydligt och spårbart format.  
+7. Validera leveranspaket med produktägare.  
+8. Fastställ leveranspaket (beslut av A).

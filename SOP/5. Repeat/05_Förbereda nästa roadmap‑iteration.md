@@ -1,36 +1,34 @@
-# SOP 5: Förbereda nästa roadmap‑iteration
+# SOP 5: Förbereda nästa roadmap-iteration
 
 ## 1. Syfte
-Identifiera hög-nivå ändringar och beroenden som behöver beaktas vid nästa roadmap‑planering.
-
-
+Förbereda underlag för nästa roadmap-iteration genom att identifiera förändringar, beroenden och risker som påverkar planeringen.
 
 ## 2. Kontext
-- Processteg: 5. Repeat
-- Delprocess: 5: Förbereda nästa roadmap‑iteration
+- Processteg: Repeat
+- Delprocess: Förbereda nästa roadmap-iteration
 
-
-## 4. Input
+## 3. Input
 - Arkitekturinsikter
 - Förändrade beroenden
 - Risker eller blockare
 - Prioriteringsinput från Kravställning
 
-
-## 5. Output
-- Roadmap‑input (hög nivå)
+## 4. Output
+- Roadmap-input (hög nivå)
 - Indikation på om roadmap behöver ändras
 
-
-## 6. RACI
-- R: Produktägare
+## 5. RACI
+- R: Business Analyst
 - A: Produktägare
-- C: Initiativledare / Projektledare, Lösningsarkitekt
-- I: 
+- C: Lösningsarkitekt, Initiativledare
+- I: Utvecklare
 
-
-## 7. Arbetssteg
-1. Identifiera ändrade eller nya beroenden.
-2. Notera risker som påverkar releaseordning.
-3. Förbereda material för en ny roadmap‑iteration.
-4. Dokumentera vilka delar som behöver omtag i nästa roadmap‑steg.
+## 6. Arbetssteg
+1. Analysera arkitekturinsikter och identifiera påverkan på roadmap.  
+2. Identifiera förändrade eller nya beroenden mellan leveranser.  
+3. Identifiera risker och blockare som påverkar planeringen.  
+4. Sammanställ prioriteringsinput från kravställning.  
+5. Bedöm behov av förändringar i roadmap.  
+6. Strukturera roadmap-input i ett tydligt format.  
+7. Validera underlaget med produktägare och arkitektur.  
+8. Fastställ roadmap-input (beslut av A).

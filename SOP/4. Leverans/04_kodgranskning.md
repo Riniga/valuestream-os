@@ -1,36 +1,33 @@
 # SOP 4: Kodgranskning
 
 ## 1. Syfte
-Säkerställa kvalitet, riktlinjer och arkitekturell följsamhet innan funktionalitet går vidare till test.
-
-
+Säkerställa att kod uppfyller kvalitetskrav, följer riktlinjer och är i linje med arkitekturprinciper innan vidare steg.
 
 ## 2. Kontext
-- Processteg: 4. Leverans
-- Delprocess: 4: Kodgranskning
+- Processteg: Leverans
+- Delprocess: Kodgranskning
 
-
-## 4. Input
-- Kod från utvecklingsfasen
+## 3. Input
+- Kod redo för granskning
 - Kodstandarder
 - Arkitekturprinciper
 
-
-## 5. Output
+## 4. Output
 - Godkänd kod
 - Förbättringar i kodbas
 
-
-## 6. RACI
+## 5. RACI
 - R: Utvecklare
-- A: Utvecklare
-- C: Teknisk lead
-- I: 
+- A: Teknisk Lead
+- C: Lösningsarkitekt
+- I: Produktägare
 
-
-## 7. Arbetssteg
-1. Granska kod för kvalitet och struktur.
-2. Säkerställa att kod följer arkitekturprinciper.
-3. Kontrollera testbarhet och edge cases.
-4. Lämna kommentarer och förbättringsförslag.
-5. Godkänna eller begära uppdateringar.
+## 6. Arbetssteg
+1. Granska kodens struktur, läsbarhet och kvalitet.  
+2. Säkerställ att kod följer definierade kodstandarder.  
+3. Verifiera att implementation följer arkitekturprinciper.  
+4. Kontrollera testbarhet och hantering av edge cases.  
+5. Identifiera förbättringsområden och ge feedback.  
+6. Begär uppdateringar vid behov eller godkänn koden.  
+7. Säkerställ att eventuella åtgärder är genomförda.  
+8. Markera kod som godkänd.

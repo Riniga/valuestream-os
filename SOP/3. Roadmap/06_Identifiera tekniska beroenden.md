@@ -1,36 +1,33 @@
 # SOP 6: Identifiera tekniska beroenden
 
 ## 1. Syfte
-Synliggöra tekniska beroenden och sekvenser för att säkerställa realistisk planering.
-
-
+Identifiera och strukturera tekniska beroenden för att möjliggöra realistisk planering och korrekt leveransordning.
 
 ## 2. Kontext
-- Processteg: 3. Roadmap
-- Delprocess: 6: Identifiera tekniska beroenden
+- Processteg: Roadmap
+- Delprocess: Identifiera tekniska beroenden
 
-
-## 4. Input
+## 3. Input
 - Leveranspaket
 - Domänmodell
 - Integrationsarkitektur
 
-
-## 5. Output
+## 4. Output
 - Teknisk beroendekarta
 - Sekvensrekommendationer
 
-
-## 6. RACI
+## 5. RACI
 - R: Teknisk Lead
-- A: Teknisk Lead
-- C: Lösningsarkitekt, Utvecklingsrepresentanter
-- I: 
+- A: Lösningsarkitekt
+- C: Utvecklare
+- I: Produktägare
 
-
-## 7. Arbetssteg
-1. Analysera beroenden mellan funktioner och system.
-2. Identifiera integrationsberoenden.
-3. Bedöma teknisk genomförbarhet per paket.
-4. Dokumentera beroenden i backloggen.
-5. Kommunicera beroenden till produktägare.
+## 6. Arbetssteg
+1. Identifiera beroenden mellan leveranspaket och funktionalitet.  
+2. Identifiera integrationsberoenden mellan system och komponenter.  
+3. Bedöm teknisk genomförbarhet för respektive leveranspaket.  
+4. Strukturera beroenden i en teknisk beroendekarta.  
+5. Ta fram sekvensrekommendationer för implementation.  
+6. Säkerställ att beroenden är spårbara till arkitektur och krav.  
+7. Validera beroendekarta med utvecklare och lösningsarkitekt.  
+8. Fastställ tekniska beroenden (beslut av A).

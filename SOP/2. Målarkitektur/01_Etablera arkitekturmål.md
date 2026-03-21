@@ -1,36 +1,34 @@
 # SOP 1: Etablera arkitekturmål
 
 ## 1. Syfte
-Fastställa de övergripande arkitekturmålen som ska styra den tekniska inriktningen för lösningen.
-
-
+Fastställa tydliga arkitekturmål som styr lösningens tekniska inriktning och säkerställer att den stödjer verksamhetens behov.
 
 ## 2. Kontext
-- Processteg: 2. Målarkitektur
-- Delprocess: 1: Etablera arkitekturmål
+- Processteg: Målarkitektur
+- Delprocess: Etablera arkitekturmål
 
+## 3. Input
+- Funktionella behov (från Kravställning)
+- Vision & målbild
+- Affärsmål
+- Scope & avgränsningar
 
-## 4. Input
-- Kravställning: funktionella behov
-- Produktvision och affärsmål
-- Avgränsningar och scope
-
-
-## 5. Output
+## 4. Output
 - Arkitekturmål
 - Initiala designprinciper
 
-
-## 6. RACI
+## 5. RACI
 - R: Lösningsarkitekt
-- A: Lösningsarkitekt
-- C: Produktägare
-- I: 
+- A: Enterprise Arkitekt
+- C: Produktägare, Teknisk Lead
+- I: Business Analyst
 
-
-## 7. Arbetssteg
-1. Analysera funktionella behov från kravställningen.
-2. Identifiera tekniska huvudkrav och arkitekturella utmaningar.
-3. Formulera arkitekturmål (skalbarhet, säkerhet, integration etc.).
-4. Identifiera viktiga designprinciper som måste följas.
-5. Förankra målen med produktägare och teknisk lead.
+## 6. Arbetssteg
+1. Analysera funktionella behov och affärsmål från kravställningen.  
+2. Identifiera tekniska krav och arkitekturella utmaningar.  
+3. Definiera arkitekturmål (t.ex. skalbarhet, säkerhet, integration).  
+4. Identifiera initiala designprinciper som ska styra lösningen.  
+5. Säkerställ att arkitekturmål stödjer verksamhetens mål och scope.  
+6. Strukturera arkitekturmål och principer i ett tydligt format.  
+7. Validera arkitekturmål med produktägare och teknisk lead.  
+8. Fastställ arkitekturmål (beslut av A).

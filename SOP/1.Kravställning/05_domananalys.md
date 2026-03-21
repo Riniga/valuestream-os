@@ -1,36 +1,33 @@
 # SOP 5: Domänanalys
 
 ## 1. Syfte
-Analysera verksamhetens objekt, processer och relationer för att skapa en gemensam begreppsmodell.
-
-
+Skapa en gemensam förståelse för verksamhetens centrala begrepp, objekt och relationer som grund för vidare krav och arkitektur.
 
 ## 2. Kontext
-- Processteg: 1.Kravställning
-- Delprocess: 5: Domänanalys
+- Processteg: Kravställning
+- Delprocess: Domänanalys
 
-
-## 4. Input
+## 3. Input
 - Stakeholderkarta
 - Scope & user stories
 - Verksamhetsregler (befintliga)
 
-
-## 5. Output
+## 4. Output
 - Domänmodell (hög nivå)
 - Begreppslista
 
-
-## 6. RACI
+## 5. RACI
 - R: Business Analyst
-- A: Business Analyst
-- C: Verksamhetsexperter, Produktägare, Lösningsarkitekt
-- I: 
+- A: Produktägare
+- C: Verksamhetsexperter
+- I: Lösningsarkitekt
 
-
-## 7. Arbetssteg
-1. Kartlägga centrala affärsobjekt.
-2. Identifiera relationer mellan objekt och processer.
-3. Dokumentera verksamhetsregler.
-4. Validera begreppsmodellen med verksamheten.
-5. Säkerställa spårbarhet mot user stories.
+## 6. Arbetssteg
+1. Identifiera centrala affärsobjekt baserat på scope och user stories.  
+2. Definiera relationer mellan objekt och centrala verksamhetsprocesser.  
+3. Dokumentera relevanta verksamhetsregler kopplade till objekten.  
+4. Strukturera en övergripande domänmodell (hög nivå).  
+5. Ta fram en begreppslista med tydliga definitioner.  
+6. Säkerställ spårbarhet mellan domänmodell och user stories.  
+7. Validera domänmodell och begrepp med verksamhetsexperter.  
+8. Fastställ domänmodell (beslut av A).

@@ -1,36 +1,34 @@
 # SOP 1: Utvärdera leveransresultat
 
 ## 1. Syfte
-Utvärdera utfallet av den senaste leveransen för att se om värde, funktionalitet och mål uppnåddes.
-
-
+Utvärdera leveransens resultat för att säkerställa att rätt värde har skapats och identifiera förbättringsområden.
 
 ## 2. Kontext
-- Processteg: 5. Repeat
-- Delprocess: 1: Utvärdera leveransresultat
+- Processteg: Repeat
+- Delprocess: Utvärdera leveransresultat
 
-
-## 4. Input
+## 3. Input
 - Levererat inkrement
 - Demofeedback
 - Release notes
 - KPI:er och målbilder
 
-
-## 5. Output
+## 4. Output
 - Sammanställd utvärdering av leveransen
 - Lista över funktionella förbättringar
 
-
-## 6. RACI
-- R: Produktägare
+## 5. RACI
+- R: Business Analyst
 - A: Produktägare
-- C: Verksamhetsrepresentanter, Utvecklingsteam
-- I: 
+- C: Verksamhetsexperter
+- I: Utvecklare
 
-
-## 7. Arbetssteg
-1. Analysera om releasen skapat avsett verksamhetsvärde.
-2. Jämföra planerat vs. levererat innehåll.
-3. Sammanställa verksamhetsfeedback.
-4. Identifiera funktionella gap och förbättringsområden.
+## 6. Arbetssteg
+1. Analysera levererat inkrement i relation till affärsmål och KPI:er.  
+2. Jämför planerat innehåll med faktisk leverans.  
+3. Sammanställ och analysera demofeedback och användarfeedback.  
+4. Identifiera funktionella gap och förbättringsområden.  
+5. Bedöm i vilken grad leveransen skapat förväntat värde.  
+6. Strukturera en sammanställd utvärdering.  
+7. Validera utvärdering med verksamhetsexperter.  
+8. Fastställ utvärdering (beslut av A).

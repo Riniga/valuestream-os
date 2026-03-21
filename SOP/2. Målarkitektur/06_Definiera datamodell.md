@@ -1,36 +1,34 @@
 # SOP 6: Definiera datamodell (hög nivå)
 
 ## 1. Syfte
-Skapa en övergripande modell över hur information struktureras, lagras och flödar.
-
-
+Definiera en övergripande datamodell som beskriver hur information struktureras, ägs och flödar i lösningen.
 
 ## 2. Kontext
-- Processteg: 2. Målarkitektur
-- Delprocess: 6: Definiera datamodell (hög nivå)
+- Processteg: Målarkitektur
+- Delprocess: Definiera datamodell (hög nivå)
 
-
-## 4. Input
+## 3. Input
 - Domänmodell
-- API‑struktur
+- API-struktur
 - Integrationsarkitektur
 
-
-## 5. Output
+## 4. Output
 - Datamodell (hög nivå)
 - Dataägarskapsmodell
 
-
-## 6. RACI
+## 5. RACI
 - R: Dataarkitekt
-- A: Dataarkitekt
-- C: Teknisk lead, Lösningsarkitekt
-- I: 
+- A: Lösningsarkitekt
+- C: Teknisk Lead
+- I: Produktägare
 
-
-## 7. Arbetssteg
-1. Definiera centrala datatyper och informationsobjekt.
-2. Kartlägga relationer och informationsflöden.
-3. Identifiera masterdata och dataägarskap.
-4. Definiera datalagringsprinciper.
-5. Dokumentera dataklassning och skyddskrav.
+## 6. Arbetssteg
+1. Identifiera centrala datatyper och informationsobjekt baserat på domänmodellen.  
+2. Definiera relationer mellan informationsobjekt.  
+3. Kartlägg informationsflöden mellan system och komponenter.  
+4. Identifiera masterdata och definiera dataägarskap.  
+5. Definiera principer för datalagring och datadelning.  
+6. Identifiera dataklassning och skyddskrav (t.ex. säkerhet, integritet).  
+7. Strukturera datamodellen i ett tydligt och övergripande format.  
+8. Validera datamodell och dataägarskap med teknisk lead.  
+9. Fastställ datamodell (beslut av A).

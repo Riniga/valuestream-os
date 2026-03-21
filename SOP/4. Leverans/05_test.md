@@ -1,36 +1,33 @@
 # SOP 5: Test
 
 ## 1. Syfte
-Verifiera att funktionaliteten fungerar som avsett och uppfyller acceptanskriterier.
-
-
+Verifiera att funktionalitet uppfyller krav och acceptanskriterier samt håller tillräcklig kvalitet för leverans.
 
 ## 2. Kontext
-- Processteg: 4. Leverans
-- Delprocess: 5: Test
+- Processteg: Leverans
+- Delprocess: Test
 
-
-## 4. Input
+## 3. Input
 - Godkänd kod
 - Acceptance criteria
 - Testplan / testramverk
 
-
-## 5. Output
+## 4. Output
 - Testresultat
 - Verifierad funktionalitet
 
-
-## 6. RACI
-- R: Testare / QA
-- A: Testare / QA
+## 5. RACI
+- R: QA / Testare
+- A: Teknisk Lead
 - C: Utvecklare
-- I: 
+- I: Produktägare
 
-
-## 7. Arbetssteg
-1. Genomföra manuella och automatiserade tester.
-2. Verifiera funktionalitet mot krav och DoD.
-3. Utföra integrationstester.
-4. Rapportera buggar och avvikelser.
-5. Säkerställa att alla blockerande fel är lösta.
+## 6. Arbetssteg
+1. Planera och förbereda test baserat på acceptance criteria.  
+2. Genomföra manuella och automatiserade tester.  
+3. Verifiera funktionalitet mot krav och definition of done.  
+4. Utföra integrationstester vid behov.  
+5. Identifiera och rapportera buggar och avvikelser.  
+6. Säkerställ att blockerande fel åtgärdas.  
+7. Dokumentera testresultat.  
+8. Markera funktionalitet som verifierad.

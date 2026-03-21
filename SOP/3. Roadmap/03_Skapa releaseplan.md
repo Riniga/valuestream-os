@@ -1,35 +1,32 @@
 # SOP 3: Skapa releaseplan
 
 ## 1. Syfte
-Skapa en plan för i vilken ordning leveranspaket ska byggas och släppas.
-
-
+Definiera en tydlig plan för i vilken ordning leveranspaket ska byggas och levereras för att maximera värde och hantera beroenden.
 
 ## 2. Kontext
-- Processteg: 3. Roadmap
-- Delprocess: 3: Skapa releaseplan
+- Processteg: Roadmap
+- Delprocess: Skapa releaseplan
 
-
-## 4. Input
+## 3. Input
 - Leveranspaket
-- MVP och högprioriterade funktioner
-- Identifierade beroenden (när de finns)
+- MVP
+- Identifierade beroenden
 
-
-## 5. Output
+## 4. Output
 - Releaseplan (version 1)
 
-
-## 6. RACI
-- R: Produktägare
+## 5. RACI
+- R: Business Analyst
 - A: Produktägare
-- C: Initiativledare / Projektledare, Lösningsarkitekt
-- I: 
+- C: Lösningsarkitekt, Initiativledare
+- I: Utvecklare
 
-
-## 7. Arbetssteg
-1. Fastställa ordning mellan leveranspaket.
-2. Definiera innehåll per release.
-3. Analysera beroenden och risker.
-4. Säkerställa att releaseordningen är realistisk.
-5. Förankra releaseplanen med verksamheten och arkitekt.
+## 6. Arbetssteg
+1. Analysera leveranspaket och identifiera beroenden mellan dem.  
+2. Fastställ ordning för leverans baserat på värde och beroenden.  
+3. Definiera innehåll för respektive release.  
+4. Identifiera risker kopplade till leveransordningen.  
+5. Säkerställ att releaseplanen är realistisk utifrån tekniska och organisatoriska förutsättningar.  
+6. Strukturera releaseplan i ett tydligt och kommunicerbart format.  
+7. Validera releaseplan med lösningsarkitekt och verksamhet.  
+8. Fastställ releaseplan (beslut av A).

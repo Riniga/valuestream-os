@@ -1,35 +1,32 @@
 # SOP 4: Skapa produktroadmap
 
 ## 1. Syfte
-Ta fram en visuell och kommunikativ plan som beskriver hur produkten utvecklas över tid.
-
-
+Ta fram en tydlig och kommunikativ roadmap som visar hur produkten utvecklas över tid i linje med mål och prioriteringar.
 
 ## 2. Kontext
-- Processteg: 3. Roadmap
-- Delprocess: 4: Skapa produktroadmap
+- Processteg: Roadmap
+- Delprocess: Skapa produktroadmap
 
-
-## 4. Input
+## 3. Input
 - Releaseplan
 - Prioriterad backlog (hög nivå)
 - Tekniska beroenden
 
-
-## 5. Output
+## 4. Output
 - Produktroadmap (visuell)
 
-
-## 6. RACI
-- R: Produktägare
+## 5. RACI
+- R: Business Analyst
 - A: Produktägare
-- C: Initiativledare, Lösningsarkitekt
-- I: 
+- C: Lösningsarkitekt, Initiativledare
+- I: Verksamhetsexperter
 
-
-## 7. Arbetssteg
-1. Visualisera planerade releaser över tid.
-2. Definiera strategiska steg och milstolpar.
-3. Stäm av roadmapen mot tekniska beroenden.
-4. Säkerställa alignment med verksamhetens mål.
-5. Publicera roadmap i lämpliga kanaler.
+## 6. Arbetssteg
+1. Strukturera releaser och leveranspaket över en tidslinje.  
+2. Identifiera och definiera strategiska steg och milstolpar.  
+3. Säkerställ att roadmapen tar hänsyn till tekniska beroenden.  
+4. Säkerställ alignment med affärsmål och värdebild.  
+5. Visualisera roadmap i ett tydligt och kommunikativt format.  
+6. Validera roadmap med lösningsarkitekt och verksamhet.  
+7. Publicera och kommunicera roadmap.  
+8. Fastställ produktroadmap (beslut av A).

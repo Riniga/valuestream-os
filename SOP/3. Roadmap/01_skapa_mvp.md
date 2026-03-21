@@ -1,35 +1,32 @@
 # SOP 1: Skapa MVP
 
 ## 1. Syfte
-Definiera den minsta användbara versionen av produkten som skapar verkligt verksamhetsvärde och kan användas för att starta leveranscykeln.
-
-
+Definiera en första levererbar produktversion (MVP) som skapar tydligt verksamhetsvärde och kan ligga till grund för vidare leveranser.
 
 ## 2. Kontext
-- Processteg: 3. Roadmap
-- Delprocess: 1: Skapa MVP
+- Processteg: Roadmap
+- Delprocess: Skapa MVP
 
+## 3. Input
+- Story Map
+- Epics & capabilities
+- Affärsmål & värdebild
 
-## 4. Input
-- Story map från Kravställning
-- Capabilities och epics
-- Affärsmål och värdebild
+## 4. Output
+- Definierad MVP
 
-
-## 5. Output
-- Definierad MVP (Minimum Viable Product)
-
-
-## 6. RACI
-- R: Produktägare
+## 5. RACI
+- R: Business Analyst
 - A: Produktägare
-- C: Verksamhetsrepresentanter, Lösningsarkitekt
-- I: 
+- C: Lösningsarkitekt, Verksamhetsexperter
+- I: Utvecklare
 
-
-## 7. Arbetssteg
-1. Identifiera vilken funktionalitet som måste ingå för att skapa första värdet.
-2. Analysera beroenden för att se vad som absolut krävs.
-3. Säkerställa att MVP går att använda i skarp verksamhet.
-4. Verifiera teknisk genomförbarhet med arkitekt.
-5. Förankra MVP med verksamheten.
+## 6. Arbetssteg
+1. Analysera story map och identifiera funktionalitet som skapar tidigt värde.  
+2. Identifiera vilka epics och capabilities som krävs för MVP.  
+3. Identifiera beroenden som måste hanteras för att möjliggöra MVP.  
+4. Säkerställ att MVP är användbar i verksamheten.  
+5. Verifiera teknisk genomförbarhet tillsammans med lösningsarkitekt.  
+6. Strukturera och dokumentera MVP i ett tydligt format.  
+7. Validera MVP med verksamhetsexperter.  
+8. Fastställ MVP (beslut av A).

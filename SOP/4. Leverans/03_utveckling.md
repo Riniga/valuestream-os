@@ -1,36 +1,33 @@
 # SOP 3: Utveckling
 
 ## 1. Syfte
-Implementera funktionalitet enligt krav, arkitektur och definition of done.
-
-
+Implementera funktionalitet enligt definierade krav, arkitektur och kvalitetsprinciper.
 
 ## 2. Kontext
-- Processteg: 4. Leverans
-- Delprocess: 3: Utveckling
+- Processteg: Leverans
+- Delprocess: Utveckling
 
-
-## 4. Input
+## 3. Input
 - Sprint backlog
 - Arkitekturprinciper
 - Design och tekniska riktlinjer
 
-
-## 5. Output
+## 4. Output
 - Implementerad funktionalitet
 - Kod redo för granskning
 
-
-## 6. RACI
+## 5. RACI
 - R: Utvecklare
-- A: Utvecklare
-- C: Lösningsarkitekt, Teknisk lead
-- I: 
+- A: Teknisk Lead
+- C: Lösningsarkitekt
+- I: Produktägare
 
-
-## 7. Arbetssteg
-1. Implementera funktionalitet enligt user story.
-2. Skriva kod enligt standarder och konventioner.
-3. Implementera integrationer och backend‑logik.
-4. Dokumentera tekniska ändringar vid behov.
-5. Förbereda för kodgranskning.
+## 6. Arbetssteg
+1. Tolka user stories och tillhörande acceptance criteria.  
+2. Implementera funktionalitet enligt arkitekturprinciper och riktlinjer.  
+3. Implementera integrationer och nödvändig backend-/frontend-logik.  
+4. Säkerställ att kod följer standarder och konventioner.  
+5. Utför lokal testning av funktionaliteten.  
+6. Dokumentera tekniska förändringar vid behov.  
+7. Förbered kod för granskning (t.ex. pull request).  
+8. Markera arbetet som klart för kodgranskning.

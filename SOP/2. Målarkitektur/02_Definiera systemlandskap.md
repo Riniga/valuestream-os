@@ -1,35 +1,32 @@
 # SOP 2: Definiera systemlandskap
 
 ## 1. Syfte
-Skapa en helhetsbild av alla system och komponenter som ingår i eller påverkar lösningen.
-
-
+Skapa en övergripande och strukturerad bild av lösningens systemlandskap för att tydliggöra komponenter, relationer och beroenden.
 
 ## 2. Kontext
-- Processteg: 2. Målarkitektur
-- Delprocess: 2: Definiera systemlandskap
+- Processteg: Målarkitektur
+- Delprocess: Definiera systemlandskap
 
-
-## 4. Input
+## 3. Input
 - Arkitekturmål
 - Funktionella behov
 - Externa och interna systemberoenden
 
-
-## 5. Output
+## 4. Output
 - Systemlandskap / Lösningskarta
 
-
-## 6. RACI
+## 5. RACI
 - R: Lösningsarkitekt
-- A: Lösningsarkitekt
-- C: Teknisk lead, Systemägare (vid behov)
-- I: 
+- A: Enterprise Arkitekt
+- C: Teknisk Lead, Verksamhetsexperter
+- I: Produktägare
 
-
-## 7. Arbetssteg
-1. Identifiera alla huvudsystem och delsystem.
-2. Kartlägga interna och externa systemberoenden.
-3. Definiera gränssnitt och dataflöden på hög nivå.
-4. Dokumentera ansvarsområden för respektive system.
-5. Skapa en arkitekturöversikt (C4‑context/container om ni använder det).
+## 6. Arbetssteg
+1. Identifiera alla relevanta system och komponenter i lösningen.  
+2. Kartlägg interna och externa systemberoenden.  
+3. Definiera gränssnitt och dataflöden på hög nivå.  
+4. Identifiera ansvar och roller kopplade till respektive system.  
+5. Strukturera systemlandskapet i en tydlig lösningskarta.  
+6. Säkerställ att systemlandskapet stödjer arkitekturmål och funktionella behov.  
+7. Validera systemlandskap med teknisk lead och verksamhet.  
+8. Fastställ systemlandskap (beslut av A).

@@ -1,36 +1,33 @@
 # SOP 4: Definiera integrationsarkitektur
 
 ## 1. Syfte
-Beskriva hur lösningen integrerar med andra system, inklusive mönster, protokoll och dataflöden.
-
-
+Definiera hur lösningen integrerar med andra system genom tydliga integrationsmönster, dataflöden och ansvarsfördelning.
 
 ## 2. Kontext
-- Processteg: 2. Målarkitektur
-- Delprocess: 4: Definiera integrationsarkitektur
+- Processteg: Målarkitektur
+- Delprocess: Definiera integrationsarkitektur
 
-
-## 4. Input
+## 3. Input
 - Systemlandskap
 - Domänmodell
 - Identifierade dataflöden
 
-
-## 5. Output
+## 4. Output
 - Integrationsarkitektur
 - Lista med integrationspunkter
 
-
-## 6. RACI
+## 5. RACI
 - R: Lösningsarkitekt
-- A: Lösningsarkitekt
-- C: Integrationsspecialist, Teknisk lead
-- I: 
+- A: Enterprise Arkitekt
+- C: Teknisk Lead
+- I: Produktägare
 
-
-## 7. Arbetssteg
-1. Identifiera integrationspunkter.
-2. Definiera mönster (REST, events, batch etc.).
-3. Kartlägga datautbyte mellan system.
-4. Definiera ansvarsfördelning mellan system.
-5. Dokumentera integrationsdesign på hög nivå.
+## 6. Arbetssteg
+1. Identifiera integrationspunkter mellan system baserat på systemlandskapet.  
+2. Definiera integrationsmönster (t.ex. REST, events, batch).  
+3. Kartlägg dataflöden mellan system och komponenter.  
+4. Definiera ansvarsfördelning mellan system (ägarskap av data och logik).  
+5. Strukturera integrationsarkitekturen i ett tydligt och dokumenterat format.  
+6. Säkerställ att integrationsarkitekturen stödjer domänmodell och arkitekturmål.  
+7. Validera integrationsarkitektur med teknisk lead.  
+8. Fastställ integrationsarkitektur (beslut av A).
