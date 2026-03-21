@@ -17,7 +17,7 @@ Verifiera att funktionalitet uppfyller krav och acceptanskriterier samt håller 
 - Verifierad funktionalitet
 
 ## 5. RACI
-- R: QA / Testare
+- R: Testare
 - A: Teknisk Lead
 - C: Utvecklare
 - I: Produktägare

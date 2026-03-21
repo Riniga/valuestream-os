@@ -21,7 +21,7 @@ Definiera ett tydligt och avgränsat scope för produkten samt identifiera vilka
 - R: Business Analyst
 - A: Produktägare
 - C: Verksamhetsexperter, Utvecklare
-- I: Initiativledare
+- I: Projektledare
 
 ## 6. Arbetssteg
 1. Samla och strukturera identifierade behov från verksamheten.  

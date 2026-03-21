@@ -20,7 +20,7 @@ Fastställa tydliga och mätbara affärsmål samt definiera vilket värde produk
 - R: Business Analyst
 - A: Produktägare
 - C: Verksamhetsexperter
-- I: Initiativledare
+- I: Projektledare
 
 ## 6. Arbetssteg
 1. Analysera vision och identifierade problemområden.  

@@ -19,7 +19,7 @@ Strukturera produktens funktionalitet i en sammanhängande story map som speglar
 ## 5. RACI
 - R: Business Analyst
 - A: Produktägare
-- C: UX / Service Designer, Verksamhetsexperter
+- C: UX, Verksamhetsexperter
 - I: Utvecklare
 
 ## 6. Arbetssteg

@@ -17,7 +17,7 @@ Beskriva användarnas huvudsakliga flöden och interaktioner för att tydliggör
 - Identifierade funktionella behov
 
 ## 5. RACI
-- R: UX / Service Designer
+- R: UX
 - A: Produktägare
 - C: Verksamhetsexperter, Användarrepresentanter
 - I: Business Analyst

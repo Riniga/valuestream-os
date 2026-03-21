@@ -7,7 +7,7 @@
 [X] Komplettera processstegsbeskrivning med mermaid-diagram för intern process   
 [X] Sammanställ samtliga roller: namn, beskrivning, arbetsbeskrivningar (kopplat till steg i processen) (SOP:Er)  
 [X] Sammanställ SOP:er. Processsteg, subprocess, Från roll, indata, utdata, till roll  
-[ ] Optimera vår RACI för samtliga SOP:er så att dessa är designade för agenter:  
+[X] Optimera vår RACI för samtliga SOP:er så att dessa är designade för agenter:  
         R → exekverande agent  
         A → styrande agent  
         C → input-agenter  

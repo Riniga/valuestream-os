@@ -20,7 +20,7 @@ Förbereda underlag för nästa roadmap-iteration genom att identifiera föränd
 ## 5. RACI
 - R: Business Analyst
 - A: Produktägare
-- C: Lösningsarkitekt, Initiativledare
+- C: Lösningsarkitekt, Projektledare
 - I: Utvecklare
 
 ## 6. Arbetssteg

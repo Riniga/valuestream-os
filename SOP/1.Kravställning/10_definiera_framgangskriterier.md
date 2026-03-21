@@ -20,7 +20,7 @@ Definiera mätbara kriterier för att säkerställa att produkten levererar öns
 - R: Business Analyst
 - A: Produktägare
 - C: Verksamhetsexperter
-- I: Initiativledare
+- I: Projektledare
 
 ## 6. Arbetssteg
 1. Analysera affärsmål och identifiera vad som ska mätas.  

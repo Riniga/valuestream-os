@@ -18,7 +18,7 @@ Identifiera och strukturera alla relevanta intressenter samt tydliggöra deras p
 ## 5. RACI
 - R: Business Analyst
 - A: Produktägare
-- C: Verksamhetsexperter, Initiativledare
+- C: Verksamhetsexperter, Projektledare
 - I: Utvecklare
 
 ## 6. Arbetssteg
