@@ -1,21 +1,26 @@
-# Agent Framework Project
+# ValueStream OS
+Agent Orchestration Framework for end-to-end value delivery.
+
 
 ## Syfte
-Bygga ett enkelt men fungerande ramverk för att hantera agenter som kan utföra uppgifter kopplade till utveckling, baserat på SOP:er (Standard Operating Procedures).
+Bygga ett fungerande ramverk för att hantera agenter som kan utföra uppgifter kopplade till mjukvaruutvecking.
+ramverket levererar samtliga komponenter i form av artifakter som behövs för stabil och kvalitativ leverans av värde i organisationen
 
 Fokus:
-- Få något fungerande snabbt
-- Iterera stegvis
+- Bygg fungerande flöden före optimering
+- Tydligt mål -> Iterera stegvis
 - Undvika överdesign i början
 
 ---
 
 ## Grundprinciper
-- Arbeta i små steg
-- Bygg fungerande flöden före optimering
-- All funktionalitet ska vara testbar i praktiken
-- Enkelhet före flexibilitet (initialt)
+- Mycket mycket tydligt flöde, hårt kopplat till
+  - Processsteg
+  - SOP:er
+  - Roller i RACI
+  - Artifakter som input och output
 - Textbaserade filer är kärnan i systemet
+- Agenter kodas för att tydligt genomföra SOP:er med input och leverarar output
 
 ---
 
@@ -28,7 +33,7 @@ Ansvar:
 - Utföra uppgifter baserat på instruktioner
 
 Teknik:
-- Microsoft AutoGen (initialt)
+- Microsoft Agent Framework
 
 ---
 
@@ -68,26 +73,57 @@ Initial implementation:
 
 ---
 
-## SOP-hantering
+## Processstruktur
 
-- SOP:er lagras som Markdown-filer
-- Varje SOP beskriver:
-  - Syfte
-  - Steg
-  - Förväntat resultat
+### Process uppdelad i processsteg
+En repeterbar, hållbar och skalbar process för att gå från 1.Kravställning → 2. Målarkitektur → 3. Roadmap → 4. Leverans → 5. Repeat → ny iteration.
+Dokumentation: /Process.md
 
-Exempelstruktur:
+### Processsteg uppdlat i delprocesser
+Tydlig beskrivning VAD steget syftar till att uppnå i processen
+Länk till SOP som sedan beskriver HUR.
+Dokumentation: /Processer/N.Processstegnamn.md
 
-```markdown
-# SOP: Example
+### SOP (Standard Operating Procedure)
+Används för att beskriva hur en roll (eller agent) skall arbeta för att uppnå målet med processsteget.
+  - Syfte: VAd är syftet med denna process
+  - Context: Vilket processsteg är det vi skall slutföra poå formen Processteg/Delprocess
+  - Input och Output: Vilka artifakter använder vi och vilka skall vi leverera
+  - RACI: Vilka roller behöver agera och informeras för att slutföra steget
+  - Arbetssteg: Konkret arbetslista
+Dokumentation: /SOP/N.Processstegnamn/M.SOP.md
+  
+### Artifakter
+Detta är filer, media, referenser, kodpaket etc som nytjas av agenter och mäniskor.
 
-## Syfte
-Beskriv vad denna SOP gör
+#### Artifaktbeskrivng 
+Samtliga artifakter beskrivs med förljande egenskaper
+- Artifaktnamn
+- Typ: markdown, kodreferens, etc
+- Beskrivning
+- Ägare (referens till den som skapar R i RACI)
+- Skapad i: SOP (referens till SOP, som skapar artifakten)
+- Används i: Lista på SOP som behöver denna artifakt
+- Format: Textdokument (Markdown), Kodrefersn
+Dokumentation: /Artifakter/Beskrivning/N.Processstegnamn/Artifaktnamn.md
 
-## Steg
-1. Gör detta
-2. Gör detta
-3. Gör detta
+#### Artifaktmall
+Mall med rubriker och innehåll som förväntas av agenten att fylla i, men några generalla fält är
+- Artifakttyp
+- Skapara
+- Datum och tid
+- Syfte
+Dokumentation: /Artifakter/Mallar/N.Processstegnamn/Artifaktnamn.md
 
-## Output
-Vad ska produceras
+### Roller
+De roller som vi identifierats som behövs för att kunna genomföra arbete i SOP:er
+Följande egenskaper dokumnteras för dessa:
+- Namn
+- Beskrivning
+- Kompetens
+Dokumentation: /Roller/Rollnamn.md
+
+### RACI
+Tydliggörande för mappningen mellan SOP:er och Roller
+Med tabell och Diagram
+Dokumentation: /RACI/N.Processstegnamn.md
