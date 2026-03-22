@@ -14,9 +14,7 @@
   },
   "python.defaultInterpreterPath": "${workspaceFolder}/.conda",
   "python.terminal.activateEnvironment": true,
-  "python.analysis.extraPaths": [
-    "${workspaceFolder}/src"
-  ],
+  "python.analysis.extraPaths": ["${workspaceFolder}/src"],
   "python.analysis.typeCheckingMode": "basic",
   "powershell.codeFormatting.preset": "OTBS",
   "files.trimTrailingWhitespace": true,
@@ -29,5 +27,9 @@
       "strings": "off",
       "other": "off"
     }
-  }
+  },
+  "cursorpyright.analysis.extraPaths": [
+    "${workspaceFolder}/src"
+  ],
+  "cursorpyright.analysis.typeCheckingMode": "basic"
 }
