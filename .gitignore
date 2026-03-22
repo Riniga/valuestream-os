@@ -1,0 +1,67 @@
+# -----------------------------
+# 🚫 Runs (ALWAYS ignore)
+# -----------------------------
+runs/
+runs/**
+
+# -----------------------------
+# 🔐 Environment & secrets
+# -----------------------------
+.env
+.env.*
+!.env.example
+
+# -----------------------------
+# 🐍 Python
+# -----------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# -----------------------------
+# 🧪 Testing / coverage
+# -----------------------------
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+
+# -----------------------------
+# 🧠 IDE / Editors
+# -----------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# -----------------------------
+# 💻 OS files
+# -----------------------------
+.DS_Store
+Thumbs.db
+
+# -----------------------------
+# 📦 Logs
+# -----------------------------
+*.log
+
+# -----------------------------
+# ⚙️ Local config
+# -----------------------------
+*.local.json
+*.config.json

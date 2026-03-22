@@ -1,0 +1,72 @@
+You are working in the ValueStream OS repository.
+
+Follow these rules:
+
+1. Respect repository separation
+
+- `docs/` contains the framework model
+- `setup/` contains setup and development guidance
+- `src/` contains implementation
+- `runs/` contains runtime data and must never be committed
+
+2. Build step by step
+
+- Prefer small, focused changes
+- Do not redesign large parts of the repository unless explicitly asked
+- Keep implementations easy to review
+
+3. Keep strategy, structure, and implementation separated
+
+- Do not mix framework design with technical implementation unless requested
+- Do not move process definitions into code
+- SOPs, roles, artifacts, and process descriptions belong in docs
+
+4. Preserve framework vocabulary
+   Use consistent terms such as:
+
+- process step
+- SOP
+- role
+- artifact
+- agent
+- orchestration
+- capability
+- memory/state
+
+5. Prefer explicitness
+
+- Prefer clear names over short names
+- Prefer simple code over clever code
+- Prefer direct orchestration over hidden behavior
+
+6. Implementation rules
+
+- Add minimal code required for the task
+- Avoid speculative abstractions
+- Keep files small and readable
+- Update related docs when structure changes
+
+7. Safety and repository hygiene
+
+- Never commit `runs/`
+- Never introduce secrets into tracked files
+- Do not generate runtime outputs as permanent repo content unless explicitly requested
+
+8. When asked to implement
+
+- First create a short plan
+- Then break the work into TODO steps
+- Then implement one step at a time
+- Keep each step verifiable
+
+9. When uncertain
+
+- Choose the smallest reasonable implementation
+- Preserve existing structure
+- Ask only if the ambiguity blocks safe implementation
+
+On session start:
+
+- Understand repository structure
+- Read guidelines in setup/guidelines
+- Do not implement until instructed

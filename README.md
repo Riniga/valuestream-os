@@ -1,129 +1,107 @@
-# ValueStream OS
-Agent Orchestration Framework for end-to-end value delivery.
+# 🚀 ValueStream OS
 
+**Agent Orchestration Framework for end-to-end value delivery**
 
-## Syfte
-Bygga ett fungerande ramverk för att hantera agenter som kan utföra uppgifter kopplade till mjukvaruutvecking.
-ramverket levererar samtliga komponenter i form av artifakter som behövs för stabil och kvalitativ leverans av värde i organisationen
+ValueStream OS is an open framework for structuring, orchestrating, and executing software development work using agents.
 
-Fokus:
-- Bygg fungerande flöden före optimering
-- Tydligt mål -> Iterera stegvis
-- Undvika överdesign i början
+It connects **process, roles, and execution** into a unified, repeatable system that turns ideas into delivered value — continuously.
 
 ---
 
-## Grundprinciper
-- Mycket mycket tydligt flöde, hårt kopplat till
-  - Processsteg
-  - SOP:er
-  - Roller i RACI
-  - Artifakter som input och output
-- Textbaserade filer är kärnan i systemet
-- Agenter kodas för att tydligt genomföra SOP:er med input och leverarar output
+## 🎯 Purpose
+
+To create a **clear, scalable and executable model** for how organizations move from:
+
+> **Idea → Architecture → Plan → Build → Learn → Repeat**
+
+The framework is designed to:
+- Reduce ambiguity in development processes  
+- Make work **explicit, structured and traceable**  
+- Enable **agent-driven execution of defined workflows**  
+- Support continuous improvement through iterative cycles  
 
 ---
 
-## Projektstruktur
+## 🔄 Core Process
 
-### 1. Agent Core
-Ansvar:
-- Definiera agenter (roller)
-- Enkel kommunikation mellan agenter
-- Utföra uppgifter baserat på instruktioner
+ValueStream OS is built around a circular delivery model:
 
-Teknik:
-- Microsoft Agent Framework
+```
+WHAT → HOW → WHEN → BUILD → LEARN → WHAT → ...0
+```
 
----
-
-### 2. Capabilities (Verktyg)
-Ansvar:
-- Exponera funktioner som agenter kan använda
-- Enkla wrapper-funktioner (API:er, filer, scripts)
-
-Exempel:
-- Läsa/skriva filer
-- Anropa API:er
-- Generera innehåll
+| Step | Focus | Outcome |
+|------|------|--------|
+| **Kravställning** | What do we need? | Requirements (VAD) |
+| **Målarkitektur** | How should it work? | Target architecture (HUR) |
+| **Roadmap** | When do we deliver? | Plan (NÄR) |
+| **Leverans** | Build & release | Product increment |
+| **Repeat** | Learn & adjust | Improved direction |
 
 ---
 
-### 3. Orchestration (SOP-exekvering)
-Ansvar:
-- Köra SOP:er steg för steg
-- Styra flöde mellan agenter
-- Hantera enkel sekvensering (ingen komplex logik initialt)
+## 🧠 Key Concepts
 
-Initial strategi:
-- Kodbaserad orkestrering
-- Ingen extern workflow-motor i början
+### 1. SOP-driven execution
+All work is defined as **Standard Operating Procedures (SOPs)**:
+- Clear purpose  
+- Defined input/output  
+- Explicit steps  
+- Connected to roles (RACI)  
 
----
-
-### 4. Memory / State
-Ansvar:
-- Spara pågående arbete
-- Lagra resultat från körningar
-- Möjliggöra enkel återupptagning
-
-Initial implementation:
-- Filer (JSON / Markdown)
-- Ingen databas i första versionen
+👉 SOPs are the bridge between **process and execution**
 
 ---
 
-## Processstruktur
+### 2. Roles → Agents
+Each role in the process can be implemented as an **agent**:
+- Product Owner  
+- Architect  
+- Developer  
+- QA  
+- etc.  
 
-### Process uppdelad i processsteg
-En repeterbar, hållbar och skalbar process för att gå från 1.Kravställning → 2. Målarkitektur → 3. Roadmap → 4. Leverans → 5. Repeat → ny iteration.
-Dokumentation: /Process.md
+Agents follow SOPs to produce consistent, high-quality output.
 
-### Processsteg uppdlat i delprocesser
-Tydlig beskrivning VAD steget syftar till att uppnå i processen
-Länk till SOP som sedan beskriver HUR.
-Dokumentation: /Processer/N.Processstegnamn.md
+---
 
-### SOP (Standard Operating Procedure)
-Används för att beskriva hur en roll (eller agent) skall arbeta för att uppnå målet med processsteget.
-  - Syfte: VAd är syftet med denna process
-  - Context: Vilket processsteg är det vi skall slutföra poå formen Processteg/Delprocess
-  - Input och Output: Vilka artifakter använder vi och vilka skall vi leverera
-  - RACI: Vilka roller behöver agera och informeras för att slutföra steget
-  - Arbetssteg: Konkret arbetslista
-Dokumentation: /SOP/N.Processstegnamn/M.SOP.md
-  
-### Artifakter
-Detta är filer, media, referenser, kodpaket etc som nytjas av agenter och mäniskor.
+### 3. Artifacts as first-class citizens
+Everything is built around **artifacts**:
+- Requirements  
+- Architecture descriptions  
+- Roadmaps  
+- Code  
+- Learnings  
 
-#### Artifaktbeskrivng 
-Samtliga artifakter beskrivs med förljande egenskaper
-- Artifaktnamn
-- Typ: markdown, kodreferens, etc
-- Beskrivning
-- Ägare (referens till den som skapar R i RACI)
-- Skapad i: SOP (referens till SOP, som skapar artifakten)
-- Används i: Lista på SOP som behöver denna artifakt
-- Format: Textdokument (Markdown), Kodrefersn
-Dokumentation: /Artifakter/Beskrivning/N.Processstegnamn/Artifaktnamn.md
+Artifacts are:
+- Structured  
+- Traceable  
+- Reusable  
 
-#### Artifaktmall
-Mall med rubriker och innehåll som förväntas av agenten att fylla i, men några generalla fält är
-- Artifakttyp
-- Skapara
-- Datum och tid
-- Syfte
-Dokumentation: /Artifakter/Mallar/N.Processstegnamn/Artifaktnamn.md
+---
 
-### Roller
-De roller som vi identifierats som behövs för att kunna genomföra arbete i SOP:er
-Följande egenskaper dokumnteras för dessa:
-- Namn
-- Beskrivning
-- Kompetens
-Dokumentation: /Roller/Rollnamn.md
+### 4. Text-first architecture
+The system is intentionally **text-based**:
+- Markdown-driven  
+- Transparent  
+- Easy to version and inspect  
 
-### RACI
-Tydliggörande för mappningen mellan SOP:er och Roller
-Med tabell och Diagram
-Dokumentation: /RACI/N.Processstegnamn.md
+This makes it ideal for:
+- AI/agent interaction  
+- Collaboration  
+- Incremental evolution  
+
+---
+
+## 🏗️ Repository Structure
+
+```
+docs/ → Process, SOPs, roles, artifacts (the "brain")
+src/ → Agents, orchestration, capabilities (the "engine")
+runs/ → Execution state and outputs
+```
+
+## 📘 Development Guidelines
+
+See:
+`setup/guidelines/framework-development-guidelines.md`

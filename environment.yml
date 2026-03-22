@@ -1,0 +1,19 @@
+name: valuestream-os
+channels:
+  - conda-forge
+dependencies:
+  # Core
+  - python=3.12
+  - pip
+
+  # Dev / tooling
+  - git
+  - curl
+
+  # Python tooling (om/när vi behöver scripts)
+  - pyyaml
+  - python-dotenv
+
+  # Pip fallback (håll tom initialt)
+  - pip:
+      []
