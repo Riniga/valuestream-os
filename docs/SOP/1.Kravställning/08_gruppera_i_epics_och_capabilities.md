@@ -11,13 +11,12 @@ Strukturera funktionaliteten i hanterbara och prioriterbara enheter genom att gr
 
 ## 3. Input
 
-- Story Map
+- Story map
 - User Stories
 
 ## 4. Output
 
-- Epics
-- Capabilities
+- Epics & Capabilities
 
 ## 5. RACI
 

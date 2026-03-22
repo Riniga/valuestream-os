@@ -11,14 +11,11 @@ Etablera en tydlig och gemensam förståelse för varför produkten ska byggas o
 
 ## 3. Input
 
-- Problembeskrivning
-- Övergripande verksamhetsmål
-- Eventuella strategidokument
+- Övergripande behov
 
 ## 4. Output
 
-- Produktvision
-- Målbild för produkten
+- Vision & målbild
 
 ## 5. RACI
 
