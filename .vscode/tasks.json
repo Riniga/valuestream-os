@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Bootstrap",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "./scripts/bootstrap.ps1"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Start Dev Environment",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "./scripts/dev.ps1"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}
