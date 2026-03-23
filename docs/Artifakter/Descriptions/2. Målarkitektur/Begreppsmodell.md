@@ -1,37 +1,26 @@
 # Artefakt: Begreppsmodell
 
 ## Typ
-Krav
+
+Arkitektur
 
 ## Beskrivning
-Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
+
+Beskriver centrala begrepp inom domänen och deras betydelse för att skapa en gemensam förståelse mellan verksamhet och teknik.
+Syftet är att säkerställa att alla roller använder samma terminologi och att begrepp tolkas konsekvent i krav, design och implementation.
 
 ## Ägare
-Produktägare
+
+Business Analyst
 
 ## Skapas i
-SOP 1: Vision & målbild
 
-## Används i
-SOP 2: Affärsmål och värdebild
+docs\SOP\2. Målarkitektur\03_Definiera domänmodell.md
 
 ## Format
-Textdokument (Markdown)
+
+.md
 
 ## Lagring
-Versionshanterad artefakt
 
----
-
-## Mall
-
-# Produktvision
-
-## Problem
-...
-
-## Målbild
-...
-
-## Effekt
-...
+GitHub (dokument-repository)

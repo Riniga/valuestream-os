@@ -4,7 +4,7 @@ import csv
 import re
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent.parent.parent
 SOP_DIR = ROOT / "docs" / "SOP"
 
 RE_SOP_TITLE = re.compile(r"^#\s*SOP\s*([0-9]+)\s*:\s*(.+)$", re.IGNORECASE)

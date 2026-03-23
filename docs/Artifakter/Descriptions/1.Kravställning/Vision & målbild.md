@@ -1,37 +1,27 @@
 # Artefakt: Vision & målbild
 
 ## Typ
+
 Krav
 
 ## Beskrivning
-Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
+
+Beskriver den övergripande visionen och målbilden för produkten eller initiativet.
+Syftet är att tydliggöra vilken effekt som ska uppnås, vilket värde som ska skapas och vilken riktning arbetet ska ha.
+Artefakten fungerar som grund för kravställning, prioritering och vidare design.
 
 ## Ägare
-Produktägare
+
+Business Analyst
 
 ## Skapas i
-SOP 1: Vision & målbild
 
-## Används i
-SOP 2: Affärsmål och värdebild
+docs\SOP\1.Kravställning\01_vision_och_malbild.md
 
 ## Format
-Textdokument (Markdown)
+
+.md
 
 ## Lagring
-Versionshanterad artefakt
 
----
-
-## Mall
-
-# Produktvision
-
-## Problem
-...
-
-## Målbild
-...
-
-## Effekt
-...
+GitHub (dokument-repository)

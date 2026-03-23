@@ -17,7 +17,7 @@ Säkerställa att kod byggs, integreras och paketeras korrekt i CI/CD-flödet f�
 
 ## 4. Output
 
-- Byggt system
+- Produktinkrement
 - Demo-underlag
 
 ## 5. RACI
