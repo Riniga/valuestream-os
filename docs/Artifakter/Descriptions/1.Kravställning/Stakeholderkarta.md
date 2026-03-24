@@ -1,37 +1,27 @@
 # Artefakt: Stakeholderkarta
 
 ## Typ
+
 Krav
 
 ## Beskrivning
-Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
 
-## Ägare
-Produktägare
+Identifierar och beskriver relevanta intressenter kopplade till produkten eller initiativet.
+Syftet är att skapa en gemensam förståelse för vilka aktörer som påverkar eller påverkas, deras behov, intressen och påverkan på lösningen.
+Artefakten används för att säkerställa att rätt perspektiv beaktas i krav, prioritering och design.
 
-## Skapas i
-SOP 1: Vision & målbild
+## Ägare (Skapar och uppdaterar)
 
-## Används i
-SOP 2: Affärsmål och värdebild
+Business Analyst
+
+## Skapas i delprocess
+
+docs\SOP\1.Kravställning\04_stakeholderkarta.md
 
 ## Format
-Textdokument (Markdown)
+
+Markdown (.md)
 
 ## Lagring
-Versionshanterad artefakt
 
----
-
-## Mall
-
-# Produktvision
-
-## Problem
-...
-
-## Målbild
-...
-
-## Effekt
-...
+GitHub (dokument-repository)

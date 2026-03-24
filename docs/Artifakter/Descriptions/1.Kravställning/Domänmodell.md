@@ -1,37 +1,26 @@
 # Artefakt: Domänmodell
 
 ## Typ
-Krav
+
+Arkitektur
 
 ## Beskrivning
-Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
 
-## Ägare
-Produktägare
+Beskriver de centrala objekten (entiteter), deras relationer och struktur inom verksamhetsdomänen.
+Syftet är att skapa en gemensam förståelse för hur information och begrepp hänger ihop samt att utgöra grund för krav, datamodell och vidare lösningsdesign.
 
-## Skapas i
-SOP 1: Vision & målbild
+## Ägare (Skapar och uppdaterar)
 
-## Används i
-SOP 2: Affärsmål och värdebild
+Business Analyst
+
+## Skapas i delprocess
+
+docs\SOP\1.Kravställning\05_domananalys.md
 
 ## Format
-Textdokument (Markdown)
+
+Markdown (.md)
 
 ## Lagring
-Versionshanterad artefakt
 
----
-
-## Mall
-
-# Produktvision
-
-## Problem
-...
-
-## Målbild
-...
-
-## Effekt
-...
+GitHub (dokument-repository)

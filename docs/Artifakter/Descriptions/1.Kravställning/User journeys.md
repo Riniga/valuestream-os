@@ -1,37 +1,26 @@
 # Artefakt: User journeys
 
 ## Typ
+
 Krav
 
 ## Beskrivning
-Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
 
-## Ägare
-Produktägare
+Beskriver hur användare interagerar med lösningen genom olika scenarier och flöden över tid.
+Syftet är att visualisera användarens upplevelse, behov och mål i olika situationer för att säkerställa att lösningen stödjer verklig användning på ett effektivt och intuitivt sätt.
 
-## Skapas i
-SOP 1: Vision & målbild
+## Ägare (Skapar och uppdaterar)
 
-## Används i
-SOP 2: Affärsmål och värdebild
+UX
+
+## Skapas i delprocess
+
+docs\SOP\1.Kravställning\06_user_journeys.md
 
 ## Format
-Textdokument (Markdown)
+
+Markdown (.md)
 
 ## Lagring
-Versionshanterad artefakt
 
----
-
-## Mall
-
-# Produktvision
-
-## Problem
-...
-
-## Målbild
-...
-
-## Effekt
-...
+GitHub (dokument-repository)

@@ -1,37 +1,26 @@
 # Artefakt: Prioriterad backlog
 
 ## Typ
-Krav
+
+Planering
 
 ## Beskrivning
-Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
 
-## Ägare
-Produktägare
+Innehåller prioriterade epics, capabilities och user stories baserat på verksamhetsvärde, behov och beroenden.
+Syftet är att styra vad som ska utvecklas och i vilken ordning samt att skapa ett tydligt underlag för roadmap och vidare planering.
 
-## Skapas i
-SOP 1: Vision & målbild
+## Ägare (Skapar och uppdaterar)
 
-## Används i
-SOP 2: Affärsmål och värdebild
+Business Analyst
+
+## Skapas i delprocess
+
+docs\SOP\1.Kravställning\09_prioritera_backlog.md
 
 ## Format
-Textdokument (Markdown)
+
+Markdown (.md)
 
 ## Lagring
-Versionshanterad artefakt
 
----
-
-## Mall
-
-# Produktvision
-
-## Problem
-...
-
-## Målbild
-...
-
-## Effekt
-...
+GitHub (dokument-repository)

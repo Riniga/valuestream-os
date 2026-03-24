@@ -1,37 +1,27 @@
 # Artefakt: Beroendekarta
 
 ## Typ
+
 Krav
 
 ## Beskrivning
-Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
 
-## Ägare
-Produktägare
+Identifierar och visualiserar beroenden mellan olika aktörer, system, funktioner och externa parter.
+Syftet är att skapa förståelse för hur olika delar påverkar varandra samt att synliggöra risker, integrationer och koordineringsbehov tidigt i processen.
+Artefakten används som underlag för planering, prioritering och arkitektur.
 
-## Skapas i
-SOP 1: Vision & målbild
+## Ägare (Skapar och uppdaterar)
 
-## Används i
-SOP 2: Affärsmål och värdebild
+Business Analyst
+
+## Skapas i delprocess
+
+docs\SOP\1.Kravställning\04_stakeholderkarta.md
 
 ## Format
-Textdokument (Markdown)
+
+Markdown (.md)
 
 ## Lagring
-Versionshanterad artefakt
 
----
-
-## Mall
-
-# Produktvision
-
-## Problem
-...
-
-## Målbild
-...
-
-## Effekt
-...
+GitHub (dokument-repository)

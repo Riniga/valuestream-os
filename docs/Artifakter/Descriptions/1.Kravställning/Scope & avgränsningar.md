@@ -1,37 +1,26 @@
 # Artefakt: Scope & avgränsningar
 
 ## Typ
+
 Krav
 
 ## Beskrivning
-Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
 
-## Ägare
-Produktägare
+Definierar vad som ingår och inte ingår i initiativet eller produkten.
+Syftet är att tydliggöra omfattning och gränser för arbetet för att minska oklarheter, undvika scope creep och skapa en gemensam förståelse för vad som ska levereras.
 
-## Skapas i
-SOP 1: Vision & målbild
+## Ägare (Skapar och uppdaterar)
 
-## Används i
-SOP 2: Affärsmål och värdebild
+Business Analyst
+
+## Skapas i delprocess
+
+docs\SOP\1.Kravställning\03_scope_och_avgransningar.md
 
 ## Format
-Textdokument (Markdown)
+
+Markdown (.md)
 
 ## Lagring
-Versionshanterad artefakt
 
----
-
-## Mall
-
-# Produktvision
-
-## Problem
-...
-
-## Målbild
-...
-
-## Effekt
-...
+GitHub (dokument-repository)

@@ -1,37 +1,26 @@
 # Artefakt: Story map
 
 ## Typ
+
 Krav
 
 ## Beskrivning
-Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
 
-## Ägare
-Produktägare
+Strukturerar och visualiserar användarbehov, aktiviteter och funktionalitet i ett sammanhängande flöde.
+Syftet är att skapa en gemensam helhetsbild av lösningen, tydliggöra samband mellan behov och funktioner samt stödja prioritering och planering.
 
-## Skapas i
-SOP 1: Vision & målbild
+## Ägare (Skapar och uppdaterar)
 
-## Används i
-SOP 2: Affärsmål och värdebild
+Business Analyst
+
+## Skapas i delprocess
+
+docs\SOP\1.Kravställning\07_skapa_story_map.md
 
 ## Format
-Textdokument (Markdown)
+
+Markdown (.md)
 
 ## Lagring
-Versionshanterad artefakt
 
----
-
-## Mall
-
-# Produktvision
-
-## Problem
-...
-
-## Målbild
-...
-
-## Effekt
-...
+GitHub (dokument-repository)

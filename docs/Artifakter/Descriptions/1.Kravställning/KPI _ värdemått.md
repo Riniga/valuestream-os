@@ -1,37 +1,26 @@
 # Artefakt: KPI / värdemått
 
 ## Typ
+
 Krav
 
 ## Beskrivning
-Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
 
-## Ägare
-Produktägare
+Definierar mätbara nyckeltal och värdemått som används för att följa upp om lösningen uppnår önskad effekt.
+Syftet är att möjliggöra uppföljning av resultat, styra prioritering samt ge underlag för beslut och kontinuerlig förbättring.
 
-## Skapas i
-SOP 1: Vision & målbild
+## Ägare (Skapar och uppdaterar)
 
-## Används i
-SOP 2: Affärsmål och värdebild
+Business Analyst
+
+## Skapas i delprocess
+
+docs\SOP\1.Kravställning\10_definiera_framgangskriterier.md
 
 ## Format
-Textdokument (Markdown)
+
+Markdown (.md)
 
 ## Lagring
-Versionshanterad artefakt
 
----
-
-## Mall
-
-# Produktvision
-
-## Problem
-...
-
-## Målbild
-...
-
-## Effekt
-...
+GitHub (dokument-repository)

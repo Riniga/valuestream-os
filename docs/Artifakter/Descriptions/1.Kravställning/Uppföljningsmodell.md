@@ -1,37 +1,26 @@
 # Artefakt: Uppföljningsmodell
 
 ## Typ
+
 Krav
 
 ## Beskrivning
-Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
 
-## Ägare
-Produktägare
+Beskriver hur uppföljning av KPI:er och värdemått ska genomföras över tid.
+Syftet är att säkerställa att rätt data samlas in, analyseras och används för att utvärdera resultat, stödja beslut och driva kontinuerlig förbättring.
 
-## Skapas i
-SOP 1: Vision & målbild
+## Ägare (Skapar och uppdaterar)
 
-## Används i
-SOP 2: Affärsmål och värdebild
+Business Analyst
+
+## Skapas i delprocess
+
+docs\SOP\1.Kravställning\10_definiera_framgangskriterier.md
 
 ## Format
-Textdokument (Markdown)
+
+Markdown (.md)
 
 ## Lagring
-Versionshanterad artefakt
 
----
-
-## Mall
-
-# Produktvision
-
-## Problem
-...
-
-## Målbild
-...
-
-## Effekt
-...
+GitHub (dokument-repository)

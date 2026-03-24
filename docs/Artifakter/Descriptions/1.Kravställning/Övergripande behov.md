@@ -1,37 +1,26 @@
 # Artefakt: Övergripande behov
 
 ## Typ
+
 Krav
 
 ## Beskrivning
-Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
 
-## Ägare
-Produktägare
+Beskriver övergripande behov och problem som lösningen ska adressera utifrån verksamhets- och användarperspektiv.
+Syftet är att tydliggöra vad som behöver uppnås utan att gå in på detaljerad lösning, samt att skapa en grund för vidare nedbrytning till epics och user stories.
 
-## Skapas i
-SOP 1: Vision & målbild
+## Ägare (Skapar och uppdaterar)
 
-## Används i
-SOP 2: Affärsmål och värdebild
+Business Analyst
+
+## Skapas i delprocess
+
+docs\SOP\1.Kravställning\06_user_journeys.md
 
 ## Format
-Textdokument (Markdown)
+
+Markdown (.md)
 
 ## Lagring
-Versionshanterad artefakt
 
----
-
-## Mall
-
-# Produktvision
-
-## Problem
-...
-
-## Målbild
-...
-
-## Effekt
-...
+GitHub (dokument-repository)
