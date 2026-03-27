@@ -46,6 +46,10 @@ class RunContext:
     def state_path(self) -> Path:
         return self.work_path / "state.json"
 
+    @property
+    def lineage_path(self) -> Path:
+        return self.work_path / "lineage.json"
+
     def initialize(self) -> dict[str, Any]:
         """Ensure folder contract exists and initialize state file."""
         self.input_path.mkdir(parents=True, exist_ok=True)
@@ -81,4 +85,51 @@ class RunContext:
 
         serialized = json.dumps(state_to_save, indent=2, sort_keys=True)
         self.state_path.write_text(f"{serialized}\n", encoding="utf-8")
+
+    def load_lineage(self) -> dict[str, Any]:
+        if not self.lineage_path.exists():
+            return {}
+        return json.loads(self.lineage_path.read_text(encoding="utf-8"))
+
+    def save_lineage(self, lineage: dict[str, Any]) -> None:
+        serialized = json.dumps(lineage, indent=2, sort_keys=True)
+        self.lineage_path.write_text(f"{serialized}\n", encoding="utf-8")
+
+    def record_lineage(
+        self,
+        *,
+        artifact_id: str,
+        artifact_path: Path,
+        source_files: tuple[Path, ...],
+        produced_by: str,
+    ) -> None:
+        lineage = self.load_lineage()
+        normalized_source_files = sorted(
+            {self._to_run_relative_path(source_file) for source_file in source_files}
+        )
+        lineage[artifact_id] = {
+            "artifact_id": artifact_id,
+            "artifact_path": self._to_run_relative_path(artifact_path),
+            "source_files": normalized_source_files,
+            "produced_by": produced_by,
+            "review_status": str(lineage.get(artifact_id, {}).get("review_status", "pending")),
+            "timestamp": _utc_timestamp(),
+        }
+        self.save_lineage(lineage)
+
+    def update_lineage_review_status(self, *, artifact_id: str, review_status: str) -> None:
+        lineage = self.load_lineage()
+        if artifact_id not in lineage:
+            return
+        lineage_entry = dict(lineage[artifact_id])
+        lineage_entry["review_status"] = review_status
+        lineage_entry["timestamp"] = _utc_timestamp()
+        lineage[artifact_id] = lineage_entry
+        self.save_lineage(lineage)
+
+    def _to_run_relative_path(self, path: Path) -> str:
+        try:
+            return path.relative_to(self.run_path).as_posix()
+        except ValueError:
+            return path.as_posix()
 

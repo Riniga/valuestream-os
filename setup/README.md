@@ -24,6 +24,7 @@ Located in: `setup/environment/`
 
 Contains:
 - `development-environment.md` → How to install and configure the project
+- `run-kravstallning.md` → Required run inputs, command usage, and expected run outputs/state
 - `.env.example` → Example environment variables
 
 👉 Start here if you want to **run the project locally**

@@ -78,6 +78,10 @@ class ProductOwnerReviewer:
                 context=context,
             )
 
+        context.update_lineage_review_status(
+            artifact_id=artifact_output.artifact_id,
+            review_status=review_status,
+        )
         context.save_state(state)
 
         return ReviewDecision(
@@ -115,9 +119,37 @@ class ProductOwnerReviewer:
     def _inform_roles_after_publication(self, *, artifact_ref: str, context: RunContext) -> None:
         event = "artifact_approved_and_published"
         for role in self.inform_roles:
+            if self._notification_exists(
+                role=role,
+                event=event,
+                artifact_ref=artifact_ref,
+                context=context,
+            ):
+                continue
             self._interaction_bus.inform(
                 role=role,
                 event=event,
                 artifact_ref=artifact_ref,
                 context=context,
             )
+
+    @staticmethod
+    def _notification_exists(
+        *,
+        role: str,
+        event: str,
+        artifact_ref: str,
+        context: RunContext,
+    ) -> bool:
+        notifications_path = context.logs_path / "notifications.md"
+        if not notifications_path.exists():
+            return False
+        content = notifications_path.read_text(encoding="utf-8")
+        for block in content.split("## Notification "):
+            if (
+                f"- Role: {role}" in block
+                and f"- Event: {event}" in block
+                and f"- Artifact: {artifact_ref}" in block
+            ):
+                return True
+        return False
