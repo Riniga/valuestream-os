@@ -2,7 +2,7 @@
 $ErrorActionPreference = "Stop"
 
 function Write-Step($msg) { Write-Host "`n==> $msg" -ForegroundColor Cyan }
-function Write-Ok($msg)   { Write-Host "OK: $msg" -ForegroundColor Green }
+function Write-Ok($msg) { Write-Host "OK: $msg" -ForegroundColor Green }
 function Write-Warn($msg) { Write-Host "WARN: $msg" -ForegroundColor Yellow }
 
 $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
@@ -26,10 +26,10 @@ Write-Ok "Activated: $envName"
 
 Write-Step "Open project in VS Code"
 if (Get-Command code -ErrorAction SilentlyContinue) {
-  code .
-  Write-Ok "VS Code opened"
+  cursor .
+  Write-Ok "Cursor opened"
 } else {
-  Write-Warn "VS Code CLI (code) not found in PATH"
+  Write-Warn "Cursor not found in PATH"
 }
 
 Write-Step "Development environment ready 🚀"

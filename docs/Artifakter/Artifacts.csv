@@ -1,0 +1,208 @@
+Artifact,SOP,Input or output,Responsible
+Övergripande behov,docs\SOP\1.Kravställning\01_vision_och_malbild.md,input,
+Vision & målbild,docs\SOP\1.Kravställning\01_vision_och_malbild.md,output,Business Analyst
+Övergripande behov,docs\SOP\1.Kravställning\02_affarsmal_och_vardebild.md,input,
+Vision & målbild,docs\SOP\1.Kravställning\02_affarsmal_och_vardebild.md,output,Business Analyst
+Vision & målbild,docs\SOP\1.Kravställning\03_scope_och_avgransningar.md,input,
+Övergripande behov,docs\SOP\1.Kravställning\03_scope_och_avgransningar.md,input,
+Scope & avgränsningar,docs\SOP\1.Kravställning\03_scope_och_avgransningar.md,output,Business Analyst
+Epics & Capabilities,docs\SOP\1.Kravställning\03_scope_och_avgransningar.md,output,Business Analyst
+Scope & avgränsningar,docs\SOP\1.Kravställning\03_scope_och_avgransningar.md,output,Business Analyst
+Scope & avgränsningar,docs\SOP\1.Kravställning\04_stakeholderkarta.md,input,
+Vision & målbild,docs\SOP\1.Kravställning\04_stakeholderkarta.md,input,
+Stakeholderkarta,docs\SOP\1.Kravställning\04_stakeholderkarta.md,output,Business Analyst
+Beroendekarta,docs\SOP\1.Kravställning\04_stakeholderkarta.md,output,Business Analyst
+Stakeholderkarta,docs\SOP\1.Kravställning\05_domananalys.md,input,
+User Stories,docs\SOP\1.Kravställning\05_domananalys.md,input,
+Verksamhetsregler,docs\SOP\1.Kravställning\05_domananalys.md,input,
+Domänmodell,docs\SOP\1.Kravställning\05_domananalys.md,output,Business Analyst
+Begreppsmodell,docs\SOP\1.Kravställning\05_domananalys.md,output,Business Analyst
+Domänmodell,docs\SOP\1.Kravställning\06_user_journeys.md,input,
+User Stories,docs\SOP\1.Kravställning\06_user_journeys.md,input,
+Stakeholderkarta,docs\SOP\1.Kravställning\06_user_journeys.md,input,
+User journeys,docs\SOP\1.Kravställning\06_user_journeys.md,output,UX
+Övergripande behov,docs\SOP\1.Kravställning\06_user_journeys.md,output,UX
+User journeys,docs\SOP\1.Kravställning\07_skapa_story_map.md,input,
+Domänmodell,docs\SOP\1.Kravställning\07_skapa_story_map.md,input,
+Övergripande behov,docs\SOP\1.Kravställning\07_skapa_story_map.md,input,
+Story map,docs\SOP\1.Kravställning\07_skapa_story_map.md,output,Business Analyst
+Funktionella block,docs\SOP\1.Kravställning\07_skapa_story_map.md,output,Business Analyst
+Story map,docs\SOP\1.Kravställning\08_gruppera_i_epics_och_capabilities.md,input,
+User Stories,docs\SOP\1.Kravställning\08_gruppera_i_epics_och_capabilities.md,input,
+Epics & Capabilities,docs\SOP\1.Kravställning\08_gruppera_i_epics_och_capabilities.md,output,Business Analyst
+Epics & Capabilities,docs\SOP\1.Kravställning\09_prioritera_backlog.md,input,
+Vision & målbild,docs\SOP\1.Kravställning\09_prioritera_backlog.md,input,
+Risker,docs\SOP\1.Kravställning\09_prioritera_backlog.md,input,
+Prioriterad backlog,docs\SOP\1.Kravställning\09_prioritera_backlog.md,output,Business Analyst
+Vision & målbild,docs\SOP\1.Kravställning\10_definiera_framgangskriterier.md,input,
+Prioriterad backlog,docs\SOP\1.Kravställning\10_definiera_framgangskriterier.md,input,
+Story map,docs\SOP\1.Kravställning\10_definiera_framgangskriterier.md,input,
+KPI / värdemått,docs\SOP\1.Kravställning\10_definiera_framgangskriterier.md,output,Business Analyst
+Uppföljningsmodell,docs\SOP\1.Kravställning\10_definiera_framgangskriterier.md,output,Business Analyst
+Övergripande behov,docs\SOP\2. Målarkitektur\01_Etablera arkitekturmål.md,input,
+Vision & målbild,docs\SOP\2. Målarkitektur\01_Etablera arkitekturmål.md,input,
+Scope & avgränsningar,docs\SOP\2. Målarkitektur\01_Etablera arkitekturmål.md,input,
+Arkitekturmål,docs\SOP\2. Målarkitektur\01_Etablera arkitekturmål.md,output,Lösningsarkitekt
+Arkitekturprinciper,docs\SOP\2. Målarkitektur\01_Etablera arkitekturmål.md,output,Lösningsarkitekt
+Arkitekturmål,docs\SOP\2. Målarkitektur\02_Definiera systemlandskap.md,input,
+Övergripande behov,docs\SOP\2. Målarkitektur\02_Definiera systemlandskap.md,input,
+Beroendekarta,docs\SOP\2. Målarkitektur\02_Definiera systemlandskap.md,input,
+Systemlandskap,docs\SOP\2. Målarkitektur\02_Definiera systemlandskap.md,output,Lösningsarkitekt
+Systemlandskap,docs\SOP\2. Målarkitektur\03_Definiera domänmodell.md,input,
+Begreppsmodell,docs\SOP\2. Målarkitektur\03_Definiera domänmodell.md,input,
+Verksamhetsregler,docs\SOP\2. Målarkitektur\03_Definiera domänmodell.md,input,
+Domänmodell,docs\SOP\2. Målarkitektur\03_Definiera domänmodell.md,output,Business Analyst
+Begreppsmodell,docs\SOP\2. Målarkitektur\03_Definiera domänmodell.md,output,Business Analyst
+Systemlandskap,docs\SOP\2. Målarkitektur\04_Definiera integrationsarkitektu.md,input,
+Domänmodell,docs\SOP\2. Målarkitektur\04_Definiera integrationsarkitektu.md,input,
+Datamodell,docs\SOP\2. Målarkitektur\04_Definiera integrationsarkitektu.md,input,
+Integrationsarkitektur,docs\SOP\2. Målarkitektur\04_Definiera integrationsarkitektu.md,output,Lösningsarkitekt
+Integrationspunkter,docs\SOP\2. Målarkitektur\04_Definiera integrationsarkitektu.md,output,Lösningsarkitekt
+Integrationsarkitektur,docs\SOP\2. Målarkitektur\05_Definiera API‑struktur.md,input,
+Domänmodell,docs\SOP\2. Målarkitektur\05_Definiera API‑struktur.md,input,
+API-specifikation,docs\SOP\2. Målarkitektur\05_Definiera API‑struktur.md,output,Lösningsarkitekt
+Domänmodell,docs\SOP\2. Målarkitektur\06_Definiera datamodell.md,input,
+API-specifikation,docs\SOP\2. Målarkitektur\06_Definiera datamodell.md,input,
+Integrationsarkitektur,docs\SOP\2. Målarkitektur\06_Definiera datamodell.md,input,
+Datamodell,docs\SOP\2. Målarkitektur\06_Definiera datamodell.md,output,Dataarkitekt
+Dataägarskap,docs\SOP\2. Målarkitektur\06_Definiera datamodell.md,output,Dataarkitekt
+Datamodell,docs\SOP\2. Målarkitektur\07_Definiera säkerhetsarkitektur.md,input,
+Integrationsarkitektur,docs\SOP\2. Målarkitektur\07_Definiera säkerhetsarkitektur.md,input,
+Arkitekturmål,docs\SOP\2. Målarkitektur\07_Definiera säkerhetsarkitektur.md,input,
+Säkerhetsarkitektur,docs\SOP\2. Målarkitektur\07_Definiera säkerhetsarkitektur.md,output,Lösningsarkitekt
+Säkerhetsprinciper,docs\SOP\2. Målarkitektur\07_Definiera säkerhetsarkitektur.md,output,Lösningsarkitekt
+Arkitekturmål,docs\SOP\2. Målarkitektur\08_Fastställ arkitekturprinciper.md,input,
+Säkerhetsarkitektur,docs\SOP\2. Målarkitektur\08_Fastställ arkitekturprinciper.md,input,
+Integrationsarkitektur,docs\SOP\2. Målarkitektur\08_Fastställ arkitekturprinciper.md,input,
+Datamodell,docs\SOP\2. Målarkitektur\08_Fastställ arkitekturprinciper.md,input,
+API-specifikation,docs\SOP\2. Målarkitektur\08_Fastställ arkitekturprinciper.md,input,
+Arkitekturprinciper,docs\SOP\2. Målarkitektur\08_Fastställ arkitekturprinciper.md,output,Lösningsarkitekt
+Arkitekturprinciper,docs\SOP\2. Målarkitektur\09_Definiera NFR.md,input,
+Datamodell,docs\SOP\2. Målarkitektur\09_Definiera NFR.md,input,
+Säkerhetsarkitektur,docs\SOP\2. Målarkitektur\09_Definiera NFR.md,input,
+Icke-funktionella krav (NFR),docs\SOP\2. Målarkitektur\09_Definiera NFR.md,output,Lösningsarkitekt
+Arkitekturprinciper,docs\SOP\2. Målarkitektur\10_Definiera teknisk plattform.md,input,
+Icke-funktionella krav (NFR),docs\SOP\2. Målarkitektur\10_Definiera teknisk plattform.md,input,
+Integrationspunkter,docs\SOP\2. Målarkitektur\10_Definiera teknisk plattform.md,input,
+Teknisk plattform,docs\SOP\2. Målarkitektur\10_Definiera teknisk plattform.md,output,Lösningsarkitekt
+Målarkitektur,docs\SOP\2. Målarkitektur\10_Definiera teknisk plattform.md,output,Lösningsarkitekt
+Systemlandskap,docs\SOP\2. Målarkitektur\11_ Dokumentera målarkitektur.md,input,
+Domänmodell,docs\SOP\2. Målarkitektur\11_ Dokumentera målarkitektur.md,input,
+Integrationsarkitektur,docs\SOP\2. Målarkitektur\11_ Dokumentera målarkitektur.md,input,
+API-specifikation,docs\SOP\2. Målarkitektur\11_ Dokumentera målarkitektur.md,input,
+Datamodell,docs\SOP\2. Målarkitektur\11_ Dokumentera målarkitektur.md,input,
+Säkerhetsarkitektur,docs\SOP\2. Målarkitektur\11_ Dokumentera målarkitektur.md,input,
+Teknisk plattform,docs\SOP\2. Målarkitektur\11_ Dokumentera målarkitektur.md,input,
+Målarkitektur,docs\SOP\2. Målarkitektur\11_ Dokumentera målarkitektur.md,output,Lösningsarkitekt
+Story map,docs\SOP\3. Roadmap\01_skapa_mvp.md,input,
+Epics & Capabilities,docs\SOP\3. Roadmap\01_skapa_mvp.md,input,
+Vision & målbild,docs\SOP\3. Roadmap\01_skapa_mvp.md,input,
+MVP-definition,docs\SOP\3. Roadmap\01_skapa_mvp.md,output,Business Analyst
+Story map,docs\SOP\3. Roadmap\02_Strukturera story map till leveranspaket.md,input,
+MVP-definition,docs\SOP\3. Roadmap\02_Strukturera story map till leveranspaket.md,input,
+Epics & Capabilities,docs\SOP\3. Roadmap\02_Strukturera story map till leveranspaket.md,input,
+Releasepaket,docs\SOP\3. Roadmap\02_Strukturera story map till leveranspaket.md,output,Business Analyst
+Releasepaket,docs\SOP\3. Roadmap\03_Skapa releaseplan.md,input,
+MVP-definition,docs\SOP\3. Roadmap\03_Skapa releaseplan.md,input,
+Beroendekarta,docs\SOP\3. Roadmap\03_Skapa releaseplan.md,input,
+Releaseplan,docs\SOP\3. Roadmap\03_Skapa releaseplan.md,output,Business Analyst
+Releaseplan,docs\SOP\3. Roadmap\04_Skapa produktroadmap.md,input,
+Prioriterad backlog,docs\SOP\3. Roadmap\04_Skapa produktroadmap.md,input,
+Beroendekarta,docs\SOP\3. Roadmap\04_Skapa produktroadmap.md,input,
+Roadmap,docs\SOP\3. Roadmap\04_Skapa produktroadmap.md,output,Business Analyst
+Releasepaket,docs\SOP\3. Roadmap\05_Prioritera funktionalitet.md,input,
+Beroendekarta,docs\SOP\3. Roadmap\05_Prioritera funktionalitet.md,input,
+MVP-definition,docs\SOP\3. Roadmap\05_Prioritera funktionalitet.md,input,
+KPI / värdemått,docs\SOP\3. Roadmap\05_Prioritera funktionalitet.md,input,
+Prioriterad backlog,docs\SOP\3. Roadmap\05_Prioritera funktionalitet.md,output,Business Analyst
+Releasepaket,docs\SOP\3. Roadmap\06_Identifiera tekniska beroenden.md,input,
+Domänmodell,docs\SOP\3. Roadmap\06_Identifiera tekniska beroenden.md,input,
+Integrationsarkitektur,docs\SOP\3. Roadmap\06_Identifiera tekniska beroenden.md,input,
+Beroendekarta,docs\SOP\3. Roadmap\06_Identifiera tekniska beroenden.md,output,Teknisk Lead
+Sekvensplan,docs\SOP\3. Roadmap\06_Identifiera tekniska beroenden.md,output,Teknisk Lead
+Prioriterad backlog,docs\SOP\4. Leverans\01_backlog_refinement.md,input,
+Feedback,docs\SOP\4. Leverans\01_backlog_refinement.md,input,
+Arkitekturinsikter,docs\SOP\4. Leverans\01_backlog_refinement.md,input,
+User Stories,docs\SOP\4. Leverans\01_backlog_refinement.md,output,Business Analyst
+Ready backlog,docs\SOP\4. Leverans\01_backlog_refinement.md,output,Business Analyst
+Ready backlog,docs\SOP\4. Leverans\02_sprintplanering.md,input,
+Teamkapacitet (behåll som egen artefakt),docs\SOP\4. Leverans\02_sprintplanering.md,input,
+Prioriterad backlog,docs\SOP\4. Leverans\02_sprintplanering.md,input,
+Sprintmål,docs\SOP\4. Leverans\02_sprintplanering.md,output,Scrum Master
+Sprint backlog,docs\SOP\4. Leverans\02_sprintplanering.md,output,Scrum Master
+Sprint backlog,docs\SOP\4. Leverans\03_utveckling.md,input,
+Arkitekturprinciper,docs\SOP\4. Leverans\03_utveckling.md,input,
+Arkitekturprinciper,docs\SOP\4. Leverans\03_utveckling.md,input,
+Produktinkrement,docs\SOP\4. Leverans\03_utveckling.md,output,Utvecklare
+Kod för granskning,docs\SOP\4. Leverans\03_utveckling.md,output,Utvecklare
+Kod för granskning,docs\SOP\4. Leverans\04_kodgranskning.md,input,
+Arkitekturprinciper,docs\SOP\4. Leverans\04_kodgranskning.md,input,
+Arkitekturprinciper,docs\SOP\4. Leverans\04_kodgranskning.md,input,
+Verifierad funktionalitet,docs\SOP\4. Leverans\04_kodgranskning.md,output,Utvecklare
+Kodförbättringar,docs\SOP\4. Leverans\04_kodgranskning.md,output,Utvecklare
+Verifierad funktionalitet,docs\SOP\4. Leverans\05_test.md,input,
+User Stories,docs\SOP\4. Leverans\05_test.md,input,
+Teststrategi,docs\SOP\4. Leverans\05_test.md,input,
+Testresultat,docs\SOP\4. Leverans\05_test.md,output,Testare
+Verifierad funktionalitet,docs\SOP\4. Leverans\05_test.md,output,Testare
+Verifierad funktionalitet,docs\SOP\4. Leverans\06_integration_och_bygg.md,input,
+CI/CD-pipeline,docs\SOP\4. Leverans\06_integration_och_bygg.md,input,
+Miljökonfiguration,docs\SOP\4. Leverans\06_integration_och_bygg.md,input,
+Produktinkrement,docs\SOP\4. Leverans\06_integration_och_bygg.md,output,DevOps
+Demo-underlag,docs\SOP\4. Leverans\06_integration_och_bygg.md,output,DevOps
+Produktinkrement,docs\SOP\4. Leverans\07_demo.md,input,
+Sprintmål,docs\SOP\4. Leverans\07_demo.md,input,
+Feedback,docs\SOP\4. Leverans\07_demo.md,output,Utvecklare
+Verifierad funktionalitet,docs\SOP\4. Leverans\07_demo.md,output,Utvecklare
+Verifierad funktionalitet,docs\SOP\4. Leverans\08_release.md,input,
+Releasepaket,docs\SOP\4. Leverans\08_release.md,input,
+Releasepaket,docs\SOP\4. Leverans\08_release.md,output,DevOps
+Release notes,docs\SOP\4. Leverans\08_release.md,output,DevOps
+Releasepaket,docs\SOP\4. Leverans\09_deployments.md,input,
+Miljökonfiguration,docs\SOP\4. Leverans\09_deployments.md,input,
+Produktinkrement,docs\SOP\4. Leverans\09_deployments.md,output,DevOps
+Deployment,docs\SOP\4. Leverans\09_deployments.md,output,DevOps
+Release notes,docs\SOP\4. Leverans\10_uppdatera_dokumentation.md,input,
+Produktinkrement,docs\SOP\4. Leverans\10_uppdatera_dokumentation.md,input,
+API-specifikation,docs\SOP\4. Leverans\10_uppdatera_dokumentation.md,input,
+Dokumentation,docs\SOP\4. Leverans\10_uppdatera_dokumentation.md,output,Business Analyst
+Deployment,docs\SOP\4. Leverans\11_uppfoljning_och_forbattring.md,input,
+Dokumentation,docs\SOP\4. Leverans\11_uppfoljning_och_forbattring.md,input,
+Feedback,docs\SOP\4. Leverans\11_uppfoljning_och_forbattring.md,input,
+Produktinkrement,docs\SOP\4. Leverans\11_uppfoljning_och_forbattring.md,input,
+Förbättringsförslag,docs\SOP\4. Leverans\11_uppfoljning_och_forbattring.md,output,Scrum Master
+Retrospektiv,docs\SOP\4. Leverans\11_uppfoljning_och_forbattring.md,output,Scrum Master
+Produktinkrement,docs\SOP\5. Repeat\01_utvardera_leveransresultat.md,input,
+Feedback,docs\SOP\5. Repeat\01_utvardera_leveransresultat.md,input,
+Release notes,docs\SOP\5. Repeat\01_utvardera_leveransresultat.md,input,
+KPI / värdemått,docs\SOP\5. Repeat\01_utvardera_leveransresultat.md,input,
+Leveransutvärdering,docs\SOP\5. Repeat\01_utvardera_leveransresultat.md,output,Business Analyst
+Funktionella förbättringar,docs\SOP\5. Repeat\01_utvardera_leveransresultat.md,output,Business Analyst
+Produktinkrement,docs\SOP\5. Repeat\02_utvardera_process_och_arbetssatt.md,input,
+Tekniska hinder,docs\SOP\5. Repeat\02_utvardera_process_och_arbetssatt.md,input,
+Leveransutvärdering,docs\SOP\5. Repeat\02_utvardera_process_och_arbetssatt.md,input,
+Retrospektiv,docs\SOP\5. Repeat\02_utvardera_process_och_arbetssatt.md,output,Scrum Master
+Processförbättringar,docs\SOP\5. Repeat\02_utvardera_process_och_arbetssatt.md,output,Scrum Master
+Leveransutvärdering,docs\SOP\5. Repeat\03_samla_input_for_uppdaterad_kravstallning.md,input,
+Retrospektiv,docs\SOP\5. Repeat\03_samla_input_for_uppdaterad_kravstallning.md,input,
+Feedback,docs\SOP\5. Repeat\03_samla_input_for_uppdaterad_kravstallning.md,input,
+Förbättringsförslag,docs\SOP\5. Repeat\03_samla_input_for_uppdaterad_kravstallning.md,input,
+Övergripande behov,docs\SOP\5. Repeat\03_samla_input_for_uppdaterad_kravstallning.md,input,
+Förbättringsförslag,docs\SOP\5. Repeat\03_samla_input_for_uppdaterad_kravstallning.md,input,
+Kravställningsunderlag,docs\SOP\5. Repeat\03_samla_input_for_uppdaterad_kravstallning.md,output,Business Analyst
+Tekniska hinder,docs\SOP\5. Repeat\04_identifiera_arkitekturella_lardomar.md,input,
+Tekniska hinder,docs\SOP\5. Repeat\04_identifiera_arkitekturella_lardomar.md,input,
+Leveransutvärdering,docs\SOP\5. Repeat\04_identifiera_arkitekturella_lardomar.md,input,
+Arkitekturinsikter,docs\SOP\5. Repeat\04_identifiera_arkitekturella_lardomar.md,output,Lösningsarkitekt
+Tekniska förbättringar,docs\SOP\5. Repeat\04_identifiera_arkitekturella_lardomar.md,output,Lösningsarkitekt
+Arkitekturinsikter,docs\SOP\5. Repeat\05_Förbereda nästa roadmap‑iteration.md,input,
+Beroendekarta,docs\SOP\5. Repeat\05_Förbereda nästa roadmap‑iteration.md,input,
+Risker,docs\SOP\5. Repeat\05_Förbereda nästa roadmap‑iteration.md,input,
+Prioriterad backlog,docs\SOP\5. Repeat\05_Förbereda nästa roadmap‑iteration.md,input,
+Roadmap-input,docs\SOP\5. Repeat\05_Förbereda nästa roadmap‑iteration.md,output,Business Analyst
+Roadmap-justering,docs\SOP\5. Repeat\05_Förbereda nästa roadmap‑iteration.md,output,Business Analyst
+Arkitekturinsikter,docs\SOP\5. Repeat\06_Förbereda nästa cykel.md,input,
+Roadmap-input,docs\SOP\5. Repeat\06_Förbereda nästa cykel.md,input,
+Förbättringsförslag,docs\SOP\5. Repeat\06_Förbereda nästa cykel.md,input,
+Kravställningsunderlag,docs\SOP\5. Repeat\06_Förbereda nästa cykel.md,output,Business Analyst
+Cykelstart-brief,docs\SOP\5. Repeat\06_Förbereda nästa cykel.md,output,Business Analyst
