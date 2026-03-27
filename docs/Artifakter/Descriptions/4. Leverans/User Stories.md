@@ -1,37 +1,32 @@
 # Artefakt: User Stories
 
 ## Typ
+
 Krav
 
 ## Beskrivning
-Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
 
-## Ägare
-Produktägare
+Beskriver konkreta behov ur ett användarperspektiv i form av korta, värdedrivna formuleringar.
+Syftet är att fånga funktionella behov på en nivå som är tillräckligt konkret för implementation men samtidigt kopplad till verksamhetsvärde.
 
-## Skapas i
-SOP 1: Vision & målbild
+User stories fungerar som en brygga mellan övergripande behov och faktisk utveckling samt används för att:
 
-## Används i
-SOP 2: Affärsmål och värdebild
+konkretisera behov identifierade i user journeys och övergripande behov
+möjliggöra dialog mellan verksamhet och utveckling
+utgöra grund för prioritering, refinement och implementation
+
+## Ägare (Skapar och uppdaterar)
+
+Business Analyst
+
+## Skapas i delprocess
+
+docs\SOP\4. Leverans\01_backlog_refinement.md
 
 ## Format
-Textdokument (Markdown)
+
+Markdown (.md)
 
 ## Lagring
-Versionshanterad artefakt
 
----
-
-## Mall
-
-# Produktvision
-
-## Problem
-...
-
-## Målbild
-...
-
-## Effekt
-...
+GitHub (dokument-repository)

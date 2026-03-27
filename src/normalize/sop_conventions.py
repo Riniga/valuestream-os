@@ -204,19 +204,19 @@ def write_sop_txt(sops, dest_dir):
 
 def main() -> int:
     discovery = discover_sop_conventions()
-    ctx_dir = ROOT / "runs"
+    ctx_dir = ROOT / "docs"
     ctx_dir.mkdir(parents=True, exist_ok=True)
 
     # legacy report
     out = format_as_markdown(discovery)
-    report_path = ctx_dir / "sop-conventions-discovery.md"
+    report_path = ctx_dir / "SOP" / "sop-conventions-discovery.md"
     report_path.write_text(out, encoding="utf-8")
     print(f"Written conventions discovery to {report_path}")
 
     # structured raw outputs
-    write_roles_csv(discovery["sops"], ctx_dir)
-    write_artifacts_csv(discovery["sops"], ctx_dir)
-    write_sop_txt(discovery["sops"], ctx_dir)
+    write_roles_csv(discovery["sops"], ctx_dir / "Roller")
+    write_artifacts_csv(discovery["sops"], ctx_dir / "Artifakter")
+    write_sop_txt(discovery["sops"], ctx_dir / "SOP")
 
     return 0
 
