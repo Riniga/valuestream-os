@@ -4,37 +4,37 @@ overview: Stegvis plan för att implementera första fungerande Business Analyst
 todos:
   - id: maf-spike
     content: Verifiera Microsoft Agent Framework i Python-miljön och lås en minimal integrationsyta för BA-agenten.
-    status: pending
+    status: completed
   - id: ba-skeleton
     content: Skapa minimal kodstruktur för BA-agent, orchestration, CLI och run workspace under `src/`.
-    status: pending
+    status: completed
   - id: run-workspace
     content: Implementera filbaserat run workspace som läser input och skriver output i `runs/`.
-    status: pending
+    status: completed
   - id: context-loader
     content: Implementera inläsning av roll, RACI, SOP, artifaktbeskrivning och mall för BA:s första artefakt.
-    status: pending
+    status: completed
   - id: ba-list
     content: Implementera `BA list` för att visa BA:s ansvariga SOP:er och kandidat-artefakter i Kravställning.
-    status: pending
+    status: completed
   - id: prompt-builder
     content: Bygg första promptgeneratorn för artefakten `Vision & målbild` utifrån framework-filer och run-input.
-    status: pending
+    status: completed
   - id: ba-generate
     content: Implementera `BA generate` som producerar `vision_och_malbild.md` via MAF + LLM i en run-mapp.
-    status: pending
+    status: completed
   - id: traceability
     content: Lägg till enkel spårbarhet mellan input, SOP, roll och genererad output.
-    status: pending
+    status: completed
   - id: ba-update
     content: Implementera minimal `BA update` för att regenerera eller skriva över befintlig BA-output kontrollerat.
-    status: pending
+    status: completed
   - id: second-sop
     content: Utöka efter verifierad baseline till nästa BA-SOP med korrekt input/output-mappning.
-    status: pending
+    status: completed
   - id: tests-docs
     content: Lägg till fokuserade tester och en kort användningsbeskrivning för första BA-flödet.
-    status: pending
+    status: completed
 isProject: false
 ---
 
