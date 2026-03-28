@@ -2,8 +2,7 @@
 
 This document describes the framework model and repository structure for ValueStream OS.
 It is intentionally conceptual.
-For coding policy, use `coding-strategy.md`.
-For day-to-day execution, use `working-mode.md`.
+For coding policy and execution guidance, use `standards.md`.
 
 ## Purpose
 

@@ -11,7 +11,7 @@ from src.agents.business_analyst.artifact_registry import (
     build_artifact_registry,
     get_artifact,
 )
-from src.agents.business_analyst.context_loader import FrameworkContextLoader
+from src.agents.business_analyst.context_loader import FrameworkContextLoader, SopEntry
 from src.agents.business_analyst.prompt_builder import PromptBuilder
 from src.capabilities.run_workspace import RunWorkspace
 
@@ -109,14 +109,17 @@ class BusinessAnalystFlow:
                     output_path = self.update(artifact_def.output_filename)
                     # Make the generated output available as input for downstream artifacts.
                     dest = self.workspace.input_dir / artifact_def.output_filename
-                    if not dest.exists():
-                        shutil.copy(output_path, dest)
+                    shutil.copy(output_path, dest)
                     results.append(
                         {"artifact": artifact_def.name, "status": "ok", "path": output_path}
                     )
             except Exception as exc:  # noqa: BLE001
                 results.append(
-                    {"artifact": artifact_def.name, "status": "error", "reason": str(exc)}
+                    {
+                        "artifact": artifact_def.name,
+                        "status": "error",
+                        "reason": f"{type(exc).__name__}: {exc}",
+                    }
                 )
 
         return results
@@ -130,12 +133,7 @@ class BusinessAnalystFlow:
             )
 
         self._validate_inputs(artifact_def)
-
-        role_text = self.loader.load_role()
-        sop = self.loader.load_sop(artifact_def.sop_filename)
-        description = self.loader.load_artifact_description(artifact_def.name)
-        template = self.loader.load_artifact_template(artifact_def.template_filename)
-        input_content = self._read_inputs(artifact_def)
+        role_text, sop, description, template, input_content = self._load_context(artifact_def)
 
         if self.workspace.output_exists(artifact_filename):
             existing_content = self.workspace.read_output(artifact_filename)
@@ -176,12 +174,7 @@ class BusinessAnalystFlow:
             )
 
         self._validate_inputs(artifact_def)
-
-        role_text = self.loader.load_role()
-        sop = self.loader.load_sop(artifact_def.sop_filename)
-        description = self.loader.load_artifact_description(artifact_def.name)
-        template = self.loader.load_artifact_template(artifact_def.template_filename)
-        input_content = self._read_inputs(artifact_def)
+        role_text, sop, description, template, input_content = self._load_context(artifact_def)
 
         prompt = self.prompt_builder.build_generate_prompt(
             role_text=role_text,
@@ -193,6 +186,16 @@ class BusinessAnalystFlow:
 
         dry_run_filename = artifact_filename.replace(".md", "_prompt_dry_run.txt")
         return self.workspace.write_output(dry_run_filename, prompt)
+
+    def _load_context(
+        self, artifact_def: ArtifactDefinition
+    ) -> tuple[str, SopEntry, str, str, dict[str, str]]:
+        role_text = self.loader.load_role()
+        sop = self.loader.load_sop(artifact_def.sop_filename)
+        description = self.loader.load_artifact_description(artifact_def.name)
+        template = self.loader.load_artifact_template(artifact_def.template_filename)
+        input_content = self._read_inputs(artifact_def)
+        return role_text, sop, description, template, input_content
 
     def _validate_inputs(self, artifact_def: ArtifactDefinition) -> None:
         missing = self.workspace.validate_input(artifact_def.input_filenames)
@@ -209,7 +212,7 @@ class BusinessAnalystFlow:
             if self.workspace.input_path(filename).exists()
         }
 
-    def _write_log(self, artifact_def: ArtifactDefinition, sop, action: str) -> None:
+    def _write_log(self, artifact_def: ArtifactDefinition, sop: SopEntry, action: str) -> None:
         log_path = self.workspace.run_dir / "run_log.json"
         entries = []
         if log_path.exists():

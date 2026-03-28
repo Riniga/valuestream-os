@@ -50,17 +50,18 @@ class FrameworkContextLoader:
         )
 
     def load_sops_for_role(self) -> list[SopEntry]:
-        return [
-            SopEntry(
-                name=self._extract_sop_name(content, sop_file.stem),
-                path=sop_file,
-                content=content,
-                inputs=self._extract_section_items(content, "3. Input"),
-                outputs=self._extract_section_items(content, "4. Output"),
-            )
-            for sop_file in sorted((self.docs_root / "SOP").rglob("*.md"))
-            if self._is_responsible(content := sop_file.read_text(encoding="utf-8"))
-        ]
+        result: list[SopEntry] = []
+        for sop_file in sorted((self.docs_root / "SOP").rglob("*.md")):
+            content = sop_file.read_text(encoding="utf-8")
+            if self._is_responsible(content):
+                result.append(SopEntry(
+                    name=self._extract_sop_name(content, sop_file.stem),
+                    path=sop_file,
+                    content=content,
+                    inputs=self._extract_section_items(content, "3. Input"),
+                    outputs=self._extract_section_items(content, "4. Output"),
+                ))
+        return result
 
     def load_sop(self, filename: str) -> SopEntry:
         matches = sorted((self.docs_root / "SOP").rglob(filename))

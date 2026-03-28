@@ -16,10 +16,8 @@ Before doing anything else:
 
 2. Read these files:
    - README.md
-   - setup/guidelines/coding-strategy.md
-   - setup/guidelines/framework-development-guidelines.md
-   - setup/guidelines/working-mode.md
    - setup/guidelines/standards.md
+   - setup/guidelines/framework-development-guidelines.md
 
 3. Summarize:
    - What this project is

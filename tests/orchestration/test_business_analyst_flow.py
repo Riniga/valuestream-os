@@ -5,18 +5,14 @@ Uses dry_run / direct method calls to verify workspace I/O,
 prompt assembly and artifact registry — no network calls made.
 """
 
-import json
 import shutil
-import tempfile
 from pathlib import Path
 
 import pytest
 
 from src.agents.business_analyst.artifact_registry import (
-    ArtifactDefinition,
     build_artifact_registry,
     get_artifact,
-    get_artifact_by_name,
 )
 from src.agents.business_analyst.context_loader import FrameworkContextLoader
 from src.agents.business_analyst.prompt_builder import PromptBuilder
@@ -192,18 +188,16 @@ def test_generate_dry_run_scope_works_with_vision_input(tmp_workspace_with_visio
 # BusinessAnalystFlow.update — branches on existing output
 # ------------------------------------------------------------------
 
-def test_update_dry_run_uses_generate_prompt_when_no_existing_output(tmp_workspace):
+def test_generate_dry_run_uses_generate_prompt_when_no_existing_output(tmp_workspace):
     flow = BusinessAnalystFlow(workspace=tmp_workspace, repo_root=REPO_ROOT)
     output_path = flow.generate_dry_run("vision_och_malbild.md")
     content = output_path.read_text(encoding="utf-8")
     assert "Befintlig version" not in content
 
 
-def test_update_dry_run_includes_existing_content_when_output_exists(tmp_workspace):
+def test_build_update_prompt_includes_existing_content(tmp_workspace):
     tmp_workspace.write_output("vision_och_malbild.md", "# Befintlig version\nGammalt innehåll")
     flow = BusinessAnalystFlow(workspace=tmp_workspace, repo_root=REPO_ROOT)
-
-    existing_prompt_path = tmp_workspace.output_dir / "vision_och_malbild_update_dry_run.txt"
 
     role_text = flow.loader.load_role()
     sop = flow.loader.load_sop("01_vision_och_malbild.md")
@@ -221,3 +215,43 @@ def test_update_dry_run_includes_existing_content_when_output_exists(tmp_workspa
     )
     assert "Befintlig version" in prompt
     assert "Gammalt innehåll" in prompt
+
+
+# ------------------------------------------------------------------
+# BusinessAnalystFlow.run_all
+# ------------------------------------------------------------------
+
+def test_run_all_skips_artifacts_with_missing_input(tmp_workspace):
+    flow = BusinessAnalystFlow(workspace=tmp_workspace, repo_root=REPO_ROOT)
+
+    results = flow.run_all(dry_run=True)
+
+    assert results[0]["artifact"] == "Vision & målbild"
+    assert results[0]["status"] == "dry-run"
+    assert any(r["status"] == "skipped" for r in results[1:])
+
+
+def test_run_all_copies_latest_output_to_input(tmp_workspace, monkeypatch):
+    flow = BusinessAnalystFlow(workspace=tmp_workspace, repo_root=REPO_ROOT)
+    artifact_filename = "vision_och_malbild.md"
+
+    tmp_workspace.input_dir.mkdir(parents=True, exist_ok=True)
+    (tmp_workspace.input_dir / artifact_filename).write_text("old input", encoding="utf-8")
+
+    def fake_update(filename: str):
+        assert filename == artifact_filename
+        return tmp_workspace.write_output(filename, "new output")
+
+    monkeypatch.setattr(flow, "update", fake_update)
+    flow._registry = flow._registry[:1]
+
+    results = flow.run_all(dry_run=False)
+
+    assert results == [
+        {
+            "artifact": "Vision & målbild",
+            "status": "ok",
+            "path": tmp_workspace.output_dir / artifact_filename,
+        }
+    ]
+    assert (tmp_workspace.input_dir / artifact_filename).read_text(encoding="utf-8") == "new output"

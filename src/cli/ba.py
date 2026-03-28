@@ -15,6 +15,9 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
+from src.capabilities.run_workspace import RunWorkspace
+from src.orchestration.business_analyst_flow import BusinessAnalystFlow
+
 
 def _find_repo_root() -> Path:
     candidate = Path(__file__).resolve().parent
@@ -169,9 +172,6 @@ def main(argv: list[str] | None = None) -> int:
     repo_root = _find_repo_root()
     load_dotenv(repo_root / ".env")
 
-    from src.capabilities.run_workspace import RunWorkspace
-    from src.orchestration.business_analyst_flow import BusinessAnalystFlow
-
     workspace = RunWorkspace(run_id=args.run_id, repo_root=repo_root)
     flow = BusinessAnalystFlow(workspace=workspace, repo_root=repo_root)
 
@@ -179,9 +179,9 @@ def main(argv: list[str] | None = None) -> int:
         if args.command == "info":
             _cmd_info(flow, repo_root)
         elif args.command == "run":
-            _cmd_run(flow, dry_run=getattr(args, "dry_run", False))
+            _cmd_run(flow, dry_run=args.dry_run)
         elif args.command == "update":
-            _cmd_update(flow, args.artifact, dry_run=getattr(args, "dry_run", False))
+            _cmd_update(flow, args.artifact, dry_run=args.dry_run)
     except FileNotFoundError as exc:
         print(f"\nFel: {exc}", file=sys.stderr)
         return 1

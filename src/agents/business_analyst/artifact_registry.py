@@ -55,8 +55,3 @@ def get_artifact(
     return next((a for a in registry if a.output_filename == output_filename), None)
 
 
-def get_artifact_by_name(
-    registry: list[ArtifactDefinition], name: str
-) -> ArtifactDefinition | None:
-    normalized = name.strip().lower()
-    return next((a for a in registry if a.name.lower() == normalized), None)

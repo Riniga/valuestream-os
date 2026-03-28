@@ -49,7 +49,7 @@ Implementera en första fungerande `Business Analyst`-agent enligt [functionalit
 - körs via terminal med tydliga BA-kommandon
 - använder LLM för att generera innehåll
 - sparar runtime-input och output i `runs/`, inte i `docs/`
-- byggs i små, verifierbara steg enligt [setup/guidelines/working-mode.md](setup/guidelines/working-mode.md)
+- byggs i små, verifierbara steg enligt [setup/guidelines/standards.md](setup/guidelines/standards.md)
 
 Föreslagen första vertikala slice:
 

@@ -31,7 +31,7 @@ Fokus: visa att hela kedjan fungerar, inte perfektion.
 ### Ingår
 
 - 1 agent: Business Analyst
-- Integration med Microsoft Agent Framework
+- En tunn agentadapter för LLM-anrop
 - LLM-baserad generering av artifakter
 - Läsa:
   - Rollbeskrivning
@@ -52,15 +52,15 @@ Fokus: visa att hela kedjan fungerar, inte perfektion.
 
 ## 3. Arkitekturval (Viktigt beslut)
 
-### Microsoft Agent Framework
+### Agentadapter + LLM-klient
 
-Agenten skall implementeras med Microsoft Agent Framework från start.
+Agenten implementeras i MVP:n som en tunn agentadapter i Python som laddar instruktioner från dokumentationen och anropar LLM via OpenAI Responses API eller Azure OpenAI Responses API.
 
 Motivering:
 
-- Undviker omskrivning senare
-- Ger naturlig modell för agenter och interaktion
-- Passar målbilden med flera agenter
+- Ger en minimal men fungerande exekveringsyta för första agenten
+- Håller integrationen enkel och explicit i MVP:n
+- Bevarar möjligheten att senare kapsla in en mer avancerad agentplattform
 
 ---
 
@@ -85,10 +85,10 @@ Det innebär:
 
 Agenten laddar:
 
-- Roll: docs/Roller/Business Analyst.md
-- Relevanta SOP:er: docs/SOP/\*_/_.md
-- Artifaktbeskrivningar: docs/Artifakter/Descriptions/\*_/_.md
-- Artifaktmallar: docs/Artifakter/Innehåll/\*_/_.md
+- Roll: `docs/agents/business-analyst.md`
+- Relevanta SOP:er: `docs/SOP/**/*`
+- Artifaktbeskrivningar: `docs/artifacts/descriptions/**/*`
+- Artifaktmallar: `docs/artifacts/templates/**/*`
 
 ---
 
@@ -107,9 +107,9 @@ Input via terminal:
 
 Exempel:
 
-> generate
+> info
 > update
-> list
+> run
 
 ---
 
@@ -138,9 +138,9 @@ Flöde:
 
 Terminal:
 
-> BA generate
+> BA info
 > BA update
-> BA list
+> BA run
 
 Terminalen visar en istruktion fö användaren hur man interagerar med agenter.
 
@@ -148,14 +148,14 @@ Terminalen visar en istruktion fö användaren hur man interagerar med agenter.
 
 ## 6. Informationsflöde
 
-[User] → [Terminal] → [Agent (MAF + LLM)] → [Artifacts]
+[User] → [Terminal] → [Agentadapter + LLM] → [Artifacts]
 
 ---
 
 ## 7. Definition of Done
 
 - Agent körs via terminal
-- Microsoft Agent Framework används
+- LLM-agentadapter används
 - LLM används för generering
 - Minst 1 artifakt genereras korrekt
 - Output sparas som markdown
