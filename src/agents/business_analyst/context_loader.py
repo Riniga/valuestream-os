@@ -4,6 +4,7 @@ import re
 from dataclasses import dataclass, field
 from pathlib import Path
 
+
 @dataclass
 class SopEntry:
     name: str
@@ -40,6 +41,14 @@ class FrameworkContextLoader:
     def load_agent_instructions(self) -> str:
         return self._extract_raw_section(self.load_role(), "Agentinstruktioner").strip()
 
+    def load_agent_purpose(self) -> str:
+        return self._extract_raw_section(self.load_role(), "Syfte").strip()
+
+    def find_description_path(self, artifact_name: str) -> Path | None:
+        return self._find_file_by_name(
+            self.docs_root / "artifacts" / "descriptions", artifact_name, recursive=True
+        )
+
     def load_sops_for_role(self) -> list[SopEntry]:
         return [
             SopEntry(
@@ -68,19 +77,25 @@ class FrameworkContextLoader:
         )
 
     def load_artifact_description(self, artifact_name: str) -> str:
-        desc_root = self.docs_root / "Artifakter" / "Descriptions"
-        path = self._find_file_by_name(desc_root, artifact_name, recursive=True)
+        path = self._find_file_by_name(
+            self.docs_root / "artifacts" / "descriptions", artifact_name, recursive=True
+        )
         if path is None:
             raise FileNotFoundError(
-                f"Artifact description not found for '{artifact_name}' in {desc_root}"
+                f"Artifact description not found for '{artifact_name}'"
             )
         return path.read_text(encoding="utf-8")
 
     def load_artifact_template(self, artifact_filename: str) -> str:
-        matches = sorted((self.docs_root / "Artifakter" / "Innehåll").rglob(artifact_filename))
+        matches = sorted((self.docs_root / "artifacts" / "templates").rglob(artifact_filename))
         if not matches:
             raise FileNotFoundError(f"Artifact template not found: {artifact_filename}")
         return matches[0].read_text(encoding="utf-8")
+
+    def find_template_path(self, artifact_name: str) -> Path | None:
+        return self._find_file_by_name(
+            self.docs_root / "artifacts" / "templates", artifact_name, recursive=True
+        )
 
     def _is_responsible(self, sop_content: str) -> bool:
         raci_section = self._extract_raw_section(sop_content, "5. RACI")
@@ -127,19 +142,34 @@ class FrameworkContextLoader:
     ) -> Path | None:
         if not directory.exists():
             return None
-        glob = directory.rglob("*.md") if recursive else directory.glob("*.md")
+        glob_fn = directory.rglob if recursive else directory.glob
         normalized_target = self._normalize_name(artifact_name)
-        candidates = sorted(glob)
-        for md_file in candidates:
-            if self._normalize_name(md_file.stem) == normalized_target:
-                return md_file
-        for md_file in candidates:
-            content = md_file.read_text(encoding="utf-8")
-            for line in content.splitlines():
-                if line.startswith("# Artefakt:") or line.startswith("# Artifact:"):
-                    title = re.sub(r"^#[^:]*:\s*", "", line).strip()
-                    if self._normalize_name(title) == normalized_target:
-                        return md_file
+        candidates = sorted(glob_fn("*.md"))
+
+        # Pass 1: stem match (works when filename ~ artifact name)
+        for f in candidates:
+            if self._normalize_name(f.stem) == normalized_target:
+                return f
+
+        # Pass 2: first heading match — handles both
+        #   "# Artefakt: Name" (description files) and
+        #   "# Name"           (template files)
+        for f in candidates:
+            title = self._extract_file_title(f)
+            if title and self._normalize_name(title) == normalized_target:
+                return f
+
+        return None
+
+    @staticmethod
+    def _extract_file_title(path: Path) -> str | None:
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if line.startswith("# "):
+                return (
+                    re.sub(r"^#[^:]*:\s*", "", line).strip()
+                    if ":" in line[2:]
+                    else line[2:].strip()
+                )
         return None
 
     @staticmethod

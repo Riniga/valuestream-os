@@ -215,7 +215,7 @@ def main() -> int:
 
     # structured raw outputs
     write_roles_csv(discovery["sops"], ctx_dir / "agents")
-    write_artifacts_csv(discovery["sops"], ctx_dir / "Artifakter")
+    write_artifacts_csv(discovery["sops"], ctx_dir / "artifacts")
     write_sop_txt(discovery["sops"], ctx_dir / "SOP")
 
     return 0

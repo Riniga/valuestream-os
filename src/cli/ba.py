@@ -25,16 +25,15 @@ def _find_repo_root() -> Path:
     return Path.cwd()
 
 
+_W = 62  # output width
+
+
 def _build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="BA", description="Business Analyst Agent — ValueStream OS")
     parser.add_argument("--run-id", required=True, metavar="RUN_ID")
     sub = parser.add_subparsers(dest="command", required=True)
 
-    sub.add_parser("list")
-
-    gen = sub.add_parser("generate")
-    gen.add_argument("--artifact", default="vision_och_malbild.md", metavar="FILENAME")
-    gen.add_argument("--dry-run", action="store_true")
+    sub.add_parser("info")
 
     upd = sub.add_parser("update")
     upd.add_argument("--artifact", default="vision_och_malbild.md", metavar="FILENAME")
@@ -43,57 +42,88 @@ def _build_parser() -> argparse.ArgumentParser:
     return parser
 
 
-def _cmd_list(flow) -> None:
-    from src.agents.business_analyst.artifact_registry import ARTIFACT_REGISTRY
-
-    responsibilities = flow.list_responsibilities()
-
-    print("\nBusiness Analyst — ansvariga artefakter (R i RACI)")
-    print("=" * 60)
-
-    seen = set()
-    for entry in responsibilities:
-        key = (entry["sop"], entry["artifact"])
-        if key in seen:
-            continue
-        seen.add(key)
-        status = "[OK]" if entry["registered"] else "[ej registrerad]"
-        print(f"\n  SOP      : {entry['sop']}")
-        print(f"  Artefakt : {entry['artifact']}  {status}")
-        if entry["registered"]:
-            print(f"  Fil      : output/{entry['output_filename']}")
-            if entry["input_required"]:
-                print(f"  Kräver   : {', '.join(entry['input_required'])}")
-
-    unique_keys = {(e["sop"], e["artifact"]) for e in responsibilities}
-    registered_count = sum(
-        1 for key in unique_keys
-        if any(e["registered"] for e in responsibilities if (e["sop"], e["artifact"]) == key)
-    )
-    print(f"\nRegistrerade och körbara: {registered_count} / {len(unique_keys)}")
+def _status(ok: bool) -> str:
+    return "[OK]" if ok else "[SAKNAS]"
 
 
-def _cmd_generate(flow, artifact_filename: str, dry_run: bool = False) -> None:
-    print(f"\nGenererar: {artifact_filename}")
-    if dry_run:
-        output_path = flow.generate_dry_run(artifact_filename)
-        print(f"\nDry-run OK — prompt sparad: {output_path}")
-    else:
-        print("Laddar framework-kontext...")
-        print("Bygger prompt...")
-        print("Anropar LLM...")
-        output_path = flow.generate(artifact_filename)
-        print(f"\nKlar! Output sparad: {output_path}")
+def _rel(path, repo_root) -> str:
+    try:
+        return str(path.relative_to(repo_root))
+    except ValueError:
+        return str(path)
+
+
+def _cmd_info(flow, repo_root) -> None:
+    info = flow.get_info()
+
+    print()
+    print("═" * _W)
+    print(f"  {info['role_name']}")
+    print("═" * _W)
+
+    agent_rel = _rel(info["agent_file"], repo_root)
+    print(f"  Fil     : {agent_rel:<42} {_status(info['agent_file_ok'])}")
+
+    purpose_lines = info["purpose"].split("\n")
+    print(f"  Uppdrag : {purpose_lines[0]}")
+    for line in purpose_lines[1:]:
+        if line.strip():
+            print(f"            {line.strip()}")
+
+    print()
+    print("  ARTIFAKTER  (R i RACI)")
+    print("  " + "─" * (_W - 2))
+
+    total_checks = 0
+    ok_checks = 0
+
+    for artifact in info["artifacts"]:
+        print()
+        print(f"  {artifact['name']}")
+
+        sop_ok = artifact["sop_ok"]
+        print(f"    SOP         : {artifact['sop_name']:<38} {_status(sop_ok)}")
+        if sop_ok:
+            print(f"                  {_rel(artifact['sop_path'], repo_root)}")
+        total_checks += 1
+        ok_checks += int(sop_ok)
+
+        desc_ok = artifact["description_ok"]
+        desc_label = artifact["description_path"].name if artifact["description_path"] else "—"
+        print(f"    Beskrivning : {desc_label:<38} {_status(desc_ok)}")
+        if desc_ok:
+            print(f"                  {_rel(artifact['description_path'], repo_root)}")
+        total_checks += 1
+        ok_checks += int(desc_ok)
+
+        tmpl_ok = artifact["template_ok"]
+        tmpl_label = artifact["template_path"].name if artifact["template_path"] else "—"
+        print(f"    Mall        : {tmpl_label:<38} {_status(tmpl_ok)}")
+        if tmpl_ok:
+            print(f"                  {_rel(artifact['template_path'], repo_root)}")
+        total_checks += 1
+        ok_checks += int(tmpl_ok)
+
+        if artifact["input_files"]:
+            print(f"    Input       : {', '.join(artifact['input_files'])}")
+        if artifact["output_file"]:
+            print(f"    Output      : {artifact['output_file']}")
+
+    print()
+    print("  " + "─" * (_W - 2))
+    summary_color = "" if ok_checks == total_checks else "  *** PROBLEM DETECTED ***"
+    print(f"  Stödfiler: {ok_checks}/{total_checks} OK{summary_color}")
+    print()
 
 
 def _cmd_update(flow, artifact_filename: str, dry_run: bool = False) -> None:
-    print(f"\nUppdaterar: {artifact_filename}")
+    print(f"\n{artifact_filename}")
     if dry_run:
         output_path = flow.generate_dry_run(artifact_filename)
-        print(f"\nDry-run OK — prompt sparad: {output_path}")
+        print(f"Dry-run OK — prompt sparad: {output_path}")
     else:
         output_path = flow.update(artifact_filename)
-        print(f"\nKlar! Output uppdaterad: {output_path}")
+        print(f"Klar! Output: {output_path}")
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -110,10 +140,8 @@ def main(argv: list[str] | None = None) -> int:
     flow = BusinessAnalystFlow(workspace=workspace, repo_root=repo_root)
 
     try:
-        if args.command == "list":
-            _cmd_list(flow)
-        elif args.command == "generate":
-            _cmd_generate(flow, args.artifact, dry_run=getattr(args, "dry_run", False))
+        if args.command == "info":
+            _cmd_info(flow, repo_root)
         elif args.command == "update":
             _cmd_update(flow, args.artifact, dry_run=getattr(args, "dry_run", False))
     except FileNotFoundError as exc:
