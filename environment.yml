@@ -14,6 +14,7 @@ dependencies:
   - pyyaml
   - python-dotenv
 
-  # Pip fallback (håll tom initialt)
+  # Pip packages
   - pip:
-      []
+      - openai>=1.0.0
+      - pytest>=8.0.0

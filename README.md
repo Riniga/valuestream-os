@@ -27,7 +27,7 @@ The framework is designed to:
 ValueStream OS is built around a circular delivery model:
 
 ```
-WHAT → HOW → WHEN → BUILD → LEARN → WHAT → ...0
+WHAT → HOW → WHEN → BUILD → LEARN → WHAT → ...
 ```
 
 | Step | Focus | Outcome |
@@ -104,4 +104,5 @@ runs/ → Execution state and outputs
 ## 📘 Development Guidelines
 
 See:
+`setup/guidelines/standards.md`
 `setup/guidelines/framework-development-guidelines.md`

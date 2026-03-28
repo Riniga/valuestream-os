@@ -1,4 +1,4 @@
-# Setup Development Environment for Valuestrea OS
+# Setup Development Environment for ValueStream OS
 
 ## Required tools and applications
 
@@ -22,7 +22,7 @@ This may be executed within VS Code by running Task: Bootstrap
 
 ## Work
 
-To start orking in the project we have this script:
+To start working in the project we have this script:
 
 ```powershell
 pwsh ./scripts/dev.ps1

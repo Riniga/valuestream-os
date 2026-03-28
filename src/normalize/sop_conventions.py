@@ -53,8 +53,8 @@ def parse_sop_file(path: Path) -> dict:
         m = RE_SECTION.match(line)
         if m:
             current_section = m.group(1).strip()
-            current_section_title = m.group(2).strip()
-            sop_meta["sections"].append(f"{current_section}. {current_section_title}")
+            section_title = m.group(2).strip()
+            sop_meta["sections"].append(f"{current_section}. {section_title}")
             continue
 
         # capture bullet list items inside Input/output/raci and Context
@@ -214,8 +214,8 @@ def main() -> int:
     print(f"Written conventions discovery to {report_path}")
 
     # structured raw outputs
-    write_roles_csv(discovery["sops"], ctx_dir / "Roller")
-    write_artifacts_csv(discovery["sops"], ctx_dir / "Artifakter")
+    write_roles_csv(discovery["sops"], ctx_dir / "agents")
+    write_artifacts_csv(discovery["sops"], ctx_dir / "artifacts")
     write_sop_txt(discovery["sops"], ctx_dir / "SOP")
 
     return 0
@@ -223,3 +223,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

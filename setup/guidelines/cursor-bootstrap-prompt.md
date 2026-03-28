@@ -16,12 +16,12 @@ Before doing anything else:
 
 2. Read these files:
    - README.md
-   - setup/guidelines/framework-development-guidelines.md
    - setup/guidelines/standards.md
-   - setup/guidelines/working-mode.md
+   - setup/guidelines/framework-development-guidelines.md
 
 3. Summarize:
    - What this project is
+   - Which guideline is authoritative for coding decisions
    - How work should be performed
    - How structure is organized
 
