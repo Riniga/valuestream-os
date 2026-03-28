@@ -20,6 +20,10 @@ def test_load_role_returns_content():
     assert "Business Analyst" in role
 
 
+def test_role_name_extracted_from_file():
+    assert loader.role_name == "Business Analyst"
+
+
 def test_load_sops_finds_ba_responsible_sops():
     sops = loader.load_sops_for_role()
     assert len(sops) >= 1
