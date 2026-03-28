@@ -1,10 +1,3 @@
-"""
-ArtifactRegistry — maps artifact names to their template filenames and output filenames.
-
-This is the single source of truth for name→file mappings.
-Add entries here as more artifacts are covered by the BA agent.
-"""
-
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -38,15 +31,9 @@ ARTIFACT_REGISTRY: list[ArtifactDefinition] = [
 
 
 def get_artifact(output_filename: str) -> ArtifactDefinition | None:
-    for artifact in ARTIFACT_REGISTRY:
-        if artifact.output_filename == output_filename:
-            return artifact
-    return None
+    return next((a for a in ARTIFACT_REGISTRY if a.output_filename == output_filename), None)
 
 
 def get_artifact_by_name(name: str) -> ArtifactDefinition | None:
     normalized = name.strip().lower()
-    for artifact in ARTIFACT_REGISTRY:
-        if artifact.name.lower() == normalized:
-            return artifact
-    return None
+    return next((a for a in ARTIFACT_REGISTRY if a.name.lower() == normalized), None)
