@@ -66,7 +66,8 @@ class BusinessAnalystFlow:
             input_content=input_content,
         )
 
-        agent = BusinessAnalystAgent()
+        instructions = self.loader.load_agent_instructions()
+        agent = BusinessAnalystAgent(instructions=instructions)
         generated_content = agent.run(prompt)
 
         output_path = self.workspace.write_output(artifact_filename, generated_content)

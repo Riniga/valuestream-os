@@ -18,14 +18,18 @@ class FrameworkContextLoader:
 
     ROLE_NAME = "Business Analyst"
     PROCESS_STEP = "1.Kravställning"
+    AGENT_FILE = "business-analyst.md"
 
     def __init__(self, repo_root: Path) -> None:
         self.repo_root = repo_root
         self.docs_root = repo_root / "docs"
 
     def load_role(self) -> str:
-        path = self.docs_root / "Roller" / "Business Analyst.md"
-        return path.read_text(encoding="utf-8")
+        return (self.docs_root / "agents" / self.AGENT_FILE).read_text(encoding="utf-8")
+
+    def load_agent_instructions(self) -> str:
+        content = self.load_role()
+        return self._extract_raw_section(content, "Agentinstruktioner").strip()
 
     def load_sops_for_role(self) -> list[SopEntry]:
         sop_dir = self.docs_root / "SOP" / self.PROCESS_STEP
@@ -103,13 +107,12 @@ class FrameworkContextLoader:
         lines = content.splitlines()
         collecting = False
         result: list[str] = []
-        target = f"## {section_heading}"
         for line in lines:
-            if line.strip() == target:
+            if re.match(rf"^##\s+{re.escape(section_heading)}\s*$", line):
                 collecting = True
                 continue
             if collecting:
-                if line.startswith("## ") and line.strip() != target:
+                if line.startswith("## "):
                     break
                 result.append(line)
         return "\n".join(result)

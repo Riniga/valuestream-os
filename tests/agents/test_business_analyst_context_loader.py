@@ -57,6 +57,12 @@ def test_load_artifact_template_scope():
     assert "## 2. Scope" in tmpl
 
 
+def test_load_agent_instructions_returns_text():
+    instructions = loader.load_agent_instructions()
+    assert len(instructions) > 20
+    assert "Business Analyst" in instructions
+
+
 def test_only_ba_responsible_sops_returned():
     sops = loader.load_sops_for_role()
     for sop in sops:

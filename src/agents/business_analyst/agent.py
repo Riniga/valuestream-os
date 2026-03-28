@@ -8,15 +8,9 @@ from openai import AzureOpenAI, OpenAI
 
 class BusinessAnalystAgent:
 
-    SYSTEM_PROMPT = (
-        "Du är en Business Analyst i ValueStream OS-ramverket. "
-        "Du arbetar stegvis, strukturerat och tydligt. "
-        "Du genererar artifakter exakt enligt den mall du får — utan att lägga till "
-        "rubriker, sektioner eller text som inte finns i mallen. "
-        "All output ska vara på svenska om inget annat anges."
-    )
+    def __init__(self, instructions: str, model: str | None = None) -> None:
+        self._instructions = instructions
 
-    def __init__(self, model: str | None = None) -> None:
         azure_key = os.environ.get("AZURE_OPENAI_API_KEY")
         azure_endpoint = os.environ.get("AZURE_OPENAI_ENDPOINT")
 
@@ -56,7 +50,7 @@ class BusinessAnalystAgent:
     def run(self, prompt: str) -> str:
         response = self._client.responses.create(
             model=self._model,
-            instructions=self.SYSTEM_PROMPT,
+            instructions=self._instructions,
             input=prompt,
         )
         return response.output_text or ""

@@ -214,7 +214,7 @@ def main() -> int:
     print(f"Written conventions discovery to {report_path}")
 
     # structured raw outputs
-    write_roles_csv(discovery["sops"], ctx_dir / "Roller")
+    write_roles_csv(discovery["sops"], ctx_dir / "agents")
     write_artifacts_csv(discovery["sops"], ctx_dir / "Artifakter")
     write_sop_txt(discovery["sops"], ctx_dir / "SOP")
 
@@ -223,3 +223,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
