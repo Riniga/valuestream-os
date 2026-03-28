@@ -2,9 +2,9 @@
 BA CLI
 
 Usage:
-    python -m src.cli.ba --run-id <run-id> list
-    python -m src.cli.ba --run-id <run-id> generate [--artifact <filename>] [--dry-run]
-    python -m src.cli.ba --run-id <run-id> update   [--artifact <filename>] [--dry-run]
+    python -m src.cli.ba --run-id <run-id> info
+    python -m src.cli.ba --run-id <run-id> run    [--dry-run]
+    python -m src.cli.ba --run-id <run-id> update --artifact <filename> [--dry-run]
 """
 
 from __future__ import annotations
@@ -34,6 +34,9 @@ def _build_parser() -> argparse.ArgumentParser:
     sub = parser.add_subparsers(dest="command", required=True)
 
     sub.add_parser("info")
+
+    run = sub.add_parser("run")
+    run.add_argument("--dry-run", action="store_true")
 
     upd = sub.add_parser("update")
     upd.add_argument("--artifact", default="vision_och_malbild.md", metavar="FILENAME")
@@ -116,6 +119,39 @@ def _cmd_info(flow, repo_root) -> None:
     print()
 
 
+def _cmd_run(flow, dry_run: bool = False) -> None:
+    mode = " (dry-run)" if dry_run else ""
+    print(f"\nKör alla artefakter{mode}...")
+    print("─" * _W)
+
+    results = flow.run_all(dry_run=dry_run)
+    total = len(results)
+
+    for i, r in enumerate(results, 1):
+        prefix = f"  [{i:>{len(str(total))}}/{total}]"
+        name = r["artifact"]
+        if r["status"] in ("ok", "dry-run"):
+            print(f"{prefix}  {name:<40}  OK")
+        elif r["status"] == "skipped":
+            missing = ", ".join(r["missing_inputs"])
+            print(f"{prefix}  {name:<40}  SAKNAR INPUT: {missing}")
+        else:
+            print(f"{prefix}  {name:<40}  FEL: {r['reason']}")
+
+    ok = sum(1 for r in results if r["status"] in ("ok", "dry-run"))
+    skipped = sum(1 for r in results if r["status"] == "skipped")
+    errors = sum(1 for r in results if r["status"] == "error")
+
+    print("─" * _W)
+    parts = [f"{ok} genererade"]
+    if skipped:
+        parts.append(f"{skipped} hoppades över (saknar input)")
+    if errors:
+        parts.append(f"{errors} fel")
+    print(f"  {', '.join(parts)}")
+    print()
+
+
 def _cmd_update(flow, artifact_filename: str, dry_run: bool = False) -> None:
     print(f"\n{artifact_filename}")
     if dry_run:
@@ -142,6 +178,8 @@ def main(argv: list[str] | None = None) -> int:
     try:
         if args.command == "info":
             _cmd_info(flow, repo_root)
+        elif args.command == "run":
+            _cmd_run(flow, dry_run=getattr(args, "dry_run", False))
         elif args.command == "update":
             _cmd_update(flow, args.artifact, dry_run=getattr(args, "dry_run", False))
     except FileNotFoundError as exc:

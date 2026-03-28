@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import shutil
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -81,6 +82,43 @@ class BusinessAnalystFlow:
                         "input_required": artifact_def.input_filenames if artifact_def else [],
                     }
                 )
+        return results
+
+    def run_all(self, dry_run: bool = False) -> list[dict]:
+        results: list[dict] = []
+
+        for artifact_def in self._registry:
+            missing = self.workspace.validate_input(artifact_def.input_filenames)
+            if missing:
+                results.append(
+                    {
+                        "artifact": artifact_def.name,
+                        "status": "skipped",
+                        "missing_inputs": missing,
+                    }
+                )
+                continue
+
+            try:
+                if dry_run:
+                    output_path = self.generate_dry_run(artifact_def.output_filename)
+                    results.append(
+                        {"artifact": artifact_def.name, "status": "dry-run", "path": output_path}
+                    )
+                else:
+                    output_path = self.update(artifact_def.output_filename)
+                    # Make the generated output available as input for downstream artifacts.
+                    dest = self.workspace.input_dir / artifact_def.output_filename
+                    if not dest.exists():
+                        shutil.copy(output_path, dest)
+                    results.append(
+                        {"artifact": artifact_def.name, "status": "ok", "path": output_path}
+                    )
+            except Exception as exc:  # noqa: BLE001
+                results.append(
+                    {"artifact": artifact_def.name, "status": "error", "reason": str(exc)}
+                )
+
         return results
 
     def update(self, artifact_filename: str = "vision_och_malbild.md") -> Path:

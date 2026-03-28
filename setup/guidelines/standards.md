@@ -46,9 +46,11 @@ Clarity, structure, and traceability take priority over speed and cleverness.
 
 ### Files
 
-- Use `PascalCase` for core framework documents when they are primary named artifacts
-- Use `kebab-case` for technical and implementation-oriented files where appropriate
-- Keep names explicit and readable
+- Keep names explicit and readable.
+- Follow existing repository conventions instead of forcing one naming style everywhere.
+- For agent definition documents under `docs/agents/`, use `kebab-case.md`.
+- For artifact templates and descriptions, keep the established artifact-facing names if they are already part of the framework vocabulary.
+- For implementation files, follow the language convention of that area, for example `snake_case.py` in Python.
 
 ### Code
 
@@ -72,6 +74,7 @@ Clarity, structure, and traceability take priority over speed and cleverness.
 - Start with the simplest working solution
 - Refactor only when structure clearly improves
 - Keep orchestration logic explicit
+- Treat `setup/guidelines/coding-strategy.md` as the primary development rule if guidance overlaps
 
 ---
 

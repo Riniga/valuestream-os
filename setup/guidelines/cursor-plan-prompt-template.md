@@ -18,6 +18,7 @@ Context:
   - `setup/` for setup and development guidance
   - `src/` for implementation
   - `runs/` for runtime output
+- Treat `setup/guidelines/coding-strategy.md` as the primary guideline if there is overlap
 - Keep strategy, structure, and implementation separated
 - Build step by step
 - Do not overengineer
