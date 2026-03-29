@@ -6,31 +6,21 @@
 | Artifakttyp | Krav |
 | Ägare | Business Analyst |
 | Version | 1.0 |
-| Datum | YYYY-MM-DD |
-| Status | Utkast / Pågående / Klar |
+| Datum | |
+| Status | |
 
 ---
 
 ## 1. Vision
-Beskriv den övergripande visionen för produkten eller initiativet.
-
-**Frågor att besvara:**
-- Vad vill vi uppnå på lång sikt?
-- Vilket problem löser vi?
-- För vem skapar vi värde?
-
-**Vision (kortfattad formulering):**
-> _En tydlig och inspirerande vision i 1–3 meningar_
+> 
 
 ---
 
 ## 2. Målbild (Target State)
-Beskriv hur framtiden ser ut när visionen är uppnådd.
-
 ### 2.1 Önskat läge
-- Hur arbetar verksamheten?
-- Hur används lösningen?
-- Vilka förmågor finns?
+- Verksamhet:
+- Lösning:
+- Förmågor:
 
 ### 2.2 Effekt på verksamheten
 | Område | Förändring |
@@ -43,8 +33,6 @@ Beskriv hur framtiden ser ut när visionen är uppnådd.
 ---
 
 ## 3. Affärsmål & värde
-Koppla visionen till konkreta mål.
-
 ### 3.1 Mål
 | Mål | Beskrivning | Mätetal (KPI) |
 |-----|-------------|---------------|
@@ -60,8 +48,6 @@ Koppla visionen till konkreta mål.
 ---
 
 ## 4. Problemdefinition
-Beskriv nuläget och varför förändringen behövs.
-
 - Nuvarande utmaningar:
 - Begränsningar:
 - Risker med att inte agera:
@@ -69,8 +55,6 @@ Beskriv nuläget och varför förändringen behövs.
 ---
 
 ## 5. Scope & avgränsningar
-Tydliggör vad som ingår och inte ingår.
-
 ### Ingår
 - 
 
@@ -88,16 +72,12 @@ Tydliggör vad som ingår och inte ingår.
 ---
 
 ## 7. Antaganden
-Lista viktiga antaganden som påverkar målbilden.
-
 - 
 - 
 
 ---
 
 ## 8. Risker
-Identifiera tidiga risker kopplade till visionen.
-
 | Risk | Påverkan | Åtgärd |
 |------|----------|--------|
 | | | |

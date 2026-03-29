@@ -6,24 +6,21 @@
 | Artifakttyp | Krav |
 | Ägare | Business Analyst |
 | Version | 1.0 |
-| Datum | YYYY-MM-DD |
-| Status | Utkast / Pågående / Klar |
+| Datum | |
+| Status | |
 
 ---
 
 ## 1. Översikt
-Beskriv syftet med funktionella block och koppling till övriga artefakter.
-
-- Referens till Övergripande behov:
-- Referens till User Journeys:
-- Referens till Epics & Capabilities:
-- Kort sammanfattning:
+| Fält | Innehåll |
+|------|----------|
+| Syfte | |
+| Referenser | |
+| Sammanfattning | |
 
 ---
 
 ## 2. Funktionella block (översikt)
-Identifiera och lista blocken.
-
 | Block | Beskrivning | Kopplade behov | Prioritet (H/M/L) |
 |-------|-------------|----------------|-------------------|
 | | | | |
@@ -33,15 +30,15 @@ Identifiera och lista blocken.
 
 ## 3. Struktur per block
 
-### Block: [Namn]
+### Block
 
-**Beskrivning:**
+**Beskrivning:** 
 
-**Syfte / värde:**
+**Syfte / värde:** 
 
-**Kopplade behov:**
+**Kopplade behov:** 
 
-**Kopplade epics:**
+**Kopplade epics:** 
 
 #### Ingående funktioner
 | Funktion | Beskrivning |
@@ -55,14 +52,11 @@ Identifiera och lista blocken.
 
 ```mermaid
 flowchart LR
-    A["Block 1"] --> B["Block 2"] --> C["Block 3"]
 ```
 
 ---
 
 ## 5. Samband mellan block
-Beskriv beroenden och relationer mellan block.
-
 | Block | Beroende till | Typ | Beskrivning |
 |-------|----------------|-----|-------------|
 | | | | |
@@ -71,8 +65,6 @@ Beskriv beroenden och relationer mellan block.
 ---
 
 ## 6. Prioritering
-Beskriv hur block prioriteras.
-
 | Block | Prioritet | Motivering |
 |-------|------------|------------|
 | | | |
@@ -81,8 +73,6 @@ Beskriv hur block prioriteras.
 ---
 
 ## 7. Avgränsningar
-Vad ingår / ingår inte i blocken.
-
 ### Ingår
 - 
 

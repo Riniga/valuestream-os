@@ -7,18 +7,18 @@
 | Artifakttyp | Krav                     |
 | Ägare       | Business Analyst         |
 | Version     | 1.0                      |
-| Datum       | YYYY-MM-DD               |
-| Status      | Utkast / Pågående / Klar |
+| Datum       |                          |
+| Status      |                          |
 
 ---
 
 ## 1. Översikt
 
-Beskriv syftet med denna artefakt.
-
-- Referens till User Journeys:
-- Referens till Övergripande behov:
-- Kort sammanfattning:
+| Fält | Innehåll |
+|------|----------|
+| Syfte | |
+| Referenser | |
+| Sammanfattning | |
 
 ---
 
@@ -26,7 +26,7 @@ Beskriv syftet med denna artefakt.
 
 | ID  | User Story                                           | Affärsvärde | Kopplat behov | Prioritet | Status |
 | --- | ---------------------------------------------------- | ----------- | ------------- | --------- | ------ |
-|     | Som [användare] vill jag [göra något] så att [värde] |             |               |           |        |
+|     |                                                      |             |               |           |        |
 |     |                                                      |             |               |           |        |
 
 ---
@@ -42,8 +42,6 @@ Beskriv syftet med denna artefakt.
 
 ## 4. Definition of Ready (DoR)
 
-Kriterier för att en story är redo för utveckling.
-
 - Tydlig beskrivning
 - Kopplad till behov
 - Acceptanskriterier definierade
@@ -52,8 +50,6 @@ Kriterier för att en story är redo för utveckling.
 ---
 
 ## 5. Definition of Done (DoD)
-
-Kriterier för att en story är klar.
 
 - Implementerad
 - Testad

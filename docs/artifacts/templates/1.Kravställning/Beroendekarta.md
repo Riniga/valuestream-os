@@ -6,33 +6,25 @@
 | Artifakttyp | Krav |
 | Ägare | Business Analyst |
 | Version | 1.0 |
-| Datum | YYYY-MM-DD |
-| Status | Utkast / Pågående / Klar |
+| Datum | |
+| Status | |
 
 ---
 
 ## 1. Översikt
-Beskriv syftet med beroendekartan och koppling till övriga artefakter.
-
-- Referens till Vision & Målbild:
-- Referens till Scope & Avgränsningar:
-- Kort sammanfattning:
+| Fält | Innehåll |
+|------|----------|
+| Syfte | |
+| Referenser | |
+| Sammanfattning | |
 
 ---
 
 ## 2. Identifierade beroenden
-Lista alla identifierade beroenden.
-
 | ID | Typ | Källa | Beroende till | Beskrivning | Kritikalitet (H/M/L) |
 |----|-----|------|----------------|-------------|----------------------|
 | | | | | | |
 | | | | | | |
-
-**Typ kan vara:**
-- System
-- Organisation
-- Funktion
-- Extern part
 
 ---
 
@@ -40,15 +32,11 @@ Lista alla identifierade beroenden.
 
 ```mermaid
 flowchart LR
-    A["System / Aktör A"] --> B["System / Aktör B"]
-    B --> C["Extern part"]
 ```
 
 ---
 
 ## 4. Kritiska beroenden
-Lyft fram beroenden med hög påverkan.
-
 | Beroende | Risk | Påverkan | Åtgärd |
 |----------|------|----------|--------|
 | | | | |
@@ -57,8 +45,6 @@ Lyft fram beroenden med hög påverkan.
 ---
 
 ## 5. Integrationspunkter
-Beskriv identifierade integrationer.
-
 | System A | System B | Typ av integration | Beskrivning |
 |----------|----------|--------------------|-------------|
 | | | | |
@@ -67,8 +53,6 @@ Beskriv identifierade integrationer.
 ---
 
 ## 6. Koordineringsbehov
-Beskriv behov av samordning mellan aktörer.
-
 | Aktörer | Beskrivning | Frekvens / Timing |
 |---------|-------------|-------------------|
 | | | |
@@ -77,8 +61,6 @@ Beskriv behov av samordning mellan aktörer.
 ---
 
 ## 7. Antaganden
-Antaganden kopplade till beroenden.
-
 - 
 - 
 

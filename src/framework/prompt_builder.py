@@ -20,21 +20,25 @@ class FrameworkPromptBuilder:
     ) -> str:
         preamble = self._build_context_section(role_name, role_text, sop_text, artifact_description)
         input_section = self._format_inputs(input_content)
+        output_rules = self._build_output_rules()
 
         return f"""{preamble}
 
-## Artifaktmall — fyll i denna struktur
-Nedan är mallen du ska fylla i. Behåll alla rubriker exakt som de är.
-Ersätt platshållartext med verkligt innehåll baserat på inputen nedan.
-Lägg inte till eller ta bort rubriker.
+## Rendermall — slutlig struktur att producera
+Använd endast denna mall som slutlig struktur för dokumentet.
+Behåll rubrikerna, fyll sektionerna med verkligt innehåll och returnera ett färdigt markdown-dokument.
+Ingen instruktionstext, inga frågor och inga exempelrader får finnas kvar i slutresultatet.
 
 {artifact_template}
 
 ## Input — underlag att basera artifakten på
 {input_section}
 
+## Outputregler
+{output_rules}
+
 ## Uppgift
-Generera artifakten enligt mallen ovan baserat på inputen.
+Generera artifakten enligt rendermallen ovan baserat på inputen.
 Returnera bara det färdiga markdown-dokumentet — inget annat.
 """
 
@@ -50,12 +54,14 @@ Returnera bara det färdiga markdown-dokumentet — inget annat.
     ) -> str:
         preamble = self._build_context_section(role_name, role_text, sop_text, artifact_description)
         input_section = self._format_inputs(input_content)
+        output_rules = self._build_output_rules()
 
         return f"""{preamble}
 
-## Artifaktmall — struktur att följa
-Nedan är mallen du ska följa. Behåll alla rubriker exakt som de är.
-Lägg inte till eller ta bort rubriker.
+## Rendermall — slutlig struktur att producera
+Använd endast denna mall som slutlig struktur för dokumentet.
+Behåll rubrikerna, fyll sektionerna med verkligt innehåll och returnera ett färdigt markdown-dokument.
+Ingen instruktionstext, inga frågor och inga exempelrader får finnas kvar i slutresultatet.
 
 {artifact_template}
 
@@ -68,8 +74,11 @@ Behåll det som fortfarande stämmer. Uppdatera det som har förändrats baserat
 ## Input — underlag att basera uppdateringen på
 {input_section}
 
+## Outputregler
+{output_rules}
+
 ## Uppgift
-Generera en uppdaterad version av artefakten baserat på befintlig version och ny input.
+Generera en uppdaterad version av artefakten baserat på befintlig version, inputen och rendermallen.
 Returnera bara det färdiga markdown-dokumentet — inget annat.
 """
 
@@ -84,7 +93,21 @@ Returnera bara det färdiga markdown-dokumentet — inget annat.
             f"Du är en {role_name} som arbetar enligt ValueStream OS-ramverket.\n\n"
             f"## Din roll\n{role_text}\n\n"
             f"## SOP — instruktion att följa\n{sop_text}\n\n"
-            f"## Artifaktbeskrivning — vad du ska producera\n{artifact_description}"
+            f"## Designunderlag — vad artefakten ska åstadkomma\n"
+            f"Detta är vägledning för innehåll, kvalitet och syfte.\n"
+            f"Text från designunderlaget får inte kopieras som instruktioner till slutdokumentet.\n\n"
+            f"{artifact_description}"
+        )
+
+    @staticmethod
+    def _build_output_rules() -> str:
+        return (
+            "- Returnera bara det färdiga markdown-dokumentet.\n"
+            "- Behåll endast rubriker, tabeller och sektioner som hör till slutdokumentet.\n"
+            "- Lämna inte kvar instruktioner som 'Beskriv', 'Lista', 'Frågor att besvara' eller liknande hjälptext.\n"
+            "- Lämna inte kvar platshållare eller exempeltext som '[Namn]', 'YYYY-MM-DD', "
+            "'Utkast / Pågående / Klar' eller exempelrader som visar format.\n"
+            "- Om en sektion saknar säkert underlag, skriv en kort saklig formulering i stället för att lämna kvar malltext."
         )
 
     @staticmethod

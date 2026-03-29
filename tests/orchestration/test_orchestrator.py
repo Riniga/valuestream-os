@@ -39,7 +39,7 @@ def _make_flow() -> list[FlowStep]:
         FlowStep(
             step_id="ux-journeys",
             agent_id="ux",
-            sop_filename="06_user_journeys.md",
+            sop_filename="07_user_journeys.md",
             artifact_name="User journeys",
             output_filename="user_journeys.md",
             input_filenames=["vision_och_malbild.md", "overgripande_behov.md"],
@@ -47,7 +47,7 @@ def _make_flow() -> list[FlowStep]:
         FlowStep(
             step_id="ba-storymap",
             agent_id="business-analyst",
-            sop_filename="07_skapa_story_map.md",
+            sop_filename="08_skapa_story_map.md",
             artifact_name="Story map",
             output_filename="story_map.md",
             input_filenames=["user_journeys.md", "vision_och_malbild.md"],
@@ -198,7 +198,9 @@ def test_dry_run_prompt_contains_expected_sections(workspace_with_input):
     content = results[0].output_path.read_text(encoding="utf-8")
     assert "Business Analyst" in content
     assert "Vision" in content
-    assert "Artifaktmall" in content
+    assert "Designunderlag" in content
+    assert "Rendermall" in content
+    assert "Outputregler" in content
 
 
 # ---------------------------------------------------------------------------
@@ -224,7 +226,7 @@ def test_ux_dry_run_prompt_contains_ux_context(tmp_path):
         FlowStep(
             step_id="ux-journeys",
             agent_id="ux",
-            sop_filename="06_user_journeys.md",
+            sop_filename="07_user_journeys.md",
             artifact_name="User journeys",
             output_filename="user_journeys.md",
             input_filenames=["vision_och_malbild.md", "overgripande_behov.md"],

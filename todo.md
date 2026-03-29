@@ -14,3 +14,7 @@
 [ ] Komplettera texter i Articacter Descriptions
 [ ] Länka till roller och artifakter
 [ ] Skapa ett
+
+[ ] Gränssnitt för att titta på dokumentation med mera.
+[ ] Välja model(er) och förstå kostnader, qoutas etc....
+[ ] Fungerande flöde för Akritektur

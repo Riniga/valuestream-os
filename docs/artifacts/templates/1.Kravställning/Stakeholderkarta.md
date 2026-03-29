@@ -6,31 +6,25 @@
 | Artifakttyp | Krav |
 | Ägare | Business Analyst |
 | Version | 1.0 |
-| Datum | YYYY-MM-DD |
-| Status | Utkast / Pågående / Klar |
+| Datum | |
+| Status | |
 
 ---
 
 ## 1. Översikt
-Beskriv syftet med stakeholderkartan och koppling till övriga artefakter.
-
-- Referens till Vision & Målbild:
-- Referens till Scope & Avgränsningar:
-- Kort sammanfattning:
+| Fält | Innehåll |
+|------|----------|
+| Syfte | |
+| Referenser | |
+| Sammanfattning | |
 
 ---
 
 ## 2. Identifierade intressenter
-Lista alla relevanta intressenter.
-
 | Intressent | Typ | Roll | Påverkan (H/M/L) | Intresse (H/M/L) |
 |------------|-----|------|------------------|------------------|
 | | | | | |
 | | | | | |
-
-**Typ kan vara:**
-- Intern (verksamhet, IT)
-- Extern (kund, partner, myndighet)
 
 ---
 
@@ -50,8 +44,6 @@ quadrantChart
 ---
 
 ## 4. Behov & förväntningar
-Beskriv vad respektive intressent förväntar sig.
-
 | Intressent | Behov | Förväntningar | Risk vid ej uppfyllt |
 |------------|-------|----------------|----------------------|
 | | | | |
@@ -60,8 +52,6 @@ Beskriv vad respektive intressent förväntar sig.
 ---
 
 ## 5. Engagemangsstrategi
-Hur varje intressent ska hanteras.
-
 | Intressent | Strategi | Kommunikationssätt | Frekvens |
 |------------|----------|--------------------|----------|
 | | | | |
@@ -70,8 +60,6 @@ Hur varje intressent ska hanteras.
 ---
 
 ## 6. Kritiska intressenter
-Identifiera de viktigaste intressenterna.
-
 | Intressent | Varför kritisk | Åtgärd |
 |------------|----------------|--------|
 | | | |
@@ -80,8 +68,6 @@ Identifiera de viktigaste intressenterna.
 ---
 
 ## 7. Antaganden
-Antaganden kopplade till intressenter.
-
 - 
 - 
 

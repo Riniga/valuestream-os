@@ -6,23 +6,21 @@
 | Artifakttyp | Planering |
 | Ägare | Business Analyst |
 | Version | 1.0 |
-| Datum | YYYY-MM-DD |
-| Status | Utkast / Pågående / Klar |
+| Datum | |
+| Status | |
 
 ---
 
 ## 1. Översikt
-Beskriv syftet med backloggen och koppling till övriga artefakter.
-
-- Referens till Story Map:
-- Referens till Epics & Capabilities:
-- Kort sammanfattning:
+| Fält | Innehåll |
+|------|----------|
+| Syfte | |
+| Referenser | |
+| Sammanfattning | |
 
 ---
 
 ## 2. Backlog (översikt)
-Prioriterad lista över epics, capabilities och user stories.
-
 | ID | Typ (Capability/Epic/Story) | Namn | Beskrivning | Prioritet | Status |
 |----|-----------------------------|------|-------------|-----------|--------|
 | | | | | | |
@@ -31,8 +29,6 @@ Prioriterad lista över epics, capabilities och user stories.
 ---
 
 ## 3. Prioritering
-Detaljerad prioritering baserat på värde och behov.
-
 | ID | Affärsvärde | Användarnytta | Riskreduktion | Beroenden | Total prioritet |
 |----|-------------|---------------|----------------|-----------|-----------------|
 | | | | | | |
@@ -41,8 +37,6 @@ Detaljerad prioritering baserat på värde och behov.
 ---
 
 ## 4. MVP (Minimum Viable Product)
-Vilka delar ingår i första leverans.
-
 | ID | Namn | Motivering |
 |----|------|------------|
 | | | |
@@ -51,18 +45,14 @@ Vilka delar ingår i första leverans.
 ---
 
 ## 5. Nästa leveranser
-Planerade efterföljande prioriteringar.
-
 | Release | Innehåll | Mål |
 |---------|----------|-----|
-| v2 | | |
-| v3 | | |
+| | | |
+| | | |
 
 ---
 
 ## 6. Beroenden
-Identifiera beroenden i backloggen.
-
 | ID | Beroende till | Beskrivning |
 |----|----------------|-------------|
 | | | |
@@ -71,19 +61,10 @@ Identifiera beroenden i backloggen.
 ---
 
 ## 7. Status & mognad
-Beskriv hur redo backlog items är.
-
 | ID | Status | Definition |
 |----|--------|------------|
 | | | |
 | | | |
-
-**Exempel på status:**
-- Identifierad
-- Analyserad
-- Redo för utveckling
-- Pågående
-- Klar
 
 ---
 
