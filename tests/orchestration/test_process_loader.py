@@ -95,3 +95,8 @@ def test_process_loader_enables_raci_workflow_for_all_steps_with_raci_participan
         step for step in flow.steps if step.output_filename == "vision_och_malbild.md"
     )
     assert vision_step.use_raci_workflow is True
+
+
+def test_process_loader_requires_approver_for_raci_workflow_flag():
+    assert ProcessFlowLoader._should_use_raci_workflow(["verksamhetsexperter"], None, ["utvecklare"]) is False
+    assert ProcessFlowLoader._should_use_raci_workflow([], "produktagare", []) is True

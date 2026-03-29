@@ -15,7 +15,9 @@ import pytest
 from src.capabilities.run_workspace import RunWorkspace
 from src.framework.models import (
     AgentDefinition,
+    ApprovalDecision,
     ArtifactStatus,
+    ConsultationResponse,
     FlowStep,
     RunStatus,
     StepStatus,
@@ -395,3 +397,98 @@ def test_default_process_marks_multiple_artifacts_for_raci_workflow(workspace_wi
     assert len(raci_steps) >= 10
     assert any(step.output_filename == "vision_och_malbild.md" for step in raci_steps)
     assert any(step.output_filename == "prioriterad_backlog.md" for step in raci_steps)
+
+
+def test_expert_context_is_filtered_to_same_artifact(workspace_with_backlog_input):
+    orch = Orchestrator(
+        workspace=workspace_with_backlog_input,
+        repo_root=REPO_ROOT,
+        flow_steps=_make_raci_flow(),
+        agent_definitions=_make_agents(),
+    )
+    step = _make_raci_flow()[0]
+
+    orch._approval_store.append(
+        ApprovalDecision(
+            step_id="same-artifact",
+            artifact_name="Prioriterad backlog",
+            artifact_filename="prioriterad_backlog.md",
+            approver_agent_id="produktagare",
+            decision="approved_with_notes",
+            summary="Behov av förtydligad MVP.",
+        )
+    )
+    orch._approval_store.append(
+        ApprovalDecision(
+            step_id="other-artifact",
+            artifact_name="Vision & målbild",
+            artifact_filename="vision_och_malbild.md",
+            approver_agent_id="produktagare",
+            decision="approved",
+            summary="Annan artefakt ska inte läcka in.",
+        )
+    )
+    orch._consultation_store.append_response(
+        ConsultationResponse(
+            request_id="req-1",
+            step_id="same-artifact",
+            artifact_name="Prioriterad backlog",
+            consultant_agent_id="verksamhetsexperter",
+            response_text="Förtydliga beroenden.",
+            summary="Förtydliga beroenden.",
+        )
+    )
+    orch._consultation_store.append_response(
+        ConsultationResponse(
+            request_id="req-2",
+            step_id="other-artifact",
+            artifact_name="Vision & målbild",
+            consultant_agent_id="verksamhetsexperter",
+            response_text="Annat svar.",
+            summary="Annat svar.",
+        )
+    )
+
+    context = orch._build_expert_context(
+        step=step,
+        consultant_agent_id="verksamhetsexperter",
+        input_content={"vision_och_malbild.md": "Visionstext"},
+    )
+
+    assert "Prioriterad backlog" in context.context_text
+    assert "Förtydliga beroenden." in context.context_text
+    assert "Behov av förtydligad MVP." in context.context_text
+    assert "Annan artefakt ska inte läcka in." not in context.context_text
+    assert "## Uppgift" not in context.context_text
+
+
+def test_approved_with_notes_triggers_post_approval_revision_prompt(workspace_with_backlog_input, monkeypatch):
+    orch = Orchestrator(
+        workspace=workspace_with_backlog_input,
+        repo_root=REPO_ROOT,
+        flow_steps=_make_raci_flow(),
+        agent_definitions=_make_agents(),
+    )
+
+    async def fake_run_approval_phase(*args, **kwargs):
+        return ApprovalDecision(
+            step_id="ba-backlog",
+            artifact_name="Prioriterad backlog",
+            artifact_filename="prioriterad_backlog.md",
+            approver_agent_id="produktagare",
+            decision="approved_with_notes",
+            summary="Godkänd med mindre justeringar.",
+            rationale="Bra riktning men några punkter behöver justeras.",
+            changes_requested=["Förtydliga MVP", "Beskriv beroenden tydligare"],
+        )
+
+    monkeypatch.setattr(orch, "_run_approval_phase", fake_run_approval_phase)
+
+    results = orch.run(dry_run=True)
+
+    assert results[0].status == StepStatus.completed
+    approval_revision_prompt = (
+        workspace_with_backlog_input.output_dir / "prioriterad_backlog_approval_revision_prompt_dry_run.txt"
+    )
+    assert approval_revision_prompt.exists()
+    assert "Approval-kommentarer" in approval_revision_prompt.read_text(encoding="utf-8")

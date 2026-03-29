@@ -8,6 +8,11 @@ Files written:
   runs/<run-id>/run_state.json          — overall run progress
   runs/<run-id>/artifact_state.json     — status of each artifact
   runs/<run-id>/agent_memory_<id>.json  — per-agent working memory
+  runs/<run-id>/consultation_requests.json  — consultation requests per artifact/step
+  runs/<run-id>/consultation_responses.json — consultation responses per artifact/step
+  runs/<run-id>/approval_decisions.json     — approval decisions and requested changes
+  runs/<run-id>/informed_role_briefs.json   — role-specific informing briefs
+  runs/<run-id>/expert_context.json         — run-scoped expert context per agent/artifact
   runs/<run-id>/run_log.json            — chronological event log
 """
 from __future__ import annotations

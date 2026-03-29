@@ -95,10 +95,16 @@ class FrameworkPromptBuilder:
         existing_content: str,
         consultation_feedback: dict[str, str],
         input_content: dict[str, str],
+        approval_feedback: str = "",
     ) -> str:
         feedback_sections = "\n\n---\n\n".join(
             f"### {agent_id}\n\n{content}" for agent_id, content in consultation_feedback.items()
         ) or "_Ingen konsultationsfeedback tillgänglig._"
+        approval_section = (
+            f"## Approval-kommentarer\n{approval_feedback}\n\n"
+            if approval_feedback.strip()
+            else ""
+        )
         return (
             f"Du är en {role_name} som reviderar artifakten `{artifact_name}` efter konsultation.\n\n"
             f"## Din roll\n{role_text}\n\n"
@@ -106,6 +112,7 @@ class FrameworkPromptBuilder:
             f"## Rendermall\n{artifact_template}\n\n"
             f"## Nuvarande version\n{existing_content}\n\n"
             f"## Konsultationsfeedback\n{feedback_sections}\n\n"
+            f"{approval_section}"
             f"## Underlag\n{self._format_inputs(input_content)}\n\n"
             f"## Outputregler\n{self._build_output_rules()}\n\n"
             f"## Uppgift\n"
@@ -153,7 +160,7 @@ class FrameworkPromptBuilder:
             f"Fokusera på vad denna roll behöver känna till inför kommande arbete.\n"
         )
 
-    def build_expert_context_prompt(
+    def build_expert_context_text(
         self,
         artifact_name: str,
         input_content: dict[str, str],
@@ -161,11 +168,12 @@ class FrameworkPromptBuilder:
     ) -> str:
         note_block = "\n\n---\n\n".join(prior_notes) if prior_notes else "_Inga tidigare noter._"
         return (
-            f"Bygg ett kort expertunderlag för artifakten `{artifact_name}`.\n\n"
-            f"## Input från runnen\n{self._format_inputs(input_content)}\n\n"
-            f"## Tidigare noter\n{note_block}\n\n"
-            f"## Uppgift\n"
-            f"Sammanfatta verksamhetskontext, viktiga regler, antaganden och risker som en verksamhetsexpert bör känna till i denna run.\n"
+            f"## Expertkontext för {artifact_name}\n\n"
+            f"### Run-underlag\n{self._format_inputs(input_content)}\n\n"
+            f"### Tidigare noter för samma artifakt\n{note_block}\n\n"
+            f"### Att bära med sig\n"
+            f"- Fokusera på verksamhetskontext, regler, antaganden och risker.\n"
+            f"- Använd endast det som är relevant för aktuell artifakt och denna run.\n"
         )
 
     @staticmethod

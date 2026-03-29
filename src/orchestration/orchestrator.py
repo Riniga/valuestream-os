@@ -364,6 +364,14 @@ class Orchestrator:
         )
 
         self._set_phase(run_state, step, "approval")
+        self._artifact_state_store.record_status(
+            artifact_state,
+            step.output_filename,
+            step.artifact_name,
+            step.step_id,
+            ArtifactStatus.awaiting_approval,
+            latest_phase="awaiting_approval",
+        )
         decision = await self._run_approval_phase(
             step=step,
             dry_run=dry_run,
@@ -384,6 +392,18 @@ class Orchestrator:
         if decision.decision == "rejected":
             raise RuntimeError(
                 f"Artifakten {step.artifact_name} avslogs av {step.approver_agent_id}: {decision.summary or decision.rationale}"
+            )
+
+        if decision.decision == "approved_with_notes" and decision.changes_requested:
+            self._set_phase(run_state, step, "approval_revision")
+            revised_content, revised_path = await self._run_revision_phase(
+                step=step,
+                dry_run=dry_run,
+                input_content=input_content,
+                existing_content=revised_content,
+                consultation_feedback=consultation_feedback,
+                approval_feedback=self._format_approval_feedback(decision),
+                dry_run_suffix="approval_revision",
             )
 
         if not dry_run:
@@ -484,6 +504,8 @@ class Orchestrator:
         input_content: dict[str, str],
         existing_content: str,
         consultation_feedback: dict[str, str],
+        approval_feedback: str = "",
+        dry_run_suffix: str = "revision",
     ) -> tuple[str, Path]:
         loader = self._make_loader(step.agent_id)
         prompt = self._prompt_builder.build_revision_prompt(
@@ -495,13 +517,14 @@ class Orchestrator:
             existing_content=existing_content,
             consultation_feedback=consultation_feedback,
             input_content=input_content,
+            approval_feedback=approval_feedback,
         )
         return await self._run_agent_prompt_async(
             agent_id=step.agent_id,
             prompt=prompt,
             dry_run=dry_run,
             output_filename=step.output_filename,
-            dry_run_suffix="revision",
+            dry_run_suffix=dry_run_suffix,
         )
 
     async def _run_approval_phase(
@@ -621,12 +644,15 @@ class Orchestrator:
             return existing
 
         prior_notes = []
-        for decision in self._approval_store.load():
-            prior_notes.append(f"{decision.artifact_name}: {decision.summary or decision.rationale}")
         for response in self._consultation_store.load_responses():
-            prior_notes.append(f"{response.artifact_name}/{response.consultant_agent_id}: {response.summary}")
+            if response.artifact_name == step.artifact_name:
+                prior_notes.append(f"{response.artifact_name}/{response.consultant_agent_id}: {response.summary}")
 
-        prompt_like_summary = self._prompt_builder.build_expert_context_prompt(
+        for decision in self._approval_store.load():
+            if decision.artifact_name == step.artifact_name:
+                prior_notes.append(f"{decision.artifact_name}: {decision.summary or decision.rationale}")
+
+        context_text = self._prompt_builder.build_expert_context_text(
             artifact_name=step.artifact_name,
             input_content=input_content,
             prior_notes=prior_notes,
@@ -635,7 +661,7 @@ class Orchestrator:
             agent_id=consultant_agent_id,
             run_id=self._workspace.run_id,
             artifact_name=step.artifact_name,
-            context_text=prompt_like_summary,
+            context_text=context_text,
             source_filenames=sorted(input_content.keys()),
         )
         self._expert_context_store.save(context)
@@ -687,14 +713,17 @@ class Orchestrator:
         if text.startswith("```"):
             text = re.sub(r"^```(?:json)?\s*", "", text)
             text = re.sub(r"\s*```$", "", text)
-        match = re.search(r"\{.*\}", text, flags=re.DOTALL)
-        if not match:
-            return None
-        try:
-            data = json.loads(match.group(0))
-        except json.JSONDecodeError:
-            return None
-        return data if isinstance(data, dict) else None
+        decoder = json.JSONDecoder()
+        for index, char in enumerate(text):
+            if char != "{":
+                continue
+            try:
+                data, _ = decoder.raw_decode(text[index:])
+            except json.JSONDecodeError:
+                continue
+            if isinstance(data, dict):
+                return data
+        return None
 
     @staticmethod
     def _approval_status_to_artifact_status(decision: str) -> ArtifactStatus:
@@ -749,6 +778,18 @@ class Orchestrator:
         if not isinstance(value, list):
             return []
         return [item for item in value if isinstance(item, str)]
+
+    @staticmethod
+    def _format_approval_feedback(decision: ApprovalDecision) -> str:
+        lines = [f"Beslut: {decision.decision}"]
+        if decision.summary:
+            lines.append(f"Sammanfattning: {decision.summary}")
+        if decision.rationale:
+            lines.append(f"Motivering: {decision.rationale}")
+        if decision.changes_requested:
+            lines.append("Begärda ändringar:")
+            lines.extend(f"- {item}" for item in decision.changes_requested)
+        return "\n".join(lines)
 
     @staticmethod
     def _build_dry_run_filename(output_filename: str, suffix: str) -> str:
