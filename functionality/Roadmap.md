@@ -14,8 +14,8 @@ Mål: göra nuvarande ramverk robust och användbart.
 
 ## Etapp 2: Agenter för komplett RACI
 
-[ ] Agent skall kunna konsultera C i RACI
-[ ] Agent skall kunna granska och godkänna dokument
+[X] Agent skall kunna konsultera C i RACI
+[X] Agent skall kunna granska och godkänna dokument
 [ ] Samtliga involverade agenter skall hållas informerade och uppdaterade
 [ ] Experter skall tränas upp inom området (inom run)
 

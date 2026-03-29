@@ -675,10 +675,10 @@ class Orchestrator:
             artifact_name=step.artifact_name,
             artifact_filename=step.output_filename,
             approver_agent_id=approver_agent_id,
-            decision=parsed.get("decision", "approved"),
-            summary=parsed.get("summary", ""),
-            rationale=parsed.get("rationale", ""),
-            changes_requested=parsed.get("changes_requested", []),
+            decision=self._as_string(parsed.get("decision"), default="approved"),
+            summary=self._as_string(parsed.get("summary")),
+            rationale=self._as_string(parsed.get("rationale")),
+            changes_requested=self._as_string_list(parsed.get("changes_requested")),
         )
 
     @staticmethod
@@ -733,12 +733,22 @@ class Orchestrator:
 
         updated_content, replacements = re.subn(
             r"(\|\s*Status\s*\|\s*)([^|]*)(\|)",
-            rf"\g<1>{document_status}\g<3>",
+            rf"\g<1>{document_status} \g<3>",
             content,
             count=1,
             flags=re.IGNORECASE,
         )
         return updated_content if replacements else content
+
+    @staticmethod
+    def _as_string(value: object, default: str = "") -> str:
+        return value if isinstance(value, str) else default
+
+    @staticmethod
+    def _as_string_list(value: object) -> list[str]:
+        if not isinstance(value, list):
+            return []
+        return [item for item in value if isinstance(item, str)]
 
     @staticmethod
     def _build_dry_run_filename(output_filename: str, suffix: str) -> str:
