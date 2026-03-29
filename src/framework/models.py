@@ -58,6 +58,7 @@ class FlowStep:
     artifact_name: str     # human-readable artifact name, e.g. "Vision & målbild"
     output_filename: str   # output file name, e.g. "vision_och_malbild.md"
     input_filenames: list[str]  # required input files for this step
+    delprocess_title: str = ""  # subprocess display name, e.g. "Affärsmål och värdebild"
 
 
 @dataclass(frozen=True)
@@ -121,3 +122,4 @@ class StepResult:
     output_path: Path | None = None
     skipped_reason: str | None = None
     error: str | None = None
+    delprocess_title: str = ""

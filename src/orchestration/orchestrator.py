@@ -154,6 +154,7 @@ class Orchestrator:
                 artifact_name=step.artifact_name,
                 status=StepStatus.skipped,
                 skipped_reason=reason,
+                delprocess_title=step.delprocess_title,
             )
 
         try:
@@ -176,6 +177,7 @@ class Orchestrator:
                 artifact_name=step.artifact_name,
                 status=StepStatus.failed,
                 error=error_msg,
+                delprocess_title=step.delprocess_title,
             )
 
         if not dry_run:
@@ -204,6 +206,7 @@ class Orchestrator:
             artifact_name=step.artifact_name,
             status=StepStatus.completed,
             output_path=output_path,
+            delprocess_title=step.delprocess_title,
         )
 
     async def _execute_step_async(self, step: FlowStep, dry_run: bool) -> Path:

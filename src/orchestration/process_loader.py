@@ -46,18 +46,22 @@ class ProcessFlowLoader:
         steps: list[FlowStep] = []
 
         for section in sections:
+
             sop = self._artifact_loader.load_sop(section.sop_filename)
             agent_id = self._resolve_agent_id(sop.content)
             input_filenames = self._resolve_input_filenames(sop.inputs)
             seen_outputs: set[str] = set()
 
             for output_name in sop.outputs:
+
                 template_path = self._artifact_loader.find_template_path(output_name)
+                # print(f"Template path: {template_path}")
                 if template_path is None:
                     continue
                 if template_path.name in seen_outputs:
                     continue
                 seen_outputs.add(template_path.name)
+
                 steps.append(
                     FlowStep(
                         step_id=self._build_step_id(
@@ -70,6 +74,7 @@ class ProcessFlowLoader:
                         artifact_name=output_name,
                         output_filename=template_path.name,
                         input_filenames=input_filenames,
+                        delprocess_title=section.title,
                     )
                 )
 

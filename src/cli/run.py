@@ -99,7 +99,8 @@ def _cmd_flow(repo_root: Path) -> None:
     print()
     for i, step in enumerate(process_flow.steps, 1):
         print()
-        print(f"  Steg {i}: {step.step_id}")
+        title = step.delprocess_title or step.step_id
+        print(f"  Steg {i}: {title}")
         print(f"    Agent      : {step.agent_id}")
         print(f"    SOP        : {step.sop_filename}")
         print(f"    Artefakt   : {step.artifact_name}")
@@ -124,7 +125,8 @@ async def _cmd_run_async(workspace: RunWorkspace, repo_root: Path, dry_run: bool
 
     for i, r in enumerate(results, 1):
         prefix = f"  [{i}/{total}]"
-        name = f"{r.step_id:<20} ({r.artifact_name})"
+        title = r.delprocess_title or r.step_id
+        name = f"{title:<30} ({r.artifact_name})"
         if r.status == StepStatus.completed:
             rel = str(r.output_path.relative_to(repo_root)) if r.output_path else ""
             print(f"{prefix}  {name}  OK  →  {rel}")

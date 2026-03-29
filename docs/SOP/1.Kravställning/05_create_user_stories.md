@@ -24,7 +24,7 @@ Skapa en första strukturerad uppsättning user stories baserat på mål, behov 
 
 ## 4. Output
 
-- User Stories (initiala, ej refinade)
+- User Stories
 
 ---
 
