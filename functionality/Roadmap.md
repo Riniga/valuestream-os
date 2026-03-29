@@ -57,3 +57,7 @@ Mål: göra lösningen mer flexibel och driftsbar.
 ## Etapp 6: Retrospektiv och feedback
 
 [ ]
+
+## Övrigt
+
+[ ] Beroenden av artifakter skall kunna vara frivilligt, alltså inte tvingande för vissa. Om dom finns så används dom annars försöker agenten klara sig utan.

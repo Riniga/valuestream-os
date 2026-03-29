@@ -4,19 +4,19 @@ overview: "Implementera stöd för att välja processsteg vid start och köra `2
 todos:
   - id: cli-process-select
     content: Inför explicit val av processfil i CLI och använd den i `flow` och `run`
-    status: pending
+    status: completed
   - id: role-registry
     content: Identifiera minsta agentuppsättning för första Målarkitektur-spåret och uppdatera agentregister vid behov
-    status: pending
+    status: completed
   - id: process-loader-validation
     content: Verifiera att process_loader och context_loader kan ladda `2. Målarkitektur` utan specialfall; gör endast små blockerande robusthetsfixar
-    status: pending
+    status: completed
   - id: run-metadata
     content: Avgör om run-state behöver utökas med explicit processfil för bättre spårbarhet
-    status: pending
+    status: completed
   - id: tests
     content: Lägg till fokuserade tester för processladdning, RACI-resolve och CLI-val för `2. Målarkitektur`
-    status: pending
+    status: completed
 isProject: false
 ---
 

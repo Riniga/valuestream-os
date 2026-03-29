@@ -2,9 +2,11 @@
 
 Diagrammet bygger på `## 3. Input` och `## 4. Output` i respektive SOP under `docs/SOP/`. Pil **A → B** betyder att artefakt **B** (output) i den aktuella SOP:en listar **A** som input.
 
-**Obs:** I SOP `05_create_user_stories` anges *Affärsmål & värdebild* som input; SOP `02_affarsmal_och_vardebild` har i nuvarande text endast *Vision & målbild* som output. I diagrammet är det modellerat som att *Vision & målbild* täcker det behov som SOP 5 uttrycker (ev. dokumentationsglapp).
+**Obs:** I SOP `05_create_user_stories` anges *Affärsmål & värdebild* som input; SOP `02_affarsmal_och_vardebild` har i nuvarande text endast *Vision & målbild* som output. I diagrammet antas att *Vision & målbild* täcker det behov som SOP 5 uttrycker (ev. dokumentationsglapp).
 
 **Obs:** SOP `10_prioritera_backlog` nämner *Risker* som input utan motsvarande artefakt-output i andra SOP:er — den noden är utelämnad här.
+
+**Domänmodell** och **Begreppsmodell** är **en nod vardera** (samma artefakt förekommer i både Kravställning och Målarkitektur).
 
 ```mermaid
 flowchart TB
@@ -16,8 +18,6 @@ flowchart TB
     SK["Stakeholderkarta"]
     BK["Beroendekarta"]
     US["User Stories"]
-    DMk["Domänmodell"]
-    BMk["Begreppsmodell"]
     UJ["User journeys"]
     SM["Story map"]
     FB["Funktionella block"]
@@ -27,13 +27,14 @@ flowchart TB
     UM["Uppföljningsmodell"]
   end
 
+  DM["Domänmodell"]
+  BM["Begreppsmodell"]
+
   subgraph mal ["2. Målarkitektur"]
     direction TB
     AM["Arkitekturmål"]
     AP["Arkitekturprinciper"]
     SL["Systemlandskap"]
-    DMm["Domänmodell"]
-    BMm["Begreppsmodell"]
     IA["Integrationsarkitektur"]
     IP["Integrationspunkter"]
     API["API-specifikation"]
@@ -47,7 +48,6 @@ flowchart TB
   end
 
   OB --> VM
-  OB --> VM
   VM --> SA
   OB --> SA
   VM --> EC
@@ -59,19 +59,19 @@ flowchart TB
   VM --> US
   SA --> US
   SK --> US
-  SK --> DMk
-  US --> DMk
-  SK --> BMk
-  US --> BMk
-  DMk --> UJ
+  SK --> DM
+  US --> DM
+  SK --> BM
+  US --> BM
+  DM --> UJ
   US --> UJ
   SK --> UJ
   UJ --> OB
   UJ --> SM
-  DMk --> SM
+  DM --> SM
   OB --> SM
   UJ --> FB
-  DMk --> FB
+  DM --> FB
   OB --> FB
   SM --> EC
   US --> EC
@@ -93,22 +93,22 @@ flowchart TB
   AM --> SL
   OB --> SL
   BK --> SL
-  SL --> DMm
-  BMm --> DMm
-  SL --> BMm
-  BMm --> BMm
+  SL --> DM
+  BM --> DM
+  SL --> BM
+  BM --> BM
   SL --> IA
-  DMm --> IA
+  DM --> IA
   DD --> IA
   SL --> IP
-  DMm --> IP
+  DM --> IP
   DD --> IP
   IA --> API
-  DMm --> API
-  DMm --> DD
+  DM --> API
+  DM --> DD
   API --> DD
   IA --> DD
-  DMm --> DA
+  DM --> DA
   API --> DA
   IA --> DA
   DD --> SAK
@@ -132,22 +132,22 @@ flowchart TB
   NFR --> MZ
   IP --> MZ
   SL --> MZ
-  DMm --> MZ
+  DM --> MZ
   IA --> MZ
   API --> MZ
   DD --> MZ
   SAK --> MZ
   TP --> MZ
-
-  DMk -.->|"samma begrepp som"| DMm
-  BMk -.->|"samma begrepp som"| BMm
 ```
 
-## Cykler och “rundgång” (kärnan i problemet)
+## Cykler och “rundgång”
 
-Följande beroenden bildar **cykler** i målarkitekturdelen (siffror = SOP-ordning i `2. Målarkitektur`):
+| Cykel | Förklaring |
+|--------|------------|
+| **BM → BM** | SOP *Definiera domänmodell* (målarkitektur) listar *Begreppsmodell* som både input och output — iteration av samma artefakt. |
+| **DM ↔ BM ↔ SL** | *Systemlandskap* matar *Domänmodell* / *Begreppsmodell*; *Domänmodell* och *Begreppsmodell* återkopplar till varandra via samma SOP. |
+| **DM → IA → API → DD → IA** (och varianter) | SOP *Integrationsarkitektur* kräver *Datamodell*; *API-struktur* kräver *Integrationsarkitektur* och *Domänmodell*; *Datamodell* kräver *API-specifikation* och *Integrationsarkitektur*. Det är en **större cykel** mellan integration, API och data som kräver grov→fin iteration eller parallellt arbete med temporära antaganden. |
+| **AP → … → AP** | *Arkitekturprinciper* produceras tidigt (SOP 1) och **fastställs** igen i SOP 8 med input från bl.a. *Säkerhetsarkitektur*, *Datamodell*, *API-specifikation* — samma artefaktnamn, två “varv”. |
+| **MZ → (indirekt)** | *Målarkitektur* (slutartefakt) sammanför alla tidigare; *Teknisk plattform* (SOP 10) producerar också *Målarkitektur* som output — överlapp/två varv mot samma slutdokument. |
 
-1. **Domänmodell ↔ Begreppsmodell** — SOP 3 tar in *Begreppsmodell* och producerar både *Domänmodell* och uppdaterad *Begreppsmodell* (`Begreppsmodell` → `Begreppsmodell`).
-2. **Domänmodell ↔ Integrationsarkitektur ↔ Datamodell ↔ API-specifikation** — SOP 4 kräver *Datamodell* innan *Integrationsarkitektur*; SOP 5–6 kräver *Integrationsarkitektur* / *API-specifikation* för *Datamodell*. Det är en **klassisk parallell design-loop** som i praktiken kräver iteration, grov nivå först eller avgränsad “spike”.
-
-Pilarna ovan är **alla** explicita input→output från SOP:erna; cyklerna syns som att samma noder nås via olika vägar fram och tillbaka.
+Kravställning har dessutom **UJ → OB** (*User journeys* producerar *Övergripande behov*), vilket skapar återkoppling till tidigare kravsteg (behov fördjupas efter journeys).

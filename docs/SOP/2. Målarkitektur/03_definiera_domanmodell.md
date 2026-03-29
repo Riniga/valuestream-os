@@ -12,7 +12,6 @@ Definiera en strukturerad domänmodell som beskriver centrala affärsobjekt, rel
 ## 3. Input
 
 - Systemlandskap
-- Begreppsmodell
 
 ## 4. Output
 
