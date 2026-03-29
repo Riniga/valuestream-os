@@ -2,6 +2,8 @@
 
 ## Målarkitektur
 
+Beskrivningar: `docs/artifacts/descriptions/2. Målarkitektur/` · Mallar: `docs/artifacts/templates/2. Målarkitektur/`
+
 ```mermaid
 flowchart LR
     subgraph "Artifact"

@@ -1,37 +1,30 @@
 # Artefakt: Arkitekturprinciper
 
 ## Typ
-Krav
+
+Arkitektur
 
 ## Beskrivning
-Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
 
-## Ägare
-Produktägare
+Samlar vägledande principer som styr design och utveckling (t.ex. löskoppling, API-först, säkerhet som standard).
+Syftet är att säkerställa konsekventa beslut över tid och göra målarkitekturen operativ för team och leveranser.
 
-## Skapas i
-SOP 1: Vision & målbild
+## Ägare (Skapar och uppdaterar)
 
-## Används i
-SOP 2: Affärsmål och värdebild
+Lösningsarkitekt
+
+## Skapas i delprocess
+
+docs\SOP\2. Målarkitektur\01_Etablera arkitekturmål.md
+
+## Uppdateras i delprocess
+
+docs\SOP\2. Målarkitektur\08_Fastställ arkitekturprinciper.md
 
 ## Format
-Textdokument (Markdown)
+
+Markdown (.md)
 
 ## Lagring
-Versionshanterad artefakt
 
----
-
-## Mall
-
-# Produktvision
-
-## Problem
-...
-
-## Målbild
-...
-
-## Effekt
-...
+GitHub (dokument-repository)

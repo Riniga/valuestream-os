@@ -1,37 +1,26 @@
 # Artefakt: Integrationsarkitektur
 
 ## Typ
-Krav
+
+Arkitektur
 
 ## Beskrivning
-Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
 
-## Ägare
-Produktägare
+Beskriver hur lösningen integrerar med omgivande system: mönster för kommunikation, dataflöden, ansvarsfördelning och övergripande integrationsregler.
+Syftet är att ge en stabil ram för API-kontrakt, datamodell och drift utan att låsa implementation i onödan.
 
-## Skapas i
-SOP 1: Vision & målbild
+## Ägare (Skapar och uppdaterar)
 
-## Används i
-SOP 2: Affärsmål och värdebild
+Lösningsarkitekt
+
+## Skapas i delprocess
+
+docs\SOP\2. Målarkitektur\04_Definiera integrationsarkitektu.md
 
 ## Format
-Textdokument (Markdown)
+
+Markdown (.md)
 
 ## Lagring
-Versionshanterad artefakt
 
----
-
-## Mall
-
-# Produktvision
-
-## Problem
-...
-
-## Målbild
-...
-
-## Effekt
-...
+GitHub (dokument-repository)

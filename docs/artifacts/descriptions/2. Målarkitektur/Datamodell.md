@@ -1,37 +1,26 @@
 # Artefakt: Datamodell
 
 ## Typ
-Krav
+
+Arkitektur
 
 ## Beskrivning
-Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
 
-## Ägare
-Produktägare
+Beskriver hur information struktureras på hög nivå: centrala informationsobjekt, relationer, lagrings- och delningsprinciper samt koppling till flöden mellan system.
+Syftet är att ge en gemensam bild av data innan detaljerad implementation och att stödja säkerhets- och integrationsbeslut.
 
-## Skapas i
-SOP 1: Vision & målbild
+## Ägare (Skapar och uppdaterar)
 
-## Används i
-SOP 2: Affärsmål och värdebild
+Dataarkitekt
+
+## Skapas i delprocess
+
+docs\SOP\2. Målarkitektur\06_Definiera datamodell.md
 
 ## Format
-Textdokument (Markdown)
+
+Markdown (.md)
 
 ## Lagring
-Versionshanterad artefakt
 
----
-
-## Mall
-
-# Produktvision
-
-## Problem
-...
-
-## Målbild
-...
-
-## Effekt
-...
+GitHub (dokument-repository)

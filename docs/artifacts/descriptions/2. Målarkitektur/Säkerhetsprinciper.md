@@ -1,37 +1,26 @@
 # Artefakt: Säkerhetsprinciper
 
 ## Typ
-Krav
+
+Arkitektur
 
 ## Beskrivning
-Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
 
-## Ägare
-Produktägare
+Samlar övergripande säkerhetsprinciper och riktlinjer som styr design och drift (t.ex. least privilege, defense in depth, sekretess för persondata).
+Syftet är att ge ett gemensamt beslutsunderlag som är lätt att följa i arkitekturprinciper, NFR och teknisk plattform.
 
-## Skapas i
-SOP 1: Vision & målbild
+## Ägare (Skapar och uppdaterar)
 
-## Används i
-SOP 2: Affärsmål och värdebild
+Lösningsarkitekt
+
+## Skapas i delprocess
+
+docs\SOP\2. Målarkitektur\07_Definiera säkerhetsarkitektur.md
 
 ## Format
-Textdokument (Markdown)
+
+Markdown (.md)
 
 ## Lagring
-Versionshanterad artefakt
 
----
-
-## Mall
-
-# Produktvision
-
-## Problem
-...
-
-## Målbild
-...
-
-## Effekt
-...
+GitHub (dokument-repository)
