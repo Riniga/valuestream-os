@@ -63,29 +63,29 @@ These documents describe:
 
 ---
 
-## Business Analyst Agent
+## Köra orkestreringen
 
-Kör BA-agenten via terminal från repots rot (med `valuestream-os` conda-miljö aktiv):
+Kör via `src.cli.run` från repots rot (med `valuestream-os` conda-miljö aktiv):
 
 ```powershell
-# Visa agentinfo, ansvariga artefakter och stödfiler
-python -m src.cli.ba --run-id demo-001 info
+# Visa det processdrivna flödet (steg, agenter, artefakter)
+python -m src.cli.run --run-id demo-001 flow
 
-# Kör alla artefakter som har tillräcklig input
-python -m src.cli.ba --run-id demo-001 run
+# Lista registrerade agenter
+python -m src.cli.run --run-id demo-001 agents
 
-# Kör hela kedjan utan LLM-anrop och skriv bara prompts
-python -m src.cli.ba --run-id demo-001 run --dry-run
+# Kör hela flödet med LLM-anrop
+python -m src.cli.run --run-id demo-001 run
 
-# Generera eller uppdatera en specifik artefakt
-python -m src.cli.ba --run-id demo-001 update --artifact vision_och_malbild.md
+# Kör utan LLM-anrop — skriver prompts till output/ för inspektion
+python -m src.cli.run --run-id demo-001 run --dry-run
 
-# Testa utan LLM-anrop (inspektera prompten)
-python -m src.cli.ba --run-id demo-001 update --artifact scope_och_avgransningar.md --dry-run
+# Visa körningens status (stegstatus, artefakter)
+python -m src.cli.run --run-id demo-001 status
 ```
 
 Input-filer placeras i `runs/<run-id>/input/`. Output hamnar i `runs/<run-id>/output/`.
-Spårbarhet loggas i `runs/<run-id>/run_log.json`.
+Körlogg och state sparas i `runs/<run-id>/` (aldrig committad).
 
 Körtester (kräver ej LLM):
 ```powershell

@@ -6,24 +6,21 @@
 | Artifakttyp | Krav |
 | Ägare | Business Analyst |
 | Version | 1.0 |
-| Datum | YYYY-MM-DD |
-| Status | Utkast / Pågående / Klar |
+| Datum | |
+| Status | |
 
 ---
 
 ## 1. Översikt
-Beskriv syftet med story map och koppling till övriga artefakter.
-
-- Referens till User Journeys:
-- Referens till Funktionella block:
-- Referens till Epics & Capabilities:
-- Kort sammanfattning:
+| Fält | Innehåll |
+|------|----------|
+| Syfte | |
+| Referenser | |
+| Sammanfattning | |
 
 ---
 
 ## 2. Backbone (Användaraktiviteter)
-Identifiera de övergripande aktiviteterna i användarens flöde.
-
 | Aktivitet | Beskrivning |
 |-----------|-------------|
 | | |
@@ -35,24 +32,11 @@ Identifiera de övergripande aktiviteterna i användarens flöde.
 
 ```mermaid
 flowchart LR
-    A["Aktivitet 1"] --> B["Aktivitet 2"] --> C["Aktivitet 3"]
-
-    subgraph A1["Aktivitet 1"]
-        A1_1["Story 1"]
-        A1_2["Story 2"]
-    end
-
-    subgraph B1["Aktivitet 2"]
-        B1_1["Story 3"]
-        B1_2["Story 4"]
-    end
 ```
 
 ---
 
 ## 4. User Stories
-Bryt ner aktiviteter i user stories.
-
 | Aktivitet | Story | Beskrivning | Prioritet | MVP (Ja/Nej) |
 |-----------|-------|-------------|-----------|---------------|
 | | | | | |
@@ -61,8 +45,6 @@ Bryt ner aktiviteter i user stories.
 ---
 
 ## 5. MVP-definition
-Identifiera vilka stories som ingår i första leverans.
-
 ### MVP scope
 - 
 
@@ -72,19 +54,14 @@ Identifiera vilka stories som ingår i första leverans.
 ---
 
 ## 6. Releaseindelning
-Planera vidare leveranser.
-
 | Release | Innehåll | Mål |
 |---------|----------|-----|
-| MVP | | |
-| v2 | | |
-| v3 | | |
+| | | |
+| | | |
 
 ---
 
 ## 7. Prioriteringsprinciper
-Beskriv hur prioritering sker i story map.
-
 - Affärsvärde
 - Användarnytta
 - Riskreduktion
@@ -93,8 +70,6 @@ Beskriv hur prioritering sker i story map.
 ---
 
 ## 8. Beroenden
-Identifiera beroenden mellan stories eller aktiviteter.
-
 | Story | Beroende till | Beskrivning |
 |-------|----------------|-------------|
 | | | |
@@ -103,8 +78,6 @@ Identifiera beroenden mellan stories eller aktiviteter.
 ---
 
 ## 9. Insikter
-Sammanfatta viktiga lärdomar från story map.
-
 - 
 - 
 

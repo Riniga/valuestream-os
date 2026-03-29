@@ -6,23 +6,21 @@
 | Artifakttyp | Krav |
 | Ägare | Business Analyst |
 | Version | 1.0 |
-| Datum | YYYY-MM-DD |
-| Status | Utkast / Pågående / Klar |
+| Datum | |
+| Status | |
 
 ---
 
 ## 1. Översikt
-Beskriv syftet med denna artefakt och koppling till vision och behov.
-
-- Referens till Vision & Målbild:
-- Referens till Epics & Capabilities:
-- Kort sammanfattning:
+| Fält | Innehåll |
+|------|----------|
+| Syfte | |
+| Referenser | |
+| Sammanfattning | |
 
 ---
 
 ## 2. Scope (Ingår)
-Tydliggör vad som ingår i initiativet.
-
 ### 2.1 Funktionellt scope
 | Område | Beskrivning |
 |--------|-------------|
@@ -46,8 +44,6 @@ Tydliggör vad som ingår i initiativet.
 ---
 
 ## 3. Avgränsningar (Ingår inte)
-Tydliggör vad som uttryckligen inte ingår.
-
 | Område | Beskrivning |
 |--------|-------------|
 | | |
@@ -56,8 +52,6 @@ Tydliggör vad som uttryckligen inte ingår.
 ---
 
 ## 4. Gränssnitt & beroenden
-Beskriv externa beroenden och integrationer.
-
 | Beroende | Typ | Beskrivning |
 |----------|-----|-------------|
 | | | |
@@ -66,16 +60,12 @@ Beskriv externa beroenden och integrationer.
 ---
 
 ## 5. Antaganden
-Viktiga antaganden som påverkar scope.
-
 - 
 - 
 
 ---
 
 ## 6. Constraints (Begränsningar)
-Tekniska, organisatoriska eller legala begränsningar.
-
 | Typ | Beskrivning |
 |-----|-------------|
 | Teknisk | |
@@ -85,8 +75,6 @@ Tekniska, organisatoriska eller legala begränsningar.
 ---
 
 ## 7. Förändringshantering
-Hur scope får ändras.
-
 - Alla förändringar ska:
   - Dokumenteras
   - Bedömas mot målbild och värde

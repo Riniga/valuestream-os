@@ -17,4 +17,5 @@ dependencies:
   # Pip packages
   - pip:
       - openai>=1.0.0
+      - agent-framework
       - pytest>=8.0.0

@@ -6,23 +6,21 @@
 | Artifakttyp | Krav |
 | Ägare | UX |
 | Version | 1.0 |
-| Datum | YYYY-MM-DD |
-| Status | Utkast / Pågående / Klar |
+| Datum | |
+| Status | |
 
 ---
 
 ## 1. Översikt
-Beskriv syftet med user journeys och koppling till övriga artefakter.
-
-- Referens till Stakeholderkarta:
-- Referens till Epics & Capabilities:
-- Kort sammanfattning:
+| Fält | Innehåll |
+|------|----------|
+| Syfte | |
+| Referenser | |
+| Sammanfattning | |
 
 ---
 
 ## 2. Identifierade användartyper
-Beskriv vilka användare som omfattas.
-
 | Användartyp | Beskrivning | Mål |
 |-------------|-------------|-----|
 | | | |
@@ -34,22 +32,19 @@ Beskriv vilka användare som omfattas.
 
 ```mermaid
 flowchart LR
-    A["Start"] --> B["Steg 1"]
-    B --> C["Steg 2"]
-    C --> D["Mål"]
 ```
 
 ---
 
 ## 4. Detaljerade user journeys
 
-### Journey: [Namn]
+### Journey
 
-**Användartyp:**
+**Användartyp:** 
 
-**Scenario:**
+**Scenario:** 
 
-**Mål:**
+**Mål:** 
 
 #### Flöde
 | Steg | Handling | Touchpoint | System | Upplevelse |
@@ -69,16 +64,12 @@ flowchart LR
 ---
 
 ## 5. Viktiga insikter
-Sammanfatta centrala lärdomar från journeys.
-
 - 
 - 
 
 ---
 
 ## 6. UX-principer (utifrån journeys)
-Härled designprinciper baserat på insikter.
-
 - Enkelhet
 - Tydlighet
 - Effektivitet

@@ -6,24 +6,21 @@
 | Artifakttyp | Krav |
 | Ägare | Business Analyst |
 | Version | 1.0 |
-| Datum | YYYY-MM-DD |
-| Status | Utkast / Pågående / Klar |
+| Datum | |
+| Status | |
 
 ---
 
 ## 1. Översikt
-Beskriv syftet med denna artefakt och koppling till övriga artefakter.
-
-- Referens till Vision & Målbild:
-- Referens till Stakeholderkarta:
-- Referens till User Journeys:
-- Kort sammanfattning:
+| Fält | Innehåll |
+|------|----------|
+| Syfte | |
+| Referenser | |
+| Sammanfattning | |
 
 ---
 
 ## 2. Identifierade behov
-Lista övergripande behov utan lösningsdetaljer.
-
 | ID | Behov | Beskrivning | Källa (stakeholder/journey) | Prioritet (H/M/L) |
 |----|-------|-------------|-----------------------------|-------------------|
 | | | | | |
@@ -32,8 +29,6 @@ Lista övergripande behov utan lösningsdetaljer.
 ---
 
 ## 3. Problem som adresseras
-Beskriv de problem som ligger bakom behoven.
-
 | Problem | Påverkan | Berörda |
 |---------|----------|---------|
 | | | |
@@ -42,8 +37,6 @@ Beskriv de problem som ligger bakom behoven.
 ---
 
 ## 4. Mål kopplat till behov
-Koppla behov till önskade effekter.
-
 | Behov | Mål | Mätetal (KPI) |
 |-------|-----|---------------|
 | | | |
@@ -52,8 +45,6 @@ Koppla behov till önskade effekter.
 ---
 
 ## 5. Kategorisering av behov
-Gruppera behov för bättre struktur.
-
 | Kategori | Beskrivning | Behov |
 |----------|-------------|-------|
 | Verksamhet | | |
@@ -63,8 +54,6 @@ Gruppera behov för bättre struktur.
 ---
 
 ## 6. Prioriteringsgrund
-Beskriv hur behov ska prioriteras.
-
 - Affärsvärde
 - Användarnytta
 - Riskreduktion
@@ -73,8 +62,6 @@ Beskriv hur behov ska prioriteras.
 ---
 
 ## 7. Avgränsningar
-Vad ingår / ingår inte i dessa behov.
-
 ### Ingår
 - 
 

@@ -6,22 +6,21 @@
 | Artifakttyp | Krav |
 | Ägare | Business Analyst |
 | Version | 1.0 |
-| Datum | YYYY-MM-DD |
-| Status | Utkast / Pågående / Klar |
+| Datum | |
+| Status | |
 
 ---
 
 ## 1. Översikt
-Beskriv syftet med denna artefakt och hur den kopplar till vision och målbild.
-
-- Referens till Vision & Målbild:
-- Kort sammanfattning av behovsbild:
+| Fält | Innehåll |
+|------|----------|
+| Syfte | |
+| Referenser | |
+| Sammanfattning | |
 
 ---
 
 ## 2. Capabilities (Förmågor)
-Identifiera vilka övergripande förmågor lösningen ska stödja.
-
 | Capability | Beskrivning | Affärsvärde | Prioritet (H/M/L) |
 |------------|-------------|-------------|-------------------|
 | | | | |
@@ -30,8 +29,6 @@ Identifiera vilka övergripande förmågor lösningen ska stödja.
 ---
 
 ## 3. Epics
-Bryt ner capabilities i epics (större funktionella områden).
-
 | Epic | Kopplad Capability | Beskrivning | Affärsvärde | Prioritet |
 |------|--------------------|-------------|-------------|-----------|
 | | | | | |
@@ -40,11 +37,6 @@ Bryt ner capabilities i epics (större funktionella områden).
 ---
 
 ## 4. Struktur & nedbrytning
-Beskriv hur epics kan brytas ner vidare.
-
-- Exempel på nedbrytning:
-  Epic → Features → User Stories
-
 - Principer:
   - Varje epic ska leverera tydligt värde
   - Ska vara möjlig att dela upp i levererbara delar
@@ -53,8 +45,6 @@ Beskriv hur epics kan brytas ner vidare.
 ---
 
 ## 5. Prioriteringsprinciper
-Beskriv hur prioritering ska göras.
-
 - Affärsvärde
 - Riskreduktion
 - Tekniska beroenden
@@ -63,8 +53,6 @@ Beskriv hur prioritering ska göras.
 ---
 
 ## 6. Beroenden
-Identifiera beroenden mellan epics eller capabilities.
-
 | Källa | Beroende till | Typ | Beskrivning |
 |------|----------------|-----|-------------|
 | | | | |
@@ -73,8 +61,6 @@ Identifiera beroenden mellan epics eller capabilities.
 ---
 
 ## 7. Avgränsningar
-Vad ingår / ingår inte i denna struktur.
-
 ### Ingår
 - 
 
@@ -94,8 +80,6 @@ Denna artefakt används som input till:
 ---
 
 ## 9. Spårbarhet
-Säkerställ koppling mellan nivåer.
-
 | Vision/Mål | Capability | Epic |
 |------------|------------|------|
 | | | |

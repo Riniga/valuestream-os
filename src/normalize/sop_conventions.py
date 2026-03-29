@@ -1,5 +1,15 @@
 #!/usr/bin/env python3
+"""
+Developer maintenance script — SOP convention discovery.
 
+Scans docs/SOP/ and reports which SOPs follow the expected structure
+(sections, RACI, inputs/outputs). Run manually during framework maintenance,
+not as part of the agent orchestration pipeline.
+
+Output is written to docs/SOP/sop-conventions-discovery.md and a CSV file.
+Running this script intentionally mutates docs/ — it is a documentation
+maintenance tool, not a production execution step.
+"""
 import csv
 import re
 from pathlib import Path
