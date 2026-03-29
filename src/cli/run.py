@@ -18,7 +18,7 @@ from dotenv import load_dotenv
 
 from src.capabilities.run_workspace import RunWorkspace
 from src.framework.context_loader import AgentContextLoader
-from src.framework.models import StepStatus
+from src.framework.models import StepResult, StepStatus
 from src.framework.stores import ArtifactStateStore, RunStateStore
 from src.orchestration.agent_registry import AGENT_DEFINITIONS
 from src.orchestration.orchestrator import Orchestrator
@@ -115,25 +115,34 @@ def _cmd_flow(repo_root: Path) -> None:
 
 async def _cmd_run_async(workspace: RunWorkspace, repo_root: Path, dry_run: bool) -> None:
     process_flow = ProcessFlowLoader(repo_root).load(DEFAULT_PROCESS_FILE)
+    total = len(process_flow.steps)
     mode = " (dry-run)" if dry_run else ""
-    print(f"\nKör flöde: {process_flow.flow_id}{mode}")
+    print(f"\nKör flöde: {process_flow.flow_id}{mode}  ({total} steg)")
     print("─" * _W)
 
     orchestrator = Orchestrator(workspace=workspace, repo_root=repo_root, process_flow=process_flow)
-    results = await orchestrator.run_async(dry_run=dry_run)
-    total = len(results)
 
-    for i, r in enumerate(results, 1):
-        prefix = f"  [{i}/{total}]"
-        title = r.delprocess_title or r.step_id
-        name = f"{title:<30} ({r.artifact_name})"
+    # Use __anext__() so we can print "pågår..." before awaiting each step.
+    # run_stream_async yields results in the same order as process_flow.steps.
+    results: list[StepResult] = []
+    stream = orchestrator.run_stream_async(dry_run=dry_run)
+    for i, step in enumerate(process_flow.steps, 1):
+        title = step.delprocess_title or step.step_id
+        name = f"{title:<30} ({step.artifact_name})"
+        print(f"  [{i}/{total}]  {name}  pågår...", flush=True)
+        try:
+            r = await stream.__anext__()
+        except StopAsyncIteration:
+            break
+        results.append(r)
         if r.status == StepStatus.completed:
             rel = str(r.output_path.relative_to(repo_root)) if r.output_path else ""
-            print(f"{prefix}  {name}  OK  →  {rel}")
+            print(f"           {'':30}  OK  →  {rel}")
         elif r.status == StepStatus.skipped:
-            print(f"{prefix}  {name}  HOPPAS ÖVER  —  {r.skipped_reason}")
+            print(f"           {'':30}  HOPPAS ÖVER  —  {r.skipped_reason}")
         else:
-            print(f"{prefix}  {name}  FEL  —  {r.error}")
+            print(f"           {'':30}  FEL  —  {r.error}")
+            break
 
     ok = sum(1 for r in results if r.status == StepStatus.completed)
     skipped = sum(1 for r in results if r.status == StepStatus.skipped)

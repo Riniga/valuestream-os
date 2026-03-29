@@ -95,7 +95,15 @@ class Orchestrator:
         return asyncio.run(self.run_async(dry_run=dry_run))
 
     async def run_async(self, dry_run: bool = False) -> list[StepResult]:
-        """Execute all flow steps and return one StepResult per step."""
+        """Execute all flow steps and return all StepResults when done."""
+        return [r async for r in self.run_stream_async(dry_run=dry_run)]
+
+    async def run_stream_async(self, dry_run: bool = False):
+        """
+        Execute all flow steps and yield each StepResult as soon as it completes.
+
+        Allows the caller to print progress in real time via `async for`.
+        """
         run_state = self._run_state_store.initialize(
             run_id=self._workspace.run_id,
             flow_id=self._process_flow.flow_id,
@@ -106,10 +114,9 @@ class Orchestrator:
         )
         self._log.append({"event": "run_started", "run_id": self._workspace.run_id, "dry_run": dry_run})
 
-        results: list[StepResult] = []
         for step in self._steps:
             result = await self._run_step_async(step, run_state, artifact_state, dry_run=dry_run)
-            results.append(result)
+            yield result
             if result.status == StepStatus.failed:
                 run_state.status = RunStatus.failed
                 self._run_state_store.save(run_state)
@@ -121,7 +128,6 @@ class Orchestrator:
         run_state.current_step_id = None
         self._run_state_store.save(run_state)
         self._log.append({"event": "run_finished", "status": run_state.status.value})
-        return results
 
     # ------------------------------------------------------------------
     # Private: step execution
