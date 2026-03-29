@@ -12,6 +12,13 @@ Mål: göra nuvarande ramverk robust och användbart.
 [X] Stabil och repeterbar körning av Kravställning
 [X] Tydlig CLI och körstatus
 
+## Etapp 2: Agenter för komplett RACI
+
+[ ] Agent skall kunna konsultera C i RACI
+[ ] Agent skall kunna granska och godkänna dokument
+[ ] Samtliga involverade agenter skall hållas informerade och uppdaterade
+[ ] Experter skall tränas upp inom området (inom run)
+
 ## Etapp 2: Nästa processsteg
 
 Mål: visa att ramverket generaliserar.

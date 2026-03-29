@@ -66,3 +66,16 @@ def test_process_loader_deduplicates_repeated_outputs_in_same_sop():
         "scope_och_avgransningar.md",
         "epics_och_capabilities.md",
     ]
+
+
+def test_process_loader_builds_raci_metadata_for_prioriterad_backlog():
+    flow = ProcessFlowLoader(REPO_ROOT, AGENT_DEFINITIONS).load(DEFAULT_PROCESS_FILE)
+    backlog_step = next(
+        step for step in flow.steps if step.output_filename == "prioriterad_backlog.md"
+    )
+
+    assert backlog_step.agent_id == "business-analyst"
+    assert backlog_step.consult_agent_ids == ["verksamhetsexperter"]
+    assert backlog_step.approver_agent_id == "produktagare"
+    assert backlog_step.informed_agent_ids == ["utvecklare"]
+    assert backlog_step.use_raci_workflow is True
