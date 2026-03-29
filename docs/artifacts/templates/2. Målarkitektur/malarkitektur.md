@@ -1,4 +1,4 @@
-# Målarkitektur (sammanställning)
+# Målarkitektur
 
 ## Metadata
 | Fält | Värde |

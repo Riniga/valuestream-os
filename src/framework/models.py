@@ -105,6 +105,7 @@ class RunState:
     """Tracks the overall state of an orchestrator run."""
     run_id: str
     flow_id: str
+    process_file: str = ""
     status: RunStatus = RunStatus.running
     current_step_id: str | None = None
     current_phase: str | None = None

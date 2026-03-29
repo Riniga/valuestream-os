@@ -72,6 +72,7 @@ class RunStateStore:
         return RunState(
             run_id=data["run_id"],
             flow_id=data["flow_id"],
+            process_file=data.get("process_file", ""),
             status=RunStatus(data["status"]),
             current_step_id=data.get("current_step_id"),
             current_phase=data.get("current_phase"),
@@ -84,6 +85,7 @@ class RunStateStore:
             {
                 "run_id": state.run_id,
                 "flow_id": state.flow_id,
+                "process_file": state.process_file,
                 "status": state.status.value,
                 "current_step_id": state.current_step_id,
                 "current_phase": state.current_phase,
@@ -92,10 +94,11 @@ class RunStateStore:
             },
         )
 
-    def initialize(self, run_id: str, flow_id: str, step_ids: list[str]) -> RunState:
+    def initialize(self, run_id: str, flow_id: str, step_ids: list[str], process_file: str = "") -> RunState:
         state = RunState(
             run_id=run_id,
             flow_id=flow_id,
+            process_file=process_file,
             status=RunStatus.running,
             step_statuses={s: StepStatus.pending.value for s in step_ids},
         )

@@ -43,6 +43,10 @@ Mål: göra lösningen mer flexibel och driftsbar.
 [ ] Stöd för OpenRouter och MiniMax https://openrouter.ai/models?q=minimax
 [ ] Modellval, kostnadsstyrning och fallback-strategier
 
+## Etapp 5: Bygg övergripande behov
+
+[ ] Skapa Övergripande Behov genom att ställa massor av frågor till användaren
+
 ## Etapp 5: Bygga och publicera fungerande kod
 
 [ ] Planering steg 1 och 2

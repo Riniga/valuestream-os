@@ -133,6 +133,7 @@ class Orchestrator:
         run_state = self._run_state_store.initialize(
             run_id=self._workspace.run_id,
             flow_id=self._process_flow.flow_id,
+            process_file=self._process_flow.process_file,
             step_ids=[s.step_id for s in self._steps],
         )
         artifact_state = self._artifact_state_store.initialize(
