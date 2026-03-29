@@ -16,8 +16,6 @@ Supports dry_run=True for testing without LLM calls (writes the prompt instead).
 from __future__ import annotations
 
 import asyncio
-import json
-import re
 import shutil
 from collections.abc import AsyncGenerator
 from pathlib import Path
@@ -26,6 +24,15 @@ from uuid import uuid4
 from src.capabilities.run_workspace import RunWorkspace
 from src.framework.context_loader import AgentContextLoader
 from src.framework.maf_adapter import AgentRunner
+from src.framework.orchestration_support import (
+    build_dry_run_output_filename,
+    default_consultation_questions,
+    format_approval_feedback_for_revision,
+    map_approval_decision_to_artifact_status,
+    parse_approval_decision_from_llm_text,
+    summarize_plain_text,
+    update_status_cell_in_markdown_table,
+)
 from src.framework.models import (
     AgentDefinition,
     ApprovalDecision,
@@ -327,8 +334,8 @@ class Orchestrator:
             artifact_filename=step.output_filename,
             requester_agent_id=step.agent_id,
             consultant_agent_ids=step.consult_agent_ids,
-            questions=self._default_consultation_questions(step.artifact_name),
-            draft_summary=self._summarize_text(draft_content),
+            questions=default_consultation_questions(step.artifact_name),
+            draft_summary=summarize_plain_text(draft_content),
         )
         self._consultation_store.append_request(request)
         consultation_feedback = await self._run_consultation_phase(
@@ -380,7 +387,7 @@ class Orchestrator:
             consultation_feedback=consultation_feedback,
         )
         self._approval_store.append(decision)
-        mapped_status = self._approval_status_to_artifact_status(decision.decision)
+        mapped_status = map_approval_decision_to_artifact_status(decision.decision)
         self._artifact_state_store.record_status(
             artifact_state,
             step.output_filename,
@@ -403,12 +410,12 @@ class Orchestrator:
                 input_content=input_content,
                 existing_content=revised_content,
                 consultation_feedback=consultation_feedback,
-                approval_feedback=self._format_approval_feedback(decision),
+                approval_feedback=format_approval_feedback_for_revision(decision),
                 dry_run_suffix="approval_revision",
             )
 
         if not dry_run:
-            revised_content = self._update_document_status(revised_content, decision.decision)
+            revised_content = update_status_cell_in_markdown_table(revised_content, decision.decision)
             revised_path = self._workspace.write_output(step.output_filename, revised_content)
 
         self._set_phase(run_state, step, "informing")
@@ -492,7 +499,7 @@ class Orchestrator:
                     artifact_name=step.artifact_name,
                     consultant_agent_id=consultant_agent_id,
                     response_text=response_text,
-                    summary=self._summarize_text(response_text),
+                    summary=summarize_plain_text(response_text),
                 )
             )
             responses[consultant_agent_id] = response_text
@@ -551,8 +558,10 @@ class Orchestrator:
             output_filename=f"{Path(step.output_filename).stem}_approval_{approver_agent_id}.json",
             dry_run_suffix="approval",
         )
-        return self._parse_approval_decision(
-            step=step,
+        return parse_approval_decision_from_llm_text(
+            step_id=step.step_id,
+            artifact_name=step.artifact_name,
+            artifact_filename=step.output_filename,
             approver_agent_id=approver_agent_id,
             raw_text=approval_text,
             dry_run=dry_run,
@@ -589,7 +598,7 @@ class Orchestrator:
                     artifact_filename=step.output_filename,
                     role_agent_id=informed_agent_id,
                     brief_text=brief_text,
-                    relevance=self._summarize_text(brief_text),
+                    relevance=summarize_plain_text(brief_text),
                 )
             )
 
@@ -617,7 +626,7 @@ class Orchestrator:
         dry_run_suffix: str,
     ) -> tuple[str, Path]:
         if dry_run:
-            dry_run_filename = self._build_dry_run_filename(output_filename, dry_run_suffix)
+            dry_run_filename = build_dry_run_output_filename(output_filename, dry_run_suffix)
             return prompt, self._workspace.write_output(dry_run_filename, prompt)
 
         loader = self._make_loader(agent_id)
@@ -667,134 +676,3 @@ class Orchestrator:
         )
         self._expert_context_store.save(context)
         return context
-
-    def _parse_approval_decision(
-        self,
-        step: FlowStep,
-        approver_agent_id: str,
-        raw_text: str,
-        dry_run: bool,
-    ) -> ApprovalDecision:
-        parsed = None if dry_run else self._extract_json_object(raw_text)
-        if dry_run:
-            parsed = {
-                "decision": "approved_with_notes",
-                "summary": "Dry-run simulerade ett godkännande med kommentarer.",
-                "rationale": "Ingen LLM kördes; approval-prompt genererades endast för granskning.",
-                "changes_requested": [],
-            }
-        if parsed is None:
-            lowered = raw_text.lower()
-            if "rejected" in lowered:
-                decision = "rejected"
-            elif "approved_with_notes" in lowered:
-                decision = "approved_with_notes"
-            else:
-                decision = "approved"
-            parsed = {
-                "decision": decision,
-                "summary": self._summarize_text(raw_text),
-                "rationale": raw_text.strip(),
-                "changes_requested": [],
-            }
-        return ApprovalDecision(
-            step_id=step.step_id,
-            artifact_name=step.artifact_name,
-            artifact_filename=step.output_filename,
-            approver_agent_id=approver_agent_id,
-            decision=self._as_string(parsed.get("decision"), default="approved"),
-            summary=self._as_string(parsed.get("summary")),
-            rationale=self._as_string(parsed.get("rationale")),
-            changes_requested=self._as_string_list(parsed.get("changes_requested")),
-        )
-
-    @staticmethod
-    def _extract_json_object(raw_text: str) -> dict[str, object] | None:
-        text = raw_text.strip()
-        if text.startswith("```"):
-            text = re.sub(r"^```(?:json)?\s*", "", text)
-            text = re.sub(r"\s*```$", "", text)
-        decoder = json.JSONDecoder()
-        for index, char in enumerate(text):
-            if char != "{":
-                continue
-            try:
-                data, _ = decoder.raw_decode(text[index:])
-            except json.JSONDecodeError:
-                continue
-            if isinstance(data, dict):
-                return data
-        return None
-
-    @staticmethod
-    def _approval_status_to_artifact_status(decision: str) -> ArtifactStatus:
-        mapping = {
-            "approved": ArtifactStatus.approved,
-            "approved_with_notes": ArtifactStatus.approved_with_notes,
-            "rejected": ArtifactStatus.rejected,
-        }
-        return mapping.get(decision, ArtifactStatus.approved)
-
-    @staticmethod
-    def _default_consultation_questions(artifact_name: str) -> list[str]:
-        return [
-            f"Vad i {artifact_name} behöver förtydligas för att fungera i praktiken?",
-            "Vilka risker, beroenden eller oklarheter ser du?",
-            "Vilka justeringar skulle förbättra kvaliteten inför godkännande?",
-        ]
-
-    @staticmethod
-    def _summarize_text(text: str, max_length: int = 180) -> str:
-        compact = re.sub(r"\s+", " ", text).strip()
-        if len(compact) <= max_length:
-            return compact
-        return compact[: max_length - 3] + "..."
-
-    @staticmethod
-    def _update_document_status(content: str, decision: str) -> str:
-        decision_to_document_status = {
-            "approved": "Godkänd",
-            "approved_with_notes": "Godkänd med kommentarer",
-            "rejected": "Avslagen",
-        }
-        document_status = decision_to_document_status.get(decision)
-        if not document_status:
-            return content
-
-        updated_content, replacements = re.subn(
-            r"(\|\s*Status\s*\|\s*)([^|]*)(\|)",
-            rf"\g<1>{document_status} \g<3>",
-            content,
-            count=1,
-            flags=re.IGNORECASE,
-        )
-        return updated_content if replacements else content
-
-    @staticmethod
-    def _as_string(value: object, default: str = "") -> str:
-        return value if isinstance(value, str) else default
-
-    @staticmethod
-    def _as_string_list(value: object) -> list[str]:
-        if not isinstance(value, list):
-            return []
-        return [item for item in value if isinstance(item, str)]
-
-    @staticmethod
-    def _format_approval_feedback(decision: ApprovalDecision) -> str:
-        lines = [f"Beslut: {decision.decision}"]
-        if decision.summary:
-            lines.append(f"Sammanfattning: {decision.summary}")
-        if decision.rationale:
-            lines.append(f"Motivering: {decision.rationale}")
-        if decision.changes_requested:
-            lines.append("Begärda ändringar:")
-            lines.extend(f"- {item}" for item in decision.changes_requested)
-        return "\n".join(lines)
-
-    @staticmethod
-    def _build_dry_run_filename(output_filename: str, suffix: str) -> str:
-        base = Path(output_filename)
-        if suffix == "prompt":
-            return f"{base.stem}_prompt_dry_run.txt"
-        return f"{base.stem}_{suffix}_prompt_dry_run.txt"

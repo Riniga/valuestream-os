@@ -167,9 +167,9 @@ class ProcessFlowLoader:
         approver_agent_id: str | None,
         informed_agent_ids: list[str],
     ) -> bool:
-        return approver_agent_id is not None and bool(
-            consult_agent_ids or approver_agent_id or informed_agent_ids
-        )
+        # RACI extended workflow requires an accountable role; C/I are optional.
+        _ = (consult_agent_ids, informed_agent_ids)
+        return approver_agent_id is not None
 
     @staticmethod
     def _extract_raci_roles(sop_content: str, key: str) -> list[str]:

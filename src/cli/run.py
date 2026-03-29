@@ -19,6 +19,7 @@ from dotenv import load_dotenv
 from src.capabilities.run_workspace import RunWorkspace
 from src.framework.context_loader import AgentContextLoader
 from src.framework.models import StepResult, StepStatus
+from src.framework.repo_layout import find_repository_root
 from src.framework.stores import (
     ApprovalStore,
     ArtifactStateStore,
@@ -29,15 +30,6 @@ from src.framework.stores import (
 from src.orchestration.agent_registry import AGENT_DEFINITIONS
 from src.orchestration.orchestrator import Orchestrator
 from src.orchestration.process_loader import DEFAULT_PROCESS_FILE, ProcessFlowLoader
-
-
-def _find_repo_root() -> Path:
-    candidate = Path(__file__).resolve().parent
-    for _ in range(8):
-        if (candidate / "docs").is_dir():
-            return candidate
-        candidate = candidate.parent
-    return Path.cwd()
 
 
 CONSOLE_WIDTH = 64
@@ -275,7 +267,7 @@ async def _main_async(argv: list[str] | None = None) -> int:
     parser = _build_parser()
     args = parser.parse_args(argv)
 
-    repo_root = _find_repo_root()
+    repo_root = find_repository_root(Path(__file__).resolve().parent)
     load_dotenv(repo_root / ".env")
 
     workspace = RunWorkspace(run_id=args.run_id, repo_root=repo_root)
