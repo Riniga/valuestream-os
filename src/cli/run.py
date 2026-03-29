@@ -34,7 +34,7 @@ def _find_repo_root() -> Path:
     return Path.cwd()
 
 
-_W = 64
+CONSOLE_WIDTH = 64
 
 
 def _build_parser() -> argparse.ArgumentParser:
@@ -62,9 +62,9 @@ def _build_parser() -> argparse.ArgumentParser:
 
 def _cmd_agents(repo_root: Path) -> None:
     print()
-    print("═" * _W)
+    print("═" * CONSOLE_WIDTH)
     print("  Registrerade agenter")
-    print("═" * _W)
+    print("═" * CONSOLE_WIDTH)
     for agent_id, agent_def in AGENT_DEFINITIONS.items():
         loader = AgentContextLoader(
             repo_root=repo_root,
@@ -92,9 +92,9 @@ def _cmd_agents(repo_root: Path) -> None:
 def _cmd_flow(repo_root: Path) -> None:
     process_flow = ProcessFlowLoader(repo_root).load(DEFAULT_PROCESS_FILE)
     print()
-    print("═" * _W)
+    print("═" * CONSOLE_WIDTH)
     print(f"  Flöde: {process_flow.flow_id}")
-    print("═" * _W)
+    print("═" * CONSOLE_WIDTH)
     print(f"  Källa: docs/processes/{process_flow.process_file}")
     print()
     for i, step in enumerate(process_flow.steps, 1):
@@ -118,7 +118,7 @@ async def _cmd_run_async(workspace: RunWorkspace, repo_root: Path, dry_run: bool
     total = len(process_flow.steps)
     mode = " (dry-run)" if dry_run else ""
     print(f"\nKör flöde: {process_flow.flow_id}{mode}  ({total} steg)")
-    print("─" * _W)
+    print("─" * CONSOLE_WIDTH)
 
     orchestrator = Orchestrator(workspace=workspace, repo_root=repo_root, process_flow=process_flow)
 
@@ -148,7 +148,7 @@ async def _cmd_run_async(workspace: RunWorkspace, repo_root: Path, dry_run: bool
     skipped = sum(1 for r in results if r.status == StepStatus.skipped)
     errors = sum(1 for r in results if r.status == StepStatus.failed)
 
-    print("─" * _W)
+    print("─" * CONSOLE_WIDTH)
     parts = [f"{ok} klara"]
     if skipped:
         parts.append(f"{skipped} hoppade över")
@@ -171,9 +171,9 @@ def _cmd_status(workspace: RunWorkspace) -> None:
     artifact_state = artifact_state_store.load()
 
     print()
-    print("═" * _W)
+    print("═" * CONSOLE_WIDTH)
     print(f"  Status: run {workspace.run_id}")
-    print("═" * _W)
+    print("═" * CONSOLE_WIDTH)
 
     if run_state is None:
         print("\n  Ingen körning hittades för detta run-id.")
@@ -235,8 +235,9 @@ async def _main_async(argv: list[str] | None = None) -> int:
         print(f"\nMiljöfel: {exc}", file=sys.stderr)
         return 1
     except Exception as exc:  # noqa: BLE001
-        if type(exc).__name__ in ("RateLimitError", "AuthenticationError"):
-            print(f"\nLLM-fel: {exc}", file=sys.stderr)
+        exc_type = type(exc).__name__
+        if "RateLimit" in exc_type or "Authentication" in exc_type or "APIError" in exc_type:
+            print(f"\nLLM-fel ({exc_type}): {exc}", file=sys.stderr)
             return 1
         raise
 

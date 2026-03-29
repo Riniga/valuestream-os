@@ -1,8 +1,7 @@
 """
 Generalized prompt builder for any agent role.
 
-Produces the same prompt structure used by the Business Analyst agent,
-but parameterised by role name so it works for UX, BA, and future roles.
+Parameterised by role name so it works for Business Analyst, UX, and future roles.
 """
 from __future__ import annotations
 
@@ -19,28 +18,19 @@ class FrameworkPromptBuilder:
         input_content: dict[str, str],
     ) -> str:
         preamble = self._build_context_section(role_name, role_text, sop_text, artifact_description)
+        render_section = self._build_render_section(artifact_template)
         input_section = self._format_inputs(input_content)
         output_rules = self._build_output_rules()
 
-        return f"""{preamble}
-
-## Rendermall — slutlig struktur att producera
-Använd endast denna mall som slutlig struktur för dokumentet.
-Behåll rubrikerna, fyll sektionerna med verkligt innehåll och returnera ett färdigt markdown-dokument.
-Ingen instruktionstext, inga frågor och inga exempelrader får finnas kvar i slutresultatet.
-
-{artifact_template}
-
-## Input — underlag att basera artifakten på
-{input_section}
-
-## Outputregler
-{output_rules}
-
-## Uppgift
-Generera artifakten enligt rendermallen ovan baserat på inputen.
-Returnera bara det färdiga markdown-dokumentet — inget annat.
-"""
+        return (
+            f"{preamble}\n\n"
+            f"{render_section}\n\n"
+            f"## Input — underlag att basera artifakten på\n{input_section}\n\n"
+            f"## Outputregler\n{output_rules}\n\n"
+            f"## Uppgift\n"
+            f"Generera artifakten enligt rendermallen ovan baserat på inputen.\n"
+            f"Returnera bara det färdiga markdown-dokumentet — inget annat.\n"
+        )
 
     def build_update_prompt(
         self,
@@ -53,34 +43,32 @@ Returnera bara det färdiga markdown-dokumentet — inget annat.
         existing_content: str,
     ) -> str:
         preamble = self._build_context_section(role_name, role_text, sop_text, artifact_description)
+        render_section = self._build_render_section(artifact_template)
         input_section = self._format_inputs(input_content)
         output_rules = self._build_output_rules()
 
-        return f"""{preamble}
+        return (
+            f"{preamble}\n\n"
+            f"{render_section}\n\n"
+            f"## Befintlig version — uppdatera denna\n"
+            f"Behåll det som fortfarande stämmer. Uppdatera det som har förändrats baserat på ny input.\n\n"
+            f"{existing_content}\n\n"
+            f"## Input — underlag att basera uppdateringen på\n{input_section}\n\n"
+            f"## Outputregler\n{output_rules}\n\n"
+            f"## Uppgift\n"
+            f"Generera en uppdaterad version av artefakten baserat på befintlig version, inputen och rendermallen.\n"
+            f"Returnera bara det färdiga markdown-dokumentet — inget annat.\n"
+        )
 
-## Rendermall — slutlig struktur att producera
-Använd endast denna mall som slutlig struktur för dokumentet.
-Behåll rubrikerna, fyll sektionerna med verkligt innehåll och returnera ett färdigt markdown-dokument.
-Ingen instruktionstext, inga frågor och inga exempelrader får finnas kvar i slutresultatet.
-
-{artifact_template}
-
-## Befintlig version — uppdatera denna
-Nedan är den befintliga versionen av artefakten.
-Behåll det som fortfarande stämmer. Uppdatera det som har förändrats baserat på ny input.
-
-{existing_content}
-
-## Input — underlag att basera uppdateringen på
-{input_section}
-
-## Outputregler
-{output_rules}
-
-## Uppgift
-Generera en uppdaterad version av artefakten baserat på befintlig version, inputen och rendermallen.
-Returnera bara det färdiga markdown-dokumentet — inget annat.
-"""
+    @staticmethod
+    def _build_render_section(artifact_template: str) -> str:
+        return (
+            "## Rendermall — slutlig struktur att producera\n"
+            "Använd endast denna mall som slutlig struktur för dokumentet.\n"
+            "Behåll rubrikerna, fyll sektionerna med verkligt innehåll och returnera ett färdigt markdown-dokument.\n"
+            "Ingen instruktionstext, inga frågor och inga exempelrader får finnas kvar i slutresultatet.\n\n"
+            f"{artifact_template}"
+        )
 
     @staticmethod
     def _build_context_section(

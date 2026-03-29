@@ -4,9 +4,6 @@ AgentContextLoader — role-agnostic document loader for the framework.
 Loads role descriptions, SOPs, artifact descriptions, and artifact templates
 from docs/ for any agent role. Parameterised by agent_file and raci_role_id
 so that the same code works for Business Analyst, UX, and future roles.
-
-The existing src/agents/business_analyst/context_loader.py is kept intact for
-backward compatibility. New code should use AgentContextLoader directly.
 """
 from __future__ import annotations
 

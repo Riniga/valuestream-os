@@ -144,23 +144,26 @@ class ArtifactStateStore:
     def record_produced(
         self, state: ArtifactState, filename: str, name: str, step_id: str
     ) -> ArtifactState:
-        state.artifacts[filename] = ArtifactRecord(
-            name=name,
-            filename=filename,
-            producer_step_id=step_id,
-            status=ArtifactStatus.produced,
-        )
-        self.save(state)
-        return state
+        return self._record_artifact(state, filename, name, step_id, ArtifactStatus.produced)
 
     def record_failed(
         self, state: ArtifactState, filename: str, name: str, step_id: str
+    ) -> ArtifactState:
+        return self._record_artifact(state, filename, name, step_id, ArtifactStatus.failed)
+
+    def _record_artifact(
+        self,
+        state: ArtifactState,
+        filename: str,
+        name: str,
+        step_id: str,
+        status: ArtifactStatus,
     ) -> ArtifactState:
         state.artifacts[filename] = ArtifactRecord(
             name=name,
             filename=filename,
             producer_step_id=step_id,
-            status=ArtifactStatus.failed,
+            status=status,
         )
         self.save(state)
         return state

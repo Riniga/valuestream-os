@@ -33,7 +33,7 @@ class ProcessFlowLoader:
         self._processes_root = self._docs_root / "processes"
         self._agent_definitions = agent_definitions or AGENT_DEFINITIONS
         sample_agent = next(iter(self._agent_definitions.values()))
-        self._artifact_loader = AgentContextLoader(
+        self._context_loader = AgentContextLoader(
             repo_root=repo_root,
             agent_file=sample_agent.agent_file,
             raci_role_id=sample_agent.raci_role_id,
@@ -47,15 +47,14 @@ class ProcessFlowLoader:
 
         for section in sections:
 
-            sop = self._artifact_loader.load_sop(section.sop_filename)
+            sop = self._context_loader.load_sop(section.sop_filename)
             agent_id = self._resolve_agent_id(sop.content)
             input_filenames = self._resolve_input_filenames(sop.inputs)
             seen_outputs: set[str] = set()
 
             for output_name in sop.outputs:
 
-                template_path = self._artifact_loader.find_template_path(output_name)
-                # print(f"Template path: {template_path}")
+                template_path = self._context_loader.find_template_path(output_name)
                 if template_path is None:
                     continue
                 if template_path.name in seen_outputs:
@@ -124,7 +123,7 @@ class ProcessFlowLoader:
         filenames: list[str] = []
         seen: set[str] = set()
         for input_name in input_names:
-            template_path = self._artifact_loader.find_template_path(input_name)
+            template_path = self._context_loader.find_template_path(input_name)
             if template_path is None:
                 continue
             if template_path.name in seen:

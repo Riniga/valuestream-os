@@ -83,7 +83,7 @@ class AgentRunner:
 # Internal: client factory
 # ---------------------------------------------------------------------------
 
-def _build_client():
+def _build_client() -> object:
     """Build the appropriate MAF client from environment variables."""
     azure_key = os.environ.get("AZURE_OPENAI_API_KEY")
     azure_endpoint = os.environ.get("AZURE_OPENAI_ENDPOINT")
@@ -102,7 +102,7 @@ def _build_client():
     )
 
 
-def _build_azure_client(api_key: str, endpoint: str):
+def _build_azure_client(api_key: str, endpoint: str) -> object:
     from agent_framework.azure._responses_client import AzureOpenAIResponsesClient
 
     parsed = urlparse(endpoint)
@@ -127,7 +127,7 @@ def _build_azure_client(api_key: str, endpoint: str):
     )
 
 
-def _build_openai_client(api_key: str):
+def _build_openai_client(api_key: str) -> object:
     from agent_framework.openai._responses_client import OpenAIResponsesClient
 
     model = os.environ.get("OPENAI_MODEL", "gpt-4o")

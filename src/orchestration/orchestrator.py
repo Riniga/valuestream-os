@@ -17,14 +17,15 @@ from __future__ import annotations
 
 import asyncio
 import shutil
+from collections.abc import AsyncGenerator
 from pathlib import Path
 
 from src.capabilities.run_workspace import RunWorkspace
 from src.framework.context_loader import AgentContextLoader
+from src.framework.maf_adapter import AgentRunner
 from src.framework.models import AgentDefinition, ArtifactState, FlowStep, ProcessFlow, RunState, RunStatus, StepResult, StepStatus
 from src.framework.prompt_builder import FrameworkPromptBuilder
 from src.framework.stores import (
-    AgentMemoryStore,
     ArtifactStateStore,
     RunLog,
     RunStateStore,
@@ -83,7 +84,6 @@ class Orchestrator:
         run_dir = workspace.run_dir
         self._run_state_store = RunStateStore(run_dir)
         self._artifact_state_store = ArtifactStateStore(run_dir)
-        self._memory_store = AgentMemoryStore(run_dir)
         self._log = RunLog(run_dir)
 
     # ------------------------------------------------------------------
@@ -98,7 +98,7 @@ class Orchestrator:
         """Execute all flow steps and return all StepResults when done."""
         return [r async for r in self.run_stream_async(dry_run=dry_run)]
 
-    async def run_stream_async(self, dry_run: bool = False):
+    async def run_stream_async(self, dry_run: bool = False) -> AsyncGenerator[StepResult, None]:
         """
         Execute all flow steps and yield each StepResult as soon as it completes.
 
@@ -268,7 +268,6 @@ class Orchestrator:
                 input_content=input_content,
             )
 
-        from src.framework.maf_adapter import AgentRunner
         runner = AgentRunner(name=agent_def.agent_id, instructions=instructions)
         content = await runner.run_async(prompt)
 
