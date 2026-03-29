@@ -11,7 +11,6 @@ from src.orchestration.agent_registry import AGENT_DEFINITIONS
 
 
 DEFAULT_PROCESS_FILE = "1. Kravställning.md"
-RACI_PHASED_ARTIFACT_FILENAMES = {"prioriterad_backlog.md"}
 
 
 @dataclass(frozen=True)
@@ -81,7 +80,11 @@ class ProcessFlowLoader:
                         consult_agent_ids=consult_agent_ids,
                         approver_agent_id=approver_agent_id,
                         informed_agent_ids=informed_agent_ids,
-                        use_raci_workflow=template_path.name in RACI_PHASED_ARTIFACT_FILENAMES,
+                        use_raci_workflow=self._should_use_raci_workflow(
+                            consult_agent_ids=consult_agent_ids,
+                            approver_agent_id=approver_agent_id,
+                            informed_agent_ids=informed_agent_ids,
+                        ),
                     )
                 )
 
@@ -157,6 +160,14 @@ class ProcessFlowLoader:
             seen.add(template_path.name)
             filenames.append(template_path.name)
         return filenames
+
+    @staticmethod
+    def _should_use_raci_workflow(
+        consult_agent_ids: list[str],
+        approver_agent_id: str | None,
+        informed_agent_ids: list[str],
+    ) -> bool:
+        return bool(consult_agent_ids or approver_agent_id or informed_agent_ids)
 
     @staticmethod
     def _extract_raci_roles(sop_content: str, key: str) -> list[str]:

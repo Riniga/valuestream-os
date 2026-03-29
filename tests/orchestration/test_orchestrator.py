@@ -382,3 +382,16 @@ def test_update_document_status_maps_approval_decisions():
     assert "| Status | Godkänd |" in approved
     assert "| Status | Godkänd med kommentarer |" in approved_with_notes
     assert "| Status | Avslagen |" in rejected
+
+
+def test_default_process_marks_multiple_artifacts_for_raci_workflow(workspace_with_input):
+    orch = Orchestrator(
+        workspace=workspace_with_input,
+        repo_root=REPO_ROOT,
+    )
+
+    raci_steps = [step for step in orch._process_flow.steps if step.use_raci_workflow]
+
+    assert len(raci_steps) >= 10
+    assert any(step.output_filename == "vision_och_malbild.md" for step in raci_steps)
+    assert any(step.output_filename == "prioriterad_backlog.md" for step in raci_steps)

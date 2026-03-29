@@ -79,3 +79,19 @@ def test_process_loader_builds_raci_metadata_for_prioriterad_backlog():
     assert backlog_step.approver_agent_id == "produktagare"
     assert backlog_step.informed_agent_ids == ["utvecklare"]
     assert backlog_step.use_raci_workflow is True
+
+
+def test_process_loader_enables_raci_workflow_for_all_steps_with_raci_participants():
+    flow = ProcessFlowLoader(REPO_ROOT, AGENT_DEFINITIONS).load(DEFAULT_PROCESS_FILE)
+
+    assert flow.steps
+    assert all(
+        step.use_raci_workflow
+        for step in flow.steps
+        if step.consult_agent_ids or step.approver_agent_id or step.informed_agent_ids
+    )
+
+    vision_step = next(
+        step for step in flow.steps if step.output_filename == "vision_och_malbild.md"
+    )
+    assert vision_step.use_raci_workflow is True
