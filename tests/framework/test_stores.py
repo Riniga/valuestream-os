@@ -11,10 +11,23 @@ from pathlib import Path
 
 import pytest
 
-from src.framework.models import ArtifactStatus, RunStatus, StepStatus
+from src.framework.models import (
+    ApprovalDecision,
+    ArtifactStatus,
+    ConsultationRequest,
+    ConsultationResponse,
+    ExpertContext,
+    InformedRoleBrief,
+    RunStatus,
+    StepStatus,
+)
 from src.framework.stores import (
+    ApprovalStore,
     AgentMemoryStore,
     ArtifactStateStore,
+    ConsultationStore,
+    ExpertContextStore,
+    InformedRoleBriefStore,
     RunLog,
     RunStateStore,
 )
@@ -88,12 +101,28 @@ def test_artifact_state_record_failed(run_dir):
 def test_artifact_state_roundtrip(run_dir):
     store = ArtifactStateStore(run_dir)
     state = store.initialize("test-run")
-    store.record_produced(state, "vision.md", "Vision & målbild", "ba-vision")
+    store.record_status(
+        state,
+        "vision.md",
+        "Vision & målbild",
+        "ba-vision",
+        ArtifactStatus.approved_with_notes,
+        consult_agent_ids=["verksamhetsexperter"],
+        approver_agent_id="produktagare",
+        informed_agent_ids=["utvecklare"],
+        latest_phase="approval",
+        approval_decision="approved_with_notes",
+    )
 
     loaded = store.load()
     assert loaded is not None
-    assert loaded.artifacts["vision.md"].status == ArtifactStatus.produced
+    assert loaded.artifacts["vision.md"].status == ArtifactStatus.approved_with_notes
     assert loaded.artifacts["vision.md"].producer_step_id == "ba-vision"
+    assert loaded.artifacts["vision.md"].consult_agent_ids == ["verksamhetsexperter"]
+    assert loaded.artifacts["vision.md"].approver_agent_id == "produktagare"
+    assert loaded.artifacts["vision.md"].informed_agent_ids == ["utvecklare"]
+    assert loaded.artifacts["vision.md"].latest_phase == "approval"
+    assert loaded.artifacts["vision.md"].approval_decision == "approved_with_notes"
 
 
 # ---------------------------------------------------------------------------
@@ -121,6 +150,100 @@ def test_agent_memory_file_created(run_dir):
     mem = store.load("business-analyst", "test-run")
     store.save(mem)
     assert (run_dir / "agent_memory_business-analyst.json").exists()
+
+
+def test_consultation_store_roundtrip(run_dir):
+    store = ConsultationStore(run_dir)
+    store.append_request(
+        ConsultationRequest(
+            request_id="req-1",
+            step_id="backlog",
+            artifact_name="Prioriterad backlog",
+            artifact_filename="prioriterad_backlog.md",
+            requester_agent_id="business-analyst",
+            consultant_agent_ids=["verksamhetsexperter"],
+            questions=["Vad bör justeras?"],
+            draft_summary="Kort sammanfattning",
+        )
+    )
+    store.append_response(
+        ConsultationResponse(
+            request_id="req-1",
+            step_id="backlog",
+            artifact_name="Prioriterad backlog",
+            consultant_agent_id="verksamhetsexperter",
+            response_text="Bra riktning men förtydliga beroenden.",
+            summary="Förtydliga beroenden.",
+        )
+    )
+
+    requests = store.load_requests()
+    responses = store.load_responses_for_step("backlog")
+
+    assert len(requests) == 1
+    assert requests[0].consultant_agent_ids == ["verksamhetsexperter"]
+    assert len(responses) == 1
+    assert responses[0].summary == "Förtydliga beroenden."
+
+
+def test_approval_store_roundtrip(run_dir):
+    store = ApprovalStore(run_dir)
+    store.append(
+        ApprovalDecision(
+            step_id="backlog",
+            artifact_name="Prioriterad backlog",
+            artifact_filename="prioriterad_backlog.md",
+            approver_agent_id="produktagare",
+            decision="approved_with_notes",
+            summary="Godkänd med kommentarer.",
+            rationale="Bra riktning.",
+            changes_requested=["Förtydliga MVP"],
+        )
+    )
+
+    decision = store.load_for_step("backlog")
+
+    assert decision is not None
+    assert decision.decision == "approved_with_notes"
+    assert decision.changes_requested == ["Förtydliga MVP"]
+
+
+def test_informed_role_brief_store_roundtrip(run_dir):
+    store = InformedRoleBriefStore(run_dir)
+    store.append(
+        InformedRoleBrief(
+            step_id="backlog",
+            artifact_name="Prioriterad backlog",
+            artifact_filename="prioriterad_backlog.md",
+            role_agent_id="utvecklare",
+            brief_text="Fokusera på högsta prioritet i första leveransen.",
+            relevance="Påverkar kommande implementation.",
+        )
+    )
+
+    briefs = store.load_for_step("backlog")
+
+    assert len(briefs) == 1
+    assert briefs[0].role_agent_id == "utvecklare"
+
+
+def test_expert_context_store_roundtrip(run_dir):
+    store = ExpertContextStore(run_dir)
+    store.save(
+        ExpertContext(
+            agent_id="verksamhetsexperter",
+            run_id="test-run",
+            artifact_name="Prioriterad backlog",
+            context_text="Viktig verksamhetskontext.",
+            source_filenames=["vision_och_malbild.md"],
+        )
+    )
+
+    context = store.load("verksamhetsexperter", "test-run", "Prioriterad backlog")
+
+    assert context is not None
+    assert context.context_text == "Viktig verksamhetskontext."
+    assert context.source_filenames == ["vision_och_malbild.md"]
 
 
 # ---------------------------------------------------------------------------

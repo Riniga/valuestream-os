@@ -8,6 +8,11 @@ Files written:
   runs/<run-id>/run_state.json          — overall run progress
   runs/<run-id>/artifact_state.json     — status of each artifact
   runs/<run-id>/agent_memory_<id>.json  — per-agent working memory
+  runs/<run-id>/consultation_requests.json  — consultation requests per artifact/step
+  runs/<run-id>/consultation_responses.json — consultation responses per artifact/step
+  runs/<run-id>/approval_decisions.json     — approval decisions and requested changes
+  runs/<run-id>/informed_role_briefs.json   — role-specific informing briefs
+  runs/<run-id>/expert_context.json         — run-scoped expert context per agent/artifact
   runs/<run-id>/run_log.json            — chronological event log
 """
 from __future__ import annotations
@@ -18,10 +23,15 @@ from pathlib import Path
 from typing import Any
 
 from src.framework.models import (
+    ApprovalDecision,
     AgentMemory,
+    ConsultationRequest,
+    ConsultationResponse,
     ArtifactRecord,
     ArtifactState,
     ArtifactStatus,
+    ExpertContext,
+    InformedRoleBrief,
     RunState,
     RunStatus,
     StepStatus,
@@ -64,6 +74,7 @@ class RunStateStore:
             flow_id=data["flow_id"],
             status=RunStatus(data["status"]),
             current_step_id=data.get("current_step_id"),
+            current_phase=data.get("current_phase"),
             step_statuses=data.get("step_statuses", {}),
         )
 
@@ -75,6 +86,7 @@ class RunStateStore:
                 "flow_id": state.flow_id,
                 "status": state.status.value,
                 "current_step_id": state.current_step_id,
+                "current_phase": state.current_phase,
                 "step_statuses": state.step_statuses,
                 "updated_at": _now_iso(),
             },
@@ -113,6 +125,11 @@ class ArtifactStateStore:
                 filename=rec["filename"],
                 producer_step_id=rec["producer_step_id"],
                 status=ArtifactStatus(rec["status"]),
+                consult_agent_ids=rec.get("consult_agent_ids", []),
+                approver_agent_id=rec.get("approver_agent_id"),
+                informed_agent_ids=rec.get("informed_agent_ids", []),
+                latest_phase=rec.get("latest_phase"),
+                approval_decision=rec.get("approval_decision"),
             )
             for filename, rec in data.get("artifacts", {}).items()
         }
@@ -129,6 +146,11 @@ class ArtifactStateStore:
                         "filename": rec.filename,
                         "producer_step_id": rec.producer_step_id,
                         "status": rec.status.value,
+                        "consult_agent_ids": rec.consult_agent_ids,
+                        "approver_agent_id": rec.approver_agent_id,
+                        "informed_agent_ids": rec.informed_agent_ids,
+                        "latest_phase": rec.latest_phase,
+                        "approval_decision": rec.approval_decision,
                     }
                     for filename, rec in state.artifacts.items()
                 },
@@ -144,26 +166,48 @@ class ArtifactStateStore:
     def record_produced(
         self, state: ArtifactState, filename: str, name: str, step_id: str
     ) -> ArtifactState:
-        return self._record_artifact(state, filename, name, step_id, ArtifactStatus.produced)
+        return self.record_status(state, filename, name, step_id, ArtifactStatus.produced)
 
     def record_failed(
         self, state: ArtifactState, filename: str, name: str, step_id: str
     ) -> ArtifactState:
-        return self._record_artifact(state, filename, name, step_id, ArtifactStatus.failed)
+        return self.record_status(state, filename, name, step_id, ArtifactStatus.failed)
 
-    def _record_artifact(
+    def record_status(
         self,
         state: ArtifactState,
         filename: str,
         name: str,
         step_id: str,
         status: ArtifactStatus,
+        *,
+        consult_agent_ids: list[str] | None = None,
+        approver_agent_id: str | None = None,
+        informed_agent_ids: list[str] | None = None,
+        latest_phase: str | None = None,
+        approval_decision: str | None = None,
     ) -> ArtifactState:
+        existing = state.artifacts.get(filename)
         state.artifacts[filename] = ArtifactRecord(
             name=name,
             filename=filename,
             producer_step_id=step_id,
             status=status,
+            consult_agent_ids=consult_agent_ids if consult_agent_ids is not None else (
+                existing.consult_agent_ids if existing else []
+            ),
+            approver_agent_id=approver_agent_id if approver_agent_id is not None else (
+                existing.approver_agent_id if existing else None
+            ),
+            informed_agent_ids=informed_agent_ids if informed_agent_ids is not None else (
+                existing.informed_agent_ids if existing else []
+            ),
+            latest_phase=latest_phase if latest_phase is not None else (
+                existing.latest_phase if existing else None
+            ),
+            approval_decision=approval_decision if approval_decision is not None else (
+                existing.approval_decision if existing else None
+            ),
         )
         self.save(state)
         return state
@@ -208,6 +252,225 @@ class AgentMemoryStore:
         memory.entries[key] = value
         self.save(memory)
         return memory
+
+
+# ---------------------------------------------------------------------------
+# ConsultationStore
+# ---------------------------------------------------------------------------
+
+class ConsultationStore:
+    """Persists consultation requests and responses for a run."""
+
+    _REQUESTS_FILENAME = "consultation_requests.json"
+    _RESPONSES_FILENAME = "consultation_responses.json"
+
+    def __init__(self, run_dir: Path) -> None:
+        self._requests_path = run_dir / self._REQUESTS_FILENAME
+        self._responses_path = run_dir / self._RESPONSES_FILENAME
+
+    def append_request(self, request: ConsultationRequest) -> None:
+        items: list[dict[str, Any]] = _read_json(self._requests_path) or []
+        items.append(
+            {
+                "request_id": request.request_id,
+                "step_id": request.step_id,
+                "artifact_name": request.artifact_name,
+                "artifact_filename": request.artifact_filename,
+                "requester_agent_id": request.requester_agent_id,
+                "consultant_agent_ids": request.consultant_agent_ids,
+                "questions": request.questions,
+                "draft_summary": request.draft_summary,
+                "created_at": _now_iso(),
+            }
+        )
+        _write_json(self._requests_path, items)
+
+    def append_response(self, response: ConsultationResponse) -> None:
+        items: list[dict[str, Any]] = _read_json(self._responses_path) or []
+        items.append(
+            {
+                "request_id": response.request_id,
+                "step_id": response.step_id,
+                "artifact_name": response.artifact_name,
+                "consultant_agent_id": response.consultant_agent_id,
+                "response_text": response.response_text,
+                "summary": response.summary,
+                "created_at": _now_iso(),
+            }
+        )
+        _write_json(self._responses_path, items)
+
+    def load_requests(self) -> list[ConsultationRequest]:
+        items = _read_json(self._requests_path) or []
+        return [
+            ConsultationRequest(
+                request_id=item["request_id"],
+                step_id=item["step_id"],
+                artifact_name=item["artifact_name"],
+                artifact_filename=item["artifact_filename"],
+                requester_agent_id=item["requester_agent_id"],
+                consultant_agent_ids=item.get("consultant_agent_ids", []),
+                questions=item.get("questions", []),
+                draft_summary=item.get("draft_summary", ""),
+            )
+            for item in items
+        ]
+
+    def load_responses(self) -> list[ConsultationResponse]:
+        items = _read_json(self._responses_path) or []
+        return [
+            ConsultationResponse(
+                request_id=item["request_id"],
+                step_id=item["step_id"],
+                artifact_name=item["artifact_name"],
+                consultant_agent_id=item["consultant_agent_id"],
+                response_text=item["response_text"],
+                summary=item.get("summary", ""),
+            )
+            for item in items
+        ]
+
+    def load_responses_for_step(self, step_id: str) -> list[ConsultationResponse]:
+        return [item for item in self.load_responses() if item.step_id == step_id]
+
+
+# ---------------------------------------------------------------------------
+# ApprovalStore
+# ---------------------------------------------------------------------------
+
+class ApprovalStore:
+    """Persists approval decisions for a run."""
+
+    _FILENAME = "approval_decisions.json"
+
+    def __init__(self, run_dir: Path) -> None:
+        self._path = run_dir / self._FILENAME
+
+    def append(self, decision: ApprovalDecision) -> None:
+        items: list[dict[str, Any]] = _read_json(self._path) or []
+        items.append(
+            {
+                "step_id": decision.step_id,
+                "artifact_name": decision.artifact_name,
+                "artifact_filename": decision.artifact_filename,
+                "approver_agent_id": decision.approver_agent_id,
+                "decision": decision.decision,
+                "summary": decision.summary,
+                "rationale": decision.rationale,
+                "changes_requested": decision.changes_requested,
+                "created_at": _now_iso(),
+            }
+        )
+        _write_json(self._path, items)
+
+    def load(self) -> list[ApprovalDecision]:
+        items = _read_json(self._path) or []
+        return [
+            ApprovalDecision(
+                step_id=item["step_id"],
+                artifact_name=item["artifact_name"],
+                artifact_filename=item["artifact_filename"],
+                approver_agent_id=item["approver_agent_id"],
+                decision=item["decision"],
+                summary=item.get("summary", ""),
+                rationale=item.get("rationale", ""),
+                changes_requested=item.get("changes_requested", []),
+            )
+            for item in items
+        ]
+
+    def load_for_step(self, step_id: str) -> ApprovalDecision | None:
+        decisions = [item for item in self.load() if item.step_id == step_id]
+        return decisions[-1] if decisions else None
+
+
+# ---------------------------------------------------------------------------
+# InformedRoleBriefStore
+# ---------------------------------------------------------------------------
+
+class InformedRoleBriefStore:
+    """Persists role-specific briefs for informed roles."""
+
+    _FILENAME = "informed_role_briefs.json"
+
+    def __init__(self, run_dir: Path) -> None:
+        self._path = run_dir / self._FILENAME
+
+    def append(self, brief: InformedRoleBrief) -> None:
+        items: list[dict[str, Any]] = _read_json(self._path) or []
+        items.append(
+            {
+                "step_id": brief.step_id,
+                "artifact_name": brief.artifact_name,
+                "artifact_filename": brief.artifact_filename,
+                "role_agent_id": brief.role_agent_id,
+                "brief_text": brief.brief_text,
+                "relevance": brief.relevance,
+                "created_at": _now_iso(),
+            }
+        )
+        _write_json(self._path, items)
+
+    def load(self) -> list[InformedRoleBrief]:
+        items = _read_json(self._path) or []
+        return [
+            InformedRoleBrief(
+                step_id=item["step_id"],
+                artifact_name=item["artifact_name"],
+                artifact_filename=item["artifact_filename"],
+                role_agent_id=item["role_agent_id"],
+                brief_text=item["brief_text"],
+                relevance=item.get("relevance", ""),
+            )
+            for item in items
+        ]
+
+    def load_for_step(self, step_id: str) -> list[InformedRoleBrief]:
+        return [item for item in self.load() if item.step_id == step_id]
+
+
+# ---------------------------------------------------------------------------
+# ExpertContextStore
+# ---------------------------------------------------------------------------
+
+class ExpertContextStore:
+    """Persists run-scoped context for consultation agents."""
+
+    _FILENAME = "expert_context.json"
+
+    def __init__(self, run_dir: Path) -> None:
+        self._path = run_dir / self._FILENAME
+
+    def save(self, context: ExpertContext) -> None:
+        items: dict[str, dict[str, Any]] = _read_json(self._path) or {}
+        key = self._build_key(context.agent_id, context.artifact_name)
+        items[key] = {
+            "agent_id": context.agent_id,
+            "run_id": context.run_id,
+            "artifact_name": context.artifact_name,
+            "context_text": context.context_text,
+            "source_filenames": context.source_filenames,
+            "updated_at": _now_iso(),
+        }
+        _write_json(self._path, items)
+
+    def load(self, agent_id: str, run_id: str, artifact_name: str) -> ExpertContext | None:
+        items: dict[str, dict[str, Any]] = _read_json(self._path) or {}
+        item = items.get(self._build_key(agent_id, artifact_name))
+        if item is None:
+            return None
+        return ExpertContext(
+            agent_id=item["agent_id"],
+            run_id=item.get("run_id", run_id),
+            artifact_name=item["artifact_name"],
+            context_text=item.get("context_text", ""),
+            source_filenames=item.get("source_filenames", []),
+        )
+
+    @staticmethod
+    def _build_key(agent_id: str, artifact_name: str) -> str:
+        safe_artifact = artifact_name.replace("/", "_")
+        return f"{agent_id}::{safe_artifact}"
 
 
 # ---------------------------------------------------------------------------

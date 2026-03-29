@@ -48,7 +48,10 @@ class ProcessFlowLoader:
         for section in sections:
 
             sop = self._context_loader.load_sop(section.sop_filename)
-            agent_id = self._resolve_agent_id(sop.content)
+            agent_id = self._resolve_agent_id(self._extract_raci_roles(sop.content, "R"))
+            consult_agent_ids = self._resolve_agent_ids(self._extract_raci_roles(sop.content, "C"))
+            approver_agent_id = self._resolve_optional_agent_id(self._extract_raci_roles(sop.content, "A"))
+            informed_agent_ids = self._resolve_agent_ids(self._extract_raci_roles(sop.content, "I"))
             input_filenames = self._resolve_input_filenames(sop.inputs)
             seen_outputs: set[str] = set()
 
@@ -74,6 +77,14 @@ class ProcessFlowLoader:
                         output_filename=template_path.name,
                         input_filenames=input_filenames,
                         delprocess_title=section.title,
+                        consult_agent_ids=consult_agent_ids,
+                        approver_agent_id=approver_agent_id,
+                        informed_agent_ids=informed_agent_ids,
+                        use_raci_workflow=self._should_use_raci_workflow(
+                            consult_agent_ids=consult_agent_ids,
+                            approver_agent_id=approver_agent_id,
+                            informed_agent_ids=informed_agent_ids,
+                        ),
                     )
                 )
 
@@ -112,12 +123,30 @@ class ProcessFlowLoader:
             )
         return sections
 
-    def _resolve_agent_id(self, sop_content: str) -> str:
-        responsible_role = self._extract_responsible_role(sop_content)
+    def _resolve_agent_id(self, roles: list[str]) -> str:
+        if not roles:
+            raise ValueError("SOP saknar RACI-rad för ansvarig roll")
+        responsible_role = roles[0]
         for agent_id, agent_def in self._agent_definitions.items():
             if agent_def.raci_role_id.lower() in responsible_role.lower():
                 return agent_id
         raise ValueError(f"Ingen registrerad agent hittades för RACI-roll: {responsible_role}")
+
+    def _resolve_optional_agent_id(self, roles: list[str]) -> str | None:
+        if not roles:
+            return None
+        return self._resolve_agent_id(roles)
+
+    def _resolve_agent_ids(self, roles: list[str]) -> list[str]:
+        resolved: list[str] = []
+        seen: set[str] = set()
+        for role in roles:
+            agent_id = self._resolve_agent_id([role])
+            if agent_id in seen:
+                continue
+            seen.add(agent_id)
+            resolved.append(agent_id)
+        return resolved
 
     def _resolve_input_filenames(self, input_names: list[str]) -> list[str]:
         filenames: list[str] = []
@@ -133,15 +162,26 @@ class ProcessFlowLoader:
         return filenames
 
     @staticmethod
-    def _extract_responsible_role(sop_content: str) -> str:
+    def _should_use_raci_workflow(
+        consult_agent_ids: list[str],
+        approver_agent_id: str | None,
+        informed_agent_ids: list[str],
+    ) -> bool:
+        return approver_agent_id is not None and bool(
+            consult_agent_ids or approver_agent_id or informed_agent_ids
+        )
+
+    @staticmethod
+    def _extract_raci_roles(sop_content: str, key: str) -> list[str]:
         raci_match = re.search(
-            r"^-\s*R\s*:\s*(.+)$",
+            rf"^-\s*{re.escape(key)}\s*:\s*(.+)$",
             sop_content,
             flags=re.MULTILINE,
         )
         if not raci_match:
-            raise ValueError("SOP saknar RACI-rad för ansvarig roll")
-        return raci_match.group(1).strip()
+            return []
+        raw = raci_match.group(1).strip()
+        return [part.strip() for part in raw.split(",") if part.strip()]
 
     @staticmethod
     def _extract_process_title(content: str, fallback: str) -> str:

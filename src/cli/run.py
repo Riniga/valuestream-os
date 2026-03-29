@@ -19,7 +19,13 @@ from dotenv import load_dotenv
 from src.capabilities.run_workspace import RunWorkspace
 from src.framework.context_loader import AgentContextLoader
 from src.framework.models import StepResult, StepStatus
-from src.framework.stores import ArtifactStateStore, RunStateStore
+from src.framework.stores import (
+    ApprovalStore,
+    ArtifactStateStore,
+    ConsultationStore,
+    InformedRoleBriefStore,
+    RunStateStore,
+)
 from src.orchestration.agent_registry import AGENT_DEFINITIONS
 from src.orchestration.orchestrator import Orchestrator
 from src.orchestration.process_loader import DEFAULT_PROCESS_FILE, ProcessFlowLoader
@@ -106,6 +112,14 @@ def _cmd_flow(repo_root: Path) -> None:
         print(f"    Artefakt   : {step.artifact_name}")
         print(f"    Output     : {step.output_filename}")
         print(f"    Input      : {', '.join(step.input_filenames)}")
+        if step.consult_agent_ids:
+            print(f"    C-roller   : {', '.join(step.consult_agent_ids)}")
+        if step.approver_agent_id:
+            print(f"    A-roll     : {step.approver_agent_id}")
+        if step.informed_agent_ids:
+            print(f"    I-roller   : {', '.join(step.informed_agent_ids)}")
+        if step.use_raci_workflow:
+            print("    RACI-flöde : draft -> consultation -> revision -> approval -> informing")
     print()
 
 
@@ -143,6 +157,15 @@ async def _cmd_run_async(workspace: RunWorkspace, repo_root: Path, dry_run: bool
         else:
             print(f"           {'':30}  FEL  —  {r.error}")
             break
+        if r.approval_decision:
+            print(f"           {'':30}  Approval  : {r.approval_decision}")
+
+    # Advance the async generator one final time so it can persist run_finished
+    # and the terminal status sees the completed run state.
+    try:
+        await stream.__anext__()
+    except StopAsyncIteration:
+        pass
 
     ok = sum(1 for r in results if r.status == StepStatus.completed)
     skipped = sum(1 for r in results if r.status == StepStatus.skipped)
@@ -166,9 +189,15 @@ def _cmd_status(workspace: RunWorkspace) -> None:
     run_dir = workspace.run_dir
     run_state_store = RunStateStore(run_dir)
     artifact_state_store = ArtifactStateStore(run_dir)
+    consultation_store = ConsultationStore(run_dir)
+    approval_store = ApprovalStore(run_dir)
+    brief_store = InformedRoleBriefStore(run_dir)
 
     run_state = run_state_store.load()
     artifact_state = artifact_state_store.load()
+    approval_decisions = approval_store.load()
+    consultation_responses = consultation_store.load_responses()
+    informed_briefs = brief_store.load()
 
     print()
     print("═" * CONSOLE_WIDTH)
@@ -184,6 +213,8 @@ def _cmd_status(workspace: RunWorkspace) -> None:
     print(f"  Status  : {run_state.status.value.upper()}")
     if run_state.current_step_id:
         print(f"  Aktivt  : {run_state.current_step_id}")
+    if run_state.current_phase:
+        print(f"  Fas     : {run_state.current_phase}")
 
     print("\n  Steg:")
     for step_id, status_val in run_state.step_statuses.items():
@@ -193,8 +224,33 @@ def _cmd_status(workspace: RunWorkspace) -> None:
         print("\n  Artefakter:")
         for filename, rec in artifact_state.artifacts.items():
             print(f"    {filename:<35} {rec.status.value}")
+            if rec.consult_agent_ids:
+                print(f"      C: {', '.join(rec.consult_agent_ids)}")
+            if rec.approver_agent_id:
+                print(f"      A: {rec.approver_agent_id}")
+            if rec.informed_agent_ids:
+                print(f"      I: {', '.join(rec.informed_agent_ids)}")
+            if rec.latest_phase:
+                print(f"      Senaste fas: {rec.latest_phase}")
+            if rec.approval_decision:
+                print(f"      Beslut: {rec.approval_decision}")
     else:
         print("\n  Artefakter: inga registrerade ännu")
+
+    if consultation_responses:
+        print("\n  Konsultationssvar:")
+        for response in consultation_responses:
+            print(f"    {response.step_id:<22} {response.consultant_agent_id:<20} {response.summary}")
+
+    if approval_decisions:
+        print("\n  Godkännanden:")
+        for decision in approval_decisions:
+            print(f"    {decision.step_id:<22} {decision.decision:<20} {decision.summary}")
+
+    if informed_briefs:
+        print("\n  Informationsbriefs:")
+        for brief in informed_briefs:
+            print(f"    {brief.step_id:<22} {brief.role_agent_id:<20} {brief.relevance}")
 
     print()
 
