@@ -44,4 +44,24 @@ AGENT_DEFINITIONS: dict[str, AgentDefinition] = {
         agent_file="användarrepresentanter.md",
         raci_role_id="Användarrepresentanter",
     ),
+    "enterprise-arkitekt": AgentDefinition(
+        agent_id="enterprise-arkitekt",
+        agent_file="enterprise-arkitekt.md",
+        raci_role_id="Enterprise Arkitekt",
+    ),
+    "teknisk-lead": AgentDefinition(
+        agent_id="teknisk-lead",
+        agent_file="teknisk-lead.md",
+        raci_role_id="Teknisk Lead",
+    ),
+    "dataarkitekt": AgentDefinition(
+        agent_id="dataarkitekt",
+        agent_file="dataarkitekt.md",
+        raci_role_id="Dataarkitekt",
+    ),
+    "devops": AgentDefinition(
+        agent_id="devops",
+        agent_file="devops.md",
+        raci_role_id="DevOps",
+    ),
 }

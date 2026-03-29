@@ -1,37 +1,26 @@
 # Artefakt: Målarkitektur
 
 ## Typ
-Krav
+
+Arkitektur
 
 ## Beskrivning
-Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
 
-## Ägare
-Produktägare
+Sammanställer systemlandskap, modeller, principer, integrationer, säkerhet, NFR och teknisk plattform till en enhetlig målbild för lösningen.
+Syftet är att ge en kommunicerbar helhet som styr prioriteringar, leverans och vidareutveckling.
 
-## Skapas i
-SOP 1: Vision & målbild
+## Ägare (Skapar och uppdaterar)
 
-## Används i
-SOP 2: Affärsmål och värdebild
+Lösningsarkitekt
+
+## Skapas i delprocess
+
+docs\SOP\2. Målarkitektur\11_ Dokumentera målarkitektur.md
 
 ## Format
-Textdokument (Markdown)
+
+Markdown (.md)
 
 ## Lagring
-Versionshanterad artefakt
 
----
-
-## Mall
-
-# Produktvision
-
-## Problem
-...
-
-## Målbild
-...
-
-## Effekt
-...
+GitHub (dokument-repository)

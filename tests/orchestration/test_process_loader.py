@@ -100,3 +100,69 @@ def test_process_loader_enables_raci_workflow_for_all_steps_with_raci_participan
 def test_process_loader_requires_approver_for_raci_workflow_flag():
     assert ProcessFlowLoader._should_use_raci_workflow(["verksamhetsexperter"], None, ["utvecklare"]) is False
     assert ProcessFlowLoader._should_use_raci_workflow([], "produktagare", []) is True
+
+
+# ---------------------------------------------------------------------------
+# 2. Målarkitektur process
+# ---------------------------------------------------------------------------
+
+MALARKITEKTUR_PROCESS_FILE = "2. Målarkitektur.md"
+
+
+def test_process_loader_reads_malarkitektur_process():
+    flow = ProcessFlowLoader(REPO_ROOT).load(MALARKITEKTUR_PROCESS_FILE)
+
+    assert flow.process_file == MALARKITEKTUR_PROCESS_FILE
+    assert "Målarkitektur" in flow.process_title
+    assert len(flow.steps) >= 11
+
+
+def test_process_loader_malarkitektur_builds_steps_from_sop_outputs():
+    flow = ProcessFlowLoader(REPO_ROOT).load(MALARKITEKTUR_PROCESS_FILE)
+    normalized_outputs = {f.lower() for step in flow.steps for f in [step.output_filename]}
+
+    assert "arkitekturmal.md" in normalized_outputs
+    assert any("systemlandskap" in f for f in normalized_outputs)
+    assert any("domanmodell" in f for f in normalized_outputs)
+    assert "malarkitektur.md" in normalized_outputs
+
+
+def test_process_loader_malarkitektur_maps_agents_from_raci():
+    flow = ProcessFlowLoader(REPO_ROOT, AGENT_DEFINITIONS).load(MALARKITEKTUR_PROCESS_FILE)
+    agent_ids = {step.agent_id for step in flow.steps}
+
+    assert "losningsarkitekt" in agent_ids
+    assert "business-analyst" in agent_ids
+    assert "dataarkitekt" in agent_ids
+
+
+def test_process_loader_malarkitektur_resolves_new_raci_roles():
+    flow = ProcessFlowLoader(REPO_ROOT, AGENT_DEFINITIONS).load(MALARKITEKTUR_PROCESS_FILE)
+
+    all_consult = {aid for step in flow.steps for aid in step.consult_agent_ids}
+    all_approvers = {step.approver_agent_id for step in flow.steps if step.approver_agent_id}
+    all_informed = {aid for step in flow.steps for aid in step.informed_agent_ids}
+
+    assert "enterprise-arkitekt" in all_approvers
+    assert "teknisk-lead" in all_consult
+    assert "devops" in all_consult
+
+
+def test_process_loader_malarkitektur_first_step_is_arkitekturmal():
+    flow = ProcessFlowLoader(REPO_ROOT).load(MALARKITEKTUR_PROCESS_FILE)
+    first_step = flow.steps[0]
+
+    assert first_step.sop_filename == "01_etablera_arkitekturmal.md"
+    assert "arkitekturmal" in first_step.output_filename
+
+
+def test_process_loader_malarkitektur_uses_raci_workflow():
+    flow = ProcessFlowLoader(REPO_ROOT, AGENT_DEFINITIONS).load(MALARKITEKTUR_PROCESS_FILE)
+
+    assert all(step.use_raci_workflow for step in flow.steps)
+
+
+def test_process_loader_malarkitektur_flow_id():
+    flow = ProcessFlowLoader(REPO_ROOT).load(MALARKITEKTUR_PROCESS_FILE)
+
+    assert flow.flow_id == "2-malarkitektur"

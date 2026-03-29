@@ -1,37 +1,26 @@
 # Artefakt: Teknisk plattform
 
 ## Typ
-Krav
+
+Arkitektur
 
 ## Beskrivning
-Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
 
-## Ägare
-Produktägare
+Fastställer teknikval och plattformsramar för utveckling, integration och drift (miljöer, CI/CD-principer, driftmodell) i linje med NFR och integrationsbehov.
+Syftet är att göra leverans och förvaltning förutsägbara utan att föregripa all detaljdesign.
 
-## Skapas i
-SOP 1: Vision & målbild
+## Ägare (Skapar och uppdaterar)
 
-## Används i
-SOP 2: Affärsmål och värdebild
+Lösningsarkitekt
+
+## Skapas i delprocess
+
+docs\SOP\2. Målarkitektur\10_Definiera teknisk plattform.md
 
 ## Format
-Textdokument (Markdown)
+
+Markdown (.md)
 
 ## Lagring
-Versionshanterad artefakt
 
----
-
-## Mall
-
-# Produktvision
-
-## Problem
-...
-
-## Målbild
-...
-
-## Effekt
-...
+GitHub (dokument-repository)

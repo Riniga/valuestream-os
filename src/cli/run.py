@@ -19,6 +19,7 @@ from dotenv import load_dotenv
 from src.capabilities.run_workspace import RunWorkspace
 from src.framework.context_loader import AgentContextLoader
 from src.framework.models import StepResult, StepStatus
+from src.framework.repo_layout import find_repository_root
 from src.framework.stores import (
     ApprovalStore,
     ArtifactStateStore,
@@ -31,15 +32,6 @@ from src.orchestration.orchestrator import Orchestrator
 from src.orchestration.process_loader import DEFAULT_PROCESS_FILE, ProcessFlowLoader
 
 
-def _find_repo_root() -> Path:
-    candidate = Path(__file__).resolve().parent
-    for _ in range(8):
-        if (candidate / "docs").is_dir():
-            return candidate
-        candidate = candidate.parent
-    return Path.cwd()
-
-
 CONSOLE_WIDTH = 64
 
 
@@ -49,6 +41,12 @@ def _build_parser() -> argparse.ArgumentParser:
         description="ValueStream OS — Agent Orchestration CLI",
     )
     parser.add_argument("--run-id", required=True, metavar="RUN_ID")
+    parser.add_argument(
+        "--process",
+        default=DEFAULT_PROCESS_FILE,
+        metavar="PROCESS_FILE",
+        help=f"Process file under docs/processes/ (default: {DEFAULT_PROCESS_FILE})",
+    )
     sub = parser.add_subparsers(dest="command", required=True)
 
     sub.add_parser("agents", help="List registered agents and their SOPs")
@@ -95,8 +93,8 @@ def _cmd_agents(repo_root: Path) -> None:
 # Command: flow
 # ---------------------------------------------------------------------------
 
-def _cmd_flow(repo_root: Path) -> None:
-    process_flow = ProcessFlowLoader(repo_root).load(DEFAULT_PROCESS_FILE)
+def _cmd_flow(repo_root: Path, process_file: str) -> None:
+    process_flow = ProcessFlowLoader(repo_root).load(process_file)
     print()
     print("═" * CONSOLE_WIDTH)
     print(f"  Flöde: {process_flow.flow_id}")
@@ -127,8 +125,8 @@ def _cmd_flow(repo_root: Path) -> None:
 # Command: run
 # ---------------------------------------------------------------------------
 
-async def _cmd_run_async(workspace: RunWorkspace, repo_root: Path, dry_run: bool) -> None:
-    process_flow = ProcessFlowLoader(repo_root).load(DEFAULT_PROCESS_FILE)
+async def _cmd_run_async(workspace: RunWorkspace, repo_root: Path, dry_run: bool, process_file: str) -> None:
+    process_flow = ProcessFlowLoader(repo_root).load(process_file)
     total = len(process_flow.steps)
     mode = " (dry-run)" if dry_run else ""
     print(f"\nKör flöde: {process_flow.flow_id}{mode}  ({total} steg)")
@@ -210,6 +208,8 @@ def _cmd_status(workspace: RunWorkspace) -> None:
         return
 
     print(f"\n  Flöde   : {run_state.flow_id}")
+    if run_state.process_file:
+        print(f"  Process : {run_state.process_file}")
     print(f"  Status  : {run_state.status.value.upper()}")
     if run_state.current_step_id:
         print(f"  Aktivt  : {run_state.current_step_id}")
@@ -267,7 +267,7 @@ async def _main_async(argv: list[str] | None = None) -> int:
     parser = _build_parser()
     args = parser.parse_args(argv)
 
-    repo_root = _find_repo_root()
+    repo_root = find_repository_root(Path(__file__).resolve().parent)
     load_dotenv(repo_root / ".env")
 
     workspace = RunWorkspace(run_id=args.run_id, repo_root=repo_root)
@@ -276,9 +276,9 @@ async def _main_async(argv: list[str] | None = None) -> int:
         if args.command == "agents":
             _cmd_agents(repo_root)
         elif args.command == "flow":
-            _cmd_flow(repo_root)
+            _cmd_flow(repo_root, args.process)
         elif args.command == "run":
-            await _cmd_run_async(workspace, repo_root, dry_run=args.dry_run)
+            await _cmd_run_async(workspace, repo_root, dry_run=args.dry_run, process_file=args.process)
         elif args.command == "status":
             _cmd_status(workspace)
     except FileNotFoundError as exc:

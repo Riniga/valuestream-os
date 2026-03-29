@@ -1,37 +1,26 @@
 # Artefakt: Arkitekturmål
 
 ## Typ
-Krav
+
+Arkitektur
 
 ## Beskrivning
-Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
 
-## Ägare
-Produktägare
+Formulerar de övergripande tekniska målen som styr hur lösningen ska utformas (t.ex. skalbarhet, säkerhet, integration, underhållbarhet).
+Syftet är att koppla krav och verksamhetsbehov till en tydlig teknisk riktning innan detaljerad design och implementation.
 
-## Skapas i
-SOP 1: Vision & målbild
+## Ägare (Skapar och uppdaterar)
 
-## Används i
-SOP 2: Affärsmål och värdebild
+Lösningsarkitekt
+
+## Skapas i delprocess
+
+docs\SOP\2. Målarkitektur\01_Etablera arkitekturmål.md
 
 ## Format
-Textdokument (Markdown)
+
+Markdown (.md)
 
 ## Lagring
-Versionshanterad artefakt
 
----
-
-## Mall
-
-# Produktvision
-
-## Problem
-...
-
-## Målbild
-...
-
-## Effekt
-...
+GitHub (dokument-repository)

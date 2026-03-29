@@ -13,7 +13,6 @@ Definiera hur lösningen integrerar med andra system genom tydliga integrationsm
 
 - Systemlandskap
 - Domänmodell
-- Datamodell
 
 ## 4. Output
 

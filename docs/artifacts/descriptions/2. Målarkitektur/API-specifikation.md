@@ -1,37 +1,26 @@
 # Artefakt: API-specifikation
 
 ## Typ
-Krav
+
+Arkitektur
 
 ## Beskrivning
-Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
 
-## Ägare
-Produktägare
+Beskriver API-struktur och kontrakt på den nivå som krävs för målarkitektur: resurser/endpoints eller motsvarande, dataformat, versions- och felhanteringsprinciper.
+Syftet är att standardisera kommunikation mellan system och koppla den till domänmodell och integrationsarkitektur.
 
-## Skapas i
-SOP 1: Vision & målbild
+## Ägare (Skapar och uppdaterar)
 
-## Används i
-SOP 2: Affärsmål och värdebild
+Lösningsarkitekt
+
+## Skapas i delprocess
+
+docs\SOP\2. Målarkitektur\05_Definiera API‑struktur.md
 
 ## Format
-Textdokument (Markdown)
+
+Markdown (.md)
 
 ## Lagring
-Versionshanterad artefakt
 
----
-
-## Mall
-
-# Produktvision
-
-## Problem
-...
-
-## Målbild
-...
-
-## Effekt
-...
+GitHub (dokument-repository)

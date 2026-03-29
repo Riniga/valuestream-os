@@ -1,37 +1,26 @@
 # Artefakt: Säkerhetsarkitektur
 
 ## Typ
-Krav
+
+Arkitektur
 
 ## Beskrivning
-Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
 
-## Ägare
-Produktägare
+Beskriver hur lösningen skyddar information, identiteter och system: autentisering, auktorisering, skydd av data i vila och transport, samt relevanta kontroller i relation till integrationer och datamodell.
+Syftet är att göra säkerhet synlig och spårbar i målarkitekturen.
 
-## Skapas i
-SOP 1: Vision & målbild
+## Ägare (Skapar och uppdaterar)
 
-## Används i
-SOP 2: Affärsmål och värdebild
+Lösningsarkitekt
+
+## Skapas i delprocess
+
+docs\SOP\2. Målarkitektur\07_Definiera säkerhetsarkitektur.md
 
 ## Format
-Textdokument (Markdown)
+
+Markdown (.md)
 
 ## Lagring
-Versionshanterad artefakt
 
----
-
-## Mall
-
-# Produktvision
-
-## Problem
-...
-
-## Målbild
-...
-
-## Effekt
-...
+GitHub (dokument-repository)

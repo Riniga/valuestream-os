@@ -22,6 +22,7 @@ from src.framework.models import (
     RunStatus,
     StepStatus,
 )
+from src.framework.orchestration_support import update_status_cell_in_markdown_table
 from src.framework.stores import (
     ApprovalStore,
     ArtifactStateStore,
@@ -377,9 +378,9 @@ def test_update_document_status_maps_approval_decisions():
         "| Status | Pågående |\n"
     )
 
-    approved = Orchestrator._update_document_status(content, "approved")
-    approved_with_notes = Orchestrator._update_document_status(content, "approved_with_notes")
-    rejected = Orchestrator._update_document_status(content, "rejected")
+    approved = update_status_cell_in_markdown_table(content, "approved")
+    approved_with_notes = update_status_cell_in_markdown_table(content, "approved_with_notes")
+    rejected = update_status_cell_in_markdown_table(content, "rejected")
 
     assert "| Status | Godkänd |" in approved
     assert "| Status | Godkänd med kommentarer |" in approved_with_notes

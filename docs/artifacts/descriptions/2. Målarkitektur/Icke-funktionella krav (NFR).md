@@ -1,37 +1,26 @@
 # Artefakt: Icke-funktionella krav (NFR)
 
 ## Typ
+
 Krav
 
 ## Beskrivning
-Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
 
-## Ägare
-Produktägare
+Definierar kvalitetskrav utöver funktionalitet: prestanda, tillgänglighet, skalbarhet, observability, driftbarhet m.m.
+Syftet är att göra förväntningar mätbara och koppla dem till arkitekturprinciper, säkerhet och teknisk plattform.
 
-## Skapas i
-SOP 1: Vision & målbild
+## Ägare (Skapar och uppdaterar)
 
-## Används i
-SOP 2: Affärsmål och värdebild
+Lösningsarkitekt
+
+## Skapas i delprocess
+
+docs\SOP\2. Målarkitektur\09_Definiera NFR.md
 
 ## Format
-Textdokument (Markdown)
+
+Markdown (.md)
 
 ## Lagring
-Versionshanterad artefakt
 
----
-
-## Mall
-
-# Produktvision
-
-## Problem
-...
-
-## Målbild
-...
-
-## Effekt
-...
+GitHub (dokument-repository)

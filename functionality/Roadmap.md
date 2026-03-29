@@ -1,7 +1,3 @@
-[ ] Stöd för Open AI
-
-[ ] Fungerande flöde för Roadmap
-
 # Roadmap
 
 ## Etapp 1: Stabilisera kärnan
@@ -19,11 +15,11 @@ Mål: göra nuvarande ramverk robust och användbart.
 [X] Samtliga involverade agenter skall hållas informerade och uppdaterade
 [X] Experter skall tränas upp inom området (inom run)
 
-## Etapp 2: Nästa processsteg
+## Etapp 3: Nästa processsteg
 
 Mål: visa att ramverket generaliserar.
 
-[ ] Fungerande flöde för Målarkitektur
+[X] Fungerande flöde för Målarkitektur
 [ ] Flytta runs folder till eget github repo, göra pull, run push
 [ ] Välja model(er) och förstå kostnader, qoutas etc.... Kunna exekvera gratis
 
@@ -43,6 +39,14 @@ Mål: göra lösningen mer flexibel och driftsbar.
 [ ] Stöd för OpenRouter och MiniMax https://openrouter.ai/models?q=minimax
 [ ] Modellval, kostnadsstyrning och fallback-strategier
 
+## Roadmap
+
+[ ] Fungerande flöde för Roadmap
+
+## Etapp 5: Bygg övergripande behov
+
+[ ] Skapa Övergripande Behov genom att ställa massor av frågor till användaren
+
 ## Etapp 5: Bygga och publicera fungerande kod
 
 [ ] Planering steg 1 och 2
@@ -53,3 +57,7 @@ Mål: göra lösningen mer flexibel och driftsbar.
 ## Etapp 6: Retrospektiv och feedback
 
 [ ]
+
+## Övrigt
+
+[ ] Beroenden av artifakter skall kunna vara frivilligt, alltså inte tvingande för vissa. Om dom finns så används dom annars försöker agenten klara sig utan.

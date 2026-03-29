@@ -1,37 +1,26 @@
 # Artefakt: Dataägarskap
 
 ## Typ
-Krav
+
+Arkitektur
 
 ## Beskrivning
-Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
 
-## Ägare
-Produktägare
+Anger vem som är master för vilken information, hur data får delas och vilka ansvar som gäller vid gränser mellan system.
+Syftet är att minska dubbellagring och oklarheter som riskerar kvalitet, säkerhet och regelefterlevnad.
 
-## Skapas i
-SOP 1: Vision & målbild
+## Ägare (Skapar och uppdaterar)
 
-## Används i
-SOP 2: Affärsmål och värdebild
+Dataarkitekt
+
+## Skapas i delprocess
+
+docs\SOP\2. Målarkitektur\06_Definiera datamodell.md
 
 ## Format
-Textdokument (Markdown)
+
+Markdown (.md)
 
 ## Lagring
-Versionshanterad artefakt
 
----
-
-## Mall
-
-# Produktvision
-
-## Problem
-...
-
-## Målbild
-...
-
-## Effekt
-...
+GitHub (dokument-repository)
