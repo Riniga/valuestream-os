@@ -1,4 +1,4 @@
-# SOP 7: Skapa Story Map
+# SOP 8: Skapa Story Map
 
 ## 1. Syfte
 

@@ -14,7 +14,6 @@ Stakeholderkarta,docs\SOP\1.Kravställning\04_stakeholderkarta.md,output,Busines
 Beroendekarta,docs\SOP\1.Kravställning\04_stakeholderkarta.md,output,Business Analyst
 Stakeholderkarta,docs\SOP\1.Kravställning\05_domananalys.md,input,
 User Stories,docs\SOP\1.Kravställning\05_domananalys.md,input,
-Verksamhetsregler,docs\SOP\1.Kravställning\05_domananalys.md,input,
 Domänmodell,docs\SOP\1.Kravställning\05_domananalys.md,output,Business Analyst
 Begreppsmodell,docs\SOP\1.Kravställning\05_domananalys.md,output,Business Analyst
 Domänmodell,docs\SOP\1.Kravställning\06_user_journeys.md,input,
@@ -50,7 +49,6 @@ Beroendekarta,docs\SOP\2. Målarkitektur\02_Definiera systemlandskap.md,input,
 Systemlandskap,docs\SOP\2. Målarkitektur\02_Definiera systemlandskap.md,output,Lösningsarkitekt
 Systemlandskap,docs\SOP\2. Målarkitektur\03_Definiera domänmodell.md,input,
 Begreppsmodell,docs\SOP\2. Målarkitektur\03_Definiera domänmodell.md,input,
-Verksamhetsregler,docs\SOP\2. Målarkitektur\03_Definiera domänmodell.md,input,
 Domänmodell,docs\SOP\2. Målarkitektur\03_Definiera domänmodell.md,output,Business Analyst
 Begreppsmodell,docs\SOP\2. Målarkitektur\03_Definiera domänmodell.md,output,Business Analyst
 Systemlandskap,docs\SOP\2. Målarkitektur\04_Definiera integrationsarkitektu.md,input,

@@ -1,4 +1,4 @@
-# SOP 8: Gruppera i epics & capabilities
+# SOP 9: Gruppera i epics & capabilities
 
 ## 1. Syfte
 

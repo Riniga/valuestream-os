@@ -125,7 +125,6 @@ Found 45 SOP file(s).
 - User Stories
 - User journeys
 - Verifierad funktionalitet
-- Verksamhetsregler
 - Vision & målbild
 - Övergripande behov
 
@@ -171,7 +170,7 @@ Found 45 SOP file(s).
 
 - title: Domänanalys
 - sections: 1. Syfte, 2. Kontext, 3. Input, 4. Output, 5. RACI, 6. Arbetssteg
-- input: Stakeholderkarta, User Stories, Verksamhetsregler
+- input: Stakeholderkarta, User Stories
 - output: Domänmodell, Begreppsmodell
 - raci: R=1, A=1, C=1, I=1
 
@@ -235,7 +234,7 @@ Found 45 SOP file(s).
 
 - title: Definiera domänmodell
 - sections: 1. Syfte, 2. Kontext, 3. Input, 4. Output, 5. RACI, 6. Arbetssteg
-- input: Systemlandskap, Begreppsmodell, Verksamhetsregler
+- input: Systemlandskap, Begreppsmodell
 - output: Domänmodell, Begreppsmodell
 - raci: R=1, A=1, C=1, I=1
 

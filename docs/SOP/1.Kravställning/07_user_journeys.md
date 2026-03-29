@@ -1,4 +1,4 @@
-# SOP 6: User Journeys / huvudflöden
+# SOP 7: User Journeys / huvudflöden
 
 ## 1. Syfte
 

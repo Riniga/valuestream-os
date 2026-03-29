@@ -13,7 +13,6 @@ Definiera en strukturerad domänmodell som beskriver centrala affärsobjekt, rel
 
 - Systemlandskap
 - Begreppsmodell
-- Verksamhetsregler
 
 ## 4. Output
 
@@ -29,11 +28,10 @@ Definiera en strukturerad domänmodell som beskriver centrala affärsobjekt, rel
 
 ## 6. Arbetssteg
 
-1. Identifiera centrala affärsobjekt baserat på begrepp och verksamhetsregler.
+1. Identifiera centrala affärsobjekt baserat på begrepp.
 2. Definiera relationer mellan objekten.
-3. Dokumentera verksamhetsregler kopplade till objekten.
-4. Strukturera en övergripande domänmodell (hög nivå).
-5. Ta fram och standardisera en begreppslista.
-6. Säkerställ spårbarhet mellan domänmodell och funktionella behov.
-7. Validera domänmodell och begrepp med verksamhetsexperter.
-8. Fastställ domänmodell (beslut av A).
+3. Strukturera en övergripande domänmodell (hög nivå).
+4. Ta fram och standardisera en begreppslista.
+5. Säkerställ spårbarhet mellan domänmodell och funktionella behov.
+6. Validera domänmodell och begrepp med verksamhetsexperter.
+7. Fastställ domänmodell (beslut av A).

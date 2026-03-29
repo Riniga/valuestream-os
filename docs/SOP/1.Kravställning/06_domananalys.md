@@ -1,4 +1,4 @@
-# SOP 5: Domänanalys
+# SOP 6: Domänanalys
 
 ## 1. Syfte
 
@@ -13,7 +13,6 @@ Skapa en gemensam förståelse för verksamhetens centrala begrepp, objekt och r
 
 - Stakeholderkarta
 - User Stories
-- Verksamhetsregler
 
 ## 4. Output
 
@@ -31,9 +30,8 @@ Skapa en gemensam förståelse för verksamhetens centrala begrepp, objekt och r
 
 1. Identifiera centrala affärsobjekt baserat på scope och user stories.
 2. Definiera relationer mellan objekt och centrala verksamhetsprocesser.
-3. Dokumentera relevanta verksamhetsregler kopplade till objekten.
-4. Strukturera en övergripande domänmodell (hög nivå).
-5. Ta fram en begreppslista med tydliga definitioner.
-6. Säkerställ spårbarhet mellan domänmodell och user stories.
-7. Validera domänmodell och begrepp med verksamhetsexperter.
-8. Fastställ domänmodell (beslut av A).
+3. Strukturera en övergripande domänmodell (hög nivå).
+4. Ta fram en begreppslista med tydliga definitioner.
+5. Säkerställ spårbarhet mellan domänmodell och user stories.
+6. Validera domänmodell och begrepp med verksamhetsexperter.
+7. Fastställ domänmodell (beslut av A).
