@@ -15,7 +15,7 @@ Business Analyst
 
 ## Skapas i delprocess
 
-docs\SOP\2. Målarkitektur\03_Definiera domänmodell.md
+[SOP 3: Definiera domänmodell](../../../SOP/2.%20Målarkitektur/03_Definiera%20domänmodell.md)
 
 ## Format
 

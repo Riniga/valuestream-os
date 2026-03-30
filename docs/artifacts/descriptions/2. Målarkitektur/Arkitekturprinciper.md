@@ -15,11 +15,11 @@ Lösningsarkitekt
 
 ## Skapas i delprocess
 
-docs\SOP\2. Målarkitektur\01_Etablera arkitekturmål.md
+[SOP 1: Etablera arkitekturmål](../../../SOP/2.%20Målarkitektur/01_etablera_arkitekturmal.md)
 
 ## Uppdateras i delprocess
 
-docs\SOP\2. Målarkitektur\08_Fastställ arkitekturprinciper.md
+[SOP 8: Fastställ arkitekturprinciper](../../../SOP/2.%20Målarkitektur/08_faststall_arkitekturprinciper.md)
 
 ## Format
 

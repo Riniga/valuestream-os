@@ -15,7 +15,7 @@ Business Analyst
 
 ## Skapas i delprocess
 
-docs\SOP\1.Kravställning\05_domananalys.md
+[SOP 5: Domänanalys](../../../SOP/1.Kravställning/05_domananalys.md)
 
 ## Format
 

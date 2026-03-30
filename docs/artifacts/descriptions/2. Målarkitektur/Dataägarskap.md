@@ -15,7 +15,7 @@ Dataarkitekt
 
 ## Skapas i delprocess
 
-docs\SOP\2. Målarkitektur\06_Definiera datamodell.md
+[SOP 6: Definiera datamodell (hög nivå)](../../../SOP/2.%20Målarkitektur/06_definiera_datamodell.md)
 
 ## Format
 

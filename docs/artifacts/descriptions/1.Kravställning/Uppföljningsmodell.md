@@ -15,7 +15,7 @@ Business Analyst
 
 ## Skapas i delprocess
 
-docs\SOP\1.Kravställning\10_definiera_framgangskriterier.md
+[SOP 10: Definiera framgångskriterier (KPI)](../../../SOP/1.Kravställning/10_definiera_framgangskriterier.md)
 
 ## Format
 

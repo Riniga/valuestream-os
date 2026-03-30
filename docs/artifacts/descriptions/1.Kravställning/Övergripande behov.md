@@ -15,7 +15,7 @@ Business Analyst
 
 ## Skapas i delprocess
 
-docs\SOP\1.Kravställning\06_user_journeys.md
+[SOP 6: User Journeys / huvudflöden](../../../SOP/1.Kravställning/06_user_journeys.md)
 
 ## Format
 

@@ -15,11 +15,11 @@ Business Analyst
 
 ## Skapas i delprocess
 
-docs\SOP\1.Kravställning\05_domananalys.md
+[SOP 5: Domänanalys](../../../SOP/1.Kravställning/05_domananalys.md)
 
 ## Uppdateras i delprocess
 
-docs\SOP\2. Målarkitektur\03_Definiera domänmodell.md
+[SOP 3: Definiera domänmodell](../../../SOP/2.%20Målarkitektur/03_Definiera%20domänmodell.md)
 
 ## Format
 
