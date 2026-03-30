@@ -1,24 +1,8 @@
-# RACI
+# Vem gör vad?
 
-Följande tabeller
+Vilken persona är det som gör vad för specifk artifakter
 
-## Roll i Delprocesser
-
-### Kravställning
-
-### Målarkitektur
-
-### Roadmap
-
-### Leverans
-
-### Repeat
-
-## Roll för artifakter
-
-Vilken roll är det som är ansvarig för att ta fram en specifik artifakt
-
-### Kravställning
+## Kravställning
 
 | Artifact              | R                | A            | C                   | I                |
 | --------------------- | ---------------- | ------------ | ------------------- | ---------------- |
@@ -38,7 +22,7 @@ Vilken roll är det som är ansvarig för att ta fram en specifik artifakt
 | KPI / värdemått       | Business Analyst | Produktägare | Verksamhetsexperter | Projektledare    |
 | Uppföljningsmodell    | Business Analyst | Produktägare | Verksamhetsexperter | Projektledare    |
 
-### Målarkitektur
+## Målarkitektur
 
 | Artifact                     | R                | A                   | C                          | I                |
 | ---------------------------- | ---------------- | ------------------- | -------------------------- | ---------------- |
@@ -58,7 +42,7 @@ Vilken roll är det som är ansvarig för att ta fram en specifik artifakt
 | Teknisk plattform            | Lösningsarkitekt | Enterprise Arkitekt | DevOps                     | Produktägare     |
 | Målarkitektur                | Lösningsarkitekt | Enterprise Arkitekt | DevOps ,Dataarkitekt       | Produktägare     |
 
-### Roadmap
+## Roadmap
 
 | Artifact            | R                | A                | C                | I                   |
 | ------------------- | ---------------- | ---------------- | ---------------- | ------------------- |
@@ -70,7 +54,7 @@ Vilken roll är det som är ansvarig för att ta fram en specifik artifakt
 | Beroendekarta       | Teknisk Lead     | Lösningsarkitekt | Utvecklare       | Produktägare        |
 | Sekvensplan         | Teknisk Lead     | Lösningsarkitekt | Utvecklare       | Produktägare        |
 
-### Leverans
+## Leverans
 
 | Artifact                  | R                 | A            | C                   | I                   |
 | ------------------------- | ----------------- | ------------ | ------------------- | ------------------- |
@@ -95,7 +79,7 @@ Vilken roll är det som är ansvarig för att ta fram en specifik artifakt
 | Förbättringsförslag       | Scrum Master      | Produktägare | Utvecklare          | Business Analyst    |
 | Retrospektiv              | Scrum Master      | Produktägare | Utvecklare          | Business Analyst    |
 
-### Repeat
+## Repeat
 
 | Artifact                   | R                | A                   | C                   | I                |
 | -------------------------- | ---------------- | ------------------- | ------------------- | ---------------- |
