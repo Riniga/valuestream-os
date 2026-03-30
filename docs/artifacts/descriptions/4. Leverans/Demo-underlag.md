@@ -21,17 +21,6 @@ Textdokument (Markdown)
 ## Lagring
 Versionshanterad artefakt
 
----
-
 ## Mall
 
-# Produktvision
-
-## Problem
-...
-
-## Målbild
-...
-
-## Effekt
-...
+[Mall för Demo-underlag](../../templates/4.%20Leverans/Demo-underlag.md)

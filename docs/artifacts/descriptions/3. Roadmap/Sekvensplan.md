@@ -21,17 +21,6 @@ Textdokument (Markdown)
 ## Lagring
 Versionshanterad artefakt
 
----
-
 ## Mall
 
-# Produktvision
-
-## Problem
-...
-
-## Målbild
-...
-
-## Effekt
-...
+[Mall för Sekvensplan](../../templates/3.%20Roadmap/Sekvensplan.md)

@@ -24,3 +24,7 @@ Markdown (.md)
 ## Lagring
 
 GitHub (dokument-repository)
+
+## Mall
+
+[Mall för API-specifikation](../../templates/2.%20Målarkitektur/api_specifikation.md)

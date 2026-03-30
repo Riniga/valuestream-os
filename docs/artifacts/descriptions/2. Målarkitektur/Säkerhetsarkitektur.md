@@ -24,3 +24,7 @@ Markdown (.md)
 ## Lagring
 
 GitHub (dokument-repository)
+
+## Mall
+
+[Mall för Säkerhetsarkitektur](../../templates/2.%20Målarkitektur/sakerhetsarkitektur.md)

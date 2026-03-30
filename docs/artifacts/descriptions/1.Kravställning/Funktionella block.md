@@ -24,3 +24,7 @@ Markdown (.md)
 ## Lagring
 
 GitHub (dokument-repository)
+
+## Mall
+
+[Mall för Funktionella block](../../templates/1.Kravställning/funktionella_block.md)

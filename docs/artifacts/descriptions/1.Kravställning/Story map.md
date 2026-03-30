@@ -24,3 +24,7 @@ Markdown (.md)
 ## Lagring
 
 GitHub (dokument-repository)
+
+## Mall
+
+[Mall för Story map](../../templates/1.Kravställning/story_map.md)

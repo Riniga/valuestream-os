@@ -25,3 +25,7 @@ Markdown (.md)
 ## Lagring
 
 GitHub (dokument-repository)
+
+## Mall
+
+[Mall för Stakeholderkarta](../../templates/1.Kravställning/Stakeholderkarta.md)

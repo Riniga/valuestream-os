@@ -21,17 +21,6 @@ Textdokument (Markdown)
 ## Lagring
 Versionshanterad artefakt
 
----
-
 ## Mall
 
-# Produktvision
-
-## Problem
-...
-
-## Målbild
-...
-
-## Effekt
-...
+[Mall för Tekniska förbättringar](../../templates/5.%20Repeat/Tekniska%20förbättringar.md)

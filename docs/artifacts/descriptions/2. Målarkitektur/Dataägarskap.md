@@ -24,3 +24,7 @@ Markdown (.md)
 ## Lagring
 
 GitHub (dokument-repository)
+
+## Mall
+
+[Mall för Dataägarskap](../../templates/2.%20Målarkitektur/dataagarskap.md)

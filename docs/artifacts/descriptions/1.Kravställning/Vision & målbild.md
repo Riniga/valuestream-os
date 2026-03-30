@@ -25,3 +25,7 @@ docs\SOP\1.Kravställning\01_vision_och_malbild.md
 ## Lagring
 
 GitHub (dokument-repository)
+
+## Mall
+
+[Mall för Vision & målbild](../../templates/1.Kravställning/vision_och_malbild.md)

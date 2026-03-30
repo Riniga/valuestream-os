@@ -24,3 +24,7 @@ Markdown (.md)
 ## Lagring
 
 GitHub (dokument-repository)
+
+## Mall
+
+[Mall för Icke-funktionella krav (NFR)](../../templates/2.%20Målarkitektur/icke_funktionella_krav_nfr.md)

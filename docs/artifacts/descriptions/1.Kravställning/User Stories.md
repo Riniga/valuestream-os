@@ -30,3 +30,7 @@ Markdown (.md)
 ## Lagring
 
 GitHub (dokument-repository)
+
+## Mall
+
+[Mall för User Stories](../../templates/1.Kravställning/user_stories.md)

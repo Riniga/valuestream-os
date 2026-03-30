@@ -24,3 +24,7 @@ Markdown (.md)
 ## Lagring
 
 GitHub (dokument-repository)
+
+## Mall
+
+[Mall för Datamodell](../../templates/2.%20Målarkitektur/Datamodell.md)

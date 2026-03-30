@@ -24,3 +24,7 @@ Markdown (.md)
 ## Lagring
 
 GitHub (dokument-repository)
+
+## Mall
+
+[Mall för Uppföljningsmodell](../../templates/1.Kravställning/uppfoljningsmodell.md)

@@ -24,3 +24,7 @@ Markdown (.md)
 ## Lagring
 
 GitHub (dokument-repository)
+
+## Mall
+
+[Mall för Övergripande behov](../../templates/1.Kravställning/overgripande_behov.md)

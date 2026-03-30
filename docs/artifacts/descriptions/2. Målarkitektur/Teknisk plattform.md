@@ -24,3 +24,7 @@ Markdown (.md)
 ## Lagring
 
 GitHub (dokument-repository)
+
+## Mall
+
+[Mall för Teknisk plattform](../../templates/2.%20Målarkitektur/teknisk_plattform.md)

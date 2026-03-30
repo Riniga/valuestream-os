@@ -25,3 +25,7 @@ Markdown (.md)
 ## Lagring
 
 GitHub (dokument-repository)
+
+## Mall
+
+[Mall för Epics & Capabilities](../../templates/1.Kravställning/epics_och_capabilities.md)

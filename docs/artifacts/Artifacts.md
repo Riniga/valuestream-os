@@ -1,4 +1,4 @@
-# Artefaktberoenden (Kravställning + Målarkitektur)
+# Artefaktberoenden
 
 Skapande av artifakter sker i en bestämd ordning. Beroenden framgår av bilder i diagrammen nedan.
 

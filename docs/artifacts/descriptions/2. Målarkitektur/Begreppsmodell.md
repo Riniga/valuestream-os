@@ -28,3 +28,7 @@ Markdown (.md)
 ## Lagring
 
 GitHub (dokument-repository)
+
+## Mall
+
+[Mall för Begreppsmodell](../../templates/2.%20Målarkitektur/Begreppsmodell.md)

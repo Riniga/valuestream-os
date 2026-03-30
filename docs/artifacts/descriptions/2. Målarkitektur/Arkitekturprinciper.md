@@ -28,3 +28,7 @@ Markdown (.md)
 ## Lagring
 
 GitHub (dokument-repository)
+
+## Mall
+
+[Mall för Arkitekturprinciper](../../templates/2.%20Målarkitektur/Arkitekturprinciper.md)

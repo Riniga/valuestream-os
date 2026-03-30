@@ -24,3 +24,7 @@ Markdown (.md)
 ## Lagring
 
 GitHub (dokument-repository)
+
+## Mall
+
+[Mall för Integrationsarkitektur](../../templates/2.%20Målarkitektur/Integrationsarkitektur.md)

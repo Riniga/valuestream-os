@@ -24,3 +24,7 @@ Markdown (.md)
 ## Lagring
 
 GitHub (dokument-repository)
+
+## Mall
+
+[Mall för Scope & avgränsningar](../../templates/1.Kravställning/scope_och_avgransningar.md)

@@ -24,3 +24,7 @@ Markdown (.md)
 ## Lagring
 
 GitHub (dokument-repository)
+
+## Mall
+
+[Mall för KPI / värdemått](../../templates/1.Kravställning/kpi_vardematt.md)

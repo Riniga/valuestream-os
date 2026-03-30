@@ -24,3 +24,7 @@ Markdown (.md)
 ## Lagring
 
 GitHub (dokument-repository)
+
+## Mall
+
+[Mall för Prioriterad backlog](../../templates/1.Kravställning/prioriterad_backlog.md)

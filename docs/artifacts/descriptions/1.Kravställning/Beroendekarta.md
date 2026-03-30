@@ -25,3 +25,7 @@ Markdown (.md)
 ## Lagring
 
 GitHub (dokument-repository)
+
+## Mall
+
+[Mall för Beroendekarta](../../templates/1.Kravställning/Beroendekarta.md)
