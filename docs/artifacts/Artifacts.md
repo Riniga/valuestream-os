@@ -5,63 +5,75 @@ Skapande av artifakter sker i en bestämd ordning. Beroenden framgår av bilder 
 ## Kravställning
 
 ```mermaid
-flowchart LR
+flowchart
+
+  OB["Övergripande behov"]
   subgraph mal[" "]
-    OB["Övergripande behov"]
+
     VM["Vision & målbild"]
+
     SA["Scope & avgränsningar"]
+    EC["Epics & Capabilities"]
+
     SK["Stakeholderkarta"]
     BK["Beroendekarta"]
     US["User Stories"]
+
+    DM["Domänmodell"]
+    BM["Begreppsmodell"]
+
     UJ["User journeys"]
     SM["Story map"]
     FB["Funktionella block"]
-    EC["Epics & Capabilities"]
+
     PB["Prioriterad backlog"]
     KPI["KPI / värdemått"]
     UM["Uppföljningsmodell"]
-    DM["Domänmodell"]
-    BM["Begreppsmodell"]
+
   end
 
     OB --> VM
-    OB --> SA
-    OB --> EC
 
+%%    OB --> SA
+%%    OB --> EC
     VM --> SA
     VM --> EC
 
     SA --> SK
-    VM --> SK
+%%    VM --> SK
     SA --> BK
-    VM --> BK
-    VM --> US
+%%    VM --> BK
+
+%%    VM --> US
     SA --> US
     SK --> US
-    SK --> DM
+
+%%    SK --> DM
     US --> DM
-    SK --> BM
+%%    SK --> BM
     US --> BM
-    DM --> UJ
+
+%%    DM --> UJ
     US --> UJ
-    SK --> UJ
+%%    SK --> UJ
     UJ --> OB
+
     UJ --> SM
-    DM --> SM
-    OB --> SM
+%%    DM --> SM
+%%    OB --> SM
+
     UJ --> FB
-    DM --> FB
-    OB --> FB
+%%    DM --> FB
+%%    OB --> FB
+
     SM --> EC
     US --> EC
     EC --> PB
-    VM --> PB
+%%    VM --> PB
     VM --> KPI
     PB --> KPI
     SM --> KPI
-    VM --> UM
-    PB --> UM
-    SM --> UM
+    KPI --> UM
 
 
 ```
@@ -150,4 +162,54 @@ flowchart
   DD --> MZ
   SAK --> MZ
   TP --> MZ
+```
+
+## Roadmap
+
+```mermaid
+flowchart
+  subgraph mal[" "]
+    MP["MVP-definition"]
+    RP["Releasepaket"]
+    RPl["Releaseplan"]
+    RM["Roadmap"]
+    SP["Sekvensplan"]
+  end
+
+  SM["Story map"]
+  EC["Epics & Capabilities"]
+  VM["Vision & målbild"]
+  BK["Beroendekarta"]
+  PB["Prioriterad backlog"]
+
+  DM["Domänmodell"]
+  IA["Integrationsarkitektur"]
+
+
+  SM --> MP
+  EC --> MP
+  VM --> MP
+  SM --> RP
+  MP --> RP
+  EC --> RP
+  RP --> RPl
+  MP --> RPl
+  BK --> RPl
+  RP --> RM
+  PB --> RM
+  BK --> RM
+  RP --> PB
+
+  MP --> PB
+
+  RP --> SP
+  DM --> SP
+  IA --> SP
+
+  SP --> BK
+
+
+
+
+
 ```

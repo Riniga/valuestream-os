@@ -18,7 +18,6 @@ Definiera ett tydligt och avgränsat scope för produkten samt identifiera vilka
 
 - Scope & avgränsningar
 - Epics & Capabilities
-- Scope & avgränsningar
 
 ## 5. RACI
 

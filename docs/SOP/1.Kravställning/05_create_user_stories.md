@@ -16,7 +16,6 @@ Skapa en första strukturerad uppsättning user stories baserat på mål, behov 
 ## 3. Input
 
 - Vision & målbild
-- Affärsmål & värdebild
 - Scope & avgränsningar
 - Stakeholderkarta
 
