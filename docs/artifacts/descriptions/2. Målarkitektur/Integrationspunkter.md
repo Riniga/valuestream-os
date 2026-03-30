@@ -15,7 +15,7 @@ Lösningsarkitekt
 
 ## Skapas i delprocess
 
-[SOP 4: Definiera integrationsarkitektur](../../../SOP/2.%20Målarkitektur/04_definiera_integrationsarkitektur.md)
+[Definiera integrationsarkitektur](../../../SOP/2.%20Målarkitektur/04_definiera_integrationsarkitektur.md)
 
 ## Format
 

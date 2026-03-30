@@ -15,7 +15,7 @@ Business Analyst
 
 ## Skapas i delprocess
 
-[SOP 7: Skapa Story Map](../../../SOP/1.Kravställning/07_skapa_story_map.md)
+[Skapa Story Map](../../../SOP/1.Kravställning/08_skapa_story_map.md)
 
 ## Format
 

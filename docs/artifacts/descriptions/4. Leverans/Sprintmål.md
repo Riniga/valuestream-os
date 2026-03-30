@@ -9,11 +9,9 @@ Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
 ## Ägare
 Produktägare
 
-## Skapas i
-SOP 1: Vision & målbild
+## Skapas i delprocess
 
-## Används i
-SOP 2: Affärsmål och värdebild
+[Sprintplanering](../../../SOP/4.%20Leverans/02_sprintplanering.md)
 
 ## Format
 Textdokument (Markdown)

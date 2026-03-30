@@ -15,7 +15,7 @@ Lösningsarkitekt
 
 ## Skapas i delprocess
 
-[SOP 2: Definiera systemlandskap](../../../SOP/2.%20Målarkitektur/02_definiera_systemlandskap.md)
+[Definiera systemlandskap](../../../SOP/2.%20Målarkitektur/02_definiera_systemlandskap.md)
 
 ## Format
 

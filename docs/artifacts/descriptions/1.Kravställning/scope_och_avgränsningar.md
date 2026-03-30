@@ -15,7 +15,7 @@ Business Analyst
 
 ## Skapas i delprocess
 
-[SOP 3: Scope & avgränsningar](../../../SOP/1.Kravställning/03_scope_och_avgransningar.md)
+[Scope & avgränsningar](../../../SOP/1.Kravställning/03_scope_och_avgransningar.md)
 
 ## Format
 

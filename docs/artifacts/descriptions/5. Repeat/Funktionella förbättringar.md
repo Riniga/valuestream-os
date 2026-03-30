@@ -9,11 +9,9 @@ Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
 ## Ägare
 Produktägare
 
-## Skapas i
-SOP 1: Vision & målbild
+## Skapas i delprocess
 
-## Används i
-SOP 2: Affärsmål och värdebild
+[Utvärdera leveransresultat](../../../SOP/5.%20Repeat/01_utvardera_leveransresultat.md)
 
 ## Format
 Textdokument (Markdown)

@@ -15,7 +15,7 @@ Business Analyst
 
 ## Skapas i delprocess
 
-[SOP 9: Prioritera backlog (hög nivå)](../../../SOP/1.Kravställning/09_prioritera_backlog.md)
+[Prioritera backlog (hög nivå)](../../../SOP/1.Kravställning/10_prioritera_backlog.md)
 
 ## Format
 

@@ -15,7 +15,7 @@ Lösningsarkitekt
 
 ## Skapas i delprocess
 
-[SOP 10: Definiera teknisk plattform](../../../SOP/2.%20Målarkitektur/10_definiera_teknisk_plattform.md)
+[Definiera teknisk plattform](../../../SOP/2.%20Målarkitektur/10_definiera_teknisk_plattform.md)
 
 ## Format
 

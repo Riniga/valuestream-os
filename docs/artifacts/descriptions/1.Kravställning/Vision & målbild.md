@@ -16,7 +16,7 @@ Business Analyst
 
 ## Skapas i
 
-[SOP 1: Vision & målbild](../../../SOP/1.Kravställning/01_vision_och_malbild.md)
+[Vision & målbild](../../../SOP/1.Kravställning/01_vision_och_malbild.md)
 
 ## Format
 

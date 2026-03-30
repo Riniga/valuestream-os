@@ -9,11 +9,9 @@ Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
 ## Ägare
 Produktägare
 
-## Skapas i
-SOP 1: Vision & målbild
+## Skapas i delprocess
 
-## Används i
-SOP 2: Affärsmål och värdebild
+[Identifiera tekniska beroenden](../../../SOP/3.%20Roadmap/06_Identifiera_tekniska_beroenden.md)
 
 ## Format
 Textdokument (Markdown)

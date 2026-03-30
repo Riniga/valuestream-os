@@ -9,11 +9,9 @@ Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
 ## Ägare
 Produktägare
 
-## Skapas i
-SOP 1: Vision & målbild
+## Skapas i delprocess
 
-## Används i
-SOP 2: Affärsmål och värdebild
+[Integration och bygg](../../../SOP/4.%20Leverans/06_integration_och_bygg.md)
 
 ## Format
 Textdokument (Markdown)

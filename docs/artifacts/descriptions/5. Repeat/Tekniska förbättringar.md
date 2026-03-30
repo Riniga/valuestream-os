@@ -9,11 +9,9 @@ Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
 ## Ägare
 Produktägare
 
-## Skapas i
-SOP 1: Vision & målbild
+## Skapas i delprocess
 
-## Används i
-SOP 2: Affärsmål och värdebild
+[Identifiera arkitekturella lardomar](../../../SOP/5.%20Repeat/04_identifiera_arkitekturella_lardomar.md)
 
 ## Format
 Textdokument (Markdown)

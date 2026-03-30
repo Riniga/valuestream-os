@@ -16,7 +16,7 @@ Business Analyst
 
 ## Skapas i delprocess
 
-[SOP 4: Stakeholder-karta](../../../SOP/1.Kravställning/04_stakeholderkarta.md)
+[Stakeholder-karta](../../../SOP/1.Kravställning/04_stakeholderkarta.md)
 
 ## Format
 

@@ -15,7 +15,7 @@ Lösningsarkitekt
 
 ## Skapas i delprocess
 
-[SOP 5: Definiera API-struktur](../../../SOP/2.%20Målarkitektur/05_Definiera%20API%u058Dstruktur.md)
+[SOP 5: Definiera API-struktur](../../../SOP/2.%20Målarkitektur/05_definiera_api_struktur.md)
 
 ## Format
 

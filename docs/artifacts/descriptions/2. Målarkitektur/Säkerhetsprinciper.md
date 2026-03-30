@@ -15,7 +15,7 @@ Lösningsarkitekt
 
 ## Skapas i delprocess
 
-[SOP 7: Definiera säkerhetsarkitektur](../../../SOP/2.%20Målarkitektur/07_definiera_sakerhetsarkitektur.md)
+[Definiera säkerhetsarkitektur](../../../SOP/2.%20Målarkitektur/07_definiera_sakerhetsarkitektur.md)
 
 ## Format
 

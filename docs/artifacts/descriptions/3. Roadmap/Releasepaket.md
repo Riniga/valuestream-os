@@ -9,11 +9,9 @@ Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
 ## Ägare
 Produktägare
 
-## Skapas i
-SOP 1: Vision & målbild
+## Skapas i delprocess
 
-## Används i
-SOP 2: Affärsmål och värdebild
+[Strukturera story map till leveranspaket](../../../SOP/3.%20Roadmap/02_Strukturera_story_map_till_leveranspaket.md)
 
 ## Format
 Textdokument (Markdown)

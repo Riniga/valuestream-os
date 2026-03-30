@@ -15,7 +15,7 @@ Lösningsarkitekt
 
 ## Skapas i delprocess
 
-[SOP 11: Dokumentera målarkitektur](../../../SOP/2.%20Målarkitektur/11_%20Dokumentera%20målarkitektur.md)
+[Dokumentera målarkitektur](../../../SOP/2.%20Målarkitektur/11_dokumentera_malarkitektur.md)
 
 ## Format
 

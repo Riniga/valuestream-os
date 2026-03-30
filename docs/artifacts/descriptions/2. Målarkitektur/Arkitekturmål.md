@@ -15,7 +15,7 @@ Lösningsarkitekt
 
 ## Skapas i delprocess
 
-[SOP 1: Etablera arkitekturmål](../../../SOP/2.%20Målarkitektur/01_etablera_arkitekturmal.md)
+[Etablera arkitekturmål](../../../SOP/2.%20Målarkitektur/01_etablera_arkitekturmal.md)
 
 ## Format
 

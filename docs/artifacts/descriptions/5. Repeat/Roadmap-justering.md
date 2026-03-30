@@ -9,11 +9,9 @@ Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
 ## Ägare
 Produktägare
 
-## Skapas i
-SOP 1: Vision & målbild
+## Skapas i delprocess
 
-## Används i
-SOP 2: Affärsmål och värdebild
+[Förbereda nästa roadmap-iteration](../../../SOP/5.%20Repeat/05_Förbereda_nästa_roadmap-iteration.md)
 
 ## Format
 Textdokument (Markdown)
