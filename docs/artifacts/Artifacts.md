@@ -1,161 +1,153 @@
-# Artifakter från processsteg
+# Artefaktberoenden (Kravställning + Målarkitektur)
 
-## Målarkitektur
-
-Beskrivningar: `docs/artifacts/descriptions/2. Målarkitektur/` · Mallar: `docs/artifacts/templates/2. Målarkitektur/`
-
-```mermaid
-flowchart LR
-    subgraph "Artifact"
-        direction LR
-        A1["Arkitekturmål"]
-        A2["Arkitekturprinciper"]
-        A3["Systemlandskap"]
-        A4["Domänmodell"]
-        A5["Begreppsmodell"]
-        A6["Integrationsarkitektur"]
-        A7["Integrationspunkter"]
-        A8["API-specifikation"]
-        A9["Datamodell"]
-        A10["Dataägarskap"]
-        A11["Säkerhetsarkitektur"]
-        A12["Säkerhetsprinciper"]
-
-        A13["Icke-funktionella krav (NFR)"]
-        A14["Teknisk plattform"]
-        A15["Målarkitektur"]
-    end
-
-    subgraph "Arbetsmoment"
-        direction
-        S1["Etablera arkitekturmål"] --> S2["Definiera systemlandskap"]
-        S2 --> S3["Definiera domänmodell"]
-        S3 --> B1["Definiera integrationsarkitektur"]
-        S3 --> B2["Definiera datamodell (hög nivå)"]
-        S3 --> B3["Definiera säkerhetsarkitektur"]
-        B1 --> B1a["Definiera API-struktur"]
-        B1a --> C1["Fastställ arkitekturprinciper"]
-        B2 --> C1
-        B3 --> C1
-        C1 --> C2["Definiera NFR (kvalitetskrav)"]
-        C2 --> D1["Definiera teknisk plattform"]
-        D1 --> E1["Dokumentera målarkitektur"]
-    end
-
-    S1 --> A1
-    S1 --> A2
-    S2 --> A3
-    S3 --> A4
-    S3 --> A5
-
-%% ===== Styling (valfritt) =====
-classDef seq fill:#1e88e5,stroke:#0d47a1,color:#fff;
-classDef par fill:#43a047,stroke:#1b5e20,color:#fff;
-classDef converge fill:#6a1b9a,stroke:#4a148c,color:#fff;
-
-class S1,S2,S3 seq;
-class B1,B2,B3,B1a par;
-class C1,C2 converge;
-class D1,E1 seq;
-```
+Skapande av artifakter sker i en bestämd ordning. Beroenden framgår av bilder i diagrammen nedan.
 
 ## Kravställning
 
 ```mermaid
 flowchart LR
-    subgraph "Delprocess"
-        D1["Vision & målbild"]
-        D2["Affärsmål & värdebild"]
-        D3["Scope & avgränsningar"]
-        D4["Stakeholder-karta"]
-        D5["Domänanalys"]
-        D6["User Journeys / huvudflöden"]
-        D7["Skapa Story Map"]
-        D8["Gruppera i epics & capabilities"]
-        D9["Prioritera backlog (hög nivå)"]
-        D0["Definiera framgångskriterier (KPI)"]
-    end
+  subgraph mal[" "]
+    OB["Övergripande behov"]
+    VM["Vision & målbild"]
+    SA["Scope & avgränsningar"]
+    SK["Stakeholderkarta"]
+    BK["Beroendekarta"]
+    US["User Stories"]
+    UJ["User journeys"]
+    SM["Story map"]
+    FB["Funktionella block"]
+    EC["Epics & Capabilities"]
+    PB["Prioriterad backlog"]
+    KPI["KPI / värdemått"]
+    UM["Uppföljningsmodell"]
+    DM["Domänmodell"]
+    BM["Begreppsmodell"]
+  end
 
-    subgraph "Artifact"
-        A1["Vision & målbild"]
-        A2["Scope & avgränsningar"]
-        A3["Epics & Capabilities"]
-        A4["Stakeholderkarta"]
-        A5["Beroendekarta"]
-        A6["Domänmodell"]
-        A7["Begreppsmodell"]
-        A8["User journeys"]
-        A9["Övergripande behov"]
-        A10["Story map"]
-        A11["Funktionella block"]
-        A12["Epics & Capabilities"]
-        A13["Prioriterad backlog"]
-        A14["KPI / värdemått"]
-        A15["Uppföljningsmodell"]
-    end
+    OB --> VM
+    OB --> SA
+    OB --> EC
+
+    VM --> SA
+    VM --> EC
+
+    SA --> SK
+    VM --> SK
+    SA --> BK
+    VM --> BK
+    VM --> US
+    SA --> US
+    SK --> US
+    SK --> DM
+    US --> DM
+    SK --> BM
+    US --> BM
+    DM --> UJ
+    US --> UJ
+    SK --> UJ
+    UJ --> OB
+    UJ --> SM
+    DM --> SM
+    OB --> SM
+    UJ --> FB
+    DM --> FB
+    OB --> FB
+    SM --> EC
+    US --> EC
+    EC --> PB
+    VM --> PB
+    VM --> KPI
+    PB --> KPI
+    SM --> KPI
+    VM --> UM
+    PB --> UM
+    SM --> UM
 
 
-    D1 --> A1
-    D2 --> A1
-    D3 --> A2
-    D3 --> A3
-    D4 --> A4
-    D4 --> A5
-    D5 --> A6
-    D5 --> A7
-    D6 --> A8
-    D6 --> A9
-    D7 --> A10
-    D7 --> A11
-    D8 --> A12
-    D9 --> A13
-    D0 --> A14
-    D0 --> A15
-
-
-
-    %% STYLING
-    classDef seq fill:#1e88e5,stroke:#0d47a1,color:#fff;
-    classDef par fill:#43a047,stroke:#1b5e20,color:#fff;
-    classDef slut fill:#6a1b9a,stroke:#4a148c,color:#fff;
-
-    class A1,A2,A3,A4 seq;
-    class B1,B2,B3 par;
-    class C1,C2,C3 slut;
 ```
 
+## Målarkitektur
+
 ```mermaid
-flowchart LR
-    subgraph " "
-        %% Riktning, struktur, begränsningar
-        A1["Arkitekturmål"]
-        A3["Systemlandskap"]
-        A4["Domänmodell"]
-        A6["Integrationsarkitektur"]
-        A13["Icke-funktionella krav (NFR)"]
+flowchart
+  subgraph mal[" "]
+    AM["Arkitekturmål"]
+    AP["Arkitekturprinciper"]
+    SL["Systemlandskap"]
+    IA["Integrationsarkitektur"]
+    IP["Integrationspunkter"]
+    API["API-specifikation"]
+    DD["Datamodell"]
+    DA["Dataägarskap"]
+    SAK["Säkerhetsarkitektur"]
+    SP["Säkerhetsprinciper"]
+    NFR["Icke-funktionella krav (NFR)"]
+    TP["Teknisk plattform"]
+    MZ["Målarkitektur"]
+  end
 
-        %% Konsekvent, byggbar, begriplig
-        A2["Arkitekturprinciper"]
-        A5["Begreppsmodell"]
-        A9["Datamodell"]
-        A8["API-specifikation"]
-        A14["Teknisk plattform"]
-
-        %% Fördjupar, konkretiserar, dokumenterar helhet
-        A7["Integrationspunkter"]
-        A10["Dataägarskap"]
-        A11["Säkerhetsarkitektur"]
-        A12["Säkerhetsprinciper"]
-        A15["Målarkitektur"]
-    end
+  DM["Domänmodell"]
+  BM["Begreppsmodell"]
+  OB["Övergripande behov"]
+  VM["Vision & målbild"]
+  SA["Scope & avgränsningar"]
+  BK["Beroendekarta"]
 
 
-%% ===== Styling (valfritt) =====
-classDef prio1 fill:#1e88e5,stroke:#0d47a1,color:#fff;
-classDef prio2 fill:#43a047,stroke:#1b5e20,color:#fff;
-classDef prio3 fill:#6a1b9a,stroke:#4a148c,color:#fff;
+  OB --> AP
+  OB --> SL
+  OB --> AM
 
-class A1,A3,A4,A6,A13 prio1;
-class A2,A5,A9,A8,A14 prio2;
-class A7,A10,A11,A12,A15 prio3;
+  VM --> AM
+  SA --> AM
+
+  VM --> AP
+  SA --> AP
+  AM --> SL
+
+  BK --> SL
+  SL --> DM
+  BM --> DM
+  SL --> BM
+  SL --> IA
+  DM --> IA
+  DD --> IA
+  SL --> IP
+  DM --> IP
+  DD --> IP
+  IA --> API
+  DM --> API
+  DM --> DD
+  API --> DD
+  IA --> DD
+  DM --> DA
+  API --> DA
+  IA --> DA
+  DD --> SAK
+  IA --> SAK
+  AM --> SAK
+  DD --> SP
+  IA --> SP
+  AM --> SP
+  AM --> AP
+  SAK --> AP
+  IA --> AP
+  DD --> AP
+  API --> AP
+  AP --> NFR
+  DD --> NFR
+  SAK --> NFR
+  AP --> TP
+  NFR --> TP
+  IP --> TP
+  AP --> MZ
+  NFR --> MZ
+  IP --> MZ
+  SL --> MZ
+  DM --> MZ
+  IA --> MZ
+  API --> MZ
+  DD --> MZ
+  SAK --> MZ
+  TP --> MZ
 ```

@@ -1,21 +1,32 @@
-## Process i form av sekvens
-Komplettas när vi har SOP:er för varje roll
+## Processflöde
+
+Övergripande bild för olika personas/agenter
+
 ```mermaid
 sequenceDiagram
-    participant V as Verksamhet
-    participant A as Arkitekt
-    participant P as Projektledning
-    participant T as Team
+    participant B as Beställare
+    participant BA as Business Arkitekt
+    participant UX as User Experience
 
-    V->>P: Kravställning (VAD)
-    P->>A: Kravunderlag överlämnas
-    A->>A: Ta fram målarkitektur (HUR)
-    A->>P: Arkitekturbeslut & målbild
-    P->>P: Skapa roadmap (NÄR)
-    P->>T: Planerad MVP / Release
-    T->>T: Utveckling + Test + Release
-    T->>P: Leveransrapport
-    P->>A: Reflektion & justering
-    A->>V: Feedback & behov av nya krav
-    V->>P: Start av nästa iteration
+    participant LA as Lösningsarkitekt
+    participant DA as Dataarkitekt
+
+    participant TL as Teknisk Lead
+
+    participant U as Utvecklarteam
+
+    B->>BA: Ett behov beskrivs
+    BA->>LA: Funktionalitet (VAD)
+    UX->>LA: Upplevelse (VAD)
+    LA->>DA: Arktitktur
+
+    LA->>TL: Arktitktur
+    DA->>LA: Informationsarkitektur
+    TL->>LA: Modeller
+
+    LA->>BA: Målarkitektur (HUR)
+
+    BA->>U: Roadmap (NÄR)
+    U->>B: Leverans
+
 ```
