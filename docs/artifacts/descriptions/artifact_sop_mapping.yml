@@ -2,7 +2,6 @@
 # Strukturerad efter processsektion där artifakterna skapas
 
 ---
-
 # KRAVSTÄLLNING
 kravstallning:
   - artifact: "Vision & målbild"
@@ -150,7 +149,6 @@ kravstallning:
     used_in: null
 
 ---
-
 # MÅLARKITEKTUR
 malarkitektur:
   - artifact: "Arkitekturmål"
@@ -295,7 +293,6 @@ malarkitektur:
     used_in: null
 
 ---
-
 # ROADMAP
 roadmap:
   - artifact: "MVP-definition"
@@ -365,7 +362,6 @@ roadmap:
     used_in: null
 
 ---
-
 # LEVERANS
 leverans:
   - artifact: "Ready backlog"
@@ -525,7 +521,6 @@ leverans:
     used_in: null
 
 ---
-
 # REPEAT
 repeat:
   - artifact: "Leveransutvärdering"
