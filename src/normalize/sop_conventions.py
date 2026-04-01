@@ -2,12 +2,12 @@
 """
 Developer maintenance script — SOP convention discovery.
 
-Scans the configured framework's SOP directory and reports which SOPs follow 
-the expected structure (sections, RACI, inputs/outputs). Run manually during 
+Scans the configured framework's SOP directory and reports which SOPs follow
+the expected structure (sections, RACI, inputs/outputs). Run manually during
 framework maintenance, not as part of the agent orchestration pipeline.
 
 Output is written to the configured framework's SOP directory with a discovery report.
-Running this script intentionally updates the framework directory — it is a 
+Running this script intentionally updates the framework directory — it is a
 documentation maintenance tool, not a production execution step.
 """
 import csv
@@ -219,7 +219,7 @@ def write_sop_txt(sops, dest_dir):
 def main() -> int:
     framework_root = get_framework_root(ROOT)
     sop_dir = framework_root / "SOP"
-    
+
     discovery = discover_sop_conventions(sop_dir)
     framework_root.mkdir(parents=True, exist_ok=True)
     sop_dir.mkdir(parents=True, exist_ok=True)

@@ -20,7 +20,7 @@ def get_framework_variant() -> str:
     """
     Get the configured framework variant from FRAMWORK environment variable.
     Defaults to "standard" if not set.
-    
+
     Returns
     -------
     str
@@ -32,12 +32,12 @@ def get_framework_variant() -> str:
 def get_framework_root(repo_root: Path) -> Path:
     """
     Get the path to the framework directory based on the configured variant.
-    
+
     Parameters
     ----------
     repo_root : Path
         The repository root path.
-    
+
     Returns
     -------
     Path
@@ -45,20 +45,20 @@ def get_framework_root(repo_root: Path) -> Path:
     """
     variant = get_framework_variant()
     framework_path = repo_root / "framework" / variant
-    
+
     # For backward compatibility, fall back to "docs" if framework variant doesn't exist
     if not framework_path.exists():
         docs_path = repo_root / "docs"
         if docs_path.exists():
             return docs_path
-    
+
     return framework_path
 
 
 def find_repository_root(start: Path | None = None, *, max_parent_hops: int = _DEFAULT_MAX_PARENT_HOPS) -> Path:
     """
     Walk parents from ``start`` until a directory containing framework documentation is found.
-    
+
     Looks for either the configured framework variant (framework/standard, framework/light, etc.)
     or falls back to the legacy "docs/" directory.
 

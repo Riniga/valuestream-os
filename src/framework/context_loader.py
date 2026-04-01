@@ -2,8 +2,8 @@
 AgentContextLoader — role-agnostic document loader for the framework.
 
 Loads role descriptions, SOPs, artifact descriptions, and artifact templates
-from the configured framework directory for any agent role. 
-Parameterised by agent_file and raci_role_id so that the same code works for 
+from the configured framework directory for any agent role.
+Parameterised by agent_file and raci_role_id so that the same code works for
 Business Analyst, UX, and future roles.
 
 The framework location is configurable via the FRAMWORK environment variable
