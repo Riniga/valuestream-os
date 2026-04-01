@@ -25,4 +25,4 @@ Varje agent representerar en roll med definierat ansvar, perspektiv och arbetspr
 
 ---
 
-*Till ett initiativ kan du välja relevanta agenter baserat på projekt-scope.*
+_Till ett initiativ kan du välja relevanta agenter baserat på projekt-scope._

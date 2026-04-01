@@ -8,14 +8,14 @@ Denna guide är din entrépunkt för att förstå och använda ValueStream OS-ra
 
 ### I'm a...
 
-| Rolle | Börja här | Andra viktiga resurser |
-|-------|-----------|------------------------|
-| **Business Analyst** | [Kravställning Process](./processes/1.%20Kravställning.md) | [RACI för Kravställning](./RACI/1.%20Kravställning.md) \| [SOP Guides](./SOP/) |
-| **Product Owner** | [RACI Matrix](./RACI/RACI.md) | [Målarkitektur](./processes/2.%20Målarkitektur.md) \| [Prioritering](./artifacts/) |
-| **Solution Architect** | [Målarkitektur Process](./processes/2.%20Målarkitektur.md) | [RACI för Målarkitektur](./RACI/2.%20Målarkitektur.md) \| [Artefakter](./artifacts/) |
-| **Developer** | [SOP & Tekniska Guider](./SOP/) | [Tekniska Specifikationer](./processes/2.%20Målarkitektur.md) \| [Capabilities](./artifacts/) |
-| **UX Designer** | [User Journeys & Behov](./artifacts/) | [Kravställning](./processes/1.%20Kravställning.md) \| [Story Maps](./artifacts/) |
-| **Project Manager** | [Process Overview](./processes/Process.md) | [Alla RACI-matriser](./RACI/) \| [Roadmap](./processes/3.%20Roadmap.md) |
+| Rolle                  | Börja här                                                  | Andra viktiga resurser                                                                        |
+| ---------------------- | ---------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| **Business Analyst**   | [Kravställning Process](./processes/1.%20Kravställning.md) | [RACI för Kravställning](./RACI/1.%20Kravställning.md) \| [SOP Guides](./SOP/)                |
+| **Product Owner**      | [RACI Matrix](./RACI/RACI.md)                              | [Målarkitektur](./processes/2.%20Målarkitektur.md) \| [Prioritering](./artifacts/)            |
+| **Solution Architect** | [Målarkitektur Process](./processes/2.%20Målarkitektur.md) | [RACI för Målarkitektur](./RACI/2.%20Målarkitektur.md) \| [Artefakter](./artifacts/)          |
+| **Developer**          | [SOP & Tekniska Guider](./SOP/)                            | [Tekniska Specifikationer](./processes/2.%20Målarkitektur.md) \| [Capabilities](./artifacts/) |
+| **UX Designer**        | [User Journeys & Behov](./artifacts/)                      | [Kravställning](./processes/1.%20Kravställning.md) \| [Story Maps](./artifacts/)              |
+| **Project Manager**    | [Process Overview](./processes/Process.md)                 | [Alla RACI-matriser](./RACI/) \| [Roadmap](./processes/3.%20Roadmap.md)                       |
 
 ---
 
@@ -24,35 +24,45 @@ Denna guide är din entrépunkt för att förstå och använda ValueStream OS-ra
 ValueStream OS organizes work into five interconnected phases that repeat in a cycle:
 
 ### 1. 🎯 Kravställning (WHAT)
+
 Define business needs, user stories, and requirements.
+
 - **What:** Understand what we need to build
 - **Artifacts:** User stories, epics, vision, scope, stakeholder maps
 - **RACI:** [Kravställning Responsibilities](./RACI/1.%20Kravställning.md)
 - **Details:** [View full process](./processes/1.%20Kravställning.md)
 
 ### 2. 🏗️ Målarkitektur (HOW)
+
 Design the target architecture and system solutions.
+
 - **What:** How should the solution be structured?
 - **Artifacts:** Architecture goals, system landscape, data models
 - **RACI:** [Målarkitektur Responsibilities](./RACI/2.%20Målarkitektur.md)
 - **Details:** [View full process](./processes/2.%20Målarkitektur.md)
 
 ### 3. 📅 Roadmap (WHEN)
+
 Plan the sequence and timeline for delivery.
+
 - **What:** When will features be released?
 - **Artifacts:** Release roadmap, sequencing decisions
 - **RACI:** [Roadmap Responsibilities](./RACI/3.%20Roadmap.md)
 - **Details:** [View full process](./processes/3.%20Roadmap.md)
 
 ### 4. 🚀 Leverans (BUILD)
+
 Build, test, and release the solution.
+
 - **What:** How do we build and launch?
 - **Artifacts:** Build plans, test results, release notes
 - **RACI:** [Leverans Responsibilities](./RACI/4.%20Leverans.md)
 - **Details:** [View full process](./processes/4.%20Leverans.md)
 
 ### 5. 🔄 Repeat (LEARN)
+
 Reflect on results and adjust for the next iteration.
+
 - **What:** What did we learn?
 - **Artifacts:** Retrospectives, lessons learned, next iteration plan
 - **RACI:** [Repeat Responsibilities](./RACI/5.%20Repeat.md)
@@ -67,26 +77,31 @@ Reflect on results and adjust for the next iteration.
 Utforska ramverket enligt katalog:
 
 ### [📋 agents/](./agents/) – Roller i Systemet
+
 Beskrivningar av alla roller: Business Analyst, Solution Architect, Developer, UX Designer, Product Owner, Project Manager, och fler.
 
 **Snabblänk:** [Alla roller](./agents/)
 
 ### [⚙️ processes/](./processes/) – De 5 Processerna
+
 Steg-för-steg processdefinitioner för varje fas (Kravställning → Målarkitektur → Roadmap → Leverans → Repeat).
 
 **Snabblänk:** [Process Overview](./processes/Process.md)
 
 ### [📊 RACI/](./RACI/) – Ansvarsmatriser
+
 För varje process: Vem är Ansvarig, Accountable, Consulted, och Informed?
 
 **Snabblänk:** [RACI Main](./RACI/RACI.md)
 
 ### [📖 SOP/](./SOP/) – Standard Operating Procedures
+
 Detaljerade how-to guider för varje aktivitet. Börja här för praktiska instruktioner.
 
 **Snabblänk:** [SOP Overview](./SOP/sop-conventions-discovery.md)
 
 ### [🎁 artifacts/](./artifacts/) – Artefakter & Mallar
+
 Beskrivningar av all indata och output från ramverket. Innehåller också mallar för att skapa nya artefakter.
 
 **Snabblänk:** [Artifacts Overview](./artifacts/Artifacts.md)
@@ -97,38 +112,38 @@ Beskrivningar av all indata och output från ramverket. Innehåller också malla
 
 ### Core Framework Concepts
 
-| Term | Definition |
-|------|-----------|
-| **Agent** | En roll som exekverar aktiviteter i ramverket (t.ex. Business Analyst, Solution Architect) |
-| **RACI** | Responsible, Accountable, Consulted, Informed – ansvarsbeslutningsmatris |
-| **Artifact** | En output/leverabel från en process-fas (t.ex. user stories, architecture diagram) |
-| **Capability** | En affärsfunktion eller systemkapabilitet som kan levereras |
-| **Epic** | En stor gruppering av relaterade user stories |
+| Term           | Definition                                                                                 |
+| -------------- | ------------------------------------------------------------------------------------------ |
+| **Agent**      | En roll som exekverar aktiviteter i ramverket (t.ex. Business Analyst, Solution Architect) |
+| **RACI**       | Responsible, Accountable, Consulted, Informed – ansvarsbeslutningsmatris                   |
+| **Artifact**   | En output/leverabel från en process-fas (t.ex. user stories, architecture diagram)         |
+| **Capability** | En affärsfunktion eller systemkapabilitet som kan levereras                                |
+| **Epic**       | En stor gruppering av relaterade user stories                                              |
 
 ### Process & Requirements
 
-| Term | Definition |
-|------|-----------|
-| **Kravställning** | Fas 1: Define requirements (WHAT do we need?) |
-| **User Story** | En kortfattad beskrivning av en användares behov i formatet "As a [role], I want [feature], so that [value]" |
-| **Vision & Målbild** | En övergripande beskrivning av önskningsvärt framtida tillstånd |
-| **Scope & Avgränsningar** | Vad är IN-scope och vad är OUT-of-scope för ett initiativ? |
+| Term                      | Definition                                                                                                   |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| **Kravställning**         | Fas 1: Define requirements (WHAT do we need?)                                                                |
+| **User Story**            | En kortfattad beskrivning av en användares behov i formatet "As a [role], I want [feature], so that [value]" |
+| **Vision & Målbild**      | En övergripande beskrivning av önskningsvärt framtida tillstånd                                              |
+| **Scope & Avgränsningar** | Vad är IN-scope och vad är OUT-of-scope för ett initiativ?                                                   |
 
 ### Architecture & Design
 
-| Term | Definition |
-|------|-----------|
-| **Målarkitektur** | Fas 2: Design target architecture (HOW should it be built?) |
-| **Systemlandskap** | En visualisering av alla system och deras relationer |
-| **Domänmodell** | En konceptuell modell av affärsdomänen och dess enheter |
+| Term               | Definition                                                  |
+| ------------------ | ----------------------------------------------------------- |
+| **Målarkitektur**  | Fas 2: Design target architecture (HOW should it be built?) |
+| **Systemlandskap** | En visualisering av alla system och deras relationer        |
+| **Domänmodell**    | En konceptuell modell av affärsdomänen och dess enheter     |
 
 ### Execution & Lifecycle
 
-| Term | Definition |
-|------|-----------|
-| **Roadmap** | Fas 3: Plan sequencing and releases (WHEN will features ship?) |
-| **Leverans** | Fas 4: Build, test, release the solution |
-| **Repeat** | Fas 5: Reflect and adjust for next iteration |
+| Term           | Definition                                                             |
+| -------------- | ---------------------------------------------------------------------- |
+| **Roadmap**    | Fas 3: Plan sequencing and releases (WHEN will features ship?)         |
+| **Leverans**   | Fas 4: Build, test, release the solution                               |
+| **Repeat**     | Fas 5: Reflect and adjust for next iteration                           |
 | **Spårbarhet** | Ability to trace from business need → requirement → solution → release |
 
 👉 **[Se full glossarie](./GLOSSARY.md)**
@@ -209,16 +224,16 @@ This framework evolves based on real-world use. Suggestions and improvements are
 
 ## 📝 Framework Metadata
 
-| Property | Value |
-|----------|-------|
-| **Framework Name** | ValueStream OS |
-| **Version** | 1.0 |
-| **Last Updated** | 2026-04-01 |
-| **Language** | Swedish (frameworkdokumentation) / English (code) |
-| **Variant** | standard (full framework) |
+| Property           | Value                                             |
+| ------------------ | ------------------------------------------------- |
+| **Framework Name** | ValueStream OS                                    |
+| **Version**        | 1.0                                               |
+| **Last Updated**   | 2026-04-01                                        |
+| **Language**       | Swedish (frameworkdokumentation) / English (code) |
+| **Variant**        | standard (full framework)                         |
 
 ---
 
 **👈 Back to [Home](.)** | **📖 Read [Process Overview](./processes/Process.md)** | **🎯 Find [Your Role](./agents/)**
 
-*Framework documentation is living documentation. It evolves as we learn how to better organize and deliver products.*
+_Framework documentation is living documentation. It evolves as we learn how to better organize and deliver products._

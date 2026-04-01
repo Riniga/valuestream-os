@@ -29,4 +29,4 @@ Länk: **[RACI.md](./RACI.md)** – Huvudmatrisen över alla artefakter och dera
 
 ---
 
-*Använd RACI-matrisen för att förstå rollen och ansvaret för varje role i varje fas.*
+_Använd RACI-matrisen för att förstå rollen och ansvaret för varje role i varje fas._

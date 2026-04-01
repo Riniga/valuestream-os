@@ -19,6 +19,7 @@ Detaljerade how-to guider för varje aktivitet i ramverket.
 En **SOP (Standard Operating Procedure)** är en detaljerad, steg-för-steg guide för att genomföra en specifik aktivitet.
 
 Varje SOP innehåller typiskt:
+
 - Mål och förutsättningar
 - Steg-för-steg instruktioner
 - Mallar och checklistor
@@ -31,4 +32,4 @@ Varje SOP innehåller typiskt:
 
 ---
 
-*Använd SOP:erna när du behöver praktiska instruktioner för att genomföra en aktivitet.*
+_Använd SOP:erna när du behöver praktiska instruktioner för att genomföra en aktivitet._

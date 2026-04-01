@@ -18,6 +18,7 @@ Varje process-fas producerar definierade artefakter (deliverables). Denna katalo
 ## Mallar
 
 Mallar för att skapa nya artefakter finns i:
+
 - **[templates/](./templates/)** – Maller organiserade per process-fas
 
 ---
@@ -26,4 +27,4 @@ Mallar för att skapa nya artefakter finns i:
 
 ---
 
-*Använd denna katalog för att förstå vilka artefakter som förväntas från varje process-fas.*
+_Använd denna katalog för att förstå vilka artefakter som förväntas från varje process-fas._

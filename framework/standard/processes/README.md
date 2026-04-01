@@ -21,4 +21,4 @@ ValueStream OS organiserar arbetet i fem förbundna faser som upprepar sig i en 
 
 ---
 
-*Läs [Process Overview](./Process.md) för att förstå flödet mellan faserna.*
+_Läs [Process Overview](./Process.md) för att förstå flödet mellan faserna._

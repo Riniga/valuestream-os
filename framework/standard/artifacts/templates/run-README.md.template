@@ -11,9 +11,9 @@ Location: `runs/[RUN-ID]/README.md`
 ```markdown
 # Run: [RUN-NAME / RUN-ID]
 
-**Execute: [START-DATE] – [END-DATE]**  
-**Process Steps:** [List: Kravställning, Målarkitektur, Roadmap, Leverans, Repeat, or custom]  
-**Team Lead:** [Name]  
+**Execute: [START-DATE] – [END-DATE]**
+**Process Steps:** [List: Kravställning, Målarkitektur, Roadmap, Leverans, Repeat, or custom]
+**Team Lead:** [Name]
 **Status:** ✅ Completed | ⏳ In Progress | 📋 Planned
 
 ---
@@ -70,7 +70,7 @@ What did we want to achieve in this run?
 
 ### Key Approvals
 
-- **[Decision/Artifact Name]** 
+- **[Decision/Artifact Name]**
   - Approved by: [Role]
   - Date: [Date]
   - Notes: [Any conditions or concerns]
@@ -214,8 +214,8 @@ Quick links:
 
 ---
 
-**Last Updated:** [Date]  
-**Last Updated By:** [Name]  
+**Last Updated:** [Date]
+**Last Updated By:** [Name]
 **Status:** [Draft / In Review / Final]
 
 *This run's results contribute to our continuous learning and improvement journey.*
@@ -241,7 +241,7 @@ Quick links:
 
 ---
 
-**Template Version:** 1.0  
+**Template Version:** 1.0
 **Last Updated:** 2026-04-01
 
 *This template will be used in the valuestream-os-data repository when it is created.*
