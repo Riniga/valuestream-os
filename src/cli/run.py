@@ -19,7 +19,7 @@ from dotenv import load_dotenv
 from src.capabilities.run_workspace import RunWorkspace
 from src.framework.context_loader import AgentContextLoader
 from src.framework.models import StepResult, StepStatus
-from src.framework.repo_layout import find_repository_root
+from src.framework.repo_layout import find_repository_root, get_framework_root
 from src.framework.stores import (
     ApprovalStore,
     ArtifactStateStore,
@@ -45,7 +45,7 @@ def _build_parser() -> argparse.ArgumentParser:
         "--process",
         default=DEFAULT_PROCESS_FILE,
         metavar="PROCESS_FILE",
-        help=f"Process file under docs/processes/ (default: {DEFAULT_PROCESS_FILE})",
+        help=f"Process file under the configured framework (default: {DEFAULT_PROCESS_FILE})",
     )
     sub = parser.add_subparsers(dest="command", required=True)
 
@@ -69,17 +69,19 @@ def _cmd_agents(repo_root: Path) -> None:
     print("═" * CONSOLE_WIDTH)
     print("  Registrerade agenter")
     print("═" * CONSOLE_WIDTH)
+    framework_root = get_framework_root(repo_root)
     for agent_id, agent_def in AGENT_DEFINITIONS.items():
         loader = AgentContextLoader(
             repo_root=repo_root,
             agent_file=agent_def.agent_file,
             raci_role_id=agent_def.raci_role_id,
         )
-        agent_path = repo_root / "docs" / "agents" / agent_def.agent_file
+        agent_path = framework_root / "agents" / agent_def.agent_file
         ok = "[OK]" if agent_path.exists() else "[SAKNAS]"
+        rel_path = f"agents/{agent_def.agent_file}"
         print()
         print(f"  {agent_id}")
-        print(f"    Fil        : docs/agents/{agent_def.agent_file:<30} {ok}")
+        print(f"    Fil        : {rel_path:<30} {ok}")
         print(f"    RACI-roll  : {agent_def.raci_role_id}")
         try:
             sops = loader.load_sops_for_role()
@@ -99,7 +101,7 @@ def _cmd_flow(repo_root: Path, process_file: str) -> None:
     print("═" * CONSOLE_WIDTH)
     print(f"  Flöde: {process_flow.flow_id}")
     print("═" * CONSOLE_WIDTH)
-    print(f"  Källa: docs/processes/{process_flow.process_file}")
+    print(f"  Källa: processes/{process_flow.process_file}")
     print()
     for i, step in enumerate(process_flow.steps, 1):
         print()

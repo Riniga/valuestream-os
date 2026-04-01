@@ -72,10 +72,10 @@ class Orchestrator:
     workspace:
         The run workspace (handles input/output file I/O).
     repo_root:
-        Path to the repository root (used to locate docs/).
+        Path to the repository root (used to locate the configured framework).
     process_flow:
-        Resolved process flow to execute. If omitted, the default process file in
-        docs/processes/ is loaded and converted into executable steps.
+        Resolved process flow to execute. If omitted, the default process file from
+        the configured framework is loaded and converted into executable steps.
     agent_definitions:
         Registry of AgentDefinition objects (defaults to AGENT_DEFINITIONS).
     """

@@ -2,14 +2,20 @@
 AgentContextLoader — role-agnostic document loader for the framework.
 
 Loads role descriptions, SOPs, artifact descriptions, and artifact templates
-from docs/ for any agent role. Parameterised by agent_file and raci_role_id
-so that the same code works for Business Analyst, UX, and future roles.
+from the configured framework directory for any agent role. 
+Parameterised by agent_file and raci_role_id so that the same code works for 
+Business Analyst, UX, and future roles.
+
+The framework location is configurable via the FRAMWORK environment variable
+(defaults to "framework/standard").
 """
 from __future__ import annotations
 
 import re
 from dataclasses import dataclass, field
 from pathlib import Path
+
+from src.framework.repo_layout import get_framework_root
 
 
 @dataclass
@@ -30,7 +36,7 @@ class AgentContextLoader:
     repo_root:
         Absolute path to the repository root.
     agent_file:
-        Filename inside docs/agents/, e.g. "business-analyst.md" or "ux.md".
+        Filename inside the agents directory, e.g. "business-analyst.md" or "ux.md".
     raci_role_id:
         The role identifier as it appears in SOP RACI sections (e.g. "Business Analyst"
         or "UX"). When None the role name extracted from the agent file is used.
@@ -43,7 +49,7 @@ class AgentContextLoader:
         raci_role_id: str | None = None,
     ) -> None:
         self.repo_root = repo_root
-        self.docs_root = repo_root / "docs"
+        self.framework_root = get_framework_root(repo_root)
         self.agent_file = agent_file
         self._raci_role_id = raci_role_id
         self._role_name: str | None = None
@@ -77,7 +83,7 @@ class AgentContextLoader:
     # ------------------------------------------------------------------
 
     def load_role(self) -> str:
-        path = self.docs_root / "agents" / self.agent_file
+        path = self.framework_root / "agents" / self.agent_file
         return path.read_text(encoding="utf-8")
 
     def load_agent_instructions(self) -> str:
@@ -98,7 +104,7 @@ class AgentContextLoader:
 
     def load_sops_for_role(self) -> list[SopEntry]:
         result: list[SopEntry] = []
-        for sop_file in sorted((self.docs_root / "SOP").rglob("*.md")):
+        for sop_file in sorted((self.framework_root / "SOP").rglob("*.md")):
             content = sop_file.read_text(encoding="utf-8")
             if self._is_responsible(content):
                 result.append(
@@ -113,7 +119,7 @@ class AgentContextLoader:
         return result
 
     def load_sop(self, filename: str) -> SopEntry:
-        matches = sorted((self.docs_root / "SOP").rglob(filename))
+        matches = sorted((self.framework_root / "SOP").rglob(filename))
         if not matches:
             raise FileNotFoundError(f"SOP file not found: {filename}")
         path = matches[0]
@@ -132,7 +138,7 @@ class AgentContextLoader:
 
     def load_artifact_description(self, artifact_name: str) -> str:
         path = self._find_file_by_name(
-            self.docs_root / "artifacts" / "descriptions", artifact_name, recursive=True
+            self.framework_root / "artifacts" / "descriptions", artifact_name, recursive=True
         )
         if path is None:
             raise FileNotFoundError(
@@ -142,7 +148,7 @@ class AgentContextLoader:
 
     def load_artifact_template(self, artifact_filename: str) -> str:
         matches = sorted(
-            (self.docs_root / "artifacts" / "templates").rglob(artifact_filename)
+            (self.framework_root / "artifacts" / "templates").rglob(artifact_filename)
         )
         if not matches:
             raise FileNotFoundError(f"Artifact template not found: {artifact_filename}")
@@ -150,12 +156,12 @@ class AgentContextLoader:
 
     def find_template_path(self, artifact_name: str) -> Path | None:
         return self._find_file_by_name(
-            self.docs_root / "artifacts" / "templates", artifact_name, recursive=True
+            self.framework_root / "artifacts" / "templates", artifact_name, recursive=True
         )
 
     def find_description_path(self, artifact_name: str) -> Path | None:
         return self._find_file_by_name(
-            self.docs_root / "artifacts" / "descriptions", artifact_name, recursive=True
+            self.framework_root / "artifacts" / "descriptions", artifact_name, recursive=True
         )
 
     # ------------------------------------------------------------------

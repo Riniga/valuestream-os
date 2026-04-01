@@ -53,7 +53,7 @@ class RunStatus(str, Enum):
 class AgentDefinition:
     """Static description of one agent role in the framework."""
     agent_id: str
-    agent_file: str        # relative to docs/agents/, e.g. "business-analyst.md"
+    agent_file: str        # relative to framework/{variant}/agents/, e.g. "business-analyst.md"
     raci_role_id: str      # role identifier as it appears in SOP RACI, e.g. "Business Analyst"
 
 
@@ -75,7 +75,7 @@ class FlowStep:
 
 @dataclass(frozen=True)
 class ProcessFlow:
-    """A process-driven flow resolved from docs/processes/."""
+    """A process-driven flow resolved from the configured framework directory."""
     flow_id: str
     process_file: str
     process_title: str

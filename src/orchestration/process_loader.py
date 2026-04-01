@@ -7,6 +7,7 @@ from pathlib import Path
 
 from src.framework.context_loader import AgentContextLoader
 from src.framework.models import AgentDefinition, FlowStep, ProcessFlow
+from src.framework.repo_layout import get_framework_root
 from src.orchestration.agent_registry import AGENT_DEFINITIONS
 
 
@@ -21,7 +22,7 @@ class ProcessSection:
 
 
 class ProcessFlowLoader:
-    """Builds executable flow steps from docs/processes/ documentation."""
+    """Builds executable flow steps from the configured framework's processes directory."""
 
     def __init__(
         self,
@@ -29,8 +30,8 @@ class ProcessFlowLoader:
         agent_definitions: dict[str, AgentDefinition] | None = None,
     ) -> None:
         self._repo_root = repo_root
-        self._docs_root = repo_root / "docs"
-        self._processes_root = self._docs_root / "processes"
+        self._framework_root = get_framework_root(repo_root)
+        self._processes_root = self._framework_root / "processes"
         self._agent_definitions = agent_definitions or AGENT_DEFINITIONS
         sample_agent = next(iter(self._agent_definitions.values()))
         self._context_loader = AgentContextLoader(
