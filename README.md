@@ -98,7 +98,7 @@ This makes it ideal for:
 ```text
 framework/ → Framework variants, navigation and documentation (the "brain")
 src/ → Agents, orchestration, capabilities (the "engine")
-runs/ → Local execution state and interim results navigation
+runs/ → Local private execution state (not versioned)
 setup/ → Development environment and working guidelines
 ```
 
@@ -106,13 +106,14 @@ setup/ → Development environment and working guidelines
 
 - `framework/standard/` is the main framework variant.
 - `framework/light/` is a lighter parallel variant.
-- `runs/` is currently both the local runtime workspace and the documented interim entry point for execution results.
+- `runs/` is a local runtime workspace and must not be committed.
+- Shared or published run results belong in the separate sibling repository `../valuestream-os-data`.
 - Some code still supports legacy `docs/` lookup for backward compatibility.
 
 Start here:
 
 - Framework: `framework/standard/INDEX.md`
-- Results navigation: `runs/INDEX.md`
+- Shared run results: `../valuestream-os-data`
 - Setup and contribution guidance: `setup/README.md`
 
 ## 📘 Development Guidelines

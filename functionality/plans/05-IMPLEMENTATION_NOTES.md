@@ -14,7 +14,7 @@ Branchen har redan levererat större delen av den ursprungliga ambitionen för M
 - glossary och breadcrumb-navigation finns på plats
 - runtime kan läsa från framework-varianter
 
-Det som återstod efter branchgranskningen var framför allt att göra resultatdelen sanningsenlig och användbar, samt att synka styrdokument och README med den faktiska strukturen.
+Det som återstod efter branchgranskningen var framför allt att göra resultatdelen sanningsenlig och användbar utan att publicera lokal `runs/` i detta repo, samt att synka styrdokument och README med den faktiska strukturen.
 
 ---
 
@@ -36,9 +36,9 @@ Det finns centrala INDEX-filer, glossary och README-breadcrumbs som gör framewo
 
 ## Branchens största gap
 
-### 1. Resultatnavigationen var bara delvis verklig
+### 1. Resultatnavigationen var felplacerad
 
-Det fanns templates för `runs/INDEX.md` och individuella run-readmes, men ingen faktisk `runs/INDEX.md` committad i repot. Samtidigt påstod vissa dokument att denna del redan var färdig.
+Det fanns templates för run-navigation, men lokal `runs/` ska enligt repo-reglerna inte committas. Den tidigare lösningen blandade därför ihop privat runtime-state med delbar dokumentation.
 
 ### 2. Styrdokumenten beskrev olika verkligheter
 
@@ -58,9 +58,9 @@ Root README och delar av setup-guidelines beskrev fortfarande `docs/` som primä
 
 Dokumentation och navigation ska beskriva `framework/standard` och `framework/light` som gällande struktur.
 
-### Decision 2: Behandla `runs/` som interim-läge i detta repo
+### Decision 2: Behåll `runs/` privat i detta repo
 
-Innan `valuestream-os-data` finns ska repot ha en tydlig, mänskligt läsbar `runs/`-ingång för att förklara var runtime-resultat finns och hur de ska förstås.
+`runs/` i `valuestream-os` ska förbli lokal runtime-state och inte versionshanteras. Delade eller publicerade resultat ska ligga i `valuestream-os-data`.
 
 ### Decision 3: Dokumentera legacy explicit
 
@@ -76,8 +76,8 @@ Extern repo-separation är fortfarande en målbild, men ska inte blandas ihop me
 
 Efter denna rebaseline är följande på plats:
 
-- verklig `runs/INDEX.md` i detta repo
-- länkning mellan framework-ingången och resultat-ingången
+- cleanup av committade `runs/`-entrypoints i detta repo
+- dokumentation som skiljer på privat lokal `runs/` och delade resultat i `valuestream-os-data`
 - uppdaterad README och setup-/guideline-dokumentation
 - dokumenterat kontrakt för framtida `valuestream-os-data`
 - verifierad navigation på dokumentationsnivå
@@ -87,7 +87,7 @@ Efter denna rebaseline är följande på plats:
 ## Kända begränsningar
 
 - `valuestream-os-data` är ännu inte etablerat
-- `runs/` används både som lokal runtime-yta och som presentationsyta i väntan på externisering
+- runtime skriver fortfarande lokalt till `runs/` i detta repo
 - vissa äldre filer och referenser använder fortfarande `docs/`-språkbruk av kompatibilitetsskäl
 
 ---
@@ -95,9 +95,10 @@ Efter denna rebaseline är följande på plats:
 ## Nästa steg efter MVP 05
 
 1. Etablera `valuestream-os-data`
-2. Flytta eller publicera relevanta run-resultat dit
-3. Uppdatera länkar mellan frameworkrepo och datarepo
-4. Avgör om `docs/`-fallback kan avvecklas i kod
+2. Publicera relevanta lokala runs manuellt dit via projektmappar, till exempel `judotech-care/`
+3. Uppdatera eller lägg till stakeholder-vänlig `README.md` i respektive projektmapp
+4. Uppdatera länkar mellan frameworkrepo och datarepo
+5. Avgör om run-root senare ska göras konfigurerbar i kod
 
 ---
 
@@ -106,5 +107,17 @@ Efter denna rebaseline är följande på plats:
 MVP 05 är inte längre ett arbete med att skapa framework-landningssidor från grunden. Det är nu ett arbete med att:
 
 - stänga gapet mellan levererat och dokumenterat,
-- ge `runs/` en verklig interim-ingång,
+- behålla `runs/` privat och flytta delbar run-berättelse till datarepot,
 - och definiera en kontrollerad väg vidare mot externt datarepo.
+
+## Publiceringsflöde just nu
+
+Det rekommenderade flödet efter denna omplanering är:
+
+1. kör orchestratorn lokalt så att privat state skrivs under `runs/<run-id>/`
+2. välj vilka filer från den lokala runnen som ska delas
+3. kopiera dem manuellt till relevant projektmapp i `../valuestream-os-data`
+4. komplettera med en mänskligt läsbar `README.md` i datarepot
+5. låt `valuestream-os` fortsätta vara hem för framework, mallar och instruktioner
+
+Detta gör att MVP 05 inte kräver någon ny kod för direkt export till datarepot nu. En eventuell framtida förbättring är att göra run-root konfigurerbar i runtime.

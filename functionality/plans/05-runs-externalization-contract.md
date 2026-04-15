@@ -20,24 +20,32 @@ Det separata datarepot ska alltså vara presentations- och historikytan för del
 
 ---
 
+## Chosen repository structure
+
+Den nuvarande och rekommenderade målstrukturen utgår från projektmappar i repo-roten, eftersom `valuestream-os-data` redan använder en sådan struktur, till exempel `judotech-care/`.
+
+I stället för att först tvinga fram en generell `runs/<run-id>/`-struktur väljer detta kontrakt:
+
+- en projektmapp per initiativ eller kundkontext
+- runtime-filer, `input/` och `output/` inne i den projektmappen
+- möjlighet att senare införa ytterligare gruppering eller index ovanpå denna modell
+
 ## Minimum repository structure
 
 ```text
 valuestream-os-data/
-  runs/
-    INDEX.md
-    <run-id>/
-      README.md
-      run_state.json
-      artifact_state.json
-      run_log.json
-      consultation_requests.json
-      consultation_responses.json
-      approval_decisions.json
-      informed_role_briefs.json
-      expert_context.json
-      input/
-      output/
+  <project-name>/
+    README.md
+    run_state.json
+    artifact_state.json
+    run_log.json
+    consultation_requests.json
+    consultation_responses.json
+    approval_decisions.json
+    informed_role_briefs.json
+    expert_context.json
+    input/
+    output/
 ```
 
 ---
@@ -91,20 +99,20 @@ Om datarepot och frameworkrepot lever i olika GitHub-repos ska länkarna vara ab
 
 ---
 
-## Runs index contract
+## Optional repo-level index contract
 
-`runs/INDEX.md` i datarepot ska minst innehålla:
+Datarepot saknar i dag en gemensam indexyta. Den är valfri på kort sikt, men rekommenderad när flera projekt eller runs ska bli lättare att hitta.
 
-- vad en run är
-- hur en run-katalog är uppbyggd
-- lista över publicerade runs
-- status eller processsteg per run
+Om en indexyta införs kan den ligga i repo-roten som exempelvis `README.md` eller `INDEX.md` och bör minst innehålla:
+
+- vilka projekt eller run-ytor som finns
+- status eller fokus per projekt
 - länk tillbaka till frameworkets index
 
 Bra miniminivå för tabell:
 
 ```text
-| Run ID | Process Step(s) | Status | Last Updated | Summary |
+| Project | Run ID | Process Step(s) | Status | Last Updated | Summary |
 ```
 
 ---
@@ -115,10 +123,11 @@ Nuvarande runtime i `valuestream-os` skriver redan huvuddelen av de filer som be
 
 Det innebär att externisering primärt är:
 
-1. välja vilka runs som ska publiceras
-2. lägga till eller komplettera `README.md` per run
-3. skapa eller uppdatera `runs/INDEX.md`
-4. säkerställa fungerande länkar tillbaka till frameworket
+1. välja vilket lokalt `runs/<run-id>/` som ska publiceras
+2. välja eller skapa motsvarande projektmapp i `valuestream-os-data`
+3. kopiera relevanta state-filer, `input/` och `output/`
+4. lägga till eller komplettera `README.md` i projektmappen
+5. säkerställa fungerande länkar tillbaka till frameworket
 
 Ingen ny grundmodell för metadata behöver tas fram.
 
@@ -126,13 +135,13 @@ Ingen ny grundmodell för metadata behöver tas fram.
 
 ## Migration checklist
 
-1. Skapa repot `valuestream-os-data`.
-2. Skapa `runs/INDEX.md` med samma informationsarkitektur som i interim-läget.
-3. Välj första run att publicera.
-4. Kopiera relevanta runtime-filer från lokalt `runs/<run-id>/`.
-5. Lägg till en stakeholder-vänlig `README.md` för runnen.
+1. Välj första lokala `runs/<run-id>/` att publicera.
+2. Mappa den till en projektmapp i `valuestream-os-data`, till exempel `judotech-care/`.
+3. Kopiera relevanta runtime-filer från lokalt `runs/<run-id>/`.
+4. Kopiera eller kurera `input/` och `output/` utifrån vad som ska delas.
+5. Lägg till eller uppdatera en stakeholder-vänlig `README.md` i projektmappen.
 6. Verifiera länkar tillbaka till `framework/standard/INDEX.md`.
-7. Uppdatera `valuestream-os` så att `runs/INDEX.md` pekar vidare till datarepot när det är etablerat.
+7. Om behov finns, lägg till repo-level `README.md` eller `INDEX.md` i `valuestream-os-data` för översikt.
 
 ---
 
@@ -141,6 +150,7 @@ Ingen ny grundmodell för metadata behöver tas fram.
 Följande beslut kan tas i nästa steg utan att blockera MVP 05:
 
 - om alla eller bara utvalda runs ska publiceras
+- om ett projekt kan innehålla flera runs över tid och hur de i så fall namnges
 - om `input/` och `output/` ska publiceras ofiltrerat eller kureras
 - om datarepot ska innehålla enbart resultat eller även snapshots av centrala artefakter
 

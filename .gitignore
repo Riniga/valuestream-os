@@ -1,12 +1,8 @@
 # -----------------------------
-# 🚫 Runs (runtime state ignored)
+# 🚫 Runs (ALWAYS ignore)
 # -----------------------------
+runs/
 runs/**
-!runs/
-!runs/README.md
-!runs/INDEX.md
-!runs/examples/
-!runs/examples/README.md
 
 # Framework variants (reserved for future use)
 # framework/light/ is a placeholder for lightweight variant

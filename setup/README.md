@@ -87,7 +87,9 @@ python -m src.cli.run --run-id demo-001 status
 Input-filer placeras i `runs/<run-id>/input/`. Output hamnar i `runs/<run-id>/output/`.
 Körlogg och state sparas i `runs/<run-id>/`.
 
-Repo:t ignorerar normalt runtime-filer under `runs/`, men behåller dokumenterade entry-filer som `runs/INDEX.md` och `runs/README.md` för stakeholder-navigation.
+`runs/` är en lokal arbetsyta för runtime och ska inte versionshanteras i detta repo.
+
+Om du vill dela eller publicera körningsresultat görs det i det separata syskonrepot `../valuestream-os-data`.
 
 Körtester (kräver ej LLM):
 ```powershell
@@ -105,7 +107,7 @@ This project is built on a clear separation:
 | `framework/` | Defines the process, roles, SOPs, artifacts and framework variants |
 | `setup/` | Defines how to run and develop the system |
 | `src/` | Implements execution (agents, orchestration, capabilities) |
-| `runs/` | Local runtime state plus interim navigation for execution results |
+| `runs/` | Local private runtime state created by orchestrator runs |
 
 ---
 

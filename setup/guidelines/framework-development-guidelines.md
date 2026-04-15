@@ -55,7 +55,8 @@ This includes:
 - logs and execution traces
 
 Runtime data must not become the permanent source of truth for the framework itself.
-Until a separate `valuestream-os-data` repository exists, `runs/` also serves as the documented interim entry point for understanding execution results.
+`runs/` is local runtime state only and should not be treated as a published documentation surface.
+If run results are to be shared, curated, or published, that should happen in the separate `valuestream-os-data` repository.
 
 ## Framework Concepts
 

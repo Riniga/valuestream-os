@@ -33,7 +33,7 @@ Göra ValueStream OS lättare att förstå och navigera för stakeholders med va
 
 ### Kvar att färdigställa i detta repo
 
-- Ett tydligt interim-läge för resultatnavigation i `runs/` så att stakeholders kan förstå var körningsresultat finns innan extern repo-separation är genomförd.
+- Tydlig dokumentation om att lokal `runs/` är privat runtime-state och att delade/publicerade resultat hör hemma i `valuestream-os-data`.
 - Synka README, guidelines och plan-/MVP-dokument med faktisk struktur (`framework/` i stället för äldre `docs/`-bild).
 - Dokumentera kontraktet för framtida flytt till `valuestream-os-data`.
 
@@ -74,7 +74,7 @@ Framework-dokumentationen ligger under `framework/<variant>/` där `standard` ä
 
 ### Resultatdata separeras senare
 
-Körningsresultat ligger fortsatt under `runs/` i detta repo som ett interim-läge, medan målbilden är ett separat repo `valuestream-os-data`.
+Körningsresultat skapas lokalt under `runs/` i detta repo som privat runtime-state, medan delade eller publicerade resultat ska ligga i det separata repot `valuestream-os-data`.
 
 **Motivering:**
 - Runtime skriver redan filbaserad state till `runs/<run-id>/`
@@ -96,13 +96,13 @@ Körningsresultat ligger fortsatt under `runs/` i detta repo som ett interim-lä
 - glossary
 - vidare länk till resultatnavigation
 
-### 4.2 Interim landningssida för resultat
+### 4.2 Resultatpublicering
 
-`runs/INDEX.md` ska i denna MVP:
-- förklara var runtime-resultat skapas
-- visa hur en run är strukturerad
-- ge minst en navigerbar run-ingång eller referensyta
-- länka tillbaka till framework-index
+I denna MVP ska dokumentationen tydligt beskriva att:
+- runtime-resultat skapas lokalt i `runs/<run-id>/`
+- lokal `runs/` inte versionshanteras
+- delade eller publicerade run-resultat hör hemma i `../valuestream-os-data`
+- templates och kontrakt i detta repo används som stöd för publicering till datarepot
 
 ### 4.3 Målbild för externisering
 
@@ -118,17 +118,15 @@ valuestream-os/
   src/
   setup/
   runs/
-    INDEX.md
     <run-id>/
-      README.md
-      ... runtime-filer lokalt eller tillfälligt
+      ... privata runtime-filer lokalt
 
 valuestream-os-data/
-  runs/
-    INDEX.md
-    <run-id>/
-      README.md
-      ... publicerade resultat
+  <project-or-run>/
+    README.md
+    input/
+    output/
+    ... publicerade resultat och state-filer
 ```
 
 ---
@@ -146,9 +144,9 @@ valuestream-os-data/
 
 ### Ska vara klart i detta repo för att stänga MVP 05
 
-- [x] `runs/INDEX.md` implementerad som verkligt interim-läge för resultatnavigation
+- [x] Dokumentationen beskriver att lokal `runs/` är privat runtime-state
 - [x] README och centrala guidelines speglar `framework/`-först-strukturen
-- [x] Minst en tydlig run-ingång eller referensyta är navigerbar från `runs/INDEX.md`
+- [x] Delade/publicerade runs hänvisas till `valuestream-os-data`
 - [x] Plan- och implementationsdokument beskriver sann leveransstatus
 
 ### Senare / extern leverans
