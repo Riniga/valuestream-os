@@ -2,9 +2,9 @@
 
 This folder contains everything needed to **set up, run, and contribute** to the ValueStream OS project.
 
-It is intentionally separated from `docs/` to distinguish between:
+It is intentionally separated from the framework content to distinguish between:
 
-- **What the framework is** → `docs/`
+- **What the framework is** → `framework/`
 - **How to run and build it** → `setup/`
 
 ---
@@ -59,7 +59,7 @@ These documents describe:
    - Read `guidelines/framework-development-guidelines.md`
 
 3. Explore the framework itself:
-   - Go to `/docs`
+   - Start in `/framework/standard/INDEX.md`
 
 ---
 
@@ -85,7 +85,9 @@ python -m src.cli.run --run-id demo-001 status
 ```
 
 Input-filer placeras i `runs/<run-id>/input/`. Output hamnar i `runs/<run-id>/output/`.
-Körlogg och state sparas i `runs/<run-id>/` (aldrig committad).
+Körlogg och state sparas i `runs/<run-id>/`.
+
+Repo:t ignorerar normalt runtime-filer under `runs/`, men behåller dokumenterade entry-filer som `runs/INDEX.md` och `runs/README.md` för stakeholder-navigation.
 
 Körtester (kräver ej LLM):
 ```powershell
@@ -100,16 +102,17 @@ This project is built on a clear separation:
 
 | Area | Purpose |
 |------|--------|
-| `docs/` | Defines the process, roles, SOPs and artifacts |
+| `framework/` | Defines the process, roles, SOPs, artifacts and framework variants |
 | `setup/` | Defines how to run and develop the system |
 | `src/` | Implements execution (agents, orchestration, capabilities) |
+| `runs/` | Local runtime state plus interim navigation for execution results |
 
 ---
 
 ## 🤝 Contributing
 
 Before contributing:
-- Read the guidelines  
-- Understand the process model in `/docs`  
+- Read the guidelines
+- Understand the process model in `/framework/standard`
 
 This ensures consistency and keeps the framework scalable over time.

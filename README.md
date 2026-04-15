@@ -95,11 +95,25 @@ This makes it ideal for:
 
 ## 🏗️ Repository Structure
 
-```
-docs/ → Process, SOPs, roles, artifacts (the "brain")
+```text
+framework/ → Framework variants, navigation and documentation (the "brain")
 src/ → Agents, orchestration, capabilities (the "engine")
-runs/ → Execution state and outputs
+runs/ → Local execution state and interim results navigation
+setup/ → Development environment and working guidelines
 ```
+
+### Current structure notes
+
+- `framework/standard/` is the main framework variant.
+- `framework/light/` is a lighter parallel variant.
+- `runs/` is currently both the local runtime workspace and the documented interim entry point for execution results.
+- Some code still supports legacy `docs/` lookup for backward compatibility.
+
+Start here:
+
+- Framework: `framework/standard/INDEX.md`
+- Results navigation: `runs/INDEX.md`
+- Setup and contribution guidance: `setup/README.md`
 
 ## 📘 Development Guidelines
 

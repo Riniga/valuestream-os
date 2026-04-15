@@ -45,9 +45,9 @@
 - **Mål**: Göra ramverk och resultat lättare att ta till sig som åhörare
 
 [ ] Flytta runs folder till eget github repo ligger i ../valuestream-os-data
-[ ] Gränssnitt Landningssida i markdown för att läsa och navigera docs-ramverket
-[ ] Gränssnitt Landningssida i markdown för att läsa och navigera run-resultatet
-[ ] Möjliggöra flera ramverk (standard och light) - docs döps om till framework/standard
+[X] Gränssnitt Landningssida i markdown för att läsa och navigera framework-ramverket
+[X] Gränssnitt Landningssida i markdown för att läsa och navigera run-resultatet via interim `runs/INDEX.md`
+[X] Möjliggöra flera ramverk (standard och light) - docs döps om till framework/standard
 
 ## Etapp 4: Plattform och skala
 

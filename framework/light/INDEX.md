@@ -215,6 +215,7 @@ Future variants might focus on specific industries, organization types, or deliv
 - Search by process: Browse the [5 process phases](./processes/Process.md)
 - Search by artifact: Check [artifacts overview](./artifacts/Artifacts.md)
 - Need a detailed how-to? Consult the [SOP guides](./SOP/)
+- Looking for execution results? Start in [runs/INDEX.md](../../runs/INDEX.md)
 
 **Want to give feedback?**
 

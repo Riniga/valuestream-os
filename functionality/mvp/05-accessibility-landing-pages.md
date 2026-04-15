@@ -2,78 +2,84 @@
 
 ## Metadata
 
-| Fält        | Värde                          |
-| ----------- | ------------------------------ |
-| ID          | 05                             |
-| Namn        | Accessibility & Landing Pages  |
-| Version     | 0.1                            |
+| Fält        | Värde                           |
+| ----------- | ------------------------------- |
+| ID          | 05                              |
+| Namn        | Accessibility & Landing Pages   |
+| Version     | 0.2                             |
 | Processsteg | Tvärgående / presentationslager |
-| Ägare       | Agent Core                     |
+| Ägare       | Agent Core                      |
+| Status      | Rebaselined efter brancharbete  |
 
 ---
 
 ## 1. Syfte
 
-Göra ramverket och dess resultat lättare att förstå och navigera för stakeholders med varierande teknisk bakgrund. Implementera ett presentationslager som en central ingångspunkt för att utforska både ramverksdokumentation och körningsresultat.
+Göra ValueStream OS lättare att förstå och navigera för stakeholders med varierande teknisk bakgrund genom ett markdown-baserat presentationslager för både ramverket och körningsresultat.
 
-**Fokus:** Navigerbarhet och förståelse för externa stakeholders — inte visualisering eller interaktivitet utan markdown.
+**Fokus:** Navigerbarhet och begriplighet i repo/editor. Ingen webbapplikation, server eller databas ingår i denna MVP.
 
 ---
 
-## 2. Scope
+## 2. Rebaselined scope
 
-### Ingår
+### Redan levererat i branchen
 
-- Landningssida för ramverksdokumentation (`docs/`)
-  - Översikt över agenter, processer, RACI, SOP:er
-  - Navigering till relevanta dokumentdelar
-  - Förklarande text för okända koncept
-- Landningssida för körningsresultat (`runs/`)
-  - Visa senaste körningar och deras status
-  - Tillgång till artifakter och beslut per körning
-  - Förklarande sammanhang för vad som hände
-- Strukturering: docs döps om till `framework/standard`
-- Separation av resultat: `runs/` flyttas till eget repo (`valuestream-os-data`)
-- Möjliggöra flera ramverk-varianter (minst struktur för `framework/light`)
+- `framework/standard/` är etablerad som primär presentationsyta för full framework-variant.
+- `framework/light/` finns som parallell variantstruktur.
+- Landningssidor och navigation finns i `framework/standard/INDEX.md` och `framework/light/INDEX.md`.
+- Glossary och README-breadcrumbs finns på plats i framework-strukturen.
+- Runtime stöder framework-varianter via `src/framework/repo_layout.py` och relaterade loaders.
 
-### Ingår ej (senare)
+### Kvar att färdigställa i detta repo
 
-- Interaktiv webbgränssnitt
+- Ett tydligt interim-läge för resultatnavigation i `runs/` så att stakeholders kan förstå var körningsresultat finns innan extern repo-separation är genomförd.
+- Synka README, guidelines och plan-/MVP-dokument med faktisk struktur (`framework/` i stället för äldre `docs/`-bild).
+- Dokumentera kontraktet för framtida flytt till `valuestream-os-data`.
+
+### Externt beroende / senare leverans
+
+- Full flytt av `runs/` till separat repo `valuestream-os-data`.
+- Permanent publicering av verkliga körningsresultat i separat datarepo.
+
+### Ingår ej i denna MVP
+
+- Interaktivt webbgränssnitt
 - Databas eller dynamisk server
 - Automatisk generering av landningssidor
-- Visualisering av flöden (kan läggas på framtida landing pages)
+- Visualisering av flöden utöver markdown-baserad struktur
 
 ---
 
 ## 3. Arkitekturval
 
-### Markdown som presentations-format
+### Markdown som presentationsformat
 
-Landningssidorna ska vara markdown-filer, inte HTML eller andra format. De läses direkt i GitHub/editor.
+Landningssidorna ska vara markdown-filer som läses direkt i GitHub eller editor.
 
 **Motivering:**
 - Konsistent med befintlig dokumentation
 - Ingen extra infrastruktur behövs
-- Lätt att versionshanteras tillsammans med innehållet
-- Stakeholders redan vana vid markdown
-
-### Extern data-repo för runs
-
-`runs/` flyttas till `valuestream-os-data` repo för att separera kod från resultat.
-
-**Motivering:**
-- Repohistorik väl använd för kod, inte data
-- Resultat kan växa mycket större än kod
-- Tydlig separation av ansvar
+- Lätt att versionshantera tillsammans med kod och framework
+- Transparent för både människor och agenter
 
 ### Framework-struktur med varianter
 
-`docs/` blir `framework/standard/` för att möjliggöra framtida varianter utan filkollisioner.
+Framework-dokumentationen ligger under `framework/<variant>/` där `standard` är huvudspåret och `light` en lättare variant.
 
 **Motivering:**
-- Framtidssäker design
-- Tydlig struktur för "standard" vs. framtida "light" variant
-- En-till-en mappning mellan docs och framework-katalog
+- Framtidssäker struktur för flera framework-varianter
+- Tydlig separation mellan ramverksinnehåll och runtime-kod
+- Möjliggör variantval i runtime utan separat kodbas
+
+### Resultatdata separeras senare
+
+Körningsresultat ligger fortsatt under `runs/` i detta repo som ett interim-läge, medan målbilden är ett separat repo `valuestream-os-data`.
+
+**Motivering:**
+- Runtime skriver redan filbaserad state till `runs/<run-id>/`
+- Externt repo finns inte etablerat ännu
+- Stakeholder-navigering kan ändå göras tydlig redan nu
 
 ---
 
@@ -81,53 +87,71 @@ Landningssidorna ska vara markdown-filer, inte HTML eller andra format. De läse
 
 ### 4.1 Landningssida för ramverk
 
-En fil `framework/standard/INDEX.md` (eller `README.md`) som:
-- Förklarar systemets syfte i 1-2 meningar
-- Listar huvudkategorier: Agenter, Processer, Roller, RACI, SOP:er, Artifakter
-- Länkar till respektive undersidor
-- Innehåller mini-glossary för nyckelord
+`framework/standard/INDEX.md` ska fungera som central ingång till:
+- agenter
+- processer
+- RACI
+- SOP:er
+- artefakter
+- glossary
+- vidare länk till resultatnavigation
 
-### 4.2 Landningssida för resultat
+### 4.2 Interim landningssida för resultat
 
-En fil `../valuestream-os-data/runs/INDEX.md` som:
-- Visar senaste körningar i tidsordning
-- Per körning: processsteg, status, nyckeldatum
-- Länk till körningsspecifika resultat (artifakter, beslut, expertsammanhang)
-- Förklaring av vilka filer som finns och vad de innehåller
+`runs/INDEX.md` ska i denna MVP:
+- förklara var runtime-resultat skapas
+- visa hur en run är strukturerad
+- ge minst en navigerbar run-ingång eller referensyta
+- länka tillbaka till framework-index
 
-### 4.3 Repo-strukturering
+### 4.3 Målbild för externisering
 
-Efter denna MVP:
-```
+När `valuestream-os-data` etableras ska samma navigationsmodell kunna flyttas dit utan att ändra framework-koncepten.
+
+Målbild:
+
+```text
 valuestream-os/
   framework/
     standard/
-      agents/
-      processes/
-      roles/
-      raci/
-      sop/
-      artifacts/
-      INDEX.md
+    light/
   src/
-  tests/
-  ...
-
-valuestream-os-data/ (separat repo)
+  setup/
   runs/
     INDEX.md
     <run-id>/
-      ...
+      README.md
+      ... runtime-filer lokalt eller tillfälligt
+
+valuestream-os-data/
+  runs/
+    INDEX.md
+    <run-id>/
+      README.md
+      ... publicerade resultat
 ```
 
 ---
 
 ## 5. Definition of Done
 
-- [ ] `docs/` refaktorerat till `framework/standard/` med samma innehål
+### Klart i denna branch
+
+- [x] `framework/standard/` etablerat med motsvarande ramverksinnehåll
+- [x] `framework/light/` etablerat som variantstruktur
+- [x] Landningssida `framework/standard/INDEX.md` implementerad med navigering
+- [x] Landningssida `framework/light/INDEX.md` implementerad
+- [x] Intern navigation och glossary för framework finns på plats
+- [x] Runtime har stöd för att läsa framework-variant från `framework/`
+
+### Ska vara klart i detta repo för att stänga MVP 05
+
+- [x] `runs/INDEX.md` implementerad som verkligt interim-läge för resultatnavigation
+- [x] README och centrala guidelines speglar `framework/`-först-strukturen
+- [x] Minst en tydlig run-ingång eller referensyta är navigerbar från `runs/INDEX.md`
+- [x] Plan- och implementationsdokument beskriver sann leveransstatus
+
+### Senare / extern leverans
+
 - [ ] `runs/` flyttat till separat repo `valuestream-os-data`
-- [ ] Landningssida `framework/standard/INDEX.md` implementerad med navigering
-- [ ] Landningssida `runs/INDEX.md` implementerad med körningsöversikt
-- [ ] Alla interna länkar uppdaterade för nya sökvägar
-- [ ] Glossary med 5-10 nyckelkoncept inkluderat i ramverks-INDEX
-- [ ] Minst ett körningsresultat synligt och navigerbart via runs-INDEX
+- [ ] Publicerat minst ett fullständigt körningsresultat i det externa datarepot
