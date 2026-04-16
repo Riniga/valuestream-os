@@ -1,4 +1,4 @@
-# KPI / Värdemått
+# KPI / värdemått
 
 ## Metadata
 | Fält | Värde |
@@ -44,35 +44,67 @@
 
 ---
 
-## 5. Datakällor
-| KPI | Datakälla | Tillförlitlighet | Kommentar |
-|-----|-----------|------------------|-----------|
-| | | | |
-| | | | |
+## 5. Hur följer vi upp
+
+### Uppföljningsstruktur
+| Nivå | Frekvens | Syfte |
+|------|----------|-------|
+| | | |
+| | | |
+
+### KPI-uppföljning
+| KPI | Frekvens | Ansvarig | Visualisering | Åtgärd vid avvikelse |
+|-----|----------|----------|----------------|----------------------|
+| | | | | |
+| | | | | |
 
 ---
 
-## 6. Visualisering & uppföljning
+## 6. Datainsamling
+| KPI | Datakälla | Metod | Automatisering | Tillförlitlighet |
+|-----|-----------|--------|----------------|------------------|
+| | | | | |
+| | | | | |
+
+---
+
+## 7. Visualisering & rapportering
 - Dashboard / rapport:
 - Visualisering (diagram, grafer):
-- Ansvarig för uppföljning:
+- Målgrupper:
+- Ansvarig:
 
 ---
 
-## 7. Användning i styrning
+## 8. Användning i styrning
 - Prioritering av backlog
 - Justering av roadmap
 - Identifiering av förbättringar
+- Beslutsunderlag
 
 ---
 
-## 8. Antaganden
-- 
-- 
+## 9. Roller & ansvar
+| Roll | Ansvar |
+|------|--------|
+| | |
+| | |
 
 ---
 
-## 9. Risker
+## 10. Kontinuerlig förbättring
+-
+-
+
+---
+
+## 11. Antaganden
+-
+-
+
+---
+
+## 12. Risker
 | Risk | Påverkan | Åtgärd |
 |------|----------|--------|
 | | | |
@@ -80,19 +112,18 @@
 
 ---
 
-## 10. Koppling till vidare arbete
+## 13. Koppling till vidare arbete
 Denna artefakt används som input till:
 
-- Prioriterad backlog
+- Prioritering
 - Roadmap
 - Repeat (uppföljning & lärande)
-- Beslutsunderlag
+- Strategiska beslut
 
 ---
 
-## 11. Godkännande
+## 14. Godkännande
 | Roll | Namn | Datum |
 |------|------|--------|
-| Business Analyst | | |
 | Beställare | | |
-| Övriga | | |
+| Business Analyst | | |

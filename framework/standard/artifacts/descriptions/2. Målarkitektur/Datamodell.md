@@ -1,4 +1,4 @@
-# Artefakt: Datamodell
+# Artefakt: Domänmodell
 
 ## Typ
 
@@ -6,16 +6,30 @@ Arkitektur
 
 ## Beskrivning
 
-Beskriver hur information struktureras på hög nivå: centrala informationsobjekt, relationer, lagrings- och delningsprinciper samt koppling till flöden mellan system.
-Syftet är att ge en gemensam bild av data innan detaljerad implementation och att stödja säkerhets- och integrationsbeslut.
+Beskriver de centrala begreppen, objekten (entiteter), deras relationer och övergripande struktur inom verksamhetsdomänen.
+
+Artefakten kombinerar:
+- Begreppsdefinitioner (terminologi)
+- Domänens struktur (objekt och relationer)
+
+Syftet är att:
+- Skapa en gemensam och konsekvent begreppsbild
+- Visa hur information och begrepp hänger ihop
+- Säkerställa spårbarhet från krav till arkitektur
+- Utgöra grund för datamodell, integrationer och vidare lösningsdesign
 
 ## Ägare (Skapar och uppdaterar)
 
-Dataarkitekt
+Business Analyst
 
 ## Skapas i delprocess
 
-[Definiera datamodell (hög nivå)](../../../SOP/2.%20Målarkitektur/06_definiera_datamodell.md)
+[Definiera domänmodell](../../../SOP/2.%20Målarkitektur/03_definiera_domanmodell.md)
+
+## Input från
+
+- Vision & målbild (inkl. begrepp light)
+- Strukturerad backlog
 
 ## Format
 
@@ -27,4 +41,4 @@ GitHub (dokument-repository)
 
 ## Mall
 
-[Mall för Datamodell](../../templates/2.%20Målarkitektur/Datamodell.md)
+[Mall för Domänmodell](../../templates/2.%20Målarkitektur/domanmodell.md)

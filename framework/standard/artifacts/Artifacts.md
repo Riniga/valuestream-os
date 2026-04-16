@@ -7,73 +7,26 @@ Skapande av artifakter sker i en bestämd ordning. Beroenden framgår av bilder 
 ```mermaid
 flowchart
 
-  OB["Övergripande behov"]
+  OB["Beställning"]
   subgraph mal[" "]
 
     VM["Vision & målbild"]
-
     SA["Scope & avgränsningar"]
-    EC["Epics & Capabilities"]
-
     SK["Stakeholderkarta"]
-    BK["Beroendekarta"]
-    US["User Stories"]
-
-    DM["Domänmodell"]
-    BM["Begreppsmodell"]
-
-    UJ["User journeys"]
-    SM["Story map"]
-    FB["Funktionella block"]
-
-    PB["Prioriterad backlog"]
+    SB["Strukturerad backlog"]
     KPI["KPI / värdemått"]
-    UM["Uppföljningsmodell"]
 
   end
 
     OB --> VM
-
-%%    OB --> SA
-%%    OB --> EC
     VM --> SA
-    VM --> EC
 
     SA --> SK
-%%    VM --> SK
-    SA --> BK
-%%    VM --> BK
 
-%%    VM --> US
-    SA --> US
-    SK --> US
+    VM --> SB
+    SA --> SB
 
-%%    SK --> DM
-    US --> DM
-%%    SK --> BM
-    US --> BM
-
-%%    DM --> UJ
-    US --> UJ
-%%    SK --> UJ
-    UJ --> OB
-
-    UJ --> SM
-%%    DM --> SM
-%%    OB --> SM
-
-    UJ --> FB
-%%    DM --> FB
-%%    OB --> FB
-
-    SM --> EC
-    US --> EC
-    EC --> PB
-%%    VM --> PB
     VM --> KPI
-    PB --> KPI
-    SM --> KPI
-    KPI --> UM
 
 
 ```

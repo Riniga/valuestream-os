@@ -10,17 +10,11 @@ RACI-matriser definierar för varje process-fas vem som är ansvarig, accountabl
 - **[Leverans RACI](./4.%20Leverans.md)** – Ansvar i delivery-fasen
 - **[Repeat RACI](./5.%20Repeat.md)** – Ansvar i learning-fasen
 
-## Överordnad RACI-matris
-
-Länk: **[RACI.md](./RACI.md)** – Huvudmatrisen över alla artefakter och deras ansvarsfördelning
-
----
-
 **RACI-definitionen:**
 
 - **Responsible (R)** – Vem gör jobbet?
 - **Accountable (A)** – Vem fattar det slutgiltiga beslutet?
-- **Consulted (C)** – Vem bör klassas in innan beslutet?
+- **Consulted (C)** – Vem bör granska och ge återkoppling in innan beslutet?
 - **Informed (I)** – Vem måste informeras efter beslutet?
 
 ---

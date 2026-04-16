@@ -7,7 +7,16 @@ Krav
 ## Beskrivning
 
 Definierar mätbara nyckeltal och värdemått som används för att följa upp om lösningen uppnår önskad effekt.
-Syftet är att möjliggöra uppföljning av resultat, styra prioritering samt ge underlag för beslut och kontinuerlig förbättring.
+
+Artefakten beskriver både:
+- vilka KPI:er som ska mätas
+- hur uppföljning av dessa ska genomföras över tid
+
+Syftet är att:
+- möjliggöra uppföljning av resultat
+- säkerställa att rätt data samlas in och analyseras
+- styra prioritering och beslut
+- stödja kontinuerlig förbättring
 
 ## Ägare (Skapar och uppdaterar)
 

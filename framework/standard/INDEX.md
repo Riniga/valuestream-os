@@ -11,7 +11,7 @@ Denna guide är din entrépunkt för att förstå och använda ValueStream OS-ra
 | Rolle                  | Börja här                                                  | Andra viktiga resurser                                                                        |
 | ---------------------- | ---------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
 | **Business Analyst**   | [Kravställning Process](./processes/1.%20Kravställning.md) | [RACI för Kravställning](./RACI/1.%20Kravställning.md) \| [SOP Guides](./SOP/)                |
-| **Product Owner**      | [RACI Matrix](./RACI/RACI.md)                              | [Målarkitektur](./processes/2.%20Målarkitektur.md) \| [Prioritering](./artifacts/)            |
+| **Beställare**         | [RACI Matrix](./RACI/REDME.md)                             | [Målarkitektur](./processes/2.%20Målarkitektur.md) \| [Prioritering](./artifacts/)            |
 | **Solution Architect** | [Målarkitektur Process](./processes/2.%20Målarkitektur.md) | [RACI för Målarkitektur](./RACI/2.%20Målarkitektur.md) \| [Artefakter](./artifacts/)          |
 | **Developer**          | [SOP & Tekniska Guider](./SOP/)                            | [Tekniska Specifikationer](./processes/2.%20Målarkitektur.md) \| [Capabilities](./artifacts/) |
 | **UX Designer**        | [User Journeys & Behov](./artifacts/)                      | [Kravställning](./processes/1.%20Kravställning.md) \| [Story Maps](./artifacts/)              |
