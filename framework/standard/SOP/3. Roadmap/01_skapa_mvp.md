@@ -22,7 +22,7 @@ Definiera en första levererbar produktversion (MVP) som skapar tydligt verksamh
 ## 5. RACI
 
 - R: Business Analyst
-- A: Produktägare
+- A: Beställare
 - C: Lösningsarkitekt, Verksamhetsexperter
 - I: Utvecklare
 

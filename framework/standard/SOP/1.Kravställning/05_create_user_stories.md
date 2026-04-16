@@ -30,7 +30,7 @@ Skapa en första strukturerad uppsättning user stories baserat på mål, behov 
 ## 5. RACI
 
 - R: Business Analyst
-- A: Produktägare
+- A: Beställare
 - C: Verksamhetsexperter, Användarrepresentanter
 - I: Lösningsarkitekt, Utvecklare
 
@@ -46,7 +46,7 @@ Skapa en första strukturerad uppsättning user stories baserat på mål, behov 
 5. Undvik tekniska lösningar — fokusera på behov och intention.
 6. Identifiera dubbletter och slå ihop liknande stories.
 7. Säkerställ rimlig granularitet (inte för stora, inte för detaljerade).
-8. Validera stories med verksamhet och produktägare.
+8. Validera stories med verksamhet och beställare.
 9. Dokumentera stories i gemensamt artefakt (User Stories).
 
 ---

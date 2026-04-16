@@ -24,7 +24,7 @@ Genomföra deployment av releaser och säkerställa att funktionalitet fungerar 
 - R: DevOps
 - A: Teknisk Lead
 - C: Utvecklare
-- I: Produktägare
+- I: Beställare
 
 ## 6. Arbetssteg
 

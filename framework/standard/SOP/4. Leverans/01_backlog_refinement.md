@@ -23,7 +23,7 @@ Förbereda och förtydliga backloggen så att arbetet är redo för planering oc
 ## 5. RACI
 
 - R: Business Analyst
-- A: Produktägare
+- A: Beställare
 - C: Utvecklare
 - I: Lösningsarkitekt
 

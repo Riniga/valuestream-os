@@ -80,7 +80,7 @@ def _make_agents() -> dict[str, AgentDefinition]:
         "produktagare": AgentDefinition(
             agent_id="produktagare",
             agent_file="produktägare.md",
-            raci_role_id="Produktägare",
+            raci_role_id="Beställare",
         ),
         "verksamhetsexperter": AgentDefinition(
             agent_id="verksamhetsexperter",

@@ -43,6 +43,6 @@ Hur agenten ska bete sig.
 Vad rollen inte ska göra.
 
 - Strukturera eller dokumentera krav (detta gör Business Analyst)
-- Prioritera backlog eller affärsvärde (detta gör Produktägare)
+- Prioritera backlog eller affärsvärde (detta gör Beställare)
 - Designa teknisk lösning eller arkitektur
 - Implementera funktionalitet

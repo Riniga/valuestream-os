@@ -23,7 +23,7 @@ Beskriva användarnas huvudsakliga flöden och interaktioner för att tydliggör
 ## 5. RACI
 
 - R: UX
-- A: Produktägare
+- A: Beställare
 - C: Verksamhetsexperter, Användarrepresentanter
 - I: Business Analyst
 

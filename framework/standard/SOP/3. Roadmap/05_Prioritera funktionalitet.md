@@ -23,7 +23,7 @@ Prioritera funktionalitet för att säkerställa att rätt saker byggs i rätt o
 ## 5. RACI
 
 - R: Business Analyst
-- A: Produktägare
+- A: Beställare
 - C: Lösningsarkitekt, Verksamhetsexperter
 - I: Utvecklare
 

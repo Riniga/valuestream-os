@@ -25,7 +25,7 @@ Definiera övergripande arkitekturprinciper som styr design, utveckling och vida
 
 - R: Lösningsarkitekt
 - A: Enterprise Arkitekt
-- C: Teknisk Lead, Produktägare
+- C: Teknisk Lead, Beställare
 - I: Utvecklare
 
 ## 6. Arbetssteg
@@ -34,5 +34,5 @@ Definiera övergripande arkitekturprinciper som styr design, utveckling och vida
 2. Formulera tydliga och generella arkitekturprinciper (t.ex. löskoppling, säkerhet som standard).
 3. Säkerställ att principerna stödjer säkerhets-, integrations- och datamodell.
 4. Konsolidera och strukturera principerna i ett enhetligt format.
-5. Validera principerna med teknisk lead och produktägare.
+5. Validera principerna med teknisk lead och beställare.
 6. Fastställ arkitekturprinciper (beslut av A).

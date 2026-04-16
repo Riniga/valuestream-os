@@ -22,7 +22,7 @@ Demonstrera levererad funktionalitet, samla feedback och verifiera att rätt vä
 ## 5. RACI
 
 - R: Utvecklare
-- A: Produktägare
+- A: Beställare
 - C: Verksamhetsexperter
 - I: Business Analyst
 
@@ -33,5 +33,5 @@ Demonstrera levererad funktionalitet, samla feedback och verifiera att rätt vä
 3. Verifiera att sprintmålet har uppnåtts.
 4. Samla in feedback och identifiera förbättringsbehov.
 5. Dokumentera demofeedback och observationer.
-6. Bekräfta levererad funktionalitet tillsammans med produktägare.
+6. Bekräfta levererad funktionalitet tillsammans med beställare.
 7. Markera funktionalitet som bekräftad.

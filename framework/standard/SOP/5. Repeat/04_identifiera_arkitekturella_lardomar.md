@@ -25,7 +25,7 @@ Identifiera och strukturera arkitekturella insikter och tekniska förbättringso
 - R: Lösningsarkitekt
 - A: Enterprise Arkitekt
 - C: Teknisk Lead
-- I: Produktägare
+- I: Beställare
 
 ## 6. Arbetssteg
 

@@ -24,7 +24,7 @@ Förbereda underlag för nästa roadmap-iteration genom att identifiera föränd
 ## 5. RACI
 
 - R: Business Analyst
-- A: Produktägare
+- A: Beställare
 - C: Lösningsarkitekt, Projektledare
 - I: Utvecklare
 
@@ -36,5 +36,5 @@ Förbereda underlag för nästa roadmap-iteration genom att identifiera föränd
 4. Sammanställ prioriteringsinput från kravställning.
 5. Bedöm behov av förändringar i roadmap.
 6. Strukturera roadmap-input i ett tydligt format.
-7. Validera underlaget med produktägare och arkitektur.
+7. Validera underlaget med beställare och arkitektur.
 8. Fastställ roadmap-input (beslut av A).

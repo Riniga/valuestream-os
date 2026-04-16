@@ -22,7 +22,7 @@ Identifiera och strukturera alla relevanta intressenter samt tydliggöra deras p
 ## 5. RACI
 
 - R: Business Analyst
-- A: Produktägare
+- A: Beställare
 - C: Verksamhetsexperter, Projektledare
 - I: Utvecklare
 

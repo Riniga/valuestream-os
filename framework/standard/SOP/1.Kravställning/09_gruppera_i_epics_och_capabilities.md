@@ -21,7 +21,7 @@ Strukturera funktionaliteten i hanterbara och prioriterbara enheter genom att gr
 ## 5. RACI
 
 - R: Business Analyst
-- A: Produktägare
+- A: Beställare
 - C: Verksamhetsexperter
 - I: Utvecklare
 

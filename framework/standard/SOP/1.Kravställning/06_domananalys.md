@@ -22,7 +22,7 @@ Skapa en gemensam förståelse för verksamhetens centrala begrepp, objekt och r
 ## 5. RACI
 
 - R: Business Analyst
-- A: Produktägare
+- A: Beställare
 - C: Verksamhetsexperter
 - I: Lösningsarkitekt
 

@@ -25,7 +25,7 @@ Definiera en säkerhetsarkitektur som skyddar information, användare och system
 - R: Lösningsarkitekt
 - A: Enterprise Arkitekt
 - C: Teknisk Lead, DevOps
-- I: Produktägare
+- I: Beställare
 
 ## 6. Arbetssteg
 

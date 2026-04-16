@@ -25,7 +25,7 @@ Säkerställa att kod byggs, integreras och paketeras korrekt i CI/CD-flödet f�
 - R: DevOps
 - A: Teknisk Lead
 - C: Utvecklare
-- I: Produktägare
+- I: Beställare
 
 ## 6. Arbetssteg
 

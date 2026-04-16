@@ -14,9 +14,9 @@ Found 45 SOP file(s).
 ## RACI roles
 
 - R: Business Analyst, Dataarkitekt, DevOps, Lösningsarkitekt, Scrum Master, Teknisk Lead, Testare, UX, Utvecklare
-- A: Enterprise Arkitekt, Lösningsarkitekt, Produktägare, Teknisk Lead
-- C: Användarrepresentanter, Dataarkitekt, DevOps, Lösningsarkitekt, Produktägare, Projektledare, Teknisk Lead, UX, Utvecklare, Verksamhetsexperter
-- I: Business Analyst, Lösningsarkitekt, Produktägare, Projektledare, Utvecklare, Verksamhetsexperter
+- A: Enterprise Arkitekt, Lösningsarkitekt, Beställare, Teknisk Lead
+- C: Användarrepresentanter, Dataarkitekt, DevOps, Lösningsarkitekt, Beställare, Projektledare, Teknisk Lead, UX, Utvecklare, Verksamhetsexperter
+- I: Business Analyst, Lösningsarkitekt, Beställare, Projektledare, Utvecklare, Verksamhetsexperter
 
 ## Artifacts (output)
 

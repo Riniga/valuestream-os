@@ -24,7 +24,7 @@ Fastställa tydliga arkitekturmål som styr lösningens tekniska inriktning och 
 
 - R: Lösningsarkitekt
 - A: Enterprise Arkitekt
-- C: Produktägare, Teknisk Lead
+- C: Beställare, Teknisk Lead
 - I: Business Analyst
 
 ## 6. Arbetssteg
@@ -35,5 +35,5 @@ Fastställa tydliga arkitekturmål som styr lösningens tekniska inriktning och 
 4. Identifiera initiala designprinciper som ska styra lösningen.
 5. Säkerställ att arkitekturmål stödjer verksamhetens mål och scope.
 6. Strukturera arkitekturmål och principer i ett tydligt format.
-7. Validera arkitekturmål med produktägare och teknisk lead.
+7. Validera arkitekturmål med beställare och teknisk lead.
 8. Fastställ arkitekturmål (beslut av A).

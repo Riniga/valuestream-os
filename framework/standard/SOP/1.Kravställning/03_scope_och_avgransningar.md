@@ -22,7 +22,7 @@ Definiera ett tydligt och avgränsat scope för produkten samt identifiera vilka
 ## 5. RACI
 
 - R: Business Analyst
-- A: Produktägare
+- A: Beställare
 - C: Verksamhetsexperter, Utvecklare
 - I: Projektledare
 

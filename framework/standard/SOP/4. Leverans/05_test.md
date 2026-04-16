@@ -25,7 +25,7 @@ Verifiera att funktionalitet uppfyller krav och acceptanskriterier samt håller 
 - R: Testare
 - A: Teknisk Lead
 - C: Utvecklare
-- I: Produktägare
+- I: Beställare
 
 ## 6. Arbetssteg
 

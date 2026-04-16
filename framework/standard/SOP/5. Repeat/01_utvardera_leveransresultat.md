@@ -24,7 +24,7 @@ Utvärdera leveransens resultat för att säkerställa att rätt värde har skap
 ## 5. RACI
 
 - R: Business Analyst
-- A: Produktägare
+- A: Beställare
 - C: Verksamhetsexperter
 - I: Utvecklare
 

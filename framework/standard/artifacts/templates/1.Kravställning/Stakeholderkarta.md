@@ -94,6 +94,6 @@ Denna artefakt används som input till:
 ## 10. Godkännande
 | Roll | Namn | Datum |
 |------|------|--------|
-| Produktägare | | |
+| Beställare | | |
 | Business Analyst | | |
 | Övriga | | |

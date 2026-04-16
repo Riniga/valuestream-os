@@ -105,5 +105,5 @@ Denna artefakt används som input till:
 | Roll | Namn | Datum |
 |------|------|--------|
 | UX | | |
-| Produktägare | | |
+| Beställare | | |
 | Business Analyst | | |

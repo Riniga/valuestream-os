@@ -22,7 +22,7 @@ Definiera en tydlig plan för i vilken ordning leveranspaket ska byggas och leve
 ## 5. RACI
 
 - R: Business Analyst
-- A: Produktägare
+- A: Beställare
 - C: Lösningsarkitekt, Projektledare
 - I: Utvecklare
 

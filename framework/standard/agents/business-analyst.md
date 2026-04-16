@@ -36,7 +36,7 @@ Säkerställa att verksamhetsbehov är tydligt formulerade, strukturerade och ö
 
 ## Begränsningar
 
-- Fattar inte beslut om prioritering eller affärsvärde — det gör Produktägare
+- Fattar inte beslut om prioritering eller affärsvärde — det gör Beställare
 - Designar inte teknisk lösning eller arkitektur
 - Implementerar inte funktionalitet
 - Äger inte slutgiltiga beslut kring användarupplevelse

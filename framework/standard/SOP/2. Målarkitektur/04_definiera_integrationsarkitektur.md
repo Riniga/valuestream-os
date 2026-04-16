@@ -24,7 +24,7 @@ Definiera hur lösningen integrerar med andra system genom tydliga integrationsm
 - R: Lösningsarkitekt
 - A: Enterprise Arkitekt
 - C: Teknisk Lead
-- I: Produktägare
+- I: Beställare
 
 ## 6. Arbetssteg
 

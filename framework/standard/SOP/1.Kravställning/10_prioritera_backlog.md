@@ -22,7 +22,7 @@ Prioritera funktionalitet på hög nivå för att maximera värde, hantera riske
 ## 5. RACI
 
 - R: Business Analyst
-- A: Produktägare
+- A: Beställare
 - C: Verksamhetsexperter
 - I: Utvecklare
 

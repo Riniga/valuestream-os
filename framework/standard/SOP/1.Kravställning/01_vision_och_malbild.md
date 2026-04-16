@@ -20,7 +20,7 @@ Etablera en tydlig och gemensam förståelse för varför produkten ska byggas o
 ## 5. RACI
 
 - R: Business Analyst
-- A: Produktägare
+- A: Beställare
 - C: Verksamhetsexperter
 - I: Projektledare
 

@@ -23,7 +23,7 @@ Definiera mätbara kriterier för att säkerställa att produkten levererar öns
 ## 5. RACI
 
 - R: Business Analyst
-- A: Produktägare
+- A: Beställare
 - C: Verksamhetsexperter
 - I: Projektledare
 

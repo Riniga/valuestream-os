@@ -25,7 +25,7 @@ Identifiera och strukturera tekniska beroenden för att möjliggöra realistisk 
 - R: Teknisk Lead
 - A: Lösningsarkitekt
 - C: Utvecklare
-- I: Produktägare
+- I: Beställare
 
 ## 6. Arbetssteg
 

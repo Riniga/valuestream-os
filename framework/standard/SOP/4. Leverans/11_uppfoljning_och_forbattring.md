@@ -24,7 +24,7 @@ Utvärdera genomförd iteration och identifiera förbättringar för att öka kv
 ## 5. RACI
 
 - R: Scrum Master
-- A: Produktägare
+- A: Beställare
 - C: Utvecklare
 - I: Business Analyst
 
@@ -34,7 +34,7 @@ Utvärdera genomförd iteration och identifiera förbättringar för att öka kv
 2. Genomför retrospektiv med teamet.
 3. Identifiera process-, kvalitets- och samarbetsproblem.
 4. Formulera konkreta förbättringsförslag.
-5. Prioritera förbättringar tillsammans med produktägare.
+5. Prioritera förbättringar tillsammans med beställare.
 6. Dokumentera och strukturera förbättringsförslag.
 7. Kommunicera förbättringar till relevanta intressenter.
 8. Säkerställ att förbättringar tas med i nästa cykel.

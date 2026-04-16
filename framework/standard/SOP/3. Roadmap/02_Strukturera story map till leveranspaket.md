@@ -22,7 +22,7 @@ Bryta ner funktionaliteten i strukturerade och leveransbara paket som möjliggö
 ## 5. RACI
 
 - R: Business Analyst
-- A: Produktägare
+- A: Beställare
 - C: Lösningsarkitekt
 - I: Utvecklare
 
@@ -34,5 +34,5 @@ Bryta ner funktionaliteten i strukturerade och leveransbara paket som möjliggö
 4. Identifiera beroenden mellan leveranspaket.
 5. Verifiera teknisk genomförbarhet med lösningsarkitekt.
 6. Strukturera leveranspaket i ett tydligt och spårbart format.
-7. Validera leveranspaket med produktägare.
+7. Validera leveranspaket med beställare.
 8. Fastställ leveranspaket (beslut av A).

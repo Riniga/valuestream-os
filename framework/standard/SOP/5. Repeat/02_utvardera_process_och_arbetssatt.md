@@ -23,7 +23,7 @@ Utvärdera arbetssätt och processer för att identifiera förbättringar som ö
 ## 5. RACI
 
 - R: Scrum Master
-- A: Produktägare
+- A: Beställare
 - C: Utvecklare
 - I: Business Analyst
 

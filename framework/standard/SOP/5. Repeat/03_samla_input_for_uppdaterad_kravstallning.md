@@ -25,7 +25,7 @@ Samla och strukturera relevant input inför nästa kravställning utan att för�
 ## 5. RACI
 
 - R: Business Analyst
-- A: Produktägare
+- A: Beställare
 - C: Verksamhetsexperter
 - I: Utvecklare
 
@@ -37,5 +37,5 @@ Samla och strukturera relevant input inför nästa kravställning utan att för�
 4. Identifiera ej levererade funktioner som ska tas vidare.
 5. Strukturera input i ett tydligt och spårbart format.
 6. Säkerställ att inga krav förändras i detta steg (endast insamling).
-7. Validera input med produktägare.
+7. Validera input med beställare.
 8. Fastställ input-paket till nästa kravställning (beslut av A).

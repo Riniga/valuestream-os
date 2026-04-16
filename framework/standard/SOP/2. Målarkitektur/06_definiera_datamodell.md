@@ -25,7 +25,7 @@ Definiera en övergripande datamodell som beskriver hur information struktureras
 - R: Dataarkitekt
 - A: Lösningsarkitekt
 - C: Teknisk Lead
-- I: Produktägare
+- I: Beställare
 
 ## 6. Arbetssteg
 

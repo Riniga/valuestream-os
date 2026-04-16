@@ -23,7 +23,7 @@ Definiera en strukturerad domänmodell som beskriver centrala affärsobjekt, rel
 - R: Business Analyst
 - A: Lösningsarkitekt
 - C: Verksamhetsexperter
-- I: Produktägare
+- I: Beställare
 
 ## 6. Arbetssteg
 

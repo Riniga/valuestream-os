@@ -28,7 +28,7 @@ Sammanställa och strukturera alla arkitekturartefakter till en tydlig och kommu
 - R: Lösningsarkitekt
 - A: Enterprise Arkitekt
 - C: Dataarkitekt, Teknisk Lead
-- I: Produktägare
+- I: Beställare
 
 ## 6. Arbetssteg
 

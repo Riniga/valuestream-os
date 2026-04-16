@@ -25,7 +25,7 @@ Implementera funktionalitet enligt definierade krav, arkitektur och kvalitetspri
 - R: Utvecklare
 - A: Teknisk Lead
 - C: Lösningsarkitekt
-- I: Produktägare
+- I: Beställare
 
 ## 6. Arbetssteg
 

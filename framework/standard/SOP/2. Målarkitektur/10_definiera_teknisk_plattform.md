@@ -25,7 +25,7 @@ Fastställa en teknisk plattform som möjliggör utveckling, integration och dri
 - R: Lösningsarkitekt
 - A: Enterprise Arkitekt
 - C: DevOps, Teknisk Lead
-- I: Produktägare
+- I: Beställare
 
 ## 6. Arbetssteg
 

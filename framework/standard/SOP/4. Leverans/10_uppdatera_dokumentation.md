@@ -22,7 +22,7 @@ Säkerställa att dokumentation är aktuell och speglar senaste förändringar i
 ## 5. RACI
 
 - R: Business Analyst
-- A: Produktägare
+- A: Beställare
 - C: Utvecklare
 - I: Verksamhetsexperter
 

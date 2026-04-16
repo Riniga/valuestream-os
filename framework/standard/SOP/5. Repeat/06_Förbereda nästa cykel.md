@@ -23,7 +23,7 @@ Säkerställa att nästa cykel kan startas effektivt med rätt underlag, tydlig 
 ## 5. RACI
 
 - R: Business Analyst
-- A: Produktägare
+- A: Beställare
 - C: Lösningsarkitekt, Verksamhetsexperter
 - I: Utvecklare
 

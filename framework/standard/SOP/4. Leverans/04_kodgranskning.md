@@ -25,7 +25,7 @@ Säkerställa att kod uppfyller kvalitetskrav, följer riktlinjer och är i linj
 - R: Utvecklare
 - A: Teknisk Lead
 - C: Lösningsarkitekt
-- I: Produktägare
+- I: Beställare
 
 ## 6. Arbetssteg
 

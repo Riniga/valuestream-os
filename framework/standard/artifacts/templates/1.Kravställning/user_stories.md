@@ -53,7 +53,7 @@
 
 - Implementerad
 - Testad
-- Godkänd av produktägare
+- Godkänd av beställare
 - Dokumenterad vid behov
 
 ---
@@ -106,5 +106,5 @@ Denna artefakt används som input till:
 | Roll             | Namn | Datum |
 | ---------------- | ---- | ----- |
 | Business Analyst |      |       |
-| Produktägare     |      |       |
+| Beställare     |      |       |
 | Team             |      |       |

@@ -22,7 +22,7 @@ Ta fram en tydlig och kommunikativ roadmap som visar hur produkten utvecklas öv
 ## 5. RACI
 
 - R: Business Analyst
-- A: Produktägare
+- A: Beställare
 - C: Lösningsarkitekt, Projektledare
 - I: Verksamhetsexperter
 

@@ -23,7 +23,7 @@ Planera sprintens innehåll så att teamet arbetar med rätt saker baserat på p
 ## 5. RACI
 
 - R: Scrum Master
-- A: Produktägare
+- A: Beställare
 - C: Utvecklare
 - I: Business Analyst
 

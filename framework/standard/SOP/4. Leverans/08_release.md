@@ -22,7 +22,7 @@ Förbereda och godkänna en release för deployment genom att paketera artefakte
 ## 5. RACI
 
 - R: DevOps
-- A: Produktägare
+- A: Beställare
 - C: Utvecklare, Teknisk Lead
 - I: Verksamhetsexperter
 
@@ -33,5 +33,5 @@ Förbereda och godkänna en release för deployment genom att paketera artefakte
 3. Ta fram release notes baserat på levererad funktionalitet.
 4. Förbered deployment (miljö, konfiguration, beroenden).
 5. Säkerställ att releasen uppfyller krav för driftsättning.
-6. Validera release med produktägare och teknisk lead.
+6. Validera release med beställare och teknisk lead.
 7. Godkänn release för deployment (beslut av A).

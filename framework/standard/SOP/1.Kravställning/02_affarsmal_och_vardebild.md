@@ -20,7 +20,7 @@ Fastställa tydliga och mätbara affärsmål samt definiera vilket värde produk
 ## 5. RACI
 
 - R: Business Analyst
-- A: Produktägare
+- A: Beställare
 - C: Verksamhetsexperter
 - I: Projektledare
 

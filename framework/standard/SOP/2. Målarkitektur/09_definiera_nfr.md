@@ -24,7 +24,7 @@ Definiera icke-funktionella krav (NFR) som säkerställer att lösningen uppfyll
 - R: Lösningsarkitekt
 - A: Enterprise Arkitekt
 - C: DevOps, Teknisk Lead
-- I: Produktägare
+- I: Beställare
 
 ## 6. Arbetssteg
 

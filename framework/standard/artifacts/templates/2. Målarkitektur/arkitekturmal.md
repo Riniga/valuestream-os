@@ -78,4 +78,4 @@ Denna artefakt används som input till:
 |------|------|--------|
 | Enterprise Arkitekt | | |
 | Lösningsarkitekt | | |
-| Produktägare | | |
+| Beställare | | |

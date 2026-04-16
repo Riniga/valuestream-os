@@ -8,7 +8,7 @@ Varje agent representerar en roll med definierat ansvar, perspektiv och arbetspr
 - [Solution Architect](./lösningsarkitekt.md) – Designa målarkitektur
 - [Developer](./utvecklare.md) – Implementera lösningen
 - [UX Designer](./ux.md) – Designa användarupplevelse
-- [Product Owner](./produktägare.md) – Äga affärsvärde och prioritering
+- [Beställare](./produktägare.md) – Äga affärsvärde och prioritering
 - [Project Manager](./projektledare.md) – Koordinera projekt
 - [Scrum Master](./scrum-master.md) – Facilitera teamarbete
 - [Business Expert](./verksamhetsexperter.md) – Subject matter expertise

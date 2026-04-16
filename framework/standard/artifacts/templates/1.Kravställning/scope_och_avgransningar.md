@@ -78,7 +78,7 @@
 - Alla förändringar ska:
   - Dokumenteras
   - Bedömas mot målbild och värde
-  - Godkännas av produktägare
+  - Godkännas av beställare
 
 ---
 
@@ -103,6 +103,6 @@ Denna artefakt används som input till:
 ## 10. Godkännande
 | Roll | Namn | Datum |
 |------|------|--------|
-| Produktägare | | |
+| Beställare | | |
 | Business Analyst | | |
 | Övriga | | |

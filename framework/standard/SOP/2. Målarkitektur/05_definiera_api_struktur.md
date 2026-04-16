@@ -23,7 +23,7 @@ Definiera en konsekvent API-struktur och kontrakt som möjliggör tydlig och sta
 - R: Lösningsarkitekt
 - A: Enterprise Arkitekt
 - C: Teknisk Lead, Utvecklare
-- I: Produktägare
+- I: Beställare
 
 ## 6. Arbetssteg
 

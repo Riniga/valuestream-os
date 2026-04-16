@@ -24,7 +24,7 @@ Skapa en övergripande och strukturerad bild av lösningens systemlandskap för 
 - R: Lösningsarkitekt
 - A: Enterprise Arkitekt
 - C: Teknisk Lead, Verksamhetsexperter
-- I: Produktägare
+- I: Beställare
 
 ## 6. Arbetssteg
 

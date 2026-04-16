@@ -7,7 +7,7 @@ Krav
 Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
 
 ## Ägare
-Produktägare
+Beställare
 
 ## Skapas i delprocess
 
