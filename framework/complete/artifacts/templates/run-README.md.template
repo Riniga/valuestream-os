@@ -1,0 +1,247 @@
+# Run Metadata Template – Individual Run README
+
+**This template is used for each run's README.md file.**
+
+Location: `runs/[RUN-ID]/README.md`
+
+---
+
+## Template Content (Copy and customize for each run)
+
+```markdown
+# Run: [RUN-NAME / RUN-ID]
+
+**Execute: [START-DATE] – [END-DATE]**
+**Process Steps:** [List: Kravställning, Målarkitektur, Roadmap, Leverans, Repeat, or custom]
+**Team Lead:** [Name]
+**Status:** ✅ Completed | ⏳ In Progress | 📋 Planned
+
+---
+
+## 📋 Executive Summary
+
+[1-2 paragraph summary of what this run accomplished, key outcomes, and business impact]
+
+**Business Context:**
+- Initiative: [Name of initiative/product]
+- Objective: [Short statement of goal]
+- Stakeholders: [Key roles/teams involved]
+
+---
+
+## 🎯 Run Objectives
+
+What did we want to achieve in this run?
+
+- [ ] Objective 1: [Description]
+- [ ] Objective 2: [Description]
+- [ ] Objective 3: [Description]
+
+**Status:** [✅ All achieved | ⚠️ Mostly achieved | ❌ Partially achieved | — Not started]
+
+---
+
+## 📊 Key Results
+
+### Artifacts Produced
+
+| Artifact | Status | Location | Key Content |
+|----------|--------|----------|------------|
+| [User Stories](./artifacts/user-stories.md) | ✅ Final | artifacts/ | [# stories, top priorities] |
+| [Vision & Scope](./artifacts/vision-scope.md) | ✅ Final | artifacts/ | [Vision statement, in/out scope] |
+| [Architecture Design](./artifacts/architecture.md) | ⏳ Draft | artifacts/ | [Architecture approach] |
+| [Roadmap](./artifacts/roadmap.md) | 📋 Template | artifacts/ | [Release plan] |
+| [Other artifacts] | Status | Location | Notes |
+
+### Run Statistics
+
+| Metric | Value |
+|--------|--------|
+| Total Duration | [X days] |
+| User Stories Created | [#] |
+| Epics Defined | [#] |
+| Architectural Decisions | [#] |
+| Stake holders Consulted | [#] |
+| Approval Gate Status | ✅ Approved / ⏳ Pending / ❌ Rejected |
+
+---
+
+## 🤝 Decisions Made
+
+### Key Approvals
+
+- **[Decision/Artifact Name]**
+  - Approved by: [Role]
+  - Date: [Date]
+  - Notes: [Any conditions or concerns]
+
+- **[Decision/Artifact Name]**
+  - Approved by: [Role]
+  - Date: [Date]
+  - Notes: [Any conditions or concerns]
+
+### Consultations
+
+Who did we consult, and what did we ask?
+
+- **[Expert/Stakeholder Name]** ([Role])
+  - Question: [What did we ask?]
+  - Response: [Summary of answer]
+  - Impact: [How did it influence decisions?]
+
+### Informed Stakeholders
+
+Who needed to know the results?
+
+- [Role/Team] – [What they were told]
+- [Role/Team] – [What they were told]
+- [Role/Team] – [What they were told]
+
+See [informed_role_briefs.json](./results/informed_role_briefs.json) for details.
+
+---
+
+## 📈 Process Flow & Timeline
+
+### Phase 1: Kravställning (WHAT)
+- Duration: [#] days
+- Output: User stories (N), Vision (1), Scope (1)
+- Status: ✅ Completed / ⏳ In Progress
+
+### Phase 2: Målarkitektur (HOW)
+- Duration: [#] days
+- Output: Architecture (1), System landscape (1)
+- Status: ✅ Completed / ⏳ In Progress / 📋 Scheduled
+
+### Phase 3: Roadmap (WHEN)
+- Duration: [#] days
+- Output: Roadmap (1), Sequencing (1)
+- Status: ✅ Completed / ⏳ In Progress / 📋 Scheduled
+
+### Phase 4: Leverans (BUILD)
+- Duration: [#] days
+- Output: Build results, Test results
+- Status: ✅ Completed / ⏳ In Progress / 📋 Scheduled
+
+### Phase 5: Repeat (LEARN)
+- Duration: [#] days
+- Output: Retrospective, Lessons Learned
+- Status: ✅ Completed / ⏳ In Progress / 📋 Scheduled
+
+**Timeline:** See [run_log.json](./run_log.json) for detailed timeline.
+
+---
+
+## 🔍 Key Findings & Insights
+
+### What Went Well ✅
+- [Finding 1]
+- [Finding 2]
+- [Finding 3]
+
+### Challenges Encountered ⚠️
+- [Challenge 1] → Solution: [How did we handle it?]
+- [Challenge 2] → Solution: [How did we handle it?]
+- [Challenge 3] → Solution: [How did we handle it?]
+
+### Surprises & Learnings 💡
+- [Insight 1]
+- [Insight 2]
+- [Insight 3]
+
+---
+
+## 📚 Artifacts & Results
+
+All artifacts from this run are stored in:
+- **artifacts/** – Final deliverables
+- **decisions/** – Approval and consultation records
+- **results/** – Completion status and stakeholder communication
+
+Quick links:
+- [User Stories and Requirements](./artifacts/user-stories.md)
+- [Architecture & Design](./artifacts/architecture.md)
+- [Roadmap & Schedule](./artifacts/roadmap.md)
+- [Decision Log](./decisions/approval_decisions.json)
+- [Completion Status](./results/artifact_state.json)
+
+---
+
+## 🚀 What's Next?
+
+### Immediate Next Steps
+1. [Action 1] – [Owner] – Due [Date]
+2. [Action 2] – [Owner] – Due [Date]
+3. [Action 3] – [Owner] – Due [Date]
+
+### Future Iterations
+- Next run focus: [Description of what will be tackled next]
+- Timeline: [When will next run start?]
+- Improvements to process: [What did we learn about the framework?]
+
+---
+
+## 📝 Run Metadata
+
+| Property | Value |
+|----------|-------|
+| **Run ID** | [Unique identifier] |
+| **Run Name** | [Human-readable name] |
+| **Initiative** | [Associated product/initiative] |
+| **Start Date** | [ISO 8601 date] |
+| **End Date** | [ISO 8601 date] |
+| **Duration** | [# days] |
+| **Team Lead** | [Name] |
+| **Team Size** | [# people] |
+| **Framework Version** | [e.g., 1.0] |
+| **Process Steps** | [List: 1, 2, 3, 4, 5] |
+| **Status** | Completed / In Progress / Planned |
+
+### Machine-Readable Data
+- Full metadata: [run_metadata.json](./run_metadata.json)
+- Detailed timeline: [run_log.json](./run_log.json)
+- Approvals: [approval_decisions.json](./decisions/approval_decisions.json)
+- Consultation: [consultation_requests.json](./decisions/consultation_requests.json)
+
+---
+
+## 🔗 Links
+
+- **← Back to [Runs Index](../INDEX.md)**
+- **Framework Overview:** [ValueStream OS Framework](../../framework/standard/INDEX.md)
+- **Understanding the Process:** [Process Overview](../../framework/standard/processes/Process.md)
+- **Role Responsibilities:** [RACI for this run's process steps](../../framework/standard/RACI/)
+
+---
+
+**Last Updated:** [Date]
+**Last Updated By:** [Name]
+**Status:** [Draft / In Review / Final]
+
+*This run's results contribute to our continuous learning and improvement journey.*
+```
+
+---
+
+## How to Use This Template
+
+1. **Copy** this template to `runs/[RUN-ID]/README.md`
+2. **Replace** all `[bracketed placeholders]` with actual run data
+3. **Remove** sections that don't apply to your run
+4. **Add** additional sections if needed for your specific context
+5. **Keep** the structure for consistency across runs
+
+## Tips for Completing
+
+- **Executive Summary:** Write this last – it's a summary of everything below
+- **Artifacts/Links:** Make sure all links work (relative paths to files in the run folder)
+- **Dates:** Use ISO 8601 format (YYYY-MM-DD)
+- **Status:** Use consistent emoji: ✅ Final, ⏳ In Progress, 📋 Planned, ⚠️ Needs Review
+- **Key Findings:** Be honest about challenges and learnings – this helps future runs
+
+---
+
+**Template Version:** 1.0
+**Last Updated:** 2026-04-01
+
+*This template will be used in the valuestream-os-data repository when it is created.*
