@@ -13,10 +13,13 @@ import pytest
 
 from src.framework.models import (
     ApprovalDecision,
+    ActorKind,
     ArtifactStatus,
     ConsultationRequest,
     ConsultationResponse,
     ExpertContext,
+    HumanTask,
+    HumanTaskStatus,
     InformedRoleBrief,
     RunStatus,
     StepStatus,
@@ -27,6 +30,7 @@ from src.framework.stores import (
     ArtifactStateStore,
     ConsultationStore,
     ExpertContextStore,
+    HumanTaskStore,
     InformedRoleBriefStore,
     RunLog,
     RunStateStore,
@@ -58,12 +62,14 @@ def test_run_state_save_and_load_roundtrip(run_dir):
     state = store.initialize("test-run", "test-flow", ["step-a"])
     state.step_statuses["step-a"] = StepStatus.completed.value
     state.status = RunStatus.completed
+    state.pending_human_task_id = "task-1"
     store.save(state)
 
     loaded = store.load()
     assert loaded is not None
     assert loaded.status == RunStatus.completed
     assert loaded.step_statuses["step-a"] == StepStatus.completed.value
+    assert loaded.pending_human_task_id == "task-1"
 
 
 def test_run_state_load_returns_none_when_missing(run_dir):
@@ -107,22 +113,34 @@ def test_artifact_state_roundtrip(run_dir):
         "Vision & målbild",
         "ba-vision",
         ArtifactStatus.approved_with_notes,
+        agent_actor_kind=ActorKind.automated,
         consult_agent_ids=["verksamhetsexperter"],
-        approver_agent_id="produktagare",
+        consult_actor_kinds={"verksamhetsexperter": ActorKind.automated},
+        approver_agent_id="bestallare",
+        approver_actor_kind=ActorKind.human,
         informed_agent_ids=["utvecklare"],
+        informed_actor_kinds={"utvecklare": ActorKind.automated},
         latest_phase="approval",
         approval_decision="approved_with_notes",
+        pending_human_task_id="task-1",
+        pending_human_phase="approval",
     )
 
     loaded = store.load()
     assert loaded is not None
     assert loaded.artifacts["vision.md"].status == ArtifactStatus.approved_with_notes
     assert loaded.artifacts["vision.md"].producer_step_id == "ba-vision"
+    assert loaded.artifacts["vision.md"].agent_actor_kind == ActorKind.automated
     assert loaded.artifacts["vision.md"].consult_agent_ids == ["verksamhetsexperter"]
-    assert loaded.artifacts["vision.md"].approver_agent_id == "produktagare"
+    assert loaded.artifacts["vision.md"].consult_actor_kinds == {"verksamhetsexperter": ActorKind.automated}
+    assert loaded.artifacts["vision.md"].approver_agent_id == "bestallare"
+    assert loaded.artifacts["vision.md"].approver_actor_kind == ActorKind.human
     assert loaded.artifacts["vision.md"].informed_agent_ids == ["utvecklare"]
+    assert loaded.artifacts["vision.md"].informed_actor_kinds == {"utvecklare": ActorKind.automated}
     assert loaded.artifacts["vision.md"].latest_phase == "approval"
     assert loaded.artifacts["vision.md"].approval_decision == "approved_with_notes"
+    assert loaded.artifacts["vision.md"].pending_human_task_id == "task-1"
+    assert loaded.artifacts["vision.md"].pending_human_phase == "approval"
 
 
 # ---------------------------------------------------------------------------
@@ -193,8 +211,9 @@ def test_approval_store_roundtrip(run_dir):
             step_id="backlog",
             artifact_name="Prioriterad backlog",
             artifact_filename="prioriterad_backlog.md",
-            approver_agent_id="produktagare",
+            approver_agent_id="bestallare",
             decision="approved_with_notes",
+            actor_kind=ActorKind.human,
             summary="Godkänd med kommentarer.",
             rationale="Bra riktning.",
             changes_requested=["Förtydliga MVP"],
@@ -205,6 +224,7 @@ def test_approval_store_roundtrip(run_dir):
 
     assert decision is not None
     assert decision.decision == "approved_with_notes"
+    assert decision.actor_kind == ActorKind.human
     assert decision.changes_requested == ["Förtydliga MVP"]
 
 
@@ -217,6 +237,7 @@ def test_informed_role_brief_store_roundtrip(run_dir):
             artifact_filename="prioriterad_backlog.md",
             role_agent_id="utvecklare",
             brief_text="Fokusera på högsta prioritet i första leveransen.",
+            actor_kind=ActorKind.automated,
             relevance="Påverkar kommande implementation.",
         )
     )
@@ -244,6 +265,31 @@ def test_expert_context_store_roundtrip(run_dir):
     assert context is not None
     assert context.context_text == "Viktig verksamhetskontext."
     assert context.source_filenames == ["vision_och_malbild.md"]
+
+
+def test_human_task_store_roundtrip(run_dir):
+    store = HumanTaskStore(run_dir)
+    task = HumanTask(
+        task_id="task-1",
+        step_id="backlog",
+        artifact_name="Prioriterad backlog",
+        artifact_filename="prioriterad_backlog.md",
+        agent_id="bestallare",
+        role_name="Beställare",
+        phase="approval",
+        status=HumanTaskStatus.pending,
+        request_payload={"decision_options": ["approved", "rejected"]},
+        response_payload={},
+    )
+    path = store.save(task)
+
+    loaded = store.load("task-1")
+
+    assert path.exists()
+    assert loaded is not None
+    assert loaded.phase == "approval"
+    assert loaded.status == HumanTaskStatus.pending
+    assert loaded.request_payload["decision_options"] == ["approved", "rejected"]
 
 
 # ---------------------------------------------------------------------------

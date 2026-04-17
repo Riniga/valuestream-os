@@ -32,7 +32,7 @@ Ta en beställning och omvandla den till ett komplett, strukturerat och kvalitet
 ## 5. RACI
 
 - R: Business Analyst
-- A: Beställare
+- A: Produktägare
 - C: Verksamhetsexperter, Användarrepresentanter
 - I: Lösningsarkitekt, Utvecklare, Projektledare
 
@@ -57,8 +57,6 @@ Ta en beställning och omvandla den till ett komplett, strukturerat och kvalitet
 4. Identifiera centrala begrepp (light)
 5. Validera med beställare
 
-(→ bygger på :contentReference[oaicite:0]{index=0} + :contentReference[oaicite:1]{index=1})
-
 ---
 
 ### Steg 3 – Avgränsa scope
@@ -67,8 +65,6 @@ Ta en beställning och omvandla den till ett komplett, strukturerat och kvalitet
 3. Säkerställ koppling till mål och värde
 4. Identifiera övergripande beroenden
 5. Fastställ scope
-
-(→ bygger på :contentReference[oaicite:2]{index=2})
 
 ---
 
@@ -79,8 +75,6 @@ Ta en beställning och omvandla den till ett komplett, strukturerat och kvalitet
 4. Identifiera beroenden mellan aktörer
 5. Fastställ stakeholderkarta
 
-(→ bygger på :contentReference[oaicite:3]{index=3})
-
 ---
 
 ### Steg 5 – Strukturera funktionalitet (backlog)
@@ -89,8 +83,6 @@ Ta en beställning och omvandla den till ett komplett, strukturerat och kvalitet
 3. Bryt ner i epics (funktionella områden)
 4. Identifiera ingående delar (features / stories light)
 5. Säkerställ spårbarhet till mål
-
-(→ bygger på :contentReference[oaicite:4]{index=4} + :contentReference[oaicite:5]{index=5})
 
 ---
 
@@ -101,8 +93,6 @@ Ta en beställning och omvandla den till ett komplett, strukturerat och kvalitet
 4. Identifiera MVP
 5. Strukturera en sammanhängande backlog
 
-(→ bygger på :contentReference[oaicite:6]{index=6})
-
 ---
 
 ### Steg 7 – Definiera KPI / värdemått
@@ -111,8 +101,6 @@ Ta en beställning och omvandla den till ett komplett, strukturerat och kvalitet
 3. Definiera målvärden
 4. Definiera hur uppföljning ska ske
 5. Säkerställ att KPI:er är mätbara
-
-(→ bygger på :contentReference[oaicite:7]{index=7})
 
 ---
 

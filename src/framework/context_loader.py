@@ -12,6 +12,7 @@ The framework location is configurable via the FRAMWORK environment variable
 from __future__ import annotations
 
 import re
+import unicodedata
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -172,11 +173,17 @@ class AgentContextLoader:
         raci_section = self._extract_raw_section(sop_content, "5. RACI")
         if not raci_section:
             return False
+        normalized_role = self._normalize_role_value(self.raci_role)
         for line in raci_section.splitlines():
             stripped = line.strip()
             if re.match(r"-\s*R\s*:", stripped, re.IGNORECASE):
                 role_value = re.sub(r"-\s*R\s*:\s*", "", stripped, flags=re.IGNORECASE)
-                if self.raci_role.lower() in role_value.lower():
+                roles = [
+                    self._normalize_role_value(part)
+                    for part in role_value.split(",")
+                    if part.strip()
+                ]
+                if normalized_role in roles:
                     return True
         return False
 
@@ -241,4 +248,13 @@ class AgentContextLoader:
 
     @staticmethod
     def _normalize_name(name: str) -> str:
-        return re.sub(r"[\s\-_&]", "", name).lower()
+        ascii_name = (
+            unicodedata.normalize("NFKD", name)
+            .encode("ascii", "ignore")
+            .decode("ascii")
+        )
+        return re.sub(r"[\s\-_&]", "", ascii_name).lower()
+
+    @staticmethod
+    def _normalize_role_value(value: str) -> str:
+        return " ".join(value.strip().casefold().split())

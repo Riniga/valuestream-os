@@ -25,12 +25,15 @@ from typing import Any
 from src.framework.models import (
     ApprovalDecision,
     AgentMemory,
+    ActorKind,
     ConsultationRequest,
     ConsultationResponse,
     ArtifactRecord,
     ArtifactState,
     ArtifactStatus,
     ExpertContext,
+    HumanTask,
+    HumanTaskStatus,
     InformedRoleBrief,
     RunState,
     RunStatus,
@@ -76,6 +79,7 @@ class RunStateStore:
             status=RunStatus(data["status"]),
             current_step_id=data.get("current_step_id"),
             current_phase=data.get("current_phase"),
+            pending_human_task_id=data.get("pending_human_task_id"),
             step_statuses=data.get("step_statuses", {}),
         )
 
@@ -89,6 +93,7 @@ class RunStateStore:
                 "status": state.status.value,
                 "current_step_id": state.current_step_id,
                 "current_phase": state.current_phase,
+                "pending_human_task_id": state.pending_human_task_id,
                 "step_statuses": state.step_statuses,
                 "updated_at": _now_iso(),
             },
@@ -128,11 +133,27 @@ class ArtifactStateStore:
                 filename=rec["filename"],
                 producer_step_id=rec["producer_step_id"],
                 status=ArtifactStatus(rec["status"]),
+                agent_actor_kind=ActorKind(rec.get("agent_actor_kind", ActorKind.automated.value)),
                 consult_agent_ids=rec.get("consult_agent_ids", []),
+                consult_actor_kinds={
+                    agent_id: ActorKind(kind)
+                    for agent_id, kind in rec.get("consult_actor_kinds", {}).items()
+                },
                 approver_agent_id=rec.get("approver_agent_id"),
+                approver_actor_kind=(
+                    ActorKind(rec["approver_actor_kind"])
+                    if rec.get("approver_actor_kind") is not None
+                    else None
+                ),
                 informed_agent_ids=rec.get("informed_agent_ids", []),
+                informed_actor_kinds={
+                    agent_id: ActorKind(kind)
+                    for agent_id, kind in rec.get("informed_actor_kinds", {}).items()
+                },
                 latest_phase=rec.get("latest_phase"),
                 approval_decision=rec.get("approval_decision"),
+                pending_human_task_id=rec.get("pending_human_task_id"),
+                pending_human_phase=rec.get("pending_human_phase"),
             )
             for filename, rec in data.get("artifacts", {}).items()
         }
@@ -149,11 +170,23 @@ class ArtifactStateStore:
                         "filename": rec.filename,
                         "producer_step_id": rec.producer_step_id,
                         "status": rec.status.value,
+                        "agent_actor_kind": rec.agent_actor_kind.value,
                         "consult_agent_ids": rec.consult_agent_ids,
+                        "consult_actor_kinds": {
+                            agent_id: kind.value for agent_id, kind in rec.consult_actor_kinds.items()
+                        },
                         "approver_agent_id": rec.approver_agent_id,
+                        "approver_actor_kind": (
+                            rec.approver_actor_kind.value if rec.approver_actor_kind is not None else None
+                        ),
                         "informed_agent_ids": rec.informed_agent_ids,
+                        "informed_actor_kinds": {
+                            agent_id: kind.value for agent_id, kind in rec.informed_actor_kinds.items()
+                        },
                         "latest_phase": rec.latest_phase,
                         "approval_decision": rec.approval_decision,
+                        "pending_human_task_id": rec.pending_human_task_id,
+                        "pending_human_phase": rec.pending_human_phase,
                     }
                     for filename, rec in state.artifacts.items()
                 },
@@ -184,11 +217,17 @@ class ArtifactStateStore:
         step_id: str,
         status: ArtifactStatus,
         *,
+        agent_actor_kind: ActorKind | None = None,
         consult_agent_ids: list[str] | None = None,
+        consult_actor_kinds: dict[str, ActorKind] | None = None,
         approver_agent_id: str | None = None,
+        approver_actor_kind: ActorKind | None = None,
         informed_agent_ids: list[str] | None = None,
+        informed_actor_kinds: dict[str, ActorKind] | None = None,
         latest_phase: str | None = None,
         approval_decision: str | None = None,
+        pending_human_task_id: str | None = None,
+        pending_human_phase: str | None = None,
     ) -> ArtifactState:
         existing = state.artifacts.get(filename)
         state.artifacts[filename] = ArtifactRecord(
@@ -196,20 +235,38 @@ class ArtifactStateStore:
             filename=filename,
             producer_step_id=step_id,
             status=status,
+            agent_actor_kind=agent_actor_kind if agent_actor_kind is not None else (
+                existing.agent_actor_kind if existing else ActorKind.automated
+            ),
             consult_agent_ids=consult_agent_ids if consult_agent_ids is not None else (
                 existing.consult_agent_ids if existing else []
+            ),
+            consult_actor_kinds=consult_actor_kinds if consult_actor_kinds is not None else (
+                existing.consult_actor_kinds if existing else {}
             ),
             approver_agent_id=approver_agent_id if approver_agent_id is not None else (
                 existing.approver_agent_id if existing else None
             ),
+            approver_actor_kind=approver_actor_kind if approver_actor_kind is not None else (
+                existing.approver_actor_kind if existing else None
+            ),
             informed_agent_ids=informed_agent_ids if informed_agent_ids is not None else (
                 existing.informed_agent_ids if existing else []
+            ),
+            informed_actor_kinds=informed_actor_kinds if informed_actor_kinds is not None else (
+                existing.informed_actor_kinds if existing else {}
             ),
             latest_phase=latest_phase if latest_phase is not None else (
                 existing.latest_phase if existing else None
             ),
             approval_decision=approval_decision if approval_decision is not None else (
                 existing.approval_decision if existing else None
+            ),
+            pending_human_task_id=pending_human_task_id if pending_human_task_id is not None else (
+                existing.pending_human_task_id if existing else None
+            ),
+            pending_human_phase=pending_human_phase if pending_human_phase is not None else (
+                existing.pending_human_phase if existing else None
             ),
         )
         self.save(state)
@@ -358,6 +415,7 @@ class ApprovalStore:
                 "artifact_filename": decision.artifact_filename,
                 "approver_agent_id": decision.approver_agent_id,
                 "decision": decision.decision,
+                "actor_kind": decision.actor_kind.value,
                 "summary": decision.summary,
                 "rationale": decision.rationale,
                 "changes_requested": decision.changes_requested,
@@ -375,6 +433,7 @@ class ApprovalStore:
                 artifact_filename=item["artifact_filename"],
                 approver_agent_id=item["approver_agent_id"],
                 decision=item["decision"],
+                actor_kind=ActorKind(item.get("actor_kind", ActorKind.automated.value)),
                 summary=item.get("summary", ""),
                 rationale=item.get("rationale", ""),
                 changes_requested=item.get("changes_requested", []),
@@ -408,6 +467,7 @@ class InformedRoleBriefStore:
                 "artifact_filename": brief.artifact_filename,
                 "role_agent_id": brief.role_agent_id,
                 "brief_text": brief.brief_text,
+                "actor_kind": brief.actor_kind.value,
                 "relevance": brief.relevance,
                 "created_at": _now_iso(),
             }
@@ -423,6 +483,7 @@ class InformedRoleBriefStore:
                 artifact_filename=item["artifact_filename"],
                 role_agent_id=item["role_agent_id"],
                 brief_text=item["brief_text"],
+                actor_kind=ActorKind(item.get("actor_kind", ActorKind.automated.value)),
                 relevance=item.get("relevance", ""),
             )
             for item in items
@@ -474,6 +535,110 @@ class ExpertContextStore:
     def _build_key(agent_id: str, artifact_name: str) -> str:
         safe_artifact = artifact_name.replace("/", "_")
         return f"{agent_id}::{safe_artifact}"
+
+
+# ---------------------------------------------------------------------------
+# HumanTaskStore
+# ---------------------------------------------------------------------------
+
+class HumanTaskStore:
+    """Persists human handoff tasks as individual JSON files."""
+
+    _DIRNAME = "human_tasks"
+
+    def __init__(self, run_dir: Path) -> None:
+        self._dir = run_dir / self._DIRNAME
+
+    def _path(self, task_id: str) -> Path:
+        safe = task_id.replace("/", "_").replace(" ", "_")
+        return self._dir / f"{safe}.json"
+
+    def path_for(self, task_id: str) -> Path:
+        return self._path(task_id)
+
+    def save(self, task: HumanTask) -> Path:
+        path = self._path(task.task_id)
+        _write_json(
+            path,
+            {
+                "task_id": task.task_id,
+                "step_id": task.step_id,
+                "artifact_name": task.artifact_name,
+                "artifact_filename": task.artifact_filename,
+                "agent_id": task.agent_id,
+                "role_name": task.role_name,
+                "phase": task.phase,
+                "task_kind": task.task_kind,
+                "action_required": task.action_required,
+                "next_step_hint": task.next_step_hint,
+                "status": task.status.value,
+                "request_payload": task.request_payload,
+                "response_payload": task.response_payload,
+                "completion_summary": task.completion_summary,
+                "updated_at": _now_iso(),
+            },
+        )
+        return path
+
+    def load(self, task_id: str) -> HumanTask | None:
+        data = _read_json(self._path(task_id))
+        if data is None:
+            return None
+        return HumanTask(
+            task_id=data["task_id"],
+            step_id=data["step_id"],
+            artifact_name=data["artifact_name"],
+            artifact_filename=data["artifact_filename"],
+            agent_id=data["agent_id"],
+            role_name=data["role_name"],
+            phase=data["phase"],
+            task_kind=data.get("task_kind", ""),
+            action_required=data.get("action_required", ""),
+            next_step_hint=data.get("next_step_hint", ""),
+            status=HumanTaskStatus(data.get("status", HumanTaskStatus.pending.value)),
+            request_payload=data.get("request_payload", {}),
+            response_payload=data.get("response_payload", {}),
+            completion_summary=data.get("completion_summary", ""),
+        )
+
+    def load_all(self) -> list[HumanTask]:
+        if not self._dir.exists():
+            return []
+        tasks: list[HumanTask] = []
+        for path in sorted(self._dir.glob("*.json")):
+            data = _read_json(path)
+            if data is None:
+                continue
+            tasks.append(
+                HumanTask(
+                    task_id=data["task_id"],
+                    step_id=data["step_id"],
+                    artifact_name=data["artifact_name"],
+                    artifact_filename=data["artifact_filename"],
+                    agent_id=data["agent_id"],
+                    role_name=data["role_name"],
+                    phase=data["phase"],
+                    task_kind=data.get("task_kind", ""),
+                    action_required=data.get("action_required", ""),
+                    next_step_hint=data.get("next_step_hint", ""),
+                    status=HumanTaskStatus(data.get("status", HumanTaskStatus.pending.value)),
+                    request_payload=data.get("request_payload", {}),
+                    response_payload=data.get("response_payload", {}),
+                    completion_summary=data.get("completion_summary", ""),
+                )
+            )
+        return tasks
+
+    def load_pending(self) -> list[HumanTask]:
+        return [task for task in self.load_all() if task.status == HumanTaskStatus.pending]
+
+    def load_for_step_and_phase(self, step_id: str, phase: str, agent_id: str) -> HumanTask | None:
+        candidates = [
+            task
+            for task in self.load_all()
+            if task.step_id == step_id and task.phase == phase and task.agent_id == agent_id
+        ]
+        return candidates[-1] if candidates else None
 
 
 # ---------------------------------------------------------------------------

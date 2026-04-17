@@ -1,0 +1,109 @@
+{
+  "agents": [
+    {
+      "agent_id": "business-analyst",
+      "display_name": "Business Analyst",
+      "raci_role_id": "Business Analyst",
+      "agent_file": "business-analyst.md",
+      "actor_kind": "automated"
+    },
+    {
+      "agent_id": "bestallare",
+      "display_name": "Beställare",
+      "raci_role_id": "Beställare",
+      "agent_file": "beställare.md",
+      "actor_kind": "human"
+    },
+    {
+      "agent_id": "produktagare",
+      "display_name": "Produktägare",
+      "raci_role_id": "Produktägare",
+      "agent_file": "produktägare.md",
+      "actor_kind": "automated"
+    },
+    {
+      "agent_id": "ux",
+      "display_name": "UX",
+      "raci_role_id": "UX",
+      "agent_file": "ux.md",
+      "actor_kind": "automated"
+    },
+    {
+      "agent_id": "verksamhetsexperter",
+      "display_name": "Verksamhetsexperter",
+      "raci_role_id": "Verksamhetsexperter",
+      "agent_file": "verksamhetsexperter.md",
+      "actor_kind": "automated"
+    },
+    {
+      "agent_id": "projektledare",
+      "display_name": "Projektledare",
+      "raci_role_id": "Projektledare",
+      "agent_file": "projektledare.md",
+      "actor_kind": "automated"
+    },
+    {
+      "agent_id": "losningsarkitekt",
+      "display_name": "Lösningsarkitekt",
+      "raci_role_id": "Lösningsarkitekt",
+      "agent_file": "lösningsarkitekt.md",
+      "actor_kind": "automated"
+    },
+    {
+      "agent_id": "utvecklare",
+      "display_name": "Utvecklare",
+      "raci_role_id": "Utvecklare",
+      "agent_file": "utvecklare.md",
+      "actor_kind": "automated"
+    },
+    {
+      "agent_id": "anvandarrepresentanter",
+      "display_name": "Användarrepresentanter",
+      "raci_role_id": "Användarrepresentanter",
+      "agent_file": "användarrepresentanter.md",
+      "actor_kind": "automated"
+    },
+    {
+      "agent_id": "enterprise-arkitekt",
+      "display_name": "Enterprise Arkitekt",
+      "raci_role_id": "Enterprise Arkitekt",
+      "agent_file": "enterprise-arkitekt.md",
+      "actor_kind": "automated"
+    },
+    {
+      "agent_id": "teknisk-lead",
+      "display_name": "Teknisk Lead",
+      "raci_role_id": "Teknisk Lead",
+      "agent_file": "teknisk-lead.md",
+      "actor_kind": "automated"
+    },
+    {
+      "agent_id": "dataarkitekt",
+      "display_name": "Dataarkitekt",
+      "raci_role_id": "Dataarkitekt",
+      "agent_file": "dataarkitekt.md",
+      "actor_kind": "automated"
+    },
+    {
+      "agent_id": "devops",
+      "display_name": "DevOps",
+      "raci_role_id": "DevOps",
+      "agent_file": "devops.md",
+      "actor_kind": "automated"
+    },
+    {
+      "agent_id": "testare",
+      "display_name": "Testare",
+      "raci_role_id": "Testare",
+      "agent_file": "testare.md",
+      "actor_kind": "automated"
+    },
+    {
+      "agent_id": "scrum-master",
+      "display_name": "Scrum Master",
+      "raci_role_id": "Scrum Master",
+      "agent_file": "scrum-master.md",
+      "actor_kind": "automated"
+    }
+  ]
+}

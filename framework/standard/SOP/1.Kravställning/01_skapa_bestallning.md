@@ -27,9 +27,9 @@ Tydliggöra behov, mål och önskat utfall för ett initiativ, så att det kan a
 ## 5. RACI
 
 - R: Beställare
-- A: Business Analyst
+- A: Produktägare
 - C: Verksamhetsexperter, Användarrepresentanter
-- I: Projektledare
+- I: Business Analyst, Projektledare
 
 ---
 

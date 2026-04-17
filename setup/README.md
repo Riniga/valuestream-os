@@ -91,6 +91,37 @@ Körlogg och state sparas i `runs/<run-id>/`.
 
 Om du vill dela eller publicera körningsresultat görs det i det separata syskonrepot `../valuestream-os-data`.
 
+### Mänsklig interaktion i körningar
+
+Vissa roller kan vara mänskliga i stället för automatiska LLM-agenter, till exempel `Beställare`.
+När orkestreringen når ett sådant steg pausas körningen och en human task skapas under:
+
+`runs/<run-id>/human_tasks/`
+
+Använd följande kommandon för att se och slutföra mänskliga uppgifter:
+
+```powershell
+# Lista alla mänskliga uppgifter för en körning
+python -m src.cli.run --run-id test-01 human-tasks
+
+# Slutför en mänsklig uppgift med en fil som redan finns på disk
+python -m src.cli.run --run-id test-01 complete-human-task 1-kravstallning-01-bestallning-draft-bestallare --artifact-file runs/test-01/input/beställning.md
+
+# Slutför en mänsklig uppgift med inline-text (bra för kort feedback eller svar)
+python -m src.cli.run --run-id test-01 complete-human-task 1-kravstallning-01-bestallning-draft-bestallare --artifact-content "# Beställning`n`n..."
+
+# Fortsätt körningen efter att uppgiften markerats som completed
+python -m src.cli.run --run-id test-01 run
+```
+
+Praktiska regler:
+
+- För filproducerande mänskliga steg, som `Beställning`, är `--artifact-file` det rekommenderade sättet.
+- För mänsklig återkoppling, frågor eller godkännanden används task-filen eller CLI-parametrar som `--response-text`, `--decision`, `--summary` och `--rationale`.
+- Om du redigerar JSON-filen manuellt måste toppnivåfältet `status` sättas till `completed`. Det räcker inte att sätta `response_payload.status`.
+- För mänskliga filsteg kan systemet även återuppta från en redan upplagd fil i `runs/<run-id>/input/` eller `runs/<run-id>/output/`, så länge tasken själv är markerad som `completed`.
+- Körningens aktuella läge kan alltid ses med `python -m src.cli.run --run-id <run-id> status`.
+
 Körtester (kräver ej LLM):
 ```powershell
 python -m pytest tests/ -v

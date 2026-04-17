@@ -5,10 +5,11 @@ Varje agent representerar en roll med definierat ansvar, perspektiv och arbetspr
 ## Agenter
 
 - [Business Analyst](./business-analyst.md) – Analysera och strukturera krav
+- [Produktägare](./produktägare.md) – Prioritera och godkänna artefakter
 - [Solution Architect](./lösningsarkitekt.md) – Designa målarkitektur
 - [Developer](./utvecklare.md) – Implementera lösningen
 - [UX Designer](./ux.md) – Designa användarupplevelse
-- [Beställare](./produktägare.md) – Äga affärsvärde och prioritering
+- [Beställare](./beställare.md) – Initiera behov och bidra med verksamhetsmål
 - [Project Manager](./projektledare.md) – Koordinera projekt
 - [Scrum Master](./scrum-master.md) – Facilitera teamarbete
 - [Business Expert](./verksamhetsexperter.md) – Subject matter expertise
