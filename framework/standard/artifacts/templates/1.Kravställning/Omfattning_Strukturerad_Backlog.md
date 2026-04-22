@@ -1,9 +1,9 @@
-# Strukturerad backlog
+# Omfattning & Strukturerad Backlog
 
 ## Metadata
 | Fält | Värde |
 |------|------|
-| Artifakttyp | Krav & Planering |
+| Artifakttyp | Krav |
 | Ägare | Business Analyst |
 | Version | 1.0 |
 | Datum | |
@@ -20,7 +20,33 @@
 
 ---
 
-## 2. Struktur (Capabilities & Epics)
+## 2. Scope (Vad ingår)
+
+### 2.1 Funktionellt scope
+| Område | Beskrivning |
+|--------|-------------|
+| | |
+| | |
+
+### 2.2 Icke-funktionellt scope
+| Område | Beskrivning |
+|--------|-------------|
+| Prestanda | |
+| Säkerhet | |
+| Tillgänglighet | |
+| Skalbarhet | |
+
+---
+
+## 3. Avgränsningar (Vad ingår inte)
+| Område | Beskrivning |
+|--------|-------------|
+| | |
+| | |
+
+---
+
+## 4. Struktur (Capabilities & Epics)
 
 ### Capabilities
 | Capability | Beskrivning | Affärsvärde | Prioritet (H/M/L) |
@@ -38,7 +64,7 @@
 
 ---
 
-## 3. Backlog (översikt)
+## 5. Backlog (översikt)
 | ID | Typ (Capability/Epic/Story) | Namn | Beskrivning | Prioritet | Status |
 |----|-----------------------------|------|-------------|-----------|--------|
 | | | | | | |
@@ -46,7 +72,7 @@
 
 ---
 
-## 4. Prioritering
+## 6. Prioritering
 | ID | Affärsvärde | Användarnytta | Riskreduktion | Beroenden | Total prioritet |
 |----|-------------|---------------|----------------|-----------|-----------------|
 | | | | | | |
@@ -54,7 +80,7 @@
 
 ---
 
-## 5. Struktur per Epic (nedbrytning)
+## 7. Struktur per Epic (nedbrytning)
 
 ### Epic: <Namn>
 
@@ -65,22 +91,6 @@
 #### Ingående delar (features / stories)
 | ID | Namn | Beskrivning |
 |----|------|-------------|
-| | | |
-| | | |
-
----
-
-## 6. MVP (Minimum Viable Product)
-| ID | Namn | Motivering |
-|----|------|------------|
-| | | |
-| | | |
-
----
-
-## 7. Nästa leveranser
-| Release | Innehåll | Mål |
-|---------|----------|-----|
 | | | |
 | | | |
 
@@ -102,30 +112,22 @@
 
 ---
 
-## 10. Avgränsningar
-### Ingår
--
-
-### Ingår inte
--
-
----
-
-## 11. Status & mognad
-| ID | Status | Definition |
-|----|--------|------------|
-| | | |
-| | | |
-
----
-
-## 12. Antaganden
+## 10. Antaganden
 -
 -
 
 ---
 
-## 13. Risker
+## 11. Constraints (Begränsningar)
+| Typ | Beskrivning |
+|-----|-------------|
+| Teknisk | |
+| Organisatorisk | |
+| Legal | |
+
+---
+
+## 12. Risker
 | Risk | Påverkan | Åtgärd |
 |------|----------|--------|
 | | | |
@@ -133,13 +135,21 @@
 
 ---
 
+## 13. Förändringshantering
+- Alla förändringar ska:
+  - Dokumenteras
+  - Bedömas mot målbild och värde
+  - Godkännas av beställare
+
+---
+
 ## 14. Koppling till vidare arbete
 Denna artefakt används som input till:
 
+- Målarkitektur
 - Roadmap
-- Sprintplanering
+- Story map
 - Refinement
-- Leverans
 
 ---
 
