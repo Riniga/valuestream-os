@@ -67,13 +67,10 @@ En **körning** eller **instans** av ramverket mot ett specifikt initiativ. Varj
 
 **Artifacts:**
 
+- Beställning
 - Vision & målbild
-- Scope & avgränsningar
-- User stories
-- Epics & capabilities
-- User journeys
-- Story map
-- Prioriterad backlog
+- Omfattning och Strukturerad Backlog
+- Stakeholderkarta
 - KPI / värdemått
 
 **Se aussi:** [Kravställning Process](./processes/1.%20Kravställning.md)
@@ -88,9 +85,9 @@ En **körning** eller **instans** av ramverket mot ett specifikt initiativ. Varj
 - Arkitekturprinciper
 - Systemlandskap
 - Domänmodell
-- Begreppsmodell
-- Datamodell
-- Security model
+- Integrationsarkitektur
+- Icke-funktionella krav
+- Målarkitektur
 
 **Se aussi:** [Målarkitektur Process](./processes/2.%20Målarkitektur.md)
 
@@ -100,10 +97,8 @@ En **körning** eller **instans** av ramverket mot ett specifikt initiativ. Varj
 
 **Artifacts:**
 
-- Release roadmap
-- Delivery timeline
-- Dependency mapping
-- Phase gate criteria
+- Roadmap
+- Teknisk plan
 
 **Se aussi:** [Roadmap Process](./processes/3.%20Roadmap.md)
 
@@ -149,11 +144,11 @@ Exempel: "As a customer, I want to reset my password, so that I can regain acces
 
 **Se även:** Epic, Capability, Backlog
 
-### Backlog (Prioriterad Backlog)
+### Backlog
 
 En **lista av user stories och features** som är sorterad efter prioritet.
 
-Den prioriterade backloggen är en artefakt från Kravställning som dokumenterar vad som ska byggas först.
+I standardvarianten dokumenteras den samlade kravbilden i `Omfattning och Strukturerad Backlog`, och i leveransfasen används `Sprint backlog` som planeringsunderlag för iterationen.
 
 **Se även:** User Story, Epic
 

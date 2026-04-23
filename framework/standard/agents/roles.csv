@@ -1,94 +1,94 @@
 Role,SOP,Type of RACI
-Beställare,docs\SOP\1.Kravställning\01_skapa_bestallning.md,R
-Produktägare,docs\SOP\1.Kravställning\01_skapa_bestallning.md,A
-Verksamhetsexperter,docs\SOP\1.Kravställning\01_skapa_bestallning.md,C
-Användarrepresentanter,docs\SOP\1.Kravställning\01_skapa_bestallning.md,C
-Business Analyst,docs\SOP\1.Kravställning\01_skapa_bestallning.md,I
-Projektledare,docs\SOP\1.Kravställning\01_skapa_bestallning.md,I
-Business Analyst,docs\SOP\1.Kravställning\02_sammanhallen_kravanalys.md,R
-Produktägare,docs\SOP\1.Kravställning\02_sammanhallen_kravanalys.md,A
-Verksamhetsexperter,docs\SOP\1.Kravställning\02_sammanhallen_kravanalys.md,C
-Användarrepresentanter,docs\SOP\1.Kravställning\02_sammanhallen_kravanalys.md,C
-Lösningsarkitekt,docs\SOP\1.Kravställning\02_sammanhallen_kravanalys.md,I
-Utvecklare,docs\SOP\1.Kravställning\02_sammanhallen_kravanalys.md,I
-Projektledare,docs\SOP\1.Kravställning\02_sammanhallen_kravanalys.md,I
-Lösningsarkitekt,docs\SOP\2. Målarkitektur\01_etablera_arkitekturell_grund.md,R
-Enterprise Arkitekt,docs\SOP\2. Målarkitektur\01_etablera_arkitekturell_grund.md,A
-Teknisk Lead,docs\SOP\2. Målarkitektur\01_etablera_arkitekturell_grund.md,C
-Verksamhetsexperter,docs\SOP\2. Målarkitektur\01_etablera_arkitekturell_grund.md,C
-Business Analyst,docs\SOP\2. Målarkitektur\01_etablera_arkitekturell_grund.md,I
-Business Analyst,docs\SOP\2. Målarkitektur\02_definiera_domanmodell.md,R
-Lösningsarkitekt,docs\SOP\2. Målarkitektur\02_definiera_domanmodell.md,A
-Verksamhetsexperter,docs\SOP\2. Målarkitektur\02_definiera_domanmodell.md,C
-Beställare,docs\SOP\2. Målarkitektur\02_definiera_domanmodell.md,I
-Lösningsarkitekt,docs\SOP\2. Målarkitektur\03_etablera malarkitektur.md,R
-Enterprise Arkitekt,docs\SOP\2. Målarkitektur\03_etablera malarkitektur.md,A
-Teknisk Lead,docs\SOP\2. Målarkitektur\03_etablera malarkitektur.md,C
-DevOps,docs\SOP\2. Målarkitektur\03_etablera malarkitektur.md,C
-Business Analyst,docs\SOP\2. Målarkitektur\03_etablera malarkitektur.md,C
-Beställare,docs\SOP\2. Målarkitektur\03_etablera malarkitektur.md,I
-Business Analyst,docs\SOP\3. Roadmap\01_skapa_roadmap.md,R
-Beställare,docs\SOP\3. Roadmap\01_skapa_roadmap.md,A
-Lösningsarkitekt,docs\SOP\3. Roadmap\01_skapa_roadmap.md,C
-Produktägare,docs\SOP\3. Roadmap\01_skapa_roadmap.md,C
-Verksamhetsexperter,docs\SOP\3. Roadmap\01_skapa_roadmap.md,I
-Utvecklare,docs\SOP\3. Roadmap\01_skapa_roadmap.md,I
-Teknisk Lead,docs\SOP\3. Roadmap\02_skapa_teknisk_plan.md,R
-Lösningsarkitekt,docs\SOP\3. Roadmap\02_skapa_teknisk_plan.md,A
-Utvecklare,docs\SOP\3. Roadmap\02_skapa_teknisk_plan.md,C
-Beställare,docs\SOP\3. Roadmap\02_skapa_teknisk_plan.md,I
-Business Analyst,docs\SOP\4. Leverans\01_backlog_refinement.md,R
-Beställare,docs\SOP\4. Leverans\01_backlog_refinement.md,A
-Utvecklare,docs\SOP\4. Leverans\01_backlog_refinement.md,C
-Lösningsarkitekt,docs\SOP\4. Leverans\01_backlog_refinement.md,I
-Scrum Master,docs\SOP\4. Leverans\02_sprintplanering.md,R
-Beställare,docs\SOP\4. Leverans\02_sprintplanering.md,A
-Utvecklare,docs\SOP\4. Leverans\02_sprintplanering.md,C
-Business Analyst,docs\SOP\4. Leverans\02_sprintplanering.md,I
-Utvecklare,docs\SOP\4. Leverans\03_utveckling.md,R
-Teknisk Lead,docs\SOP\4. Leverans\03_utveckling.md,A
-Lösningsarkitekt,docs\SOP\4. Leverans\03_utveckling.md,C
-Beställare,docs\SOP\4. Leverans\03_utveckling.md,I
-Testare,docs\SOP\4. Leverans\05_test.md,R
-Teknisk Lead,docs\SOP\4. Leverans\05_test.md,A
-Utvecklare,docs\SOP\4. Leverans\05_test.md,C
-Beställare,docs\SOP\4. Leverans\05_test.md,I
-DevOps,docs\SOP\4. Leverans\06_integration_och_bygg.md,R
-Teknisk Lead,docs\SOP\4. Leverans\06_integration_och_bygg.md,A
-Utvecklare,docs\SOP\4. Leverans\06_integration_och_bygg.md,C
-Beställare,docs\SOP\4. Leverans\06_integration_och_bygg.md,I
-Utvecklare,docs\SOP\4. Leverans\07_demo.md,R
-Beställare,docs\SOP\4. Leverans\07_demo.md,A
-Verksamhetsexperter,docs\SOP\4. Leverans\07_demo.md,C
-Business Analyst,docs\SOP\4. Leverans\07_demo.md,I
-DevOps,docs\SOP\4. Leverans\08_release.md,R
-Beställare,docs\SOP\4. Leverans\08_release.md,A
-Utvecklare,docs\SOP\4. Leverans\08_release.md,C
-Teknisk Lead,docs\SOP\4. Leverans\08_release.md,C
-Verksamhetsexperter,docs\SOP\4. Leverans\08_release.md,I
-Business Analyst,docs\SOP\4. Leverans\10_uppdatera_dokumentation.md,R
-Beställare,docs\SOP\4. Leverans\10_uppdatera_dokumentation.md,A
-Utvecklare,docs\SOP\4. Leverans\10_uppdatera_dokumentation.md,C
-Verksamhetsexperter,docs\SOP\4. Leverans\10_uppdatera_dokumentation.md,I
-Scrum Master,docs\SOP\4. Leverans\11_uppfoljning_och_forbattring.md,R
-Beställare,docs\SOP\4. Leverans\11_uppfoljning_och_forbattring.md,A
-Utvecklare,docs\SOP\4. Leverans\11_uppfoljning_och_forbattring.md,C
-Business Analyst,docs\SOP\4. Leverans\11_uppfoljning_och_forbattring.md,I
-Business Analyst,docs\SOP\5. Repeat\01_utvardera_leveransresultat.md,R
-Beställare,docs\SOP\5. Repeat\01_utvardera_leveransresultat.md,A
-Verksamhetsexperter,docs\SOP\5. Repeat\01_utvardera_leveransresultat.md,C
-Utvecklare,docs\SOP\5. Repeat\01_utvardera_leveransresultat.md,I
-Scrum Master,docs\SOP\5. Repeat\02_utvardera_process_och_arbetssatt.md,R
-Beställare,docs\SOP\5. Repeat\02_utvardera_process_och_arbetssatt.md,A
-Utvecklare,docs\SOP\5. Repeat\02_utvardera_process_och_arbetssatt.md,C
-Business Analyst,docs\SOP\5. Repeat\02_utvardera_process_och_arbetssatt.md,I
-Lösningsarkitekt,docs\SOP\5. Repeat\04_identifiera_arkitekturella_lardomar.md,R
-Enterprise Arkitekt,docs\SOP\5. Repeat\04_identifiera_arkitekturella_lardomar.md,A
-Teknisk Lead,docs\SOP\5. Repeat\04_identifiera_arkitekturella_lardomar.md,C
-Beställare,docs\SOP\5. Repeat\04_identifiera_arkitekturella_lardomar.md,I
-Business Analyst,docs\SOP\5. Repeat\06_Förbereda nästa cykel.md,R
-Beställare,docs\SOP\5. Repeat\06_Förbereda nästa cykel.md,A
-Lösningsarkitekt,docs\SOP\5. Repeat\06_Förbereda nästa cykel.md,C
-Verksamhetsexperter,docs\SOP\5. Repeat\06_Förbereda nästa cykel.md,C
-Projektledare,docs\SOP\5. Repeat\06_Förbereda nästa cykel.md,C
-Utvecklare,docs\SOP\5. Repeat\06_Förbereda nästa cykel.md,I
+Beställare,framework\standard\SOP\1.Kravställning\01_skapa_bestallning.md,R
+Produktägare,framework\standard\SOP\1.Kravställning\01_skapa_bestallning.md,A
+Verksamhetsexperter,framework\standard\SOP\1.Kravställning\01_skapa_bestallning.md,C
+Användarrepresentanter,framework\standard\SOP\1.Kravställning\01_skapa_bestallning.md,C
+Business Analyst,framework\standard\SOP\1.Kravställning\01_skapa_bestallning.md,I
+Projektledare,framework\standard\SOP\1.Kravställning\01_skapa_bestallning.md,I
+Business Analyst,framework\standard\SOP\1.Kravställning\02_sammanhallen_kravanalys.md,R
+Produktägare,framework\standard\SOP\1.Kravställning\02_sammanhallen_kravanalys.md,A
+Verksamhetsexperter,framework\standard\SOP\1.Kravställning\02_sammanhallen_kravanalys.md,C
+Användarrepresentanter,framework\standard\SOP\1.Kravställning\02_sammanhallen_kravanalys.md,C
+Lösningsarkitekt,framework\standard\SOP\1.Kravställning\02_sammanhallen_kravanalys.md,I
+Utvecklare,framework\standard\SOP\1.Kravställning\02_sammanhallen_kravanalys.md,I
+Projektledare,framework\standard\SOP\1.Kravställning\02_sammanhallen_kravanalys.md,I
+Lösningsarkitekt,framework\standard\SOP\2. Målarkitektur\01_etablera_arkitekturell_grund.md,R
+Enterprise Arkitekt,framework\standard\SOP\2. Målarkitektur\01_etablera_arkitekturell_grund.md,A
+Teknisk Lead,framework\standard\SOP\2. Målarkitektur\01_etablera_arkitekturell_grund.md,C
+Verksamhetsexperter,framework\standard\SOP\2. Målarkitektur\01_etablera_arkitekturell_grund.md,C
+Business Analyst,framework\standard\SOP\2. Målarkitektur\01_etablera_arkitekturell_grund.md,I
+Business Analyst,framework\standard\SOP\2. Målarkitektur\02_definiera_domanmodell.md,R
+Lösningsarkitekt,framework\standard\SOP\2. Målarkitektur\02_definiera_domanmodell.md,A
+Verksamhetsexperter,framework\standard\SOP\2. Målarkitektur\02_definiera_domanmodell.md,C
+Beställare,framework\standard\SOP\2. Målarkitektur\02_definiera_domanmodell.md,I
+Lösningsarkitekt,framework\standard\SOP\2. Målarkitektur\03_etablera malarkitektur.md,R
+Enterprise Arkitekt,framework\standard\SOP\2. Målarkitektur\03_etablera malarkitektur.md,A
+Teknisk Lead,framework\standard\SOP\2. Målarkitektur\03_etablera malarkitektur.md,C
+DevOps,framework\standard\SOP\2. Målarkitektur\03_etablera malarkitektur.md,C
+Business Analyst,framework\standard\SOP\2. Målarkitektur\03_etablera malarkitektur.md,C
+Beställare,framework\standard\SOP\2. Målarkitektur\03_etablera malarkitektur.md,I
+Business Analyst,framework\standard\SOP\3. Roadmap\01_skapa_roadmap.md,R
+Beställare,framework\standard\SOP\3. Roadmap\01_skapa_roadmap.md,A
+Lösningsarkitekt,framework\standard\SOP\3. Roadmap\01_skapa_roadmap.md,C
+Produktägare,framework\standard\SOP\3. Roadmap\01_skapa_roadmap.md,C
+Verksamhetsexperter,framework\standard\SOP\3. Roadmap\01_skapa_roadmap.md,I
+Utvecklare,framework\standard\SOP\3. Roadmap\01_skapa_roadmap.md,I
+Teknisk Lead,framework\standard\SOP\3. Roadmap\02_skapa_teknisk_plan.md,R
+Lösningsarkitekt,framework\standard\SOP\3. Roadmap\02_skapa_teknisk_plan.md,A
+Utvecklare,framework\standard\SOP\3. Roadmap\02_skapa_teknisk_plan.md,C
+Beställare,framework\standard\SOP\3. Roadmap\02_skapa_teknisk_plan.md,I
+Business Analyst,framework\standard\SOP\4. Leverans\01_backlog_refinement.md,R
+Beställare,framework\standard\SOP\4. Leverans\01_backlog_refinement.md,A
+Utvecklare,framework\standard\SOP\4. Leverans\01_backlog_refinement.md,C
+Lösningsarkitekt,framework\standard\SOP\4. Leverans\01_backlog_refinement.md,I
+Scrum Master,framework\standard\SOP\4. Leverans\02_sprintplanering.md,R
+Beställare,framework\standard\SOP\4. Leverans\02_sprintplanering.md,A
+Utvecklare,framework\standard\SOP\4. Leverans\02_sprintplanering.md,C
+Business Analyst,framework\standard\SOP\4. Leverans\02_sprintplanering.md,I
+Utvecklare,framework\standard\SOP\4. Leverans\03_utveckling.md,R
+Teknisk Lead,framework\standard\SOP\4. Leverans\03_utveckling.md,A
+Lösningsarkitekt,framework\standard\SOP\4. Leverans\03_utveckling.md,C
+Beställare,framework\standard\SOP\4. Leverans\03_utveckling.md,I
+Testare,framework\standard\SOP\4. Leverans\05_test.md,R
+Teknisk Lead,framework\standard\SOP\4. Leverans\05_test.md,A
+Utvecklare,framework\standard\SOP\4. Leverans\05_test.md,C
+Beställare,framework\standard\SOP\4. Leverans\05_test.md,I
+DevOps,framework\standard\SOP\4. Leverans\06_integration_och_bygg.md,R
+Teknisk Lead,framework\standard\SOP\4. Leverans\06_integration_och_bygg.md,A
+Utvecklare,framework\standard\SOP\4. Leverans\06_integration_och_bygg.md,C
+Beställare,framework\standard\SOP\4. Leverans\06_integration_och_bygg.md,I
+Utvecklare,framework\standard\SOP\4. Leverans\07_demo.md,R
+Beställare,framework\standard\SOP\4. Leverans\07_demo.md,A
+Verksamhetsexperter,framework\standard\SOP\4. Leverans\07_demo.md,C
+Business Analyst,framework\standard\SOP\4. Leverans\07_demo.md,I
+DevOps,framework\standard\SOP\4. Leverans\08_release.md,R
+Beställare,framework\standard\SOP\4. Leverans\08_release.md,A
+Utvecklare,framework\standard\SOP\4. Leverans\08_release.md,C
+Teknisk Lead,framework\standard\SOP\4. Leverans\08_release.md,C
+Verksamhetsexperter,framework\standard\SOP\4. Leverans\08_release.md,I
+Business Analyst,framework\standard\SOP\4. Leverans\10_uppdatera_dokumentation.md,R
+Beställare,framework\standard\SOP\4. Leverans\10_uppdatera_dokumentation.md,A
+Utvecklare,framework\standard\SOP\4. Leverans\10_uppdatera_dokumentation.md,C
+Verksamhetsexperter,framework\standard\SOP\4. Leverans\10_uppdatera_dokumentation.md,I
+Scrum Master,framework\standard\SOP\4. Leverans\11_uppfoljning_och_forbattring.md,R
+Beställare,framework\standard\SOP\4. Leverans\11_uppfoljning_och_forbattring.md,A
+Utvecklare,framework\standard\SOP\4. Leverans\11_uppfoljning_och_forbattring.md,C
+Business Analyst,framework\standard\SOP\4. Leverans\11_uppfoljning_och_forbattring.md,I
+Business Analyst,framework\standard\SOP\5. Repeat\01_utvardera_leveransresultat.md,R
+Beställare,framework\standard\SOP\5. Repeat\01_utvardera_leveransresultat.md,A
+Verksamhetsexperter,framework\standard\SOP\5. Repeat\01_utvardera_leveransresultat.md,C
+Utvecklare,framework\standard\SOP\5. Repeat\01_utvardera_leveransresultat.md,I
+Scrum Master,framework\standard\SOP\5. Repeat\02_utvardera_process_och_arbetssatt.md,R
+Beställare,framework\standard\SOP\5. Repeat\02_utvardera_process_och_arbetssatt.md,A
+Utvecklare,framework\standard\SOP\5. Repeat\02_utvardera_process_och_arbetssatt.md,C
+Business Analyst,framework\standard\SOP\5. Repeat\02_utvardera_process_och_arbetssatt.md,I
+Lösningsarkitekt,framework\standard\SOP\5. Repeat\04_identifiera_arkitekturella_lardomar.md,R
+Enterprise Arkitekt,framework\standard\SOP\5. Repeat\04_identifiera_arkitekturella_lardomar.md,A
+Teknisk Lead,framework\standard\SOP\5. Repeat\04_identifiera_arkitekturella_lardomar.md,C
+Beställare,framework\standard\SOP\5. Repeat\04_identifiera_arkitekturella_lardomar.md,I
+Business Analyst,framework\standard\SOP\5. Repeat\06_Förbereda nästa cykel.md,R
+Beställare,framework\standard\SOP\5. Repeat\06_Förbereda nästa cykel.md,A
+Lösningsarkitekt,framework\standard\SOP\5. Repeat\06_Förbereda nästa cykel.md,C
+Verksamhetsexperter,framework\standard\SOP\5. Repeat\06_Förbereda nästa cykel.md,C
+Projektledare,framework\standard\SOP\5. Repeat\06_Förbereda nästa cykel.md,C
+Utvecklare,framework\standard\SOP\5. Repeat\06_Förbereda nästa cykel.md,I

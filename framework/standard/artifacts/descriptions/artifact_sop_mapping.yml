@@ -185,7 +185,7 @@ roadmap:
         markdown_link: "[SOP 1 (Leverans): Backlog refinement](../../../SOP/4. Leverans/01_backlog_refinement.md)"
       - sop_file: "06_Förbereda nästa cykel.md"
         sop_section: "Repeat"
-        markdown_link: "[SOP 4 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda nästa cykel.md)"
+        markdown_link: "[SOP 6 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda%20nästa%20cykel.md)"
 
   - artifact: "Teknisk plan"
     file_path: "3. Roadmap/teknisk_plan.md"
@@ -197,7 +197,7 @@ roadmap:
     used_in:
       - sop_file: "06_Förbereda nästa cykel.md"
         sop_section: "Repeat"
-        markdown_link: "[SOP 4 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda nästa cykel.md)"
+        markdown_link: "[SOP 6 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda%20nästa%20cykel.md)"
 
 ---
 # LEVERANS
@@ -326,7 +326,7 @@ leverans:
         markdown_link: "[SOP 4 (Repeat): Identifiera arkitekturella lärdomar](../../../SOP/5. Repeat/04_identifiera_arkitekturella_lardomar.md)"
       - sop_file: "06_Förbereda nästa cykel.md"
         sop_section: "Repeat"
-        markdown_link: "[SOP 4 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda nästa cykel.md)"
+        markdown_link: "[SOP 6 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda%20nästa%20cykel.md)"
 
 ---
 # REPEAT
@@ -344,7 +344,7 @@ repeat:
         markdown_link: "[SOP 2 (Repeat): Utvärdera process & arbetssätt](../../../SOP/5. Repeat/02_utvardera_process_och_arbetssatt.md)"
       - sop_file: "06_Förbereda nästa cykel.md"
         sop_section: "Repeat"
-        markdown_link: "[SOP 4 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda nästa cykel.md)"
+        markdown_link: "[SOP 6 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda%20nästa%20cykel.md)"
 
   - artifact: "Processförbättringar"
     file_path: "5. Repeat/processforbattringar.md"
@@ -356,7 +356,7 @@ repeat:
     used_in:
       - sop_file: "06_Förbereda nästa cykel.md"
         sop_section: "Repeat"
-        markdown_link: "[SOP 4 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda nästa cykel.md)"
+        markdown_link: "[SOP 6 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda%20nästa%20cykel.md)"
 
   - artifact: "Arkitekturinsikter"
     file_path: "5. Repeat/arkitekturinsikter.md"
@@ -368,7 +368,7 @@ repeat:
     used_in:
       - sop_file: "06_Förbereda nästa cykel.md"
         sop_section: "Repeat"
-        markdown_link: "[SOP 4 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda nästa cykel.md)"
+        markdown_link: "[SOP 6 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda%20nästa%20cykel.md)"
       - sop_file: "01_backlog_refinement.md"
         sop_section: "Leverans"
         markdown_link: "[SOP 1 (Leverans): Backlog refinement](../../../SOP/4. Leverans/01_backlog_refinement.md)"
@@ -378,7 +378,7 @@ repeat:
     created:
       sop_file: "06_Förbereda nästa cykel.md"
       sop_section: "Repeat"
-      markdown_link: "[SOP 4 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda nästa cykel.md)"
+      markdown_link: "[SOP 6 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda%20nästa%20cykel.md)"
     updated: null
     used_in:
       - sop_file: "01_backlog_refinement.md"

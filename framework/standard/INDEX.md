@@ -172,9 +172,7 @@ ValueStream OS is designed to support multiple variants for different contexts:
 - **framework/standard/** – Full framework with all roles, processes, SOPs (current, this directory)
 - **framework/light/** – Lightweight variant optimized for smaller teams (coming soon)
 
-Future variants might focus on specific industries, organization types, or delivery methods. The directory structure allows multiple variants to coexist without collision.
-
-[Learn more about framework variants →](../Roadmap.md)
+Future variants might focus on specific industries, organization types, or delivery methods. The directory structure allows multiple variants to coexist without collision. Just nu är `framework/standard/` den primära och mest kompletta varianten i repo:t.
 
 ---
 

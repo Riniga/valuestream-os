@@ -35,4 +35,4 @@ Versionshanterad artefakt
 
 ## Mall
 
-[Mall för Roadmap](../../templates/3.%20Roadmap/roadmap.md)
+[Mall för Roadmap](../../templates/3.%20Roadmap/Roadmap.md)

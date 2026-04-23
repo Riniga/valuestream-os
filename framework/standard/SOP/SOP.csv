@@ -1,22 +1,21 @@
 SOP,Delprocess,processsteg
-docs\SOP\1.Kravställning\01_skapa_bestallning.md,Skapa beställning,Kravställning
-docs\SOP\1.Kravställning\02_sammanhallen_kravanalys.md,Sammanhållen kravanalys,Kravställning
-docs\SOP\2. Målarkitektur\01_etablera_arkitekturell_grund.md,Etablera arkitekturell grund,Målarkitektur
-docs\SOP\2. Målarkitektur\02_definiera_domanmodell.md,Definiera domänmodell,Målarkitektur
-docs\SOP\2. Målarkitektur\03_etablera malarkitektur.md,Etablera målarkitektur,Målarkitektur
-docs\SOP\3. Roadmap\01_skapa_roadmap.md,Skapa Roadmap,Roadmap
-docs\SOP\3. Roadmap\02_skapa_teknisk_plan.md,Skapa Teknisk plan,Roadmap
-docs\SOP\4. Leverans\01_backlog_refinement.md,Backlog refinement,Leverans
-docs\SOP\4. Leverans\02_sprintplanering.md,Sprintplanering,Leverans
-docs\SOP\4. Leverans\03_utveckling.md,Utveckling och kodgranskning,Leverans
-docs\SOP\4. Leverans\05_test.md,Test,Leverans
-docs\SOP\4. Leverans\06_integration_och_bygg.md,Integration & bygg (CI/CD),Leverans
-docs\SOP\4. Leverans\07_demo.md,Demo,Leverans
-docs\SOP\4. Leverans\08_release.md,Release och deployment,Leverans
-docs\SOP\4. Leverans\10_uppdatera_dokumentation.md,Uppdatera dokumentation,Leverans
-docs\SOP\4. Leverans\11_uppfoljning_och_forbattring.md,Uppföljning & förbättring,Leverans
-docs\SOP\5. Repeat\01_utvardera_leveransresultat.md,Utvärdera leveransresultat,Repeat
-docs\SOP\5. Repeat\02_utvardera_process_och_arbetssatt.md,Utvärdera process & arbetssätt,Repeat
-docs\SOP\5. Repeat\04_identifiera_arkitekturella_lardomar.md,Identifiera arkitekturella lärdomar,Repeat
-docs\SOP\5. Repeat\06_Förbereda nästa cykel.md,Förbereda nästa cykel,Repeat
-docs\SOP\sop-conventions-discovery.md,,
+framework\standard\SOP\1.Kravställning\01_skapa_bestallning.md,Skapa beställning,Kravställning
+framework\standard\SOP\1.Kravställning\02_sammanhallen_kravanalys.md,Sammanhållen kravanalys,Kravställning
+framework\standard\SOP\2. Målarkitektur\01_etablera_arkitekturell_grund.md,Etablera arkitekturell grund,Målarkitektur
+framework\standard\SOP\2. Målarkitektur\02_definiera_domanmodell.md,Definiera domänmodell,Målarkitektur
+framework\standard\SOP\2. Målarkitektur\03_etablera malarkitektur.md,Etablera målarkitektur,Målarkitektur
+framework\standard\SOP\3. Roadmap\01_skapa_roadmap.md,Skapa Roadmap,Roadmap
+framework\standard\SOP\3. Roadmap\02_skapa_teknisk_plan.md,Skapa Teknisk plan,Roadmap
+framework\standard\SOP\4. Leverans\01_backlog_refinement.md,Backlog refinement,Leverans
+framework\standard\SOP\4. Leverans\02_sprintplanering.md,Sprintplanering,Leverans
+framework\standard\SOP\4. Leverans\03_utveckling.md,Utveckling och kodgranskning,Leverans
+framework\standard\SOP\4. Leverans\05_test.md,Test,Leverans
+framework\standard\SOP\4. Leverans\06_integration_och_bygg.md,Integration & bygg (CI/CD),Leverans
+framework\standard\SOP\4. Leverans\07_demo.md,Demo,Leverans
+framework\standard\SOP\4. Leverans\08_release.md,Release och deployment,Leverans
+framework\standard\SOP\4. Leverans\10_uppdatera_dokumentation.md,Uppdatera dokumentation,Leverans
+framework\standard\SOP\4. Leverans\11_uppfoljning_och_forbattring.md,Uppföljning & förbättring,Leverans
+framework\standard\SOP\5. Repeat\01_utvardera_leveransresultat.md,Utvärdera leveransresultat,Repeat
+framework\standard\SOP\5. Repeat\02_utvardera_process_och_arbetssatt.md,Utvärdera process & arbetssätt,Repeat
+framework\standard\SOP\5. Repeat\04_identifiera_arkitekturella_lardomar.md,Identifiera arkitekturella lärdomar,Repeat
+framework\standard\SOP\5. Repeat\06_Förbereda nästa cykel.md,Förbereda nästa cykel,Repeat

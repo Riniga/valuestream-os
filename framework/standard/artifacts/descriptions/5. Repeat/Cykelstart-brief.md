@@ -11,11 +11,11 @@ Business Analyst
 
 ## Skapas i delprocess
 
-[Förbereda nästa cykel](../../../SOP/5.%20Repeat/06_Förbereda nästa cykel.md)
+[Förbereda nästa cykel](../../../SOP/5.%20Repeat/06_Förbereda%20nästa%20cykel.md)
 
 ## Uppdateras i
 
-- [Förbereda nästa cykel](../../../SOP/5.%20Repeat/06_Förbereda nästa cykel.md)
+- [Förbereda nästa cykel](../../../SOP/5.%20Repeat/06_Förbereda%20nästa%20cykel.md)
 
 ## Format
 Textdokument (Markdown)
