@@ -54,7 +54,9 @@ def map_approval_decision_to_artifact_status(decision: str) -> ArtifactStatus:
         "approved_with_notes": ArtifactStatus.approved_with_notes,
         "rejected": ArtifactStatus.rejected,
     }
-    return mapping.get(decision, ArtifactStatus.approved)
+    if decision not in mapping:
+        raise ValueError(f"Okänt approval-beslut: {decision}")
+    return mapping[decision]
 
 
 def update_status_cell_in_markdown_table(content: str, decision: str) -> str:
@@ -144,12 +146,15 @@ def parse_approval_decision_from_llm_text(
             "rationale": raw_text.strip(),
             "changes_requested": [],
         }
+    decision_value = approval_value_as_string(parsed.get("decision"), default="approved")
+    if decision_value not in {"approved", "approved_with_notes", "rejected"}:
+        raise ValueError(f"Okänt approval-beslut från modelloutput: {decision_value}")
     return ApprovalDecision(
         step_id=step_id,
         artifact_name=artifact_name,
         artifact_filename=artifact_filename,
         approver_agent_id=approver_agent_id,
-        decision=approval_value_as_string(parsed.get("decision"), default="approved"),
+        decision=decision_value,
         summary=approval_value_as_string(parsed.get("summary")),
         rationale=approval_value_as_string(parsed.get("rationale")),
         changes_requested=approval_value_as_string_list(parsed.get("changes_requested")),

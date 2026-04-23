@@ -4,6 +4,10 @@
 runs/
 runs/**
 
+# Framework variants (reserved for future use)
+# framework/light/ is a placeholder for lightweight variant
+# See framework/standard/INDEX.md for full framework reference
+
 # -----------------------------
 # 🔐 Environment & secrets
 # -----------------------------

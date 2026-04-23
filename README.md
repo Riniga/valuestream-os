@@ -35,8 +35,8 @@ WHAT → HOW → WHEN → BUILD → LEARN → WHAT → ...
 | **Kravställning** | What do we need? | Requirements (VAD) |
 | **Målarkitektur** | How should it work? | Target architecture (HUR) |
 | **Roadmap** | When do we deliver? | Plan (NÄR) |
-| **Leverans** | Build & release | Product increment |
-| **Repeat** | Learn & adjust | Improved direction |
+| **Leverans** | Build & release | Product increment, release package and documentation |
+| **Repeat** | Learn & adjust | Evaluation, insights and cycle start brief |
 
 ---
 
@@ -95,11 +95,26 @@ This makes it ideal for:
 
 ## 🏗️ Repository Structure
 
-```
-docs/ → Process, SOPs, roles, artifacts (the "brain")
+```text
+framework/ → Framework variants, navigation and documentation (the "brain")
 src/ → Agents, orchestration, capabilities (the "engine")
-runs/ → Execution state and outputs
+runs/ → Local private execution state (not versioned)
+setup/ → Development environment and working guidelines
 ```
+
+### Current structure notes
+
+- `framework/standard/` is the main framework variant.
+- `framework/light/` is a lighter parallel variant.
+- `runs/` is a local runtime workspace and must not be committed.
+- Shared or published run results belong in the separate sibling repository `../valuestream-os-data`.
+- Some code still supports legacy `docs/` lookup for backward compatibility.
+
+Start here:
+
+- Framework: `framework/standard/INDEX.md`
+- Shared run results: `../valuestream-os-data`
+- Setup and contribution guidance: `setup/README.md`
 
 ## 📘 Development Guidelines
 

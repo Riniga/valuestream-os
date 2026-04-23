@@ -1,0 +1,86 @@
+Artifact,SOP,Input or output,Responsible
+Beställning,framework\standard\SOP\1.Kravställning\01_skapa_bestallning.md,output,Beställare
+Beställning,framework\standard\SOP\1.Kravställning\02_sammanhallen_kravanalys.md,input,
+Vision & målbild,framework\standard\SOP\1.Kravställning\02_sammanhallen_kravanalys.md,output,Business Analyst
+Omfattning och Strukturerad Backlog,framework\standard\SOP\1.Kravställning\02_sammanhallen_kravanalys.md,output,Business Analyst
+Stakeholderkarta,framework\standard\SOP\1.Kravställning\02_sammanhallen_kravanalys.md,output,Business Analyst
+KPI / värdemått,framework\standard\SOP\1.Kravställning\02_sammanhallen_kravanalys.md,output,Business Analyst
+Omfattning och Strukturerad Backlog,framework\standard\SOP\2. Målarkitektur\01_etablera_arkitekturell_grund.md,input,
+Vision & målbild,framework\standard\SOP\2. Målarkitektur\01_etablera_arkitekturell_grund.md,input,
+Arkitekturmål,framework\standard\SOP\2. Målarkitektur\01_etablera_arkitekturell_grund.md,output,Lösningsarkitekt
+Arkitekturprinciper,framework\standard\SOP\2. Målarkitektur\01_etablera_arkitekturell_grund.md,output,Lösningsarkitekt
+Systemlandskap,framework\standard\SOP\2. Målarkitektur\01_etablera_arkitekturell_grund.md,output,Lösningsarkitekt
+Omfattning och Strukturerad Backlog,framework\standard\SOP\2. Målarkitektur\02_definiera_domanmodell.md,input,
+Systemlandskap,framework\standard\SOP\2. Målarkitektur\02_definiera_domanmodell.md,input,
+Domänmodell,framework\standard\SOP\2. Målarkitektur\02_definiera_domanmodell.md,output,Business Analyst
+Systemlandskap,framework\standard\SOP\2. Målarkitektur\03_etablera malarkitektur.md,input,
+Domänmodell,framework\standard\SOP\2. Målarkitektur\03_etablera malarkitektur.md,input,
+Omfattning och Strukturerad Backlog,framework\standard\SOP\2. Målarkitektur\03_etablera malarkitektur.md,input,
+Integrationsarkitektur,framework\standard\SOP\2. Målarkitektur\03_etablera malarkitektur.md,output,Lösningsarkitekt
+Arkitekturprinciper,framework\standard\SOP\2. Målarkitektur\03_etablera malarkitektur.md,output,Lösningsarkitekt
+Icke-funktionella krav,framework\standard\SOP\2. Målarkitektur\03_etablera malarkitektur.md,output,Lösningsarkitekt
+Målarkitektur,framework\standard\SOP\2. Målarkitektur\03_etablera malarkitektur.md,output,Lösningsarkitekt
+Vision & målbild,framework\standard\SOP\3. Roadmap\01_skapa_roadmap.md,input,
+Omfattning och Strukturerad Backlog,framework\standard\SOP\3. Roadmap\01_skapa_roadmap.md,input,
+KPI / värdemått,framework\standard\SOP\3. Roadmap\01_skapa_roadmap.md,input,
+Målarkitektur,framework\standard\SOP\3. Roadmap\01_skapa_roadmap.md,input,
+Integrationsarkitektur,framework\standard\SOP\3. Roadmap\01_skapa_roadmap.md,input,
+Icke-funktionella krav,framework\standard\SOP\3. Roadmap\01_skapa_roadmap.md,input,
+Roadmap,framework\standard\SOP\3. Roadmap\01_skapa_roadmap.md,output,Business Analyst
+Roadmap,framework\standard\SOP\3. Roadmap\02_skapa_teknisk_plan.md,input,
+Målarkitektur,framework\standard\SOP\3. Roadmap\02_skapa_teknisk_plan.md,input,
+Integrationsarkitektur,framework\standard\SOP\3. Roadmap\02_skapa_teknisk_plan.md,input,
+Domänmodell,framework\standard\SOP\3. Roadmap\02_skapa_teknisk_plan.md,input,
+Teknisk plan,framework\standard\SOP\3. Roadmap\02_skapa_teknisk_plan.md,output,Teknisk Lead
+Roadmap,framework\standard\SOP\4. Leverans\01_backlog_refinement.md,input,
+Cykelstart-brief,framework\standard\SOP\4. Leverans\01_backlog_refinement.md,input,
+Arkitekturinsikter,framework\standard\SOP\4. Leverans\01_backlog_refinement.md,input,
+Sprint backlog,framework\standard\SOP\4. Leverans\01_backlog_refinement.md,output,Business Analyst
+Sprint backlog,framework\standard\SOP\4. Leverans\02_sprintplanering.md,input,
+Sprint backlog,framework\standard\SOP\4. Leverans\02_sprintplanering.md,output,Scrum Master
+Sprint backlog,framework\standard\SOP\4. Leverans\03_utveckling.md,input,
+Arkitekturprinciper,framework\standard\SOP\4. Leverans\03_utveckling.md,input,
+Målarkitektur,framework\standard\SOP\4. Leverans\03_utveckling.md,input,
+Produktinkrement,framework\standard\SOP\4. Leverans\03_utveckling.md,output,Utvecklare
+Produktinkrement,framework\standard\SOP\4. Leverans\05_test.md,input,
+Sprint backlog,framework\standard\SOP\4. Leverans\05_test.md,input,
+Testresultat,framework\standard\SOP\4. Leverans\05_test.md,output,Testare
+Produktinkrement,framework\standard\SOP\4. Leverans\05_test.md,output,Testare
+Produktinkrement,framework\standard\SOP\4. Leverans\06_integration_och_bygg.md,input,
+Testresultat,framework\standard\SOP\4. Leverans\06_integration_och_bygg.md,input,
+Produktinkrement,framework\standard\SOP\4. Leverans\06_integration_och_bygg.md,output,DevOps
+Produktinkrement,framework\standard\SOP\4. Leverans\07_demo.md,input,
+Sprint backlog,framework\standard\SOP\4. Leverans\07_demo.md,input,
+Releasepaket,framework\standard\SOP\4. Leverans\07_demo.md,output,Utvecklare
+Förbättringsförslag,framework\standard\SOP\4. Leverans\07_demo.md,output,Utvecklare
+Produktinkrement,framework\standard\SOP\4. Leverans\08_release.md,input,
+Testresultat,framework\standard\SOP\4. Leverans\08_release.md,input,
+Releasepaket,framework\standard\SOP\4. Leverans\08_release.md,input,
+Releasepaket,framework\standard\SOP\4. Leverans\08_release.md,output,DevOps
+Produktinkrement,framework\standard\SOP\4. Leverans\08_release.md,output,DevOps
+Releasepaket,framework\standard\SOP\4. Leverans\10_uppdatera_dokumentation.md,input,
+Produktinkrement,framework\standard\SOP\4. Leverans\10_uppdatera_dokumentation.md,input,
+Dokumentation,framework\standard\SOP\4. Leverans\10_uppdatera_dokumentation.md,output,Business Analyst
+Releasepaket,framework\standard\SOP\4. Leverans\11_uppfoljning_och_forbattring.md,input,
+Dokumentation,framework\standard\SOP\4. Leverans\11_uppfoljning_och_forbattring.md,input,
+Produktinkrement,framework\standard\SOP\4. Leverans\11_uppfoljning_och_forbattring.md,input,
+Testresultat,framework\standard\SOP\4. Leverans\11_uppfoljning_och_forbattring.md,input,
+Förbättringsförslag,framework\standard\SOP\4. Leverans\11_uppfoljning_och_forbattring.md,output,Scrum Master
+Produktinkrement,framework\standard\SOP\5. Repeat\01_utvardera_leveransresultat.md,input,
+Releasepaket,framework\standard\SOP\5. Repeat\01_utvardera_leveransresultat.md,input,
+Förbättringsförslag,framework\standard\SOP\5. Repeat\01_utvardera_leveransresultat.md,input,
+KPI / värdemått,framework\standard\SOP\5. Repeat\01_utvardera_leveransresultat.md,input,
+Leveransutvärdering,framework\standard\SOP\5. Repeat\01_utvardera_leveransresultat.md,output,Business Analyst
+Produktinkrement,framework\standard\SOP\5. Repeat\02_utvardera_process_och_arbetssatt.md,input,
+Leveransutvärdering,framework\standard\SOP\5. Repeat\02_utvardera_process_och_arbetssatt.md,input,
+Processförbättringar,framework\standard\SOP\5. Repeat\02_utvardera_process_och_arbetssatt.md,output,Scrum Master
+Leveransutvärdering,framework\standard\SOP\5. Repeat\04_identifiera_arkitekturella_lardomar.md,input,
+Förbättringsförslag,framework\standard\SOP\5. Repeat\04_identifiera_arkitekturella_lardomar.md,input,
+Arkitekturinsikter,framework\standard\SOP\5. Repeat\04_identifiera_arkitekturella_lardomar.md,output,Lösningsarkitekt
+Arkitekturinsikter,framework\standard\SOP\5. Repeat\06_Förbereda nästa cykel.md,input,
+Leveransutvärdering,framework\standard\SOP\5. Repeat\06_Förbereda nästa cykel.md,input,
+Processförbättringar,framework\standard\SOP\5. Repeat\06_Förbereda nästa cykel.md,input,
+Förbättringsförslag,framework\standard\SOP\5. Repeat\06_Förbereda nästa cykel.md,input,
+Roadmap,framework\standard\SOP\5. Repeat\06_Förbereda nästa cykel.md,input,
+Teknisk plan,framework\standard\SOP\5. Repeat\06_Förbereda nästa cykel.md,input,
+Cykelstart-brief,framework\standard\SOP\5. Repeat\06_Förbereda nästa cykel.md,output,Business Analyst

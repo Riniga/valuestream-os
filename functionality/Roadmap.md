@@ -1,40 +1,58 @@
 # Roadmap
 
-## Etapp 1: Stabilisera kärnan
+## PR 1: Initial kärnfunktionalitet
 
-Mål: göra nuvarande ramverk robust och användbart.
-[X] Konstruktion av Agent Orchestration Framework
-[X] Använda Microsoft Agent Framework
-[X] Stabil och repeterbar körning av Kravställning
-[X] Tydlig CLI och körstatus
+- **Branch**: 01-business-analyst-agent
+- **Mål**: Göra nuvarande ramverk robust och användbart.
+  [X] Agent körs via terminal
+  [X] LLM-agentadapter används
+  [X] LLM används för generering
+  [X] Minst 1 artifakt genereras korrekt
+  [X] Output sparas som markdown
 
-## Etapp 2: Agenter för komplett RACI
+## PR 2 Orkestring med ramverk
 
-[X] Agent skall kunna konsultera C i RACI
-[X] Agent skall kunna granska och godkänna dokument
-[X] Samtliga involverade agenter skall hållas informerade och uppdaterade
-[X] Experter skall tränas upp inom området (inom run)
+- **Branch**: agent-orchestration-framework
+- **Mål**: Nyttja Microsoft Agent Framework och MS Foundry
 
-## Etapp 3: Nästa processsteg
+[X] Microsoft Agent Framework används i implementationen
+[X] Minst en andra agentroll finns och kan köras i samma flöde
+[X] Nyttjar ramverk i docs för orkestrering av agenter och artifakter
+[X] Enkel agentminnesmodell används i körningen
+[X] Körning och resultat är spårbara i `runs/`
 
-Mål: visa att ramverket generaliserar.
+## PR 3: Agenter för komplett RACI
 
-[X] Fungerande flöde för Målarkitektur
-[ ] Flytta runs folder till eget github repo, göra pull, run push
-[ ] Välja model(er) och förstå kostnader, qoutas etc.... Kunna exekvera gratis
+- **Branch**: raci-consultation-approval-and-informing
+- **Mål**: Konsultering och godkännande flöde på plats
 
-### Etapp 3: Konsumtion och samarbete
+[X] RACI används aktivt av orchestratorn för att styra konsultation, godkännande och informing
+[X] `Verksamhetsexperter` kan använda run-specifik expertkontext
+[X] `Produktägare` kan fatta explicit beslut med motivering
+[X] Minnesfiler och statefiler sparas under `runs/`
 
-Mål: göra resultatet lätt att använda för stakeholders.
+## PR 4: Målarkitektur som processsteg
 
-[ ] Gränssnitt för att läsa dokumentation och artefakter
-[ ] Presentation per process, stakeholder och artefakt
-[ ] Tydlig navigering mellan input/output och processsteg
+- **Branch**: malarkitektur-process-step
+- **Mål**: Generaliserar processen för ramverksfunktionalitet
+
+[X] **ett end-to-end-spår** producerar och lagrar artefakter för Målarkitektur enligt filkonventioner som redan gäller för Kravställning.
+[X] Resultat och val av processsteg är **spårbara** i `runs/<run-id>/`
+
+## PR 5: ?
+
+- **Branch**:
+- **Mål**: Göra ramverk och resultat lättare att ta till sig som åhörare
+
+[ ] Flytta runs folder till eget github repo ligger i ../valuestream-os-data
+[X] Gränssnitt Landningssida i markdown för att läsa och navigera framework-ramverket
+[X] Gränssnitt Landningssida i markdown för att läsa och navigera run-resultatet via interim `runs/INDEX.md`
+[X] Möjliggöra flera ramverk (standard och light) - docs döps om till framework/standard
 
 ## Etapp 4: Plattform och skala
 
 Mål: göra lösningen mer flexibel och driftsbar.
-
+[ ] Välja model(er) och förstå kostnader, qoutas etc.... Kunna exekvera gratis
 [ ] Stöd för OpenAI
 [ ] Stöd för OpenRouter och MiniMax https://openrouter.ai/models?q=minimax
 [ ] Modellval, kostnadsstyrning och fallback-strategier

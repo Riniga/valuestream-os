@@ -7,7 +7,12 @@ from pathlib import Path
 
 from src.framework.context_loader import AgentContextLoader
 from src.framework.models import AgentDefinition, FlowStep, ProcessFlow
-from src.orchestration.agent_registry import AGENT_DEFINITIONS
+from src.framework.repo_layout import get_framework_root
+from src.orchestration.agent_registry import (
+    build_raci_role_index,
+    load_agent_definitions,
+    normalize_raci_role,
+)
 
 
 DEFAULT_PROCESS_FILE = "1. Kravställning.md"
@@ -21,7 +26,7 @@ class ProcessSection:
 
 
 class ProcessFlowLoader:
-    """Builds executable flow steps from docs/processes/ documentation."""
+    """Build executable flow steps from the configured framework."""
 
     def __init__(
         self,
@@ -29,9 +34,12 @@ class ProcessFlowLoader:
         agent_definitions: dict[str, AgentDefinition] | None = None,
     ) -> None:
         self._repo_root = repo_root
-        self._docs_root = repo_root / "docs"
-        self._processes_root = self._docs_root / "processes"
-        self._agent_definitions = agent_definitions or AGENT_DEFINITIONS
+        self._framework_root = get_framework_root(repo_root)
+        self._processes_root = self._framework_root / "processes"
+        self._agent_definitions = agent_definitions or load_agent_definitions(repo_root)
+        if not self._agent_definitions:
+            raise ValueError("Inga agentdefinitioner kunde laddas från frameworket")
+        self._raci_role_index = build_raci_role_index(self._agent_definitions)
         sample_agent = next(iter(self._agent_definitions.values()))
         self._context_loader = AgentContextLoader(
             repo_root=repo_root,
@@ -46,24 +54,49 @@ class ProcessFlowLoader:
         steps: list[FlowStep] = []
 
         for section in sections:
-
             sop = self._context_loader.load_sop(section.sop_filename)
-            agent_id = self._resolve_agent_id(self._extract_raci_roles(sop.content, "R"))
-            consult_agent_ids = self._resolve_agent_ids(self._extract_raci_roles(sop.content, "C"))
-            approver_agent_id = self._resolve_optional_agent_id(self._extract_raci_roles(sop.content, "A"))
-            informed_agent_ids = self._resolve_agent_ids(self._extract_raci_roles(sop.content, "I"))
-            input_filenames = self._resolve_input_filenames(sop.inputs)
+            agent_id = self._resolve_required_agent_id(
+                self._extract_raci_roles(sop.content, "R"),
+                key="R",
+                sop_filename=section.sop_filename,
+            )
+            consult_agent_ids = self._resolve_agent_ids(
+                self._extract_raci_roles(sop.content, "C"),
+                sop_filename=section.sop_filename,
+            )
+            approver_agent_id = self._resolve_optional_agent_id(
+                self._extract_raci_roles(sop.content, "A"),
+                sop_filename=section.sop_filename,
+            )
+            informed_agent_ids = self._resolve_agent_ids(
+                self._extract_raci_roles(sop.content, "I"),
+                sop_filename=section.sop_filename,
+            )
+            input_filenames, optional_input_filenames = self._resolve_input_filenames(
+                sop.inputs,
+                sop_filename=section.sop_filename,
+            )
             seen_outputs: set[str] = set()
+            responsible_def = self._agent_definitions[agent_id]
+            consult_actor_kinds = {
+                role_agent_id: self._agent_definitions[role_agent_id].actor_kind
+                for role_agent_id in consult_agent_ids
+            }
+            approver_actor_kind = (
+                self._agent_definitions[approver_agent_id].actor_kind
+                if approver_agent_id is not None
+                else None
+            )
+            informed_actor_kinds = {
+                role_agent_id: self._agent_definitions[role_agent_id].actor_kind
+                for role_agent_id in informed_agent_ids
+            }
 
             for output_name in sop.outputs:
-
-                template_path = self._context_loader.find_template_path(output_name)
-                if template_path is None:
-                    continue
+                template_path = self._require_template_path(output_name, section.sop_filename)
                 if template_path.name in seen_outputs:
                     continue
                 seen_outputs.add(template_path.name)
-
                 steps.append(
                     FlowStep(
                         step_id=self._build_step_id(
@@ -76,10 +109,15 @@ class ProcessFlowLoader:
                         artifact_name=output_name,
                         output_filename=template_path.name,
                         input_filenames=input_filenames,
+                        optional_input_filenames=optional_input_filenames,
                         delprocess_title=section.title,
+                        agent_actor_kind=responsible_def.actor_kind,
                         consult_agent_ids=consult_agent_ids,
+                        consult_actor_kinds=consult_actor_kinds,
                         approver_agent_id=approver_agent_id,
+                        approver_actor_kind=approver_actor_kind,
                         informed_agent_ids=informed_agent_ids,
+                        informed_actor_kinds=informed_actor_kinds,
                         use_raci_workflow=self._should_use_raci_workflow(
                             consult_agent_ids=consult_agent_ids,
                             approver_agent_id=approver_agent_id,
@@ -123,43 +161,72 @@ class ProcessFlowLoader:
             )
         return sections
 
-    def _resolve_agent_id(self, roles: list[str]) -> str:
+    def _resolve_required_agent_id(self, roles: list[str], *, key: str, sop_filename: str) -> str:
         if not roles:
-            raise ValueError("SOP saknar RACI-rad för ansvarig roll")
-        responsible_role = roles[0]
-        for agent_id, agent_def in self._agent_definitions.items():
-            if agent_def.raci_role_id.lower() in responsible_role.lower():
-                return agent_id
-        raise ValueError(f"Ingen registrerad agent hittades för RACI-roll: {responsible_role}")
+            raise ValueError(f"SOP '{sop_filename}' saknar RACI-rad för {key}")
+        return self._resolve_agent_id(roles[0], sop_filename=sop_filename)
 
-    def _resolve_optional_agent_id(self, roles: list[str]) -> str | None:
+    def _resolve_agent_id(self, role: str, *, sop_filename: str) -> str:
+        normalized_role = normalize_raci_role(role)
+        agent_id = self._raci_role_index.get(normalized_role)
+        if agent_id is None:
+            raise ValueError(
+                f"Ingen registrerad agent hittades för RACI-roll '{role}' i SOP '{sop_filename}'"
+            )
+        return agent_id
+
+    def _resolve_optional_agent_id(self, roles: list[str], *, sop_filename: str) -> str | None:
         if not roles:
             return None
-        return self._resolve_agent_id(roles)
+        return self._resolve_agent_id(roles[0], sop_filename=sop_filename)
 
-    def _resolve_agent_ids(self, roles: list[str]) -> list[str]:
+    def _resolve_agent_ids(self, roles: list[str], *, sop_filename: str) -> list[str]:
         resolved: list[str] = []
         seen: set[str] = set()
         for role in roles:
-            agent_id = self._resolve_agent_id([role])
+            agent_id = self._resolve_agent_id(role, sop_filename=sop_filename)
             if agent_id in seen:
                 continue
             seen.add(agent_id)
             resolved.append(agent_id)
         return resolved
 
-    def _resolve_input_filenames(self, input_names: list[str]) -> list[str]:
-        filenames: list[str] = []
-        seen: set[str] = set()
+    def _resolve_input_filenames(
+        self, input_names: list[str], *, sop_filename: str
+    ) -> tuple[list[str], list[str]]:
+        required_filenames: list[str] = []
+        optional_filenames: list[str] = []
+        seen_required: set[str] = set()
+        seen_optional: set[str] = set()
         for input_name in input_names:
-            template_path = self._context_loader.find_template_path(input_name)
-            if template_path is None:
+            artifact_name, is_optional = self._parse_input_artifact(input_name)
+            template_path = self._require_template_path(artifact_name, sop_filename)
+            resolved_name = template_path.name
+            if is_optional:
+                if resolved_name in seen_optional or resolved_name in seen_required:
+                    continue
+                seen_optional.add(resolved_name)
+                optional_filenames.append(resolved_name)
                 continue
-            if template_path.name in seen:
+
+            if resolved_name in seen_required:
                 continue
-            seen.add(template_path.name)
-            filenames.append(template_path.name)
-        return filenames
+            seen_required.add(resolved_name)
+            required_filenames.append(resolved_name)
+        return required_filenames, optional_filenames
+
+    @staticmethod
+    def _parse_input_artifact(input_name: str) -> tuple[str, bool]:
+        stripped = input_name.strip()
+        optional_patterns = (
+            r"^(?:optional|valfri)\s*:\s*(.+)$",
+            r"^(.+?)\s*\((?:optional|valfri)\)$",
+        )
+        for pattern in optional_patterns:
+            match = re.match(pattern, stripped, flags=re.IGNORECASE)
+            if match:
+                return match.group(1).strip(), True
+        return stripped, False
 
     @staticmethod
     def _should_use_raci_workflow(
@@ -167,9 +234,7 @@ class ProcessFlowLoader:
         approver_agent_id: str | None,
         informed_agent_ids: list[str],
     ) -> bool:
-        # RACI extended workflow requires an accountable role; C/I are optional.
-        _ = (consult_agent_ids, informed_agent_ids)
-        return approver_agent_id is not None
+        return bool(consult_agent_ids or approver_agent_id or informed_agent_ids)
 
     @staticmethod
     def _extract_raci_roles(sop_content: str, key: str) -> list[str]:
@@ -199,6 +264,25 @@ class ProcessFlowLoader:
         process_slug = ProcessFlowLoader._slugify(Path(process_file).stem)
         output_slug = ProcessFlowLoader._slugify(Path(output_filename).stem)
         return f"{process_slug}-{section_index:02d}-{output_slug}"
+
+    def _require_template_path(self, artifact_name: str, sop_filename: str) -> Path:
+        template_path = self._context_loader.find_template_path(artifact_name)
+        if template_path is None:
+            raise FileNotFoundError(
+                f"Artefaktmall saknas för '{artifact_name}' som refereras i SOP '{sop_filename}'"
+            )
+        return template_path
+
+    @staticmethod
+    def _fallback_input_filename(artifact_name: str) -> str:
+        ascii_value = (
+            unicodedata.normalize("NFKD", artifact_name)
+            .encode("ascii", "ignore")
+            .decode("ascii")
+        )
+        ascii_value = ascii_value.lower()
+        ascii_value = re.sub(r"[^a-z0-9]+", "_", ascii_value)
+        return f"{ascii_value.strip('_')}.md"
 
     @staticmethod
     def _slugify(value: str) -> str:

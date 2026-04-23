@@ -94,7 +94,7 @@ All work should follow this loop:
 
 ## Repository Structure
 
-- `docs/` = framework definition
+- `framework/` = framework definition
   - process, SOPs, roles, RACI, artifacts
 - `src/` = implementation
   - agents, orchestration, capabilities, memory/state
@@ -113,7 +113,7 @@ Do not mix responsibilities between these areas.
 
 - Keep names explicit and readable.
 - Follow existing repository conventions instead of forcing one naming style everywhere.
-- For agent definition documents under `docs/agents/`, use `kebab-case.md`.
+- For agent definition documents under `framework/<variant>/agents/`, use `kebab-case.md`.
 - For artifact templates and descriptions, keep the established artifact-facing names if they are already part of the framework vocabulary.
 - For implementation files, follow the language convention of that area, for example `snake_case.py` in Python.
 

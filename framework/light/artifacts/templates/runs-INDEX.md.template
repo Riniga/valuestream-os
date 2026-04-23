@@ -1,0 +1,218 @@
+# ValueStream OS Results – Run Index
+
+Central index of all execution runs and their results.
+
+---
+
+## 📊 Recent Runs
+
+| Run ID | Start Date | Process Step | Status | Duration | Key Findings |
+|--------|-----------|--------------|--------|----------|-------------|
+| [middag-tillsammans](#middag-tillsammans) | 2026-03-15 | Kravställning → Målarkitektur | ✅ Complete | 15 days | Vision clarified, 23 user stories, 5 epics |
+| [sample-future-run](#) | TBD | TBD | ⏰ Scheduled | — | — |
+
+---
+
+## 📁 How to Navigate This Index
+
+### Option 1: Browse Recent Runs
+Start with the table above. Click on a Run ID to jump to that run's detailed folder.
+
+### Option 2: Direct Folder Access
+Each run has its own folder:
+- `runs/[RUN-ID]/` containing all metadata and results
+- See **Run Folder Structure** below
+
+### Option 3: Browse by Process Step
+(Coming soon) – Filter runs by process step (Kravställning, Målarkitektur, ..., Repeat)
+
+---
+
+## 📂 Run Folder Structure
+
+Each run folder follows this structure:
+
+```
+runs/[RUN-ID]/
+├─ README.md                      ← Start here: run overview & key decisions
+├─ run_metadata.json              ← Machine-readable run info
+├─ run_log.json                   ← Execution log (timeline)
+├─ artifacts/                     ← All produced artifacts
+│  ├─ user_stories.md
+│  ├─ vision_and_scope.md
+│  └─ ...
+├─ decisions/
+│  ├─ approval_decisions.json     ← Who approved what
+│  ├─ consultation_requests.json  ← Questions asked
+│  └─ consultation_responses.json ← Answers received
+└─ results/
+   ├─ artifact_state.json         ← Which artifacts were completed
+   ├─ informed_role_briefs.json   ← Who was notified
+   └─ expert_context.json         ← Expert inputs used
+```
+
+---
+
+## 📖 How Runs Work
+
+### What is a Run?
+
+A **run** is one execution of the ValueStream OS framework against a specific initiative or product feature.
+
+Each run:
+- Executes one or more process steps (Kravställning, Målarkitektur, Roadmap, Leverans, Repeat)
+- Produces artifacts (user stories, architecture, roadmaps, etc.)
+- Records decisions (approvals, consultations, stakeholder input)
+- Documents results and lessons learned
+
+### Life of a Run
+
+1. **Start** – Initiative is launched; Run ID is created
+2. **Execute** – Team executes framework steps
+3. **Record** – All artifacts and decisions are documented
+4. **Review** – Results are reviewed and approved
+5. **Learn** – Retrospective captures lessons for next iteration
+6. **Archive** – Run results are stored for reference
+
+---
+
+## 🔍 Reading a Run's Results
+
+To understand a specific run:
+
+1. **Start with README** – [runs/[RUN-ID]/README.md](./template-run-metadata.md)
+   - High-level summary
+   - Key decisions
+   - Main artifacts
+   - Quick facts
+
+2. **Review Artifacts** – In `runs/[RUN-ID]/artifacts/`
+   - User stories
+   - Vision & scope
+   - Architecture diagram
+   - Roadmap, etc.
+
+3. **Check Decisions** – In `runs/[RUN-ID]/decisions/`
+   - Who approved what?
+   - What was discussed?
+   - Any disagreements?
+
+4. **See Results** – In `runs/[RUN-ID]/results/`
+   - What was actually completed?
+   - Did we achieve our goals?
+   - What's next?
+
+---
+
+## 📋 Run Legend – Understanding the JSON Files
+
+### run_metadata.json
+Machine-readable information about the run:
+- Run ID, start/end dates
+- Process steps executed
+- Team members involved
+- Status (draft, in-review, approved, completed)
+
+### run_log.json
+Timestamped log of all activities:
+- Each step/decision with timestamp
+- Who performed action
+- What was produced
+
+### approval_decisions.json
+Record of all approvals:
+- What was approved (artifact, decision)
+- Who approved
+- When
+- Any conditions
+
+### consultation_requests.json
+Queries to experts/stakeholders:
+- Question
+- To whom
+- When asked
+
+### consultation_responses.json
+Responses to queries:
+- Response content
+- Expert/stakeholder name
+- Notes
+
+### artifact_state.json
+Completion status of each artifact:
+- Artifact name
+- Status (draft, review, approved, final)
+- Version
+
+### informed_role_briefs.json
+Communication log:
+- Who was informed
+- What they were told
+- When
+
+### expert_context.json
+Background info used:
+- Expert names & roles
+- Their areas of expertise
+- Key inputs they provided
+
+---
+
+## 🎯 Uses for Run Results
+
+### For Product Managers
+- See [Vision & Scope](./artifacts/) for business strategy
+- Check [User Stories](./artifacts/) for feature priorities
+- Review [Approval Decisions](./decisions/) to see stakeholder alignment
+
+### For Architects
+- Review [Architecture Design](./artifacts/) from Målarkitektur phase
+- Check [System Landscape](./artifacts/)
+- See [Decisions Made](./decisions/) about technical choices
+
+### For Developers
+- Read [User Stories](./artifacts/) for requirements
+- Review [Technical Specification](./artifacts/)
+- Check [Dependencies/Risks](./results/) from Roadmap phase
+
+### For Project Managers
+- Use [Run Timeline](./run_log.json) for planning
+- See [Approvals](./decisions/) to track gate completion
+- Check [Completion Status](./results/artifact_state.json) for progress
+
+---
+
+## 🔗 Link Back to Framework
+
+Need context on the framework itself?
+
+👉 **[ValueStream OS Framework Overview](../framework/standard/INDEX.md)**
+
+---
+
+## 📝 Runs by Process Step
+
+(Future feature) – Will be able to filter runs by process step:
+- ✅ Kravställning Runs
+- ✅ Målarkitektur Runs
+- ✅ Roadmap Runs
+- ✅ Leverans Runs
+- ✅ Repeat Runs
+
+---
+
+## 🆔 Current & Archived Runs
+
+- **Active Runs** – Runs currently in progress
+- **Completed Runs** – Finished runs, available for reference
+- **Archived Runs** – Older runs, kept for historical reference
+
+---
+
+**Last Updated:** 2026-04-01
+**Repository:** valuestream-os-data (planned)
+**Version:** 1.0 (Template)
+
+---
+
+*This template will be used in the valuestream-os-data repository when it is created.*

@@ -11,6 +11,7 @@ class RunWorkspace:
         self.run_dir = repo_root / "runs" / run_id
         self.input_dir = self.run_dir / "input"
         self.output_dir = self.run_dir / "output"
+        self.human_tasks_dir = self.run_dir / "human_tasks"
 
     def validate_input(self, required_files: list[str]) -> list[str]:
         return [f for f in required_files if not (self.input_dir / f).exists()]

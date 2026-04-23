@@ -2,14 +2,22 @@
 AgentContextLoader — role-agnostic document loader for the framework.
 
 Loads role descriptions, SOPs, artifact descriptions, and artifact templates
-from docs/ for any agent role. Parameterised by agent_file and raci_role_id
-so that the same code works for Business Analyst, UX, and future roles.
+from the configured framework directory for any agent role.
+Parameterised by agent_file and raci_role_id so that the same code works for
+Business Analyst, UX, and future roles.
+
+The framework location is configurable via the FRAMEWORK environment variable
+(legacy FRAMWORK is also supported; defaults to "framework/standard").
 """
 from __future__ import annotations
 
 import re
+import unicodedata
 from dataclasses import dataclass, field
 from pathlib import Path
+from urllib.parse import unquote
+
+from src.framework.repo_layout import get_framework_root
 
 
 @dataclass
@@ -30,7 +38,7 @@ class AgentContextLoader:
     repo_root:
         Absolute path to the repository root.
     agent_file:
-        Filename inside docs/agents/, e.g. "business-analyst.md" or "ux.md".
+        Filename inside the agents directory, e.g. "business-analyst.md" or "ux.md".
     raci_role_id:
         The role identifier as it appears in SOP RACI sections (e.g. "Business Analyst"
         or "UX"). When None the role name extracted from the agent file is used.
@@ -43,7 +51,7 @@ class AgentContextLoader:
         raci_role_id: str | None = None,
     ) -> None:
         self.repo_root = repo_root
-        self.docs_root = repo_root / "docs"
+        self.framework_root = get_framework_root(repo_root)
         self.agent_file = agent_file
         self._raci_role_id = raci_role_id
         self._role_name: str | None = None
@@ -77,7 +85,7 @@ class AgentContextLoader:
     # ------------------------------------------------------------------
 
     def load_role(self) -> str:
-        path = self.docs_root / "agents" / self.agent_file
+        path = self.framework_root / "agents" / self.agent_file
         return path.read_text(encoding="utf-8")
 
     def load_agent_instructions(self) -> str:
@@ -98,7 +106,7 @@ class AgentContextLoader:
 
     def load_sops_for_role(self) -> list[SopEntry]:
         result: list[SopEntry] = []
-        for sop_file in sorted((self.docs_root / "SOP").rglob("*.md")):
+        for sop_file in sorted((self.framework_root / "SOP").rglob("*.md")):
             content = sop_file.read_text(encoding="utf-8")
             if self._is_responsible(content):
                 result.append(
@@ -113,13 +121,14 @@ class AgentContextLoader:
         return result
 
     def load_sop(self, filename: str) -> SopEntry:
-        matches = sorted((self.docs_root / "SOP").rglob(filename))
+        normalized_filename = unquote(filename)
+        matches = sorted((self.framework_root / "SOP").rglob(normalized_filename))
         if not matches:
-            raise FileNotFoundError(f"SOP file not found: {filename}")
+            raise FileNotFoundError(f"SOP file not found: {normalized_filename}")
         path = matches[0]
         content = path.read_text(encoding="utf-8")
         return SopEntry(
-            name=self._extract_sop_name(content, Path(filename).stem),
+            name=self._extract_sop_name(content, Path(normalized_filename).stem),
             path=path,
             content=content,
             inputs=self._extract_section_items(content, "3. Input"),
@@ -132,7 +141,7 @@ class AgentContextLoader:
 
     def load_artifact_description(self, artifact_name: str) -> str:
         path = self._find_file_by_name(
-            self.docs_root / "artifacts" / "descriptions", artifact_name, recursive=True
+            self.framework_root / "artifacts" / "descriptions", artifact_name, recursive=True
         )
         if path is None:
             raise FileNotFoundError(
@@ -142,7 +151,7 @@ class AgentContextLoader:
 
     def load_artifact_template(self, artifact_filename: str) -> str:
         matches = sorted(
-            (self.docs_root / "artifacts" / "templates").rglob(artifact_filename)
+            (self.framework_root / "artifacts" / "templates").rglob(artifact_filename)
         )
         if not matches:
             raise FileNotFoundError(f"Artifact template not found: {artifact_filename}")
@@ -150,12 +159,12 @@ class AgentContextLoader:
 
     def find_template_path(self, artifact_name: str) -> Path | None:
         return self._find_file_by_name(
-            self.docs_root / "artifacts" / "templates", artifact_name, recursive=True
+            self.framework_root / "artifacts" / "templates", artifact_name, recursive=True
         )
 
     def find_description_path(self, artifact_name: str) -> Path | None:
         return self._find_file_by_name(
-            self.docs_root / "artifacts" / "descriptions", artifact_name, recursive=True
+            self.framework_root / "artifacts" / "descriptions", artifact_name, recursive=True
         )
 
     # ------------------------------------------------------------------
@@ -166,11 +175,17 @@ class AgentContextLoader:
         raci_section = self._extract_raw_section(sop_content, "5. RACI")
         if not raci_section:
             return False
+        normalized_role = self._normalize_role_value(self.raci_role)
         for line in raci_section.splitlines():
             stripped = line.strip()
             if re.match(r"-\s*R\s*:", stripped, re.IGNORECASE):
                 role_value = re.sub(r"-\s*R\s*:\s*", "", stripped, flags=re.IGNORECASE)
-                if self.raci_role.lower() in role_value.lower():
+                roles = [
+                    self._normalize_role_value(part)
+                    for part in role_value.split(",")
+                    if part.strip()
+                ]
+                if normalized_role in roles:
                     return True
         return False
 
@@ -235,4 +250,13 @@ class AgentContextLoader:
 
     @staticmethod
     def _normalize_name(name: str) -> str:
-        return re.sub(r"[\s\-_&]", "", name).lower()
+        ascii_name = (
+            unicodedata.normalize("NFKD", name)
+            .encode("ascii", "ignore")
+            .decode("ascii")
+        )
+        return re.sub(r"[\s\-_&]", "", ascii_name).lower()
+
+    @staticmethod
+    def _normalize_role_value(value: str) -> str:
+        return " ".join(value.strip().casefold().split())

@@ -21,9 +21,11 @@ The goal is to build working flows first, then improve them iteratively.
 
 ## Repository Model
 
-### `docs/`
+### `framework/`
 
-Framework definition lives in `docs/`.
+Framework definition lives in `framework/<variant>/`.
+Today the primary variant is `framework/standard/`, and `framework/light/` is available as a lighter parallel variant.
+
 This includes:
 
 - process descriptions
@@ -53,6 +55,8 @@ This includes:
 - logs and execution traces
 
 Runtime data must not become the permanent source of truth for the framework itself.
+`runs/` is local runtime state only and should not be treated as a published documentation surface.
+If run results are to be shared, curated, or published, that should happen in the separate `valuestream-os-data` repository.
 
 ## Framework Concepts
 
@@ -78,7 +82,7 @@ Each SOP should make the following explicit:
 
 ### Agents and Roles
 
-Agent definitions are stored under `docs/agents/`.
+Agent definitions are stored under `framework/<variant>/agents/`.
 They describe the role, purpose, and operating instructions for the agent.
 
 ### Artifacts
@@ -86,11 +90,16 @@ They describe the role, purpose, and operating instructions for the agent.
 Artifacts are the inputs and outputs used across SOPs.
 They are documented in two parts:
 
-- descriptions under `docs/artifacts/descriptions/`
-- templates under `docs/artifacts/templates/`
+- descriptions under `framework/<variant>/artifacts/descriptions/`
+- templates under `framework/<variant>/artifacts/templates/`
 
 Artifact descriptions explain what an artifact is and why it exists.
 Artifact templates define the structure an agent is expected to produce.
+
+## Backward Compatibility
+
+Some runtime code still supports lookup from legacy `docs/` paths when a framework variant cannot be found.
+That compatibility layer exists to avoid breaking older flows during migration, but `framework/` is the primary repository model going forward.
 
 ## Implementation Direction
 

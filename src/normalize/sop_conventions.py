@@ -2,20 +2,24 @@
 """
 Developer maintenance script — SOP convention discovery.
 
-Scans docs/SOP/ and reports which SOPs follow the expected structure
-(sections, RACI, inputs/outputs). Run manually during framework maintenance,
-not as part of the agent orchestration pipeline.
+Scans the configured framework's SOP directory and reports which SOPs follow
+the expected structure (sections, RACI, inputs/outputs). Run manually during
+framework maintenance, not as part of the agent orchestration pipeline.
 
-Output is written to docs/SOP/sop-conventions-discovery.md and a CSV file.
-Running this script intentionally mutates docs/ — it is a documentation
-maintenance tool, not a production execution step.
+Output is written to the configured framework's SOP directory with a discovery report.
+Running this script intentionally updates the framework directory — it is a
+documentation maintenance tool, not a production execution step.
 """
 import csv
 import re
 from pathlib import Path
 
+from dotenv import load_dotenv
+
+from src.framework.repo_layout import get_framework_root
+
 ROOT = Path(__file__).resolve().parent.parent.parent
-SOP_DIR = ROOT / "docs" / "SOP"
+load_dotenv(ROOT / ".env")
 
 RE_SOP_TITLE = re.compile(r"^#\s*SOP\s*([0-9]+)\s*:\s*(.+)$", re.IGNORECASE)
 RE_SECTION = re.compile(r"^##\s*([0-9]+)\.\s*(.+)$")
@@ -94,8 +98,8 @@ def parse_sop_file(path: Path) -> dict:
     return sop_meta
 
 
-def discover_sop_conventions() -> dict:
-    sop_files = sorted(SOP_DIR.rglob("*.md"))
+def discover_sop_conventions(sop_dir: Path) -> dict:
+    sop_files = sorted(sop_dir.rglob("*.md"))
     all_meta = []
     section_freq = {}
     raci_roles = {"R": set(), "A": set(), "C": set(), "I": set()}
@@ -213,20 +217,23 @@ def write_sop_txt(sops, dest_dir):
 
 
 def main() -> int:
-    discovery = discover_sop_conventions()
-    ctx_dir = ROOT / "docs"
-    ctx_dir.mkdir(parents=True, exist_ok=True)
+    framework_root = get_framework_root(ROOT)
+    sop_dir = framework_root / "SOP"
+
+    discovery = discover_sop_conventions(sop_dir)
+    framework_root.mkdir(parents=True, exist_ok=True)
+    sop_dir.mkdir(parents=True, exist_ok=True)
 
     # legacy report
     out = format_as_markdown(discovery)
-    report_path = ctx_dir / "SOP" / "sop-conventions-discovery.md"
+    report_path = sop_dir / "sop-conventions-discovery.md"
     report_path.write_text(out, encoding="utf-8")
     print(f"Written conventions discovery to {report_path}")
 
     # structured raw outputs
-    write_roles_csv(discovery["sops"], ctx_dir / "agents")
-    write_artifacts_csv(discovery["sops"], ctx_dir / "artifacts")
-    write_sop_txt(discovery["sops"], ctx_dir / "SOP")
+    write_roles_csv(discovery["sops"], framework_root / "agents")
+    write_artifacts_csv(discovery["sops"], framework_root / "artifacts")
+    write_sop_txt(discovery["sops"], sop_dir)
 
     return 0
 

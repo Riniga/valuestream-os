@@ -19,6 +19,7 @@ from typing import Any
 class StepStatus(str, Enum):
     pending = "pending"
     running = "running"
+    paused = "paused"
     completed = "completed"
     skipped = "skipped"
     failed = "failed"
@@ -30,6 +31,7 @@ class ArtifactStatus(str, Enum):
     in_consultation = "in_consultation"
     revision_requested = "revision_requested"
     awaiting_approval = "awaiting_approval"
+    awaiting_human_input = "awaiting_human_input"
     approved = "approved"
     approved_with_notes = "approved_with_notes"
     rejected = "rejected"
@@ -49,12 +51,24 @@ class RunStatus(str, Enum):
 # Flow definition
 # ---------------------------------------------------------------------------
 
+class ActorKind(str, Enum):
+    automated = "automated"
+    human = "human"
+
+
+class HumanTaskStatus(str, Enum):
+    pending = "pending"
+    completed = "completed"
+    cancelled = "cancelled"
+
 @dataclass(frozen=True)
 class AgentDefinition:
     """Static description of one agent role in the framework."""
     agent_id: str
-    agent_file: str        # relative to docs/agents/, e.g. "business-analyst.md"
+    agent_file: str        # relative to framework/{variant}/agents/, e.g. "business-analyst.md"
     raci_role_id: str      # role identifier as it appears in SOP RACI, e.g. "Business Analyst"
+    actor_kind: ActorKind = ActorKind.automated
+    display_name: str = ""
 
 
 @dataclass(frozen=True)
@@ -66,16 +80,21 @@ class FlowStep:
     artifact_name: str     # human-readable artifact name, e.g. "Vision & målbild"
     output_filename: str   # output file name, e.g. "vision_och_malbild.md"
     input_filenames: list[str]  # required input files for this step
+    optional_input_filenames: list[str] = field(default_factory=list)
     delprocess_title: str = ""  # subprocess display name, e.g. "Affärsmål och värdebild"
+    agent_actor_kind: ActorKind = ActorKind.automated
     consult_agent_ids: list[str] = field(default_factory=list)
+    consult_actor_kinds: dict[str, ActorKind] = field(default_factory=dict)
     approver_agent_id: str | None = None
+    approver_actor_kind: ActorKind | None = None
     informed_agent_ids: list[str] = field(default_factory=list)
+    informed_actor_kinds: dict[str, ActorKind] = field(default_factory=dict)
     use_raci_workflow: bool = False
 
 
 @dataclass(frozen=True)
 class ProcessFlow:
-    """A process-driven flow resolved from docs/processes/."""
+    """A process-driven flow resolved from the configured framework directory."""
     flow_id: str
     process_file: str
     process_title: str
@@ -93,11 +112,17 @@ class ArtifactRecord:
     filename: str
     producer_step_id: str
     status: ArtifactStatus = ArtifactStatus.pending
+    agent_actor_kind: ActorKind = ActorKind.automated
     consult_agent_ids: list[str] = field(default_factory=list)
+    consult_actor_kinds: dict[str, ActorKind] = field(default_factory=dict)
     approver_agent_id: str | None = None
+    approver_actor_kind: ActorKind | None = None
     informed_agent_ids: list[str] = field(default_factory=list)
+    informed_actor_kinds: dict[str, ActorKind] = field(default_factory=dict)
     latest_phase: str | None = None
     approval_decision: str | None = None
+    pending_human_task_id: str | None = None
+    pending_human_phase: str | None = None
 
 
 @dataclass
@@ -109,6 +134,7 @@ class RunState:
     status: RunStatus = RunStatus.running
     current_step_id: str | None = None
     current_phase: str | None = None
+    pending_human_task_id: str | None = None
     step_statuses: dict[str, str] = field(default_factory=dict)  # step_id -> StepStatus.value
 
 
@@ -159,6 +185,7 @@ class ApprovalDecision:
     artifact_filename: str
     approver_agent_id: str
     decision: str
+    actor_kind: ActorKind = ActorKind.automated
     summary: str = ""
     rationale: str = ""
     changes_requested: list[str] = field(default_factory=list)
@@ -172,6 +199,7 @@ class InformedRoleBrief:
     artifact_filename: str
     role_agent_id: str
     brief_text: str
+    actor_kind: ActorKind = ActorKind.automated
     relevance: str = ""
 
 
@@ -183,6 +211,25 @@ class ExpertContext:
     artifact_name: str
     context_text: str
     source_filenames: list[str] = field(default_factory=list)
+
+
+@dataclass
+class HumanTask:
+    """A file-backed handoff for work that must be completed by a human role."""
+    task_id: str
+    step_id: str
+    artifact_name: str
+    artifact_filename: str
+    agent_id: str
+    role_name: str
+    phase: str
+    task_kind: str = ""
+    action_required: str = ""
+    next_step_hint: str = ""
+    status: HumanTaskStatus = HumanTaskStatus.pending
+    request_payload: dict[str, Any] = field(default_factory=dict)
+    response_payload: dict[str, Any] = field(default_factory=dict)
+    completion_summary: str = ""
 
 
 # ---------------------------------------------------------------------------
@@ -202,3 +249,5 @@ class StepResult:
     delprocess_title: str = ""
     phase: str | None = None
     approval_decision: str | None = None
+    human_task_id: str | None = None
+    human_task_path: Path | None = None
