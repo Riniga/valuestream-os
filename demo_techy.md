@@ -4,14 +4,14 @@ Agent Orchestration Framework for end-to-end value delivery
 
 ## Syfte med denna demo
 
-Målet är att på cirka 25 minuter ge en tekniskt trovärdig och inspirerande bild av:
+På cirka 25 minuter ska du få en tekniskt trovärdig och inspirerande bild av:
 
 - vad ValueStream OS faktiskt är
 - hur `framework/standard` hänger ihop
 - hur CLI och körning fungerar i praktiken
 - vad en run faktiskt producerar
 
-Demot ska hjälpa åhörarna att förstå att detta inte bara är "några agenter", utan ett explicit system där process, roller, ansvar, artefakter och körning hänger ihop.
+Efter demon ska du ha en tydlig bild av att detta inte bara är "några agenter", utan ett explicit system där process, roller, ansvar, artefakter och körning hänger ihop.
 
 ## Målgrupp och ton
 
@@ -19,16 +19,14 @@ Demot ska hjälpa åhörarna att förstå att detta inte bara är "några agente
 - Van vid kod, arkitektur, automatisering och AI/agent-koncept
 - Intresserad av struktur, spårbarhet och hur lösningen faktiskt fungerar
 
-Ton:
+Presentationen bör upplevas som:
 
 - konkret
 - transparent
 - ingen powerpoint, bara repo, markdown och CLI
 - visa att lösningen är begriplig och praktiskt användbar
 
-## Rekommenderad ordning
-
-För techpublik är det bättre att förklara i denna ordning:
+## Agenda
 
 1. **Varför denna lösning finns**
 2. **Den övergripande modellen**: process + repo + text-first
@@ -37,11 +35,11 @@ För techpublik är det bättre att förklara i denna ordning:
 5. **Hur det körs i CLI**
 6. **Vad man faktiskt får ut av en run**
 
-Viktigt: börja **inte** med detaljer om RACI eller enskilda artefakter. Publiken behöver först förstå helheten, annars känns resten som fristående dokument.
+Viktigt: börja **inte** med detaljer om RACI eller enskilda artefakter. Publiken behöver först förstå helheten, annars känns resten som fristående delar i stället för ett sammanhängande system.
 
 ---
 
-# Manus: 25 minuter
+# Upplägg: 25 minuter
 
 ## 0. Öppning och framing - 2 min
 
@@ -53,13 +51,13 @@ Viktigt: börja **inte** med detaljer om RACI eller enskilda artefakter. Publike
 
 "Det här är ett ramverk för att gå från idé till levererat värde med hjälp av agenter, men på ett kontrollerat sätt."
 
-### Säg ungefär
+### Det här ska du få med dig
 
-"Det jag vill visa idag är inte bara att vi kan generera dokument med AI. Det intressanta här är att vi har byggt ett sammanhängande system där process, roller, ansvar, instruktioner och resultat hänger ihop."
+"Här blir det tydligt att det inte bara handlar om att generera dokument med AI. Det intressanta är att vi har byggt ett sammanhängande system där process, roller, ansvar, instruktioner och resultat hänger ihop."
 
-"Det betyder att vi kan köra utvecklingsarbete på ett mer strukturerat, spårbart och repeterbart sätt."
+"Det innebär att utvecklingsarbete kan bedrivas på ett mer strukturerat, spårbart och repeterbart sätt."
 
-### Peka på i README
+### Lyft fram i README
 
 - syftet
 - den cirkulära modellen
@@ -70,7 +68,7 @@ Viktigt: börja **inte** med detaljer om RACI eller enskilda artefakter. Publike
   - `runs/`
   - `setup/`
 
-### Kärnpoäng att landa
+### Kärnpoäng att landa i
 
 - `framework/` är hjärnan
 - `src/` är motorn
@@ -78,23 +76,23 @@ Viktigt: börja **inte** med detaljer om RACI eller enskilda artefakter. Publike
 
 ---
 
-## 1. Förklara ramverket standard - 6 min
+## 1. Förklaring av ramverket: standard - 6 min
 
 ### Visa
 
 - `framework/standard/INDEX.md`
 
-### Säg ungefär
+### Det här ska du förstå
 
-"Om README beskriver idén, så beskriver standardramverket hur arbetet faktiskt ska gå till."
+"README beskriver idén. Standardramverket beskriver hur arbetet faktiskt ska gå till."
 
-"Det viktiga här är att vi inte börjar i kod. Vi börjar i verksamhetsflöde och ansvar."
+"Det viktiga här är att utgångspunkten inte är kod, utan verksamhetsflöde, ansvar och definierade resultat."
 
 ### Gå igenom i denna ordning
 
 #### A. De 5 processstegen
 
-Peka på:
+Lyft fram:
 
 - Kravställning
 - Målarkitektur
@@ -102,7 +100,7 @@ Peka på:
 - Leverans
 - Repeat
 
-Säg:
+Poängen här är:
 
 "De här fem stegen motsvarar egentligen fem olika frågor:
 vad behöver vi, hur ska det fungera, när gör vi vad, hur bygger vi, och vad lärde vi oss."
@@ -111,7 +109,7 @@ vad behöver vi, hur ska det fungera, när gör vi vad, hur bygger vi, och vad l
 
 #### B. Strukturen i ramverket
 
-Peka på:
+Lyft fram:
 
 - `agents/`
 - `processes/`
@@ -119,7 +117,7 @@ Peka på:
 - `SOP/`
 - `artifacts/`
 
-Säg:
+Poängen här är:
 
 "Det här är den viktiga modellen:
 processen beskriver flödet,
@@ -128,9 +126,9 @@ SOP beskriver hur ett steg utförs,
 artefakterna beskriver vad som kommer in och ut,
 och agenterna är de roller som utför arbetet."
 
-#### C. Förklara begreppen i rätt relation
+#### C. Förklarar begreppen i rätt relation
 
-Använd denna enkla förklaring:
+En enkel förklaring att använda:
 
 - **Process** = i vilken ordning saker händer
 - **RACI** = vem som ansvarar, godkänner, konsulteras och informeras
@@ -138,7 +136,7 @@ Använd denna enkla förklaring:
 - **SOP** = instruktionen för en sittning
 - **Artefakt** = resultatet eller underlaget
 
-Säg:
+Poängen här är:
 
 "Det viktiga är att de här inte är separata dokumenttyper. De är kopplade till varandra."
 
@@ -155,7 +153,7 @@ Säg:
 - gärna en agentfil, till exempel Business Analyst
 - gärna artefaktmall för `bestallning.md`
 
-### Säg ungefär
+### Det här ska publiken förstå
 
 "Nu zoomar vi in på ett enda konkret spår, så att man ser hur allt hänger ihop i praktiken."
 
@@ -167,14 +165,14 @@ Säg:
 4. Visa agent/roll, till exempel Business Analyst
 5. Visa artefaktmall eller artefaktbeskrivning
 
-### Det du vill få publiken att förstå
+### Det publiken ska förstå
 
 - Processen beskriver _varför och i vilken ordning_
 - SOP beskriver _hur_
 - RACI beskriver _vem_
 - Artefakten beskriver _vad som produceras_
 
-### Kort formulering att använda
+### Formulering att kunna använda
 
 "Om man bara har prompts får man ofta magi men låg styrning. Här försöker vi i stället göra exekveringen explicit."
 
@@ -188,9 +186,9 @@ Säg:
 
 - terminal / kommandoprompt
 
-### Säg ungefär
+### Det här ska publiken förstå
 
-"All exekvering sker idag via CLI. Det är medvetet. För en teknisk publik är det här det snabbaste sättet att visa att systemet faktiskt fungerar och är transparent."
+"All exekvering sker idag via CLI. Det är medvetet. För en teknisk publik är det här det snabbaste sättet att visa att systemet faktiskt fungerar och att allt är transparent."
 
 ### Visa några kommandon
 
@@ -221,18 +219,18 @@ Exempel på vad du kan visa:
 
 ### Rekommenderat upplägg
 
-1. Säg att du börjar från ett behov
+1. Börja från ett behov
 2. Visa att du använder mallen för `bestallning.md`
 3. Lägg filen i en ny runs input-mapp
 4. Starta körningen i CLI
 
-### Säg ungefär
+### Det här ska publiken få se
 
-"Jag börjar inte från kod, utan från ett verksamhetsbehov."
+"Demot börjar inte i kod, utan i ett verkligt verksamhetsbehov."
 
-"Det första vi gör är att formulera en beställning i en enkel mall. Den blir sedan startpunkten för hela flödet."
+"Det första steget är att formulera en beställning i en enkel mall. Den blir startpunkten för hela flödet."
 
-"När jag lägger in den i en run kan ramverket ta vid och producera nästa lager av underlag."
+"När den läggs in i en run kan ramverket ta vid och producera nästa lager av underlag."
 
 ### Tips
 
@@ -250,7 +248,7 @@ Försök inte läsa hela beställningen i detalj. Visa bara att:
 
 - `runs/test-01/output/INDEX.md`
 
-### Säg ungefär
+### Det här ska publiken förstå
 
 "I stället för att vänta på att allt ska köras klart kan vi titta på en tidigare körning och se vad systemet faktiskt producerar."
 
@@ -260,7 +258,7 @@ Försök inte läsa hela beställningen i detalj. Visa bara att:
 
 #### A. Runsammanfattning
 
-Peka på:
+Lyft fram:
 
 - run id
 - status
@@ -268,21 +266,21 @@ Peka på:
 - antal huvudartefakter
 - approvals / consultations / briefs
 
-Säg:
+Det här visar:
 
 "Det här ger direkt en överblick över vad som faktiskt hänt i runnen."
 
 #### B. Genererat innehåll per processsteg
 
-Peka på att output är grupperat enligt de fem processerna.
+Lyft fram att output är grupperat enligt de fem processerna.
 
-Säg:
+Det här visar:
 
 "Det här är viktigt för att resultatet ska vara läsbart även för människor. Vi ser inte bara filer, utan resultat grupperat enligt verksamhetsflödet."
 
 #### C. Metadata och spårbarhet
 
-Peka kort på:
+Lyft kort fram:
 
 - `run_state.json`
 - `artifact_state.json`
@@ -291,7 +289,7 @@ Peka kort på:
 - consultations
 - informed briefs
 
-Säg:
+Det här visar:
 
 "För techfolk är det här kanske den mest intressanta delen: vi har inte bara producerat artefakter, utan också spår av beslut, konsultationer och status."
 
@@ -307,13 +305,13 @@ Säg:
 2. **AI används inom en tydlig struktur med roller, SOP:er, RACI och artefakter**
 3. **Resultatet blir både användbart och spårbart**
 
-### Säg ungefär
+### Det här ska publiken ta med sig
 
-"Det jag hoppas ni tar med er är att det här inte handlar om att låta en agent improvisera fram utvecklingsarbete."
+"Det centrala att ta med sig är att detta inte handlar om att låta en agent improvisera fram utvecklingsarbete."
 
-"Det handlar om att göra utvecklingsflödet explicit nog för att både människor och agenter ska kunna samarbeta i samma struktur."
+"Det handlar om att göra utvecklingsflödet explicit nog för att både människor och agenter ska kunna arbeta inom samma struktur."
 
-"Det gör att vi kan börja enkelt, men successivt öka robusthet, standardisering och automation."
+"Det gör det möjligt att börja enkelt och sedan successivt öka robusthet, standardisering och automation."
 
 ---
 
