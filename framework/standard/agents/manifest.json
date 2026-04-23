@@ -78,13 +78,6 @@
       "actor_kind": "automated"
     },
     {
-      "agent_id": "dataarkitekt",
-      "display_name": "Dataarkitekt",
-      "raci_role_id": "Dataarkitekt",
-      "agent_file": "dataarkitekt.md",
-      "actor_kind": "automated"
-    },
-    {
       "agent_id": "devops",
       "display_name": "DevOps",
       "raci_role_id": "DevOps",
