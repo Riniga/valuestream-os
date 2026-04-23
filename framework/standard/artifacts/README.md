@@ -7,13 +7,13 @@ Varje process-fas producerar definierade artefakter (deliverables). Denna katalo
 - **[1. Kravställning/](./descriptions/1.Kravställning/)** – Requirements artifacts (user stories, vision, scope, etc.)
 - **[2. Målarkitektur/](./descriptions/2.%20Målarkitektur/)** – Architecture artifacts (goals, principles, system landscape, etc.)
 - **[3. Roadmap/](./descriptions/3.%20Roadmap/)** – Planning artifacts (roadmap, timelines, sequences)
-- **[4. Leverans/](./descriptions/4.%20Leverans/)** – Delivery artifacts (build plans, test results, release notes)
-- **[5. Repeat/](./descriptions/5.%20Repeat/)** – Learning artifacts (retrospectives, lessons learned, adjustments)
+- **[4. Leverans/](./descriptions/4.%20Leverans/)** – Delivery artifacts (sprint backlog, produktinkrement, testresultat, releasepaket, dokumentation, förbättringsförslag)
+- **[5. Repeat/](./descriptions/5.%20Repeat/)** – Learning artifacts (leveransutvärdering, processförbättringar, arkitekturinsikter, cykelstart-brief)
 
 ## Huvudöversikter
 
 - **[Artifacts.md](./Artifacts.md)** – Fullständig katalog och artefakt-beroendediagram
-- **[Artifacts.csv](./Artifacts.csv)** – Spreadsheet-format för reference
+- **[Artifacts.csv](./Artifacts.csv)** – Tabellöversikt för referens; `Artifacts.md` och beskrivningsfilerna är primär källa
 
 ## Mallar
 

@@ -1,13 +1,13 @@
 # Artefakt: Leveransutvärdering
 
 ## Typ
-Krav
+Utvärderingsunderlag
 
 ## Beskrivning
-Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
+Samlad bedömning av vad som levererats, vilket värde som skapats och vilka funktionella förbättringar som bör tas vidare. Artefakten ersätter separata filer för funktionella förbättringar.
 
 ## Ägare
-Beställare
+Business Analyst
 
 ## Skapas i delprocess
 

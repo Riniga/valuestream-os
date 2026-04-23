@@ -1,13 +1,13 @@
 # Artefakt: Dokumentation
 
 ## Typ
-Krav
+Stödartefakt
 
 ## Beskrivning
-Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
+Samlad teknisk och funktionell dokumentation som behöver uppdateras när en release genomförs. Artefakten används för att fånga det som ska leva vidare efter leveransen snarare än att duplicera information från releasepaketet.
 
 ## Ägare
-Beställare
+Business Analyst
 
 ## Skapas i delprocess
 

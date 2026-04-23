@@ -1,17 +1,22 @@
 # Artefakt: Releasepaket
 
 ## Typ
-Krav
+Releaseunderlag
 
 ## Beskrivning
-Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
+Samlar allt underlag som behövs för att godkänna, genomföra och följa upp en release. Artefakten ersätter separata artefakter för demo-underlag, release notes och deployment genom att samla releasebeskrivning, driftsättningsstatus, kända risker och verifieringar i ett dokument.
 
 ## Ägare
-Beställare
+DevOps
 
 ## Skapas i delprocess
 
 [Release](../../../SOP/4.%20Leverans/08_release.md)
+
+## Uppdateras i
+
+- [Demo](../../../SOP/4.%20Leverans/07_demo.md)
+- [Deployments](../../../SOP/4.%20Leverans/09_deployments.md)
 
 ## Format
 Textdokument (Markdown)

@@ -12,12 +12,13 @@ Säkerställa att nästa cykel kan startas effektivt med rätt underlag, tydlig 
 ## 3. Input
 
 - Arkitekturinsikter
-- Roadmap-input
-- Förbättringsförslag
+- Leveransutvärdering
+- Processförbättringar
+- Underlag från kravställningsuppdatering
+- Underlag från roadmap-iteration
 
 ## 4. Output
 
-- Kravställningsunderlag
 - Cykelstart-brief
 
 ## 5. RACI
@@ -29,11 +30,11 @@ Säkerställa att nästa cykel kan startas effektivt med rätt underlag, tydlig 
 
 ## 6. Arbetssteg
 
-1. Sammanställ input från arkitektur, roadmap och förbättringsförslag.
+1. Sammanställ input från arkitektur, roadmap, leveransutvärdering och processförbättringar.
 2. Definiera övergripande mål och fokus för nästa cykel.
 3. Säkerställ alignment mellan verksamhet, arkitektur och team.
-4. Strukturera startunderlag för nästa kravställning.
+4. Strukturera startunderlag för nästa kravställning inom samma dokument.
 5. Ta fram en sammanställd cykelstart-brief.
 6. Kommunicera mål, förändringar och förutsättningar till relevanta roller.
 7. Verifiera att allt underlag är komplett och redo.
-8. Fastställ startunderlag (beslut av A).
+8. Fastställ cykelstart-brief (beslut av A).

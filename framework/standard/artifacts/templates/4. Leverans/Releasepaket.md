@@ -1,86 +1,45 @@
-﻿# Teknisk plattform
+﻿# Releasepaket
 
 ## Metadata
-| FÃ¤lt | VÃ¤rde |
-|------|------|
-| Artifakttyp | Arkitektur |
-| Ã„gare | LÃ¶sningsarkitekt |
-| Version | 1.0 |
-| Datum | |
-| Status | |
-
----
-
-## 1. Ã–versikt
-| FÃ¤lt | InnehÃ¥ll |
-|------|----------|
-| Syfte | |
-| Referenser (NFR, integrationspunkter, arkitekturprinciper) | |
-| Sammanfattning | |
-
----
-
-## 2. MiljÃ¶er
-| MiljÃ¶ | Syfte | Kommentar |
-|-------|-------|-----------|
-| | | |
-| | | |
-
----
-
-## 3. Plattformsval
-| OmrÃ¥de | Val | Motivering |
-|--------|-----|------------|
-| Runtime / sprÃ¥k | | |
-| Integration | | |
-| Data / lagring | | |
-| Identitet / sÃ¤kerhet | | |
-
----
-
-## 4. CI/CD (principer)
-| Princip | Beskrivning |
-|---------|-------------|
-| Branching | |
-| Build / test | |
+| Fält | Värde |
+| --- | --- |
+| Artifakttyp | Releaseunderlag |
+| Ägare | DevOps |
 | Release | |
+| Datum | |
+| Status | Förbereds / Godkänd / Driftsatt |
 
----
+## 1. Releaseöversikt
+- Ingående produktinkrement:
+- Syfte med releasen:
+- Berörda miljöer:
 
-## 5. Driftmodell
-| Aspekt | Beskrivning |
-|--------|-------------|
-| Hosting | |
-| Skalning | |
-| Ã–vervakning | |
+## 2. Innehåll
+| Del | Beskrivning | Referens |
+| --- | --- | --- |
+| Funktionalitet | | |
+| Testresultat | | |
+| Kända begränsningar | | |
 
----
+## 3. Demo och feedback
+- Sammanfattning av demo:
+- Viktig feedback:
+- Beslut eller villkor:
 
-## 6. Antaganden
-- 
-- 
+## 4. Deployment
+| Miljö | Planerat datum | Faktiskt datum | Status | Kommentar |
+| --- | --- | --- | --- | --- |
+| | | | | |
 
----
-
-## 7. Risker
-| Risk | PÃ¥verkan | Ã…tgÃ¤rd |
-|------|----------|--------|
+## 5. Risker och rollback
+| Risk | Påverkan | Åtgärd / rollback |
+| --- | --- | --- |
 | | | |
 
----
-
-## 8. Koppling till vidare arbete
-Denna artefakt anvÃ¤nds som input till:
-
-- MÃ¥larkitektur (sammanstÃ¤llning)
-- Leverans och roadmap
-
----
-
-## 9. GodkÃ¤nnande
+## 6. Godkännande
 | Roll | Namn | Datum |
-|------|------|--------|
-| Enterprise Arkitekt | | |
-| LÃ¶sningsarkitekt | | |
+| --- | --- | --- |
 | DevOps | | |
+| Beställare | | |
+| Teknisk Lead | | |
 

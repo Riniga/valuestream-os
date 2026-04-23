@@ -13,12 +13,11 @@ Implementera funktionalitet enligt definierade krav, arkitektur och kvalitetspri
 
 - Sprint backlog
 - Arkitekturprinciper
-- Arkitekturprinciper
+- Målarkitektur
 
 ## 4. Output
 
 - Produktinkrement
-- Kod för granskning
 
 ## 5. RACI
 
@@ -35,5 +34,5 @@ Implementera funktionalitet enligt definierade krav, arkitektur och kvalitetspri
 4. Säkerställ att kod följer standarder och konventioner.
 5. Utför lokal testning av funktionaliteten.
 6. Dokumentera tekniska förändringar vid behov.
-7. Förbered kod för granskning (t.ex. pull request).
+7. Förbered ändringarna för kodgranskning inom produktinkrementet.
 8. Markera arbetet som klart för kodgranskning.

@@ -23,7 +23,7 @@ En **ansvarsmatris** som definierar för varje artefakt/beslut:
 
 Varje process-fas har sin egen RACI-matris.
 
-**Se också:** [RACI-matriser](./RACI/RACI.md)
+**Se också:** [RACI-matriser](./RACI/README.md)
 
 ### Artifact (Artefakt)
 
@@ -113,10 +113,12 @@ En **körning** eller **instans** av ramverket mot ett specifikt initiativ. Varj
 
 **Artifacts:**
 
-- Build plans
-- Test cases & results
-- Release notes
-- Deployment guides
+- Sprint backlog
+- Produktinkrement
+- Testresultat
+- Releasepaket
+- Dokumentation
+- Förbättringsförslag
 
 **Se aussi:** [Leverans Process](./processes/4.%20Leverans.md)
 
@@ -126,10 +128,10 @@ En **körning** eller **instans** av ramverket mot ett specifikt initiativ. Varj
 
 **Artifacts:**
 
-- Retrospective notes
-- Lessons learned
-- Decision log
-- Adjusted roadmap
+- Leveransutvärdering
+- Processförbättringar
+- Arkitekturinsikter
+- Cykelstart-brief
 
 **Se aussi:** [Repeat Process](./processes/5.%20Repeat.md)
 

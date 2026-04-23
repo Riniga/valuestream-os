@@ -1,17 +1,22 @@
 # Artefakt: Cykelstart-brief
 
 ## Typ
-Krav
+Startunderlag
 
 ## Beskrivning
-Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
+Sammanhållet startunderlag för nästa cykel. Artefakten konsoliderar sådant som tidigare låg i separata filer för kravställningsunderlag, roadmap-input och roadmap-justering.
 
 ## Ägare
-Beställare
+Business Analyst
 
 ## Skapas i delprocess
 
-[Förbereda nästa cykel](../../../SOP/5.%20Repeat/06_Förbereda_nästa_cykel.md)
+[Förbereda nästa cykel](../../../SOP/5.%20Repeat/06_Förbereda nästa cykel.md)
+
+## Uppdateras i
+
+- [Samla input för uppdaterad kravställning](../../../SOP/5.%20Repeat/03_samla_input_for_uppdaterad_kravstallning.md)
+- [Förbereda nästa roadmap-iteration](../../../SOP/5.%20Repeat/05_Förbereda nästa roadmap‑iteration.md)
 
 ## Format
 Textdokument (Markdown)
