@@ -1,86 +1,43 @@
-﻿# Teknisk plattform
+﻿# Sprint backlog
 
 ## Metadata
-| FÃ¤lt | VÃ¤rde |
-|------|------|
-| Artifakttyp | Arkitektur |
-| Ã„gare | LÃ¶sningsarkitekt |
-| Version | 1.0 |
+| Fält | Värde |
+| --- | --- |
+| Artifakttyp | Leveransplan |
+| Ägare | Scrum Master |
+| Iteration | |
 | Datum | |
-| Status | |
+| Status | Utkast / Fastställd |
 
----
+## 1. Sprintmål
+- Primärt mål:
+- Affärsvärde:
+- Definition av klart:
 
-## 1. Ã–versikt
-| FÃ¤lt | InnehÃ¥ll |
-|------|----------|
-| Syfte | |
-| Referenser (NFR, integrationspunkter, arkitekturprinciper) | |
-| Sammanfattning | |
+## 2. Omfattning
+| Story / arbete | Prioritet | Ansvarig | Kommentar |
+| --- | --- | --- | --- |
+| | | | |
 
----
+## 3. Beroenden och risker
+| Typ | Beskrivning | Påverkan | Åtgärd |
+| --- | --- | --- | --- |
+| Beroende | | | |
+| Risk | | | |
 
-## 2. MiljÃ¶er
-| MiljÃ¶ | Syfte | Kommentar |
-|-------|-------|-----------|
-| | | |
-| | | |
+## 4. Kapacitet och avgränsning
+- Tillgänglig kapacitet:
+- Viktiga antaganden:
+- Det som uttryckligen inte ingår:
 
----
+## 5. Uppföljning under iterationen
+| Kontrollpunkt | Datum | Status | Kommentar |
+| --- | --- | --- | --- |
+| | | | |
 
-## 3. Plattformsval
-| OmrÃ¥de | Val | Motivering |
-|--------|-----|------------|
-| Runtime / sprÃ¥k | | |
-| Integration | | |
-| Data / lagring | | |
-| Identitet / sÃ¤kerhet | | |
-
----
-
-## 4. CI/CD (principer)
-| Princip | Beskrivning |
-|---------|-------------|
-| Branching | |
-| Build / test | |
-| Release | |
-
----
-
-## 5. Driftmodell
-| Aspekt | Beskrivning |
-|--------|-------------|
-| Hosting | |
-| Skalning | |
-| Ã–vervakning | |
-
----
-
-## 6. Antaganden
-- 
-- 
-
----
-
-## 7. Risker
-| Risk | PÃ¥verkan | Ã…tgÃ¤rd |
-|------|----------|--------|
-| | | |
-
----
-
-## 8. Koppling till vidare arbete
-Denna artefakt anvÃ¤nds som input till:
-
-- MÃ¥larkitektur (sammanstÃ¤llning)
-- Leverans och roadmap
-
----
-
-## 9. GodkÃ¤nnande
+## 6. Godkännande
 | Roll | Namn | Datum |
-|------|------|--------|
-| Enterprise Arkitekt | | |
-| LÃ¶sningsarkitekt | | |
-| DevOps | | |
+| --- | --- | --- |
+| Beställare | | |
+| Scrum Master | | |
 

@@ -1,86 +1,37 @@
-﻿# Teknisk plattform
+﻿# Testresultat
 
 ## Metadata
-| FÃ¤lt | VÃ¤rde |
-|------|------|
-| Artifakttyp | Arkitektur |
-| Ã„gare | LÃ¶sningsarkitekt |
-| Version | 1.0 |
+| Fält | Värde |
+| --- | --- |
+| Artifakttyp | Kvalitetsunderlag |
+| Ägare | Testare |
+| Testomgång | |
 | Datum | |
-| Status | |
+| Status | Godkänd / Godkänd med avvikelser / Ej godkänd |
 
----
+## 1. Omfattning
+- Testat inkrement:
+- Testmiljö:
+- Refererade krav eller stories:
 
-## 1. Ã–versikt
-| FÃ¤lt | InnehÃ¥ll |
-|------|----------|
-| Syfte | |
-| Referenser (NFR, integrationspunkter, arkitekturprinciper) | |
-| Sammanfattning | |
+## 2. Genomförda tester
+| Testtyp | Omfattning | Utfall | Kommentar |
+| --- | --- | --- | --- |
+| | | | |
 
----
+## 3. Avvikelser
+| ID | Beskrivning | Allvarlighet | Beslut |
+| --- | --- | --- | --- |
+| | | | |
 
-## 2. MiljÃ¶er
-| MiljÃ¶ | Syfte | Kommentar |
-|-------|-------|-----------|
-| | | |
-| | | |
+## 4. Bedömning av releasbarhet
+- Rekommendation:
+- Blockerare:
+- Villkor för release:
 
----
-
-## 3. Plattformsval
-| OmrÃ¥de | Val | Motivering |
-|--------|-----|------------|
-| Runtime / sprÃ¥k | | |
-| Integration | | |
-| Data / lagring | | |
-| Identitet / sÃ¤kerhet | | |
-
----
-
-## 4. CI/CD (principer)
-| Princip | Beskrivning |
-|---------|-------------|
-| Branching | |
-| Build / test | |
-| Release | |
-
----
-
-## 5. Driftmodell
-| Aspekt | Beskrivning |
-|--------|-------------|
-| Hosting | |
-| Skalning | |
-| Ã–vervakning | |
-
----
-
-## 6. Antaganden
-- 
-- 
-
----
-
-## 7. Risker
-| Risk | PÃ¥verkan | Ã…tgÃ¤rd |
-|------|----------|--------|
-| | | |
-
----
-
-## 8. Koppling till vidare arbete
-Denna artefakt anvÃ¤nds som input till:
-
-- MÃ¥larkitektur (sammanstÃ¤llning)
-- Leverans och roadmap
-
----
-
-## 9. GodkÃ¤nnande
+## 5. Godkännande
 | Roll | Namn | Datum |
-|------|------|--------|
-| Enterprise Arkitekt | | |
-| LÃ¶sningsarkitekt | | |
-| DevOps | | |
+| --- | --- | --- |
+| Testare | | |
+| Teknisk Lead | | |
 

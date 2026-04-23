@@ -12,13 +12,12 @@ Identifiera och strukturera arkitekturella insikter och tekniska förbättringso
 ## 3. Input
 
 - Tekniska hinder
-- Tekniska hinder
 - Leveransutvärdering
+- Förbättringsförslag
 
 ## 4. Output
 
 - Arkitekturinsikter
-- Tekniska förbättringar
 
 ## 5. RACI
 

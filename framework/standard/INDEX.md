@@ -11,7 +11,7 @@ Denna guide är din entrépunkt för att förstå och använda ValueStream OS-ra
 | Rolle                  | Börja här                                                  | Andra viktiga resurser                                                                        |
 | ---------------------- | ---------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
 | **Business Analyst**   | [Kravställning Process](./processes/1.%20Kravställning.md) | [RACI för Kravställning](./RACI/1.%20Kravställning.md) \| [SOP Guides](./SOP/)                |
-| **Beställare**         | [RACI Matrix](./RACI/REDME.md)                             | [Målarkitektur](./processes/2.%20Målarkitektur.md) \| [Prioritering](./artifacts/)            |
+| **Beställare**         | [RACI Matrix](./RACI/README.md)                            | [Målarkitektur](./processes/2.%20Målarkitektur.md) \| [Prioritering](./artifacts/)            |
 | **Solution Architect** | [Målarkitektur Process](./processes/2.%20Målarkitektur.md) | [RACI för Målarkitektur](./RACI/2.%20Målarkitektur.md) \| [Artefakter](./artifacts/)          |
 | **Developer**          | [SOP & Tekniska Guider](./SOP/)                            | [Tekniska Specifikationer](./processes/2.%20Målarkitektur.md) \| [Capabilities](./artifacts/) |
 | **UX Designer**        | [User Journeys & Behov](./artifacts/)                      | [Kravställning](./processes/1.%20Kravställning.md) \| [Story Maps](./artifacts/)              |
@@ -55,7 +55,7 @@ Plan the sequence and timeline for delivery.
 Build, test, and release the solution.
 
 - **What:** How do we build and launch?
-- **Artifacts:** Build plans, test results, release notes
+- **Artifacts:** Sprint backlog, produktinkrement, testresultat, releasepaket, dokumentation, förbättringsförslag
 - **RACI:** [Leverans Responsibilities](./RACI/4.%20Leverans.md)
 - **Details:** [View full process](./processes/4.%20Leverans.md)
 
@@ -64,7 +64,7 @@ Build, test, and release the solution.
 Reflect on results and adjust for the next iteration.
 
 - **What:** What did we learn?
-- **Artifacts:** Retrospectives, lessons learned, next iteration plan
+- **Artifacts:** Leveransutvärdering, processförbättringar, arkitekturinsikter, cykelstart-brief
 - **RACI:** [Repeat Responsibilities](./RACI/5.%20Repeat.md)
 - **Details:** [View full process](./processes/5.%20Repeat.md)
 
@@ -92,7 +92,7 @@ Steg-för-steg processdefinitioner för varje fas (Kravställning → Målarkite
 
 För varje process: Vem är Ansvarig, Accountable, Consulted, och Informed?
 
-**Snabblänk:** [RACI Main](./RACI/RACI.md)
+**Snabblänk:** [RACI Overview](./RACI/README.md)
 
 ### [📖 SOP/](./SOP/) – Standard Operating Procedures
 
@@ -110,43 +110,14 @@ Beskrivningar av all indata och output från ramverket. Innehåller också malla
 
 ## 📚 Glossary – Key Terms
 
-### Core Framework Concepts
+Den fullständiga ordlistan finns i [GLOSSARY.md](./GLOSSARY.md). Några centrala begrepp:
 
-| Term           | Definition                                                                                 |
-| -------------- | ------------------------------------------------------------------------------------------ |
-| **Agent**      | En roll som exekverar aktiviteter i ramverket (t.ex. Business Analyst, Solution Architect) |
-| **RACI**       | Responsible, Accountable, Consulted, Informed – ansvarsbeslutningsmatris                   |
-| **Artifact**   | En output/leverabel från en process-fas (t.ex. user stories, architecture diagram)         |
-| **Capability** | En affärsfunktion eller systemkapabilitet som kan levereras                                |
-| **Epic**       | En stor gruppering av relaterade user stories                                              |
+- **Agent** – en roll som utför aktiviteter i ramverket
+- **RACI** – ansvarsmatris för vem som gör, godkänner, konsulteras och informeras
+- **Artifact** – en konkret leverabel eller ett arbetsunderlag från ett processsteg
+- **Spårbarhet** – kopplingen mellan behov, lösning, leverans och lärdomar
 
-### Process & Requirements
-
-| Term                      | Definition                                                                                                   |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| **Kravställning**         | Fas 1: Define requirements (WHAT do we need?)                                                                |
-| **User Story**            | En kortfattad beskrivning av en användares behov i formatet "As a [role], I want [feature], so that [value]" |
-| **Vision & Målbild**      | En övergripande beskrivning av önskningsvärt framtida tillstånd                                              |
-| **Scope & Avgränsningar** | Vad är IN-scope och vad är OUT-of-scope för ett initiativ?                                                   |
-
-### Architecture & Design
-
-| Term               | Definition                                                  |
-| ------------------ | ----------------------------------------------------------- |
-| **Målarkitektur**  | Fas 2: Design target architecture (HOW should it be built?) |
-| **Systemlandskap** | En visualisering av alla system och deras relationer        |
-| **Domänmodell**    | En konceptuell modell av affärsdomänen och dess enheter     |
-
-### Execution & Lifecycle
-
-| Term           | Definition                                                             |
-| -------------- | ---------------------------------------------------------------------- |
-| **Roadmap**    | Fas 3: Plan sequencing and releases (WHEN will features ship?)         |
-| **Leverans**   | Fas 4: Build, test, release the solution                               |
-| **Repeat**     | Fas 5: Reflect and adjust for next iteration                           |
-| **Spårbarhet** | Ability to trace from business need → requirement → solution → release |
-
-👉 **[Se full glossarie](./GLOSSARY.md)**
+👉 **[Öppna full glossarie](./GLOSSARY.md)**
 
 ---
 

@@ -35,8 +35,8 @@ WHAT → HOW → WHEN → BUILD → LEARN → WHAT → ...
 | **Kravställning** | What do we need? | Requirements (VAD) |
 | **Målarkitektur** | How should it work? | Target architecture (HUR) |
 | **Roadmap** | When do we deliver? | Plan (NÄR) |
-| **Leverans** | Build & release | Product increment |
-| **Repeat** | Learn & adjust | Improved direction |
+| **Leverans** | Build & release | Product increment, release package and documentation |
+| **Repeat** | Learn & adjust | Evaluation, insights and cycle start brief |
 
 ---
 

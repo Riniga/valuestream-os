@@ -11,14 +11,13 @@ Säkerställa att kod uppfyller kvalitetskrav, följer riktlinjer och är i linj
 
 ## 3. Input
 
-- Kod för granskning
+- Produktinkrement
 - Arkitekturprinciper
-- Arkitekturprinciper
+- Kodstandarder
 
 ## 4. Output
 
-- Verifierad funktionalitet
-- Kodförbättringar
+- Produktinkrement
 
 ## 5. RACI
 
@@ -35,5 +34,5 @@ Säkerställa att kod uppfyller kvalitetskrav, följer riktlinjer och är i linj
 4. Kontrollera testbarhet och hantering av edge cases.
 5. Identifiera förbättringsområden och ge feedback.
 6. Begär uppdateringar vid behov eller godkänn koden.
-7. Säkerställ att eventuella åtgärder är genomförda.
-8. Markera kod som godkänd.
+7. Säkerställ att eventuella åtgärder är genomförda i produktinkrementet.
+8. Markera produktinkrementet som granskat och klart för test.

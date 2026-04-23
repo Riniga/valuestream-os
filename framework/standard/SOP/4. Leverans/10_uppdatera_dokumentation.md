@@ -11,7 +11,7 @@ Säkerställa att dokumentation är aktuell och speglar senaste förändringar i
 
 ## 3. Input
 
-- Release notes
+- Releasepaket
 - Produktinkrement
 - API-specifikation
 

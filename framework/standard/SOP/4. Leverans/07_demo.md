@@ -12,12 +12,12 @@ Demonstrera levererad funktionalitet, samla feedback och verifiera att rätt vä
 ## 3. Input
 
 - Produktinkrement
-- Sprintmål
+- Sprint backlog
 
 ## 4. Output
 
-- Feedback
-- Verifierad funktionalitet
+- Releasepaket
+- Förbättringsförslag
 
 ## 5. RACI
 
@@ -28,10 +28,10 @@ Demonstrera levererad funktionalitet, samla feedback och verifiera att rätt vä
 
 ## 6. Arbetssteg
 
-1. Förbered demonstration baserat på levererad funktionalitet och sprintmål.
+1. Förbered demonstration baserat på levererad funktionalitet och sprintmålet i sprint backloggen.
 2. Demonstrera funktionalitet för verksamhet och intressenter.
 3. Verifiera att sprintmålet har uppnåtts.
 4. Samla in feedback och identifiera förbättringsbehov.
-5. Dokumentera demofeedback och observationer.
+5. Dokumentera demofeedback och observationer i releasepaketet och förbättringsunderlaget.
 6. Bekräfta levererad funktionalitet tillsammans med beställare.
-7. Markera funktionalitet som bekräftad.
+7. Markera underlaget som klart för release.

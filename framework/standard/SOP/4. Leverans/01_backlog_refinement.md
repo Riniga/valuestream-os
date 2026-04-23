@@ -12,13 +12,13 @@ Förbereda och förtydliga backloggen så att arbetet är redo för planering oc
 ## 3. Input
 
 - Prioriterad backlog
-- Feedback
+- Cykelstart-brief
 - Arkitekturinsikter
 
 ## 4. Output
 
 - User Stories
-- Ready backlog
+- Underlag till Sprint backlog
 
 ## 5. RACI
 
@@ -36,5 +36,5 @@ Förbereda och förtydliga backloggen så att arbetet är redo för planering oc
 5. Säkerställ att stories uppfyller definition of ready (t.ex. INVEST).
 6. Identifiera tekniska beroenden och risker kopplade till stories.
 7. Estimera stories tillsammans med utvecklingsteamet.
-8. Markera stories som “ready” i backloggen.
-9. Fastställ ready-backlog (beslut av A).
+8. Markera stories som redo för iterationens planering.
+9. Lämna ett sammanhållet planeringsunderlag till sprintplaneringen.

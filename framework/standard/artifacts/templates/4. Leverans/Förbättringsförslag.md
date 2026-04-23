@@ -1,86 +1,33 @@
-﻿# Teknisk plattform
+﻿# Förbättringsförslag
 
 ## Metadata
-| FÃ¤lt | VÃ¤rde |
-|------|------|
-| Artifakttyp | Arkitektur |
-| Ã„gare | LÃ¶sningsarkitekt |
-| Version | 1.0 |
+| Fält | Värde |
+| --- | --- |
+| Artifakttyp | Förbättringsunderlag |
+| Ägare | Scrum Master |
+| Iteration / release | |
 | Datum | |
-| Status | |
+| Status | Samlad / Prioriterad |
 
----
+## 1. Sammanfattning
+- Övergripande observation:
+- Viktigaste lärdom:
+- Rekommenderad riktning till Repeat:
 
-## 1. Ã–versikt
-| FÃ¤lt | InnehÃ¥ll |
-|------|----------|
-| Syfte | |
-| Referenser (NFR, integrationspunkter, arkitekturprinciper) | |
-| Sammanfattning | |
+## 2. Samlade förbättringar
+| Område | Förbättring | Källa | Prioritet |
+| --- | --- | --- | --- |
+| Produkt | | Demo / feedback / retro | |
+| Process | | Demo / feedback / retro | |
+| Teknik | | Demo / feedback / retro | |
 
----
-
-## 2. MiljÃ¶er
-| MiljÃ¶ | Syfte | Kommentar |
-|-------|-------|-----------|
-| | | |
-| | | |
-
----
-
-## 3. Plattformsval
-| OmrÃ¥de | Val | Motivering |
-|--------|-----|------------|
-| Runtime / sprÃ¥k | | |
-| Integration | | |
-| Data / lagring | | |
-| Identitet / sÃ¤kerhet | | |
-
----
-
-## 4. CI/CD (principer)
-| Princip | Beskrivning |
-|---------|-------------|
-| Branching | |
-| Build / test | |
-| Release | |
-
----
-
-## 5. Driftmodell
-| Aspekt | Beskrivning |
-|--------|-------------|
-| Hosting | |
-| Skalning | |
-| Ã–vervakning | |
-
----
-
-## 6. Antaganden
-- 
-- 
-
----
-
-## 7. Risker
-| Risk | PÃ¥verkan | Ã…tgÃ¤rd |
-|------|----------|--------|
+## 3. Beslut eller uppföljning
+| Fråga | Nästa steg | Ansvarig |
+| --- | --- | --- |
 | | | |
 
----
-
-## 8. Koppling till vidare arbete
-Denna artefakt anvÃ¤nds som input till:
-
-- MÃ¥larkitektur (sammanstÃ¤llning)
-- Leverans och roadmap
-
----
-
-## 9. GodkÃ¤nnande
-| Roll | Namn | Datum |
-|------|------|--------|
-| Enterprise Arkitekt | | |
-| LÃ¶sningsarkitekt | | |
-| DevOps | | |
+## 4. Koppling till nästa cykel
+- Det som bör tas upp i leveransutvärdering:
+- Det som bör tas upp i processförbättringar:
+- Det som bör tas upp i arkitekturinsikter:
 

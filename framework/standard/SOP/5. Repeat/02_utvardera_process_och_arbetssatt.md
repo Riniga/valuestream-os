@@ -17,7 +17,6 @@ Utvärdera arbetssätt och processer för att identifiera förbättringar som ö
 
 ## 4. Output
 
-- Retrospektiv
 - Processförbättringar
 
 ## 5. RACI
@@ -29,11 +28,11 @@ Utvärdera arbetssätt och processer för att identifiera förbättringar som ö
 
 ## 6. Arbetssteg
 
-1. Samla in data från sprintresultat och tidigare retrospektiv.
-2. Genomför retrospektiv med teamet.
+1. Samla in data från sprintresultat och tidigare förbättringsarbete.
+2. Genomför retrospektiv med teamet som en del av processförbättringarna.
 3. Identifiera hinder, flaskhalsar och kvalitetsproblem.
 4. Identifiera förbättringsområden i arbetssätt och process.
 5. Prioritera förbättringsåtgärder tillsammans med teamet.
-6. Strukturera och dokumentera retrospektivrapport.
+6. Strukturera och dokumentera ett sammanhållet förbättringsunderlag för process och arbetssätt.
 7. Kommunicera förbättringar till relevanta intressenter.
 8. Säkerställ att förbättringar tas med i nästa cykel.

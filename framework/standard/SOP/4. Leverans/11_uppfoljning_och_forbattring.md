@@ -11,15 +11,14 @@ Utvärdera genomförd iteration och identifiera förbättringar för att öka kv
 
 ## 3. Input
 
-- Deployment
+- Releasepaket
 - Dokumentation
-- Feedback
 - Produktinkrement
+- Testresultat
 
 ## 4. Output
 
 - Förbättringsförslag
-- Retrospektiv
 
 ## 5. RACI
 
@@ -30,11 +29,11 @@ Utvärdera genomförd iteration och identifiera förbättringar för att öka kv
 
 ## 6. Arbetssteg
 
-1. Samla in input från leveransen (demo, deployment, sprintresultat).
-2. Genomför retrospektiv med teamet.
+1. Samla in input från leveransen (demo, deployment, testresultat och sprintutfall).
+2. Genomför retrospektiv med teamet som en del av förbättringsunderlaget.
 3. Identifiera process-, kvalitets- och samarbetsproblem.
 4. Formulera konkreta förbättringsförslag.
 5. Prioritera förbättringar tillsammans med beställare.
-6. Dokumentera och strukturera förbättringsförslag.
+6. Dokumentera och strukturera ett sammanhållet förbättringsunderlag.
 7. Kommunicera förbättringar till relevanta intressenter.
-8. Säkerställ att förbättringar tas med i nästa cykel.
+8. Säkerställ att förbättringarna tas med i nästa cykel.

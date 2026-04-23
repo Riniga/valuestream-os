@@ -1,13 +1,13 @@
 # Artefakt: Arkitekturinsikter
 
 ## Typ
-Krav
+Arkitekturunderlag
 
 ## Beskrivning
-Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
+Samlar tekniska lärdomar, arkitekturella avvikelser och rekommenderade förbättringar från leveransen. Artefakten ersätter separata filer för tekniska förbättringar.
 
 ## Ägare
-Beställare
+Lösningsarkitekt
 
 ## Skapas i delprocess
 

@@ -11,13 +11,13 @@ Förbereda och godkänna en release för deployment genom att paketera artefakte
 
 ## 3. Input
 
-- Verifierad funktionalitet
+- Produktinkrement
+- Testresultat
 - Releasepaket
 
 ## 4. Output
 
 - Releasepaket
-- Release notes
 
 ## 5. RACI
 
@@ -30,8 +30,8 @@ Förbereda och godkänna en release för deployment genom att paketera artefakte
 
 1. Sammanställ releasekandidat och tillhörande artefakter.
 2. Paketera releasen med nödvändig metadata.
-3. Ta fram release notes baserat på levererad funktionalitet.
+3. Sammanställ release notes, demoresultat och driftsättningsförutsättningar i releasepaketet.
 4. Förbered deployment (miljö, konfiguration, beroenden).
 5. Säkerställ att releasen uppfyller krav för driftsättning.
 6. Validera release med beställare och teknisk lead.
-7. Godkänn release för deployment (beslut av A).
+7. Godkänn releasepaketet för deployment (beslut av A).

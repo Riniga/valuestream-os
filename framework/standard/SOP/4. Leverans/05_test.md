@@ -11,14 +11,14 @@ Verifiera att funktionalitet uppfyller krav och acceptanskriterier samt håller 
 
 ## 3. Input
 
-- Verifierad funktionalitet
+- Produktinkrement
 - User Stories
 - Teststrategi
 
 ## 4. Output
 
 - Testresultat
-- Verifierad funktionalitet
+- Produktinkrement
 
 ## 5. RACI
 
@@ -36,4 +36,4 @@ Verifiera att funktionalitet uppfyller krav och acceptanskriterier samt håller 
 5. Identifiera och rapportera buggar och avvikelser.
 6. Säkerställ att blockerande fel åtgärdas.
 7. Dokumentera testresultat.
-8. Markera funktionalitet som verifierad.
+8. Uppdatera produktinkrementets status utifrån testutfallet.

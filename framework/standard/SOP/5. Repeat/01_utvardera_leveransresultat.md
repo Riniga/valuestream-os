@@ -12,14 +12,13 @@ Utvärdera leveransens resultat för att säkerställa att rätt värde har skap
 ## 3. Input
 
 - Produktinkrement
-- Feedback
-- Release notes
+- Releasepaket
+- Förbättringsförslag
 - KPI / värdemått
 
 ## 4. Output
 
 - Leveransutvärdering
-- Funktionella förbättringar
 
 ## 5. RACI
 
@@ -33,8 +32,8 @@ Utvärdera leveransens resultat för att säkerställa att rätt värde har skap
 1. Analysera levererat inkrement i relation till affärsmål och KPI:er.
 2. Jämför planerat innehåll med faktisk leverans.
 3. Sammanställ och analysera demofeedback och användarfeedback.
-4. Identifiera funktionella gap och förbättringsområden.
+4. Identifiera funktionella gap och förbättringsområden inom utvärderingen.
 5. Bedöm i vilken grad leveransen skapat förväntat värde.
-6. Strukturera en sammanställd utvärdering.
+6. Strukturera en sammanställd utvärdering som även fångar rekommenderade förändringar.
 7. Validera utvärdering med verksamhetsexperter.
 8. Fastställ utvärdering (beslut av A).

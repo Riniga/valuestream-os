@@ -18,8 +18,7 @@ Förbereda underlag för nästa roadmap-iteration genom att identifiera föränd
 
 ## 4. Output
 
-- Roadmap-input
-- Roadmap-justering
+- Underlag till Cykelstart-brief
 
 ## 5. RACI
 
@@ -35,6 +34,6 @@ Förbereda underlag för nästa roadmap-iteration genom att identifiera föränd
 3. Identifiera risker och blockare som påverkar planeringen.
 4. Sammanställ prioriteringsinput från kravställning.
 5. Bedöm behov av förändringar i roadmap.
-6. Strukturera roadmap-input i ett tydligt format.
+6. Strukturera planeringspåverkan i ett tydligt format.
 7. Validera underlaget med beställare och arkitektur.
-8. Fastställ roadmap-input (beslut av A).
+8. Lämna vidare roadmap-underlaget till arbetet med cykelstart-brief.

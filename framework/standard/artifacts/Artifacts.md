@@ -166,3 +166,40 @@ flowchart
 
 
 ```
+
+## Leverans
+
+```mermaid
+flowchart
+  SB["Sprint backlog"]
+  PI["Produktinkrement"]
+  TR["Testresultat"]
+  RP["Releasepaket"]
+  DO["Dokumentation"]
+  FB["Förbättringsförslag"]
+
+  SB --> PI
+  PI --> TR
+  PI --> RP
+  TR --> RP
+  RP --> DO
+  RP --> FB
+  TR --> FB
+  PI --> FB
+```
+
+## Repeat
+
+```mermaid
+flowchart
+  LU["Leveransutvärdering"]
+  PF["Processförbättringar"]
+  AI["Arkitekturinsikter"]
+  CB["Cykelstart-brief"]
+
+  LU --> PF
+  LU --> AI
+  LU --> CB
+  PF --> CB
+  AI --> CB
+```

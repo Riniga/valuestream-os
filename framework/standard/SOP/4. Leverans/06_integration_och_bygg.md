@@ -11,14 +11,14 @@ Säkerställa att kod byggs, integreras och paketeras korrekt i CI/CD-flödet f�
 
 ## 3. Input
 
-- Verifierad funktionalitet
+- Produktinkrement
+- Testresultat
 - CI/CD-pipeline
 - Miljökonfiguration
 
 ## 4. Output
 
 - Produktinkrement
-- Demo-underlag
 
 ## 5. RACI
 
@@ -34,6 +34,6 @@ Säkerställa att kod byggs, integreras och paketeras korrekt i CI/CD-flödet f�
 3. Verifiera att integrationer fungerar i byggmiljön.
 4. Identifiera och hantera byggfel och loggar.
 5. Säkerställ att artefakter genereras korrekt.
-6. Publicera byggresultat och artefakter.
-7. Validera att systemet är redo för demo.
+6. Publicera byggresultat och uppdatera produktinkrementet med aktuell byggstatus.
+7. Validera att systemet är redo för demo och releaseförberedelser.
 8. Markera bygg som klar.

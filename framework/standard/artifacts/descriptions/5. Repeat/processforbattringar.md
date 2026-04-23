@@ -1,13 +1,13 @@
 # Artefakt: Processförbättringar
 
 ## Typ
-Krav
+Förbättringsunderlag
 
 ## Beskrivning
-Beskriver varför produkten ska byggas och vilken effekt den ska skapa.
+Samlat underlag för arbetssätt, samarbete och processförbättringar. Artefakten ersätter separata retrospektivfiler och gör det tydligt vilka förbättringar som ska föras vidare till nästa cykel.
 
 ## Ägare
-Beställare
+Scrum Master
 
 ## Skapas i delprocess
 
