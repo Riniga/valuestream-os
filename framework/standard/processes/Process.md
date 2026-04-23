@@ -29,11 +29,11 @@ Syfte: Fånga behov, mål och önskad funktionalitet från verksamheten.
 
 Innehåller:
 
-- Beställning
-- Vision och målbild
-- Omfattning och strukturerad backlog
-- Stakeholderkarta
-- KPI / värdemått
+- `Beställning`
+- `Vision & målbild`
+- `Omfattning och Strukturerad Backlog`
+- `Stakeholderkarta`
+- `KPI / värdemått`
 
 ➡ **Läs mer: [1. Kravställning](1.%20Kravställning.md).**
 
@@ -47,13 +47,13 @@ Syfte: Definiera den framtida arkitekturen – tekniskt och strukturellt.
 
 Innehåller:
 
-- Arkitekturmål
-- Systemlandskap
-- Domänmodell
-- Integrationsarkitektur
-- Arkitekturprinciper
-- Icke-funktionella krav
-- Målarkitektur
+- `Arkitekturmål`
+- `Systemlandskap`
+- `Domänmodell`
+- `Integrationsarkitektur`
+- `Arkitekturprinciper`
+- `Icke-funktionella krav`
+- `Målarkitektur`
 
 ➡ **Läs mer: [2. Målarkitektur](2.%20Målarkitektur.md).**
 
@@ -67,10 +67,10 @@ Syfte: Planera och prioritera leveranser mot målbilden.
 
 Innehåller:
 
-- Roadmap
-- MVP, prioritering och leveransordning inom roadmapen
-- Tekniska beroenden och genomförandeordning
-- Teknisk plan vid behov
+- `Roadmap`
+- prioritering och leveransordning inom `Roadmap`
+- tekniska beroenden och genomförandeordning
+- `Teknisk plan` vid behov
 
 ➡ **Läs mer: [3. Roadmap](3.%20Roadmap.md).**
 
@@ -103,10 +103,10 @@ Syfte: Säkerställa kontinuerlig förbättring av både produkt och arkitektur.
 
 Innehåller:
 
-- Lärdomar från senaste leveransen
-- Justering av målarkitektur (vid behov)
-- Uppdatering av kravbild
-- Omprioritering av roadmap
+- `Leveransutvärdering`
+- `Processförbättringar`
+- `Arkitekturinsikter`
+- `Cykelstart-brief`
 
 ➡ **Läs mer: [5. Repeat](5.%20Repeat.md).**
 
