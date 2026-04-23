@@ -26,4 +26,4 @@ Versionshanterad artefakt
 
 ## Mall
 
-[Mall för Sprint backlog](../../templates/4.%20Leverans/Sprint%20backlog.md)
+[Mall för Sprint backlog](../../templates/4.%20Leverans/sprint_backlog.md)

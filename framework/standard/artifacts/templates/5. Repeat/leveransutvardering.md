@@ -1,4 +1,4 @@
-﻿# Leveransutvärdering
+# Leveransutvärdering
 
 ## Metadata
 | Fält | Värde |
@@ -30,4 +30,3 @@
 | --- | --- | --- |
 | Business Analyst | | |
 | Beställare | | |
-

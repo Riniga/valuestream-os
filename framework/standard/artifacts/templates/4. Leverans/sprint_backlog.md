@@ -1,4 +1,4 @@
-﻿# Sprint backlog
+# Sprint backlog
 
 ## Metadata
 | Fält | Värde |
@@ -40,4 +40,3 @@
 | --- | --- | --- |
 | Beställare | | |
 | Scrum Master | | |
-

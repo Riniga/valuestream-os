@@ -24,7 +24,7 @@ Business Analyst
 
 ## Skapas i delprocess
 
-[Definiera framgångskriterier (KPI)](../../../SOP/1.Kravställning/11_definiera_framgangskriterier.md)
+[Sammanhållen Kravanalys](../../../SOP/1.Kravställning/02_sammanhallen_kravanalys.md)
 
 ## Format
 

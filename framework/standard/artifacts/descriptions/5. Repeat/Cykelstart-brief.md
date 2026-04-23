@@ -15,8 +15,7 @@ Business Analyst
 
 ## Uppdateras i
 
-- [Samla input för uppdaterad kravställning](../../../SOP/5.%20Repeat/03_samla_input_for_uppdaterad_kravstallning.md)
-- [Förbereda nästa roadmap-iteration](../../../SOP/5.%20Repeat/05_Förbereda nästa roadmap‑iteration.md)
+- [Förbereda nästa cykel](../../../SOP/5.%20Repeat/06_Förbereda nästa cykel.md)
 
 ## Format
 Textdokument (Markdown)
@@ -26,4 +25,4 @@ Versionshanterad artefakt
 
 ## Mall
 
-[Mall för Cykelstart-brief](../../templates/5.%20Repeat/Cykelstart-brief.md)
+[Mall för Cykelstart-brief](../../templates/5.%20Repeat/cykelstart-brief.md)

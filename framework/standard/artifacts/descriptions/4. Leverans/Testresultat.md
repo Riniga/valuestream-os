@@ -27,4 +27,4 @@ Versionshanterad artefakt
 
 ## Mall
 
-[Mall för Testresultat](../../templates/4.%20Leverans/Testresultat.md)
+[Mall för Testresultat](../../templates/4.%20Leverans/testresultat.md)

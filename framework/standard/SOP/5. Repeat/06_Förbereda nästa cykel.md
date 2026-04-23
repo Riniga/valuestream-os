@@ -2,7 +2,7 @@
 
 ## 1. Syfte
 
-Säkerställa att nästa cykel kan startas effektivt med rätt underlag, tydlig riktning och alignment mellan alla roller.
+Säkerställa att nästa cykel kan startas effektivt med rätt underlag, tydlig riktning och alignment mellan alla roller i en sammanhållen Business Analyst-sittning.
 
 ## 2. Kontext
 
@@ -14,8 +14,11 @@ Säkerställa att nästa cykel kan startas effektivt med rätt underlag, tydlig 
 - Arkitekturinsikter
 - Leveransutvärdering
 - Processförbättringar
-- Underlag från kravställningsuppdatering
-- Underlag från roadmap-iteration
+- Förbättringsförslag
+- Övergripande behov
+- Beroendekarta
+- Risker
+- Prioriterad backlog
 
 ## 4. Output
 
@@ -30,11 +33,13 @@ Säkerställa att nästa cykel kan startas effektivt med rätt underlag, tydlig 
 
 ## 6. Arbetssteg
 
-1. Sammanställ input från arkitektur, roadmap, leveransutvärdering och processförbättringar.
-2. Definiera övergripande mål och fokus för nästa cykel.
-3. Säkerställ alignment mellan verksamhet, arkitektur och team.
-4. Strukturera startunderlag för nästa kravställning inom samma dokument.
-5. Ta fram en sammanställd cykelstart-brief.
-6. Kommunicera mål, förändringar och förutsättningar till relevanta roller.
-7. Verifiera att allt underlag är komplett och redo.
-8. Fastställ cykelstart-brief (beslut av A).
+1. Sammanställ input från leveransutvärdering, processförbättringar och förbättringsförslag.
+2. Strukturera kravsignaler, omprioriteringar och ej levererade behov som ska tas in i nästa kravställning.
+3. Analysera arkitekturinsikter, beroenden och risker som påverkar nästa roadmap-varv.
+4. Sammanställ planeringspåverkan för nästa cykel utan att uppdatera roadmapen i detalj.
+5. Definiera övergripande mål och fokus för nästa cykel.
+6. Säkerställ alignment mellan verksamhet, arkitektur och team.
+7. Ta fram en sammanställd cykelstart-brief som innehåller startunderlag för nästa kravställning.
+8. Kommunicera mål, förändringar och förutsättningar till relevanta roller.
+9. Verifiera att allt underlag är komplett och redo.
+10. Fastställ cykelstart-brief (beslut av A).

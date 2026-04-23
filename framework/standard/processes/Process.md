@@ -29,11 +29,11 @@ Syfte: Fånga behov, mål och önskad funktionalitet från verksamheten.
 
 Innehåller:
 
-- User stories och epics
-- Icke-funktionella krav (NFR)
-- Verksamhetsmål
-- Avgränsningar
-- Problemdefinition
+- Beställning
+- Vision och målbild
+- Omfattning och strukturerad backlog
+- Stakeholderkarta
+- KPI / värdemått
 
 ➡ **Läs mer: [1. Kravställning](1.%20Kravställning.md).**
 
@@ -47,12 +47,13 @@ Syfte: Definiera den framtida arkitekturen – tekniskt och strukturellt.
 
 Innehåller:
 
-- Systemkarta / Lösningslandskap
+- Arkitekturmål
+- Systemlandskap
 - Domänmodell
 - Integrationsarkitektur
-- Datamodell (hög nivå)
-- Säkerhetsarkitektur
 - Arkitekturprinciper
+- Icke-funktionella krav
+- Målarkitektur
 
 ➡ **Läs mer: [2. Målarkitektur](2.%20Målarkitektur.md).**
 
@@ -66,11 +67,10 @@ Syfte: Planera och prioritera leveranser mot målbilden.
 
 Innehåller:
 
-- MVP-definition
-- Prioriterade leveransvågor
-- Releaseplan (v1, v2, v3…)
-- Tekniska och organisatoriska beroenden
-- Resursbehov
+- Roadmap
+- MVP, prioritering och leveransordning inom roadmapen
+- Tekniska beroenden och genomförandeordning
+- Teknisk plan vid behov
 
 ➡ **Läs mer: [3. Roadmap](3.%20Roadmap.md).**
 

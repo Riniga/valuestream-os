@@ -1,4 +1,4 @@
-# Artefakt: Sekvensplan
+# Artefakt: Teknisk plan
 
 ## Typ
 Plan
@@ -31,4 +31,4 @@ Versionshanterad artefakt
 
 ## Mall
 
-[Mall för Sekvensplan](../../templates/3.%20Roadmap/teknisk_plan.md)
+[Mall för Teknisk plan](../../templates/3.%20Roadmap/teknisk_plan.md)

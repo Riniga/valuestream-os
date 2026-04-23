@@ -4,149 +4,71 @@
 ---
 # KRAVSTÄLLNING
 kravstallning:
+  - artifact: "Beställning"
+    file_path: "1.Kravställning/beställning.md"
+    created:
+      sop_file: "01_skapa_bestallning.md"
+      sop_section: "Kravställning"
+      markdown_link: "[SOP 1 (Kravställning): Skapa beställning](../../../SOP/1.Kravställning/01_skapa_bestallning.md)"
+    updated: null
+    used_in:
+      - sop_file: "02_sammanhallen_kravanalys.md"
+        sop_section: "Kravställning"
+        markdown_link: "[SOP 2 (Kravställning): Sammanhållen kravanalys](../../../SOP/1.Kravställning/02_sammanhallen_kravanalys.md)"
+
   - artifact: "Vision & målbild"
-    file_path: "1.Kravställning/Vision & målbild.md"
+    file_path: "1.Kravställning/vision_malbild.md"
     created:
-      sop_file: "01_vision_och_malbild.md"
+      sop_file: "02_sammanhallen_kravanalys.md"
       sop_section: "Kravställning"
-      markdown_link: "[SOP 1: Vision & målbild](../../../SOP/1.Kravställning/01_vision_och_malbild.md)"
+      markdown_link: "[SOP 2 (Kravställning): Sammanhållen kravanalys](../../../SOP/1.Kravställning/02_sammanhallen_kravanalys.md)"
     updated: null
-    used_in: null
+    used_in:
+      - sop_file: "01_etablera_arkitekturell_grund.md"
+        sop_section: "Målarkitektur"
+        markdown_link: "[SOP 1 (Målarkitektur): Etablera arkitekturell grund](../../../SOP/2. Målarkitektur/01_etablera_arkitekturell_grund.md)"
+      - sop_file: "01_skapa_roadmap.md"
+        sop_section: "Roadmap"
+        markdown_link: "[SOP 1 (Roadmap): Skapa Roadmap](../../../SOP/3. Roadmap/01_skapa_roadmap.md)"
 
-  - artifact: "Övergripande behov"
-    file_path: "1.Kravställning/Övergripande behov.md"
+  - artifact: "Omfattning och Strukturerad Backlog"
+    file_path: "1.Kravställning/Omfattning_Strukturerad_Backlog.md"
     created:
-      sop_file: "02_affarsmal_och_vardebild.md"
+      sop_file: "02_sammanhallen_kravanalys.md"
       sop_section: "Kravställning"
-      markdown_link: "[SOP 2: Affärsmål & värdebild](../../../SOP/1.Kravställning/02_affarsmal_och_vardebild.md)"
+      markdown_link: "[SOP 2 (Kravställning): Sammanhållen kravanalys](../../../SOP/1.Kravställning/02_sammanhallen_kravanalys.md)"
     updated: null
-    used_in: null
-
-  - artifact: "scope_och_avgränsningar"
-    file_path: "1.Kravställning/scope_och_avgränsningar.md"
-    created:
-      sop_file: "03_scope_och_avgransningar.md"
-      sop_section: "Kravställning"
-      markdown_link: "[SOP 3: Scope & avgränsningar](../../../SOP/1.Kravställning/03_scope_och_avgransningar.md)"
-    updated: null
-    used_in: null
+    used_in:
+      - sop_file: "01_etablera_arkitekturell_grund.md"
+        sop_section: "Målarkitektur"
+        markdown_link: "[SOP 1 (Målarkitektur): Etablera arkitekturell grund](../../../SOP/2. Målarkitektur/01_etablera_arkitekturell_grund.md)"
+      - sop_file: "02_definiera_domanmodell.md"
+        sop_section: "Målarkitektur"
+        markdown_link: "[SOP 2 (Målarkitektur): Definiera domänmodell](../../../SOP/2. Målarkitektur/02_definiera_domanmodell.md)"
+      - sop_file: "01_skapa_roadmap.md"
+        sop_section: "Roadmap"
+        markdown_link: "[SOP 1 (Roadmap): Skapa Roadmap](../../../SOP/3. Roadmap/01_skapa_roadmap.md)"
 
   - artifact: "Stakeholderkarta"
     file_path: "1.Kravställning/Stakeholderkarta.md"
     created:
-      sop_file: "04_stakeholderkarta.md"
+      sop_file: "02_sammanhallen_kravanalys.md"
       sop_section: "Kravställning"
-      markdown_link: "[SOP 4: Stakeholder-karta](../../../SOP/1.Kravställning/04_stakeholderkarta.md)"
+      markdown_link: "[SOP 2 (Kravställning): Sammanhållen kravanalys](../../../SOP/1.Kravställning/02_sammanhallen_kravanalys.md)"
     updated: null
     used_in: null
 
-  - artifact: "User Stories"
-    file_path: "1.Kravställning/User Stories.md"
+  - artifact: "KPI / värdemått"
+    file_path: "1.Kravställning/kpi_vardematt.md"
     created:
-      sop_file: "05_create_user_stories.md"
+      sop_file: "02_sammanhallen_kravanalys.md"
       sop_section: "Kravställning"
-      markdown_link: "[SOP 5: Create User Stories](../../../SOP/1.Kravställning/05_create_user_stories.md)"
+      markdown_link: "[SOP 2 (Kravställning): Sammanhållen kravanalys](../../../SOP/1.Kravställning/02_sammanhallen_kravanalys.md)"
     updated: null
-    used_in: null
-
-  - artifact: "Begreppsmodell"
-    file_path: "1.Kravställning/Begreppsmodell.md"
-    created:
-      sop_file: "06_domananalys.md"
-      sop_section: "Kravställning"
-      markdown_link: "[SOP 6: Domänanalys](../../../SOP/1.Kravställning/06_domananalys.md)"
-    updated:
-      - sop_file: "03_definiera_domanmodell.md"
-        sop_section: "Målarkitektur"
-        markdown_link: "[SOP 3: Definiera domänmodell](../../../SOP/2. Målarkitektur/03_definiera_domanmodell.md)"
-    used_in: null
-
-  - artifact: "User journeys"
-    file_path: "1.Kravställning/User journeys.md"
-    created:
-      sop_file: "07_user_journeys.md"
-      sop_section: "Kravställning"
-      markdown_link: "[SOP 7: User Journeys / huvudflöden](../../../SOP/1.Kravställning/07_user_journeys.md)"
-    updated: null
-    used_in: null
-
-  - artifact: "Story map"
-    file_path: "1.Kravställning/Story map.md"
-    created:
-      sop_file: "08_skapa_story_map.md"
-      sop_section: "Kravställning"
-      markdown_link: "[SOP 8: Skapa Story Map](../../../SOP/1.Kravställning/08_skapa_story_map.md)"
-    updated: null
-    used_in: null
-
-  - artifact: "epics_och_capabilities"
-    file_path: "1.Kravställning/epics_och_capabilities.md"
-    created:
-      sop_file: "09_gruppera_i_epics_och_capabilities.md"
-      sop_section: "Kravställning"
-      markdown_link: "[SOP 9: Gruppera i epics & capabilities](../../../SOP/1.Kravställning/09_gruppera_i_epics_och_capabilities.md)"
-    updated: null
-    used_in: null
-
-  - artifact: "Prioriterad backlog"
-    file_path: "1.Kravställning/Prioriterad backlog.md"
-    created:
-      sop_file: "10_prioritera_backlog.md"
-      sop_section: "Kravställning"
-      markdown_link: "[SOP 10: Prioritera backlog](../../../SOP/1.Kravställning/10_prioritera_backlog.md)"
-    updated:
-      - sop_file: "05_Prioritera funktionalitet.md"
+    used_in:
+      - sop_file: "01_skapa_roadmap.md"
         sop_section: "Roadmap"
-        markdown_link: "[SOP 5 (Roadmap): Prioritera funktionalitet](../../../SOP/3. Roadmap/05_Prioritera funktionalitet.md)"
-    used_in: null
-
-  - artifact: "KPI _ värdemått"
-    file_path: "1.Kravställning/KPI _ värdemått.md"
-    created:
-      sop_file: "11_definiera_framgangskriterier.md"
-      sop_section: "Kravställning"
-      markdown_link: "[SOP 11: Definiera framgångskriterier (KPI)](../../../SOP/1.Kravställning/11_definiera_framgangskriterier.md)"
-    updated: null
-    used_in: null
-
-  - artifact: "Beroendekarta"
-    file_path: "1.Kravställning/Beroendekarta.md"
-    created: null
-    updated:
-      - sop_file: "05_Identifiera tekniska beroenden.md"
-        sop_section: "Roadmap"
-        markdown_link: "[SOP 6 (Roadmap): Identifiera tekniska beroenden](../../../SOP/3. Roadmap/06_Identifiera tekniska beroenden.md)"
-    used_in: null
-
-  - artifact: "Domänmodell"
-    file_path: "1.Kravställning/Domänmodell.md"
-    created:
-      sop_file: "06_domananalys.md"
-      sop_section: "Kravställning"
-      markdown_link: "[SOP 6: Domänanalys](../../../SOP/1.Kravställning/06_domananalys.md)"
-    updated:
-      - sop_file: "03_definiera_domanmodell.md"
-        sop_section: "Målarkitektur"
-        markdown_link: "[SOP 3: Definiera domänmodell](../../../SOP/2. Målarkitektur/03_definiera_domanmodell.md)"
-    used_in: null
-
-  - artifact: "Funktionella block"
-    file_path: "1.Kravställning/Funktionella block.md"
-    created:
-      sop_file: "09_gruppera_i_epics_och_capabilities.md"
-      sop_section: "Kravställning"
-      markdown_link: "[SOP 9: Gruppera i epics & capabilities](../../../SOP/1.Kravställning/09_gruppera_i_epics_och_capabilities.md)"
-    updated: null
-    used_in: null
-
-  - artifact: "Uppföljningsmodell"
-    file_path: "1.Kravställning/Uppföljningsmodell.md"
-    created:
-      sop_file: "11_definiera_framgangskriterier.md"
-      sop_section: "Kravställning"
-      markdown_link: "[SOP 11: Definiera framgångskriterier (KPI)](../../../SOP/1.Kravställning/11_definiera_framgangskriterier.md)"
-    updated: null
-    used_in: null
+        markdown_link: "[SOP 1 (Roadmap): Skapa Roadmap](../../../SOP/3. Roadmap/01_skapa_roadmap.md)"
 
 ---
 # MÅLARKITEKTUR
@@ -154,210 +76,117 @@ malarkitektur:
   - artifact: "Arkitekturmål"
     file_path: "2. Målarkitektur/Arkitekturmål.md"
     created:
-      sop_file: "01_etablera_arkitekturmal.md"
+      sop_file: "01_etablera_arkitekturell_grund.md"
       sop_section: "Målarkitektur"
-      markdown_link: "[SOP 1 (Målarkitektur): Etablera arkitekturmål](../../../SOP/2. Målarkitektur/01_etablera_arkitekturmal.md)"
+      markdown_link: "[SOP 1 (Målarkitektur): Etablera arkitekturell grund](../../../SOP/2. Målarkitektur/01_etablera_arkitekturell_grund.md)"
     updated: null
-    used_in: null
+    used_in:
+      - sop_file: "03_etablera malarkitektur.md"
+        sop_section: "Målarkitektur"
+        markdown_link: "[SOP 3 (Målarkitektur): Etablera målarkitektur](../../../SOP/2. Målarkitektur/03_etablera%20malarkitektur.md)"
 
   - artifact: "Systemlandskap"
     file_path: "2. Målarkitektur/Systemlandskap.md"
     created:
-      sop_file: "02_definiera_systemlandskap.md"
+      sop_file: "01_etablera_arkitekturell_grund.md"
       sop_section: "Målarkitektur"
-      markdown_link: "[SOP 2 (Målarkitektur): Definiera systemlandskap](../../../SOP/2. Målarkitektur/02_definiera_systemlandskap.md)"
+      markdown_link: "[SOP 1 (Målarkitektur): Etablera arkitekturell grund](../../../SOP/2. Målarkitektur/01_etablera_arkitekturell_grund.md)"
     updated: null
-    used_in: null
+    used_in:
+      - sop_file: "02_definiera_domanmodell.md"
+        sop_section: "Målarkitektur"
+        markdown_link: "[SOP 2 (Målarkitektur): Definiera domänmodell](../../../SOP/2. Målarkitektur/02_definiera_domanmodell.md)"
+      - sop_file: "03_etablera malarkitektur.md"
+        sop_section: "Målarkitektur"
+        markdown_link: "[SOP 3 (Målarkitektur): Etablera målarkitektur](../../../SOP/2. Målarkitektur/03_etablera%20malarkitektur.md)"
 
   - artifact: "Domänmodell"
     file_path: "2. Målarkitektur/Domänmodell.md"
     created:
-      sop_file: "06_domananalys.md"
-      sop_section: "Kravställning"
-      markdown_link: "[SOP 6 (Kravställning): Domänanalys](../../../SOP/1.Kravställning/06_domananalys.md)"
-    updated:
-      - sop_file: "03_definiera_domanmodell.md"
+      sop_file: "02_definiera_domanmodell.md"
+      sop_section: "Målarkitektur"
+      markdown_link: "[SOP 2 (Målarkitektur): Definiera domänmodell](../../../SOP/2. Målarkitektur/02_definiera_domanmodell.md)"
+    updated: null
+    used_in:
+      - sop_file: "03_etablera malarkitektur.md"
         sop_section: "Målarkitektur"
-        markdown_link: "[SOP 3 (Målarkitektur): Definiera domänmodell](../../../SOP/2. Målarkitektur/03_definiera_domanmodell.md)"
-    used_in: null
+        markdown_link: "[SOP 3 (Målarkitektur): Etablera målarkitektur](../../../SOP/2. Målarkitektur/03_etablera%20malarkitektur.md)"
+      - sop_file: "02_skapa_teknisk_plan.md"
+        sop_section: "Roadmap"
+        markdown_link: "[SOP 2 (Roadmap): Skapa Teknisk plan](../../../SOP/3. Roadmap/02_skapa_teknisk_plan.md)"
 
   - artifact: "Integrationsarkitektur"
     file_path: "2. Målarkitektur/Integrationsarkitektur.md"
     created:
-      sop_file: "04_definiera_integrationsarkitektur.md"
+      sop_file: "03_etablera malarkitektur.md"
       sop_section: "Målarkitektur"
-      markdown_link: "[SOP 4 (Målarkitektur): Definiera integrationsarkitektur](../../../SOP/2. Målarkitektur/04_definiera_integrationsarkitektur.md)"
+      markdown_link: "[SOP 3 (Målarkitektur): Etablera målarkitektur](../../../SOP/2. Målarkitektur/03_etablera%20malarkitektur.md)"
     updated: null
-    used_in: null
-
-  - artifact: "API-specifikation"
-    file_path: "2. Målarkitektur/API-specifikation.md"
-    created:
-      sop_file: "05_definiera_api_struktur.md"
-      sop_section: "Målarkitektur"
-      markdown_link: "[SOP 5 (Målarkitektur): Definiera API-struktur](../../../SOP/2. Målarkitektur/05_definiera_api_struktur.md)"
-    updated: null
-    used_in: null
-
-  - artifact: "Datamodell"
-    file_path: "2. Målarkitektur/Datamodell.md"
-    created:
-      sop_file: "06_definiera_datamodell.md"
-      sop_section: "Målarkitektur"
-      markdown_link: "[SOP 6 (Målarkitektur): Definiera datamodell (hög nivå)](../../../SOP/2. Målarkitektur/06_definiera_datamodell.md)"
-    updated: null
-    used_in: null
-
-  - artifact: "Säkerhetsarkitektur"
-    file_path: "2. Målarkitektur/Säkerhetsarkitektur.md"
-    created:
-      sop_file: "07_definiera_sakerhetsarkitektur.md"
-      sop_section: "Målarkitektur"
-      markdown_link: "[SOP 7 (Målarkitektur): Definiera säkerhetsarkitektur](../../../SOP/2. Målarkitektur/07_definiera_sakerhetsarkitektur.md)"
-    updated: null
-    used_in: null
+    used_in:
+      - sop_file: "01_skapa_roadmap.md"
+        sop_section: "Roadmap"
+        markdown_link: "[SOP 1 (Roadmap): Skapa Roadmap](../../../SOP/3. Roadmap/01_skapa_roadmap.md)"
+      - sop_file: "02_skapa_teknisk_plan.md"
+        sop_section: "Roadmap"
+        markdown_link: "[SOP 2 (Roadmap): Skapa Teknisk plan](../../../SOP/3. Roadmap/02_skapa_teknisk_plan.md)"
 
   - artifact: "Arkitekturprinciper"
     file_path: "2. Målarkitektur/Arkitekturprinciper.md"
     created:
-      sop_file: "08_faststall_arkitekturprinciper.md"
+      sop_file: "01_etablera_arkitekturell_grund.md"
       sop_section: "Målarkitektur"
-      markdown_link: "[SOP 8 (Målarkitektur): Fastställ arkitekturprinciper](../../../SOP/2. Målarkitektur/08_faststall_arkitekturprinciper.md)"
-    updated: null
+      markdown_link: "[SOP 1 (Målarkitektur): Etablera arkitekturell grund](../../../SOP/2. Målarkitektur/01_etablera_arkitekturell_grund.md)"
+    updated:
+      - sop_file: "03_etablera malarkitektur.md"
+        sop_section: "Målarkitektur"
+        markdown_link: "[SOP 3 (Målarkitektur): Etablera målarkitektur](../../../SOP/2. Målarkitektur/03_etablera%20malarkitektur.md)"
     used_in: null
 
-  - artifact: "Icke-funktionella krav (NFR)"
-    file_path: "2. Målarkitektur/Icke-funktionella krav (NFR).md"
+  - artifact: "Icke-funktionella krav"
+    file_path: "2. Målarkitektur/Icke-funktionella krav.md"
     created:
-      sop_file: "09_definiera_nfr.md"
+      sop_file: "03_etablera malarkitektur.md"
       sop_section: "Målarkitektur"
-      markdown_link: "[SOP 9 (Målarkitektur): Definiera NFR](../../../SOP/2. Målarkitektur/09_definiera_nfr.md)"
+      markdown_link: "[SOP 3 (Målarkitektur): Etablera målarkitektur](../../../SOP/2. Målarkitektur/03_etablera%20malarkitektur.md)"
     updated: null
-    used_in: null
-
-  - artifact: "Teknisk plattform"
-    file_path: "2. Målarkitektur/Teknisk plattform.md"
-    created:
-      sop_file: "10_definiera_teknisk_plattform.md"
-      sop_section: "Målarkitektur"
-      markdown_link: "[SOP 10 (Målarkitektur): Definiera teknisk plattform](../../../SOP/2. Målarkitektur/10_definiera_teknisk_plattform.md)"
-    updated: null
-    used_in: null
+    used_in:
+      - sop_file: "01_skapa_roadmap.md"
+        sop_section: "Roadmap"
+        markdown_link: "[SOP 1 (Roadmap): Skapa Roadmap](../../../SOP/3. Roadmap/01_skapa_roadmap.md)"
 
   - artifact: "Målarkitektur"
     file_path: "2. Målarkitektur/Målarkitektur.md"
     created:
-      sop_file: "11_dokumentera_malarkitektur.md"
+      sop_file: "03_etablera malarkitektur.md"
       sop_section: "Målarkitektur"
-      markdown_link: "[SOP 11 (Målarkitektur): Dokumentera målarkitektur](../../../SOP/2. Målarkitektur/11_dokumentera_malarkitektur.md)"
+      markdown_link: "[SOP 3 (Målarkitektur): Etablera målarkitektur](../../../SOP/2. Målarkitektur/03_etablera%20malarkitektur.md)"
     updated: null
-    used_in: null
-
-  - artifact: "Begreppsmodell"
-    file_path: "2. Målarkitektur/Begreppsmodell.md"
-    created:
-      sop_file: "06_domananalys.md"
-      sop_section: "Kravställning"
-      markdown_link: "[SOP 6 (Kravställning): Domänanalys](../../../SOP/1.Kravställning/06_domananalys.md)"
-    updated:
-      - sop_file: "03_definiera_domanmodell.md"
-        sop_section: "Målarkitektur"
-        markdown_link: "[SOP 3 (Målarkitektur): Definiera domänmodell](../../../SOP/2. Målarkitektur/03_definiera_domanmodell.md)"
-    used_in: null
-
-  - artifact: "Integrationspunkter"
-    file_path: "2. Målarkitektur/Integrationspunkter.md"
-    created:
-      sop_file: "04_definiera_integrationsarkitektur.md"
-      sop_section: "Målarkitektur"
-      markdown_link: "[SOP 4 (Målarkitektur): Definiera integrationsarkitektur](../../../SOP/2. Målarkitektur/04_definiera_integrationsarkitektur.md)"
-    updated: null
-    used_in: null
-
-  - artifact: "Dataägarskap"
-    file_path: "2. Målarkitektur/Dataägarskap.md"
-    created:
-      sop_file: "06_definiera_datamodell.md"
-      sop_section: "Målarkitektur"
-      markdown_link: "[SOP 6 (Målarkitektur): Definiera datamodell (hög nivå)](../../../SOP/2. Målarkitektur/06_definiera_datamodell.md)"
-    updated: null
-    used_in: null
-
-  - artifact: "Säkerhetsprinciper"
-    file_path: "2. Målarkitektur/Säkerhetsprinciper.md"
-    created:
-      sop_file: "07_definiera_sakerhetsarkitektur.md"
-      sop_section: "Målarkitektur"
-      markdown_link: "[SOP 7 (Målarkitektur): Definiera säkerhetsarkitektur](../../../SOP/2. Målarkitektur/07_definiera_sakerhetsarkitektur.md)"
-    updated: null
-    used_in: null
+    used_in:
+      - sop_file: "01_skapa_roadmap.md"
+        sop_section: "Roadmap"
+        markdown_link: "[SOP 1 (Roadmap): Skapa Roadmap](../../../SOP/3. Roadmap/01_skapa_roadmap.md)"
 
 ---
 # ROADMAP
 roadmap:
-  - artifact: "MVP-definition"
-    file_path: "3. Roadmap/MVP-definition.md"
-    created:
-      sop_file: "01_skapa_mvp.md"
-      sop_section: "Roadmap"
-      markdown_link: "[SOP 1 (Roadmap): Skapa MVP](../../../SOP/3. Roadmap/01_skapa_mvp.md)"
-    updated: null
-    used_in: null
-
-  - artifact: "Releasepaket"
-    file_path: "3. Roadmap/Releasepaket.md"
-    created:
-      sop_file: "02_Strukturera story map till leveranspaket.md"
-      sop_section: "Roadmap"
-      markdown_link: "[SOP 2 (Roadmap): Strukturera story map till leveranspaket](../../../SOP/3. Roadmap/02_Strukturera story map till leveranspaket.md)"
-    updated:
-      - sop_file: "01_backlog_refinement.md"
-        sop_section: "Leverans"
-        markdown_link: "[SOP 1 (Leverans): Backlog refinement](../../../SOP/4. Leverans/01_backlog_refinement.md)"
-    used_in: null
-
-  - artifact: "Prioriterad backlog"
-    file_path: "3. Roadmap/Prioriterad backlog.md"
-    created:
-      sop_file: "05_Prioritera funktionalitet.md"
-      sop_section: "Roadmap"
-      markdown_link: "[SOP 5 (Roadmap): Prioritera funktionalitet](../../../SOP/3. Roadmap/05_Prioritera funktionalitet.md)"
-    updated: null
-    used_in: null
-
-  - artifact: "Releaseplan"
-    file_path: "3. Roadmap/Releaseplan.md"
-    created:
-      sop_file: "03_Skapa releaseplan.md"
-      sop_section: "Roadmap"
-      markdown_link: "[SOP 3 (Roadmap): Skapa releaseplan](../../../SOP/3. Roadmap/03_Skapa releaseplan.md)"
-    updated: null
-    used_in: null
-
   - artifact: "Roadmap"
     file_path: "3. Roadmap/Roadmap.md"
     created:
-      sop_file: "04_Skapa produktroadmap.md"
+      sop_file: "01_skapa_roadmap.md"
       sop_section: "Roadmap"
-      markdown_link: "[SOP 4 (Roadmap): Skapa produktroadmap](../../../SOP/3. Roadmap/04_Skapa produktroadmap.md)"
+      markdown_link: "[SOP 1 (Roadmap): Skapa Roadmap](../../../SOP/3. Roadmap/01_skapa_roadmap.md)"
     updated: null
-    used_in: null
+    used_in:
+      - sop_file: "02_skapa_teknisk_plan.md"
+        sop_section: "Roadmap"
+        markdown_link: "[SOP 2 (Roadmap): Skapa Teknisk plan](../../../SOP/3. Roadmap/02_skapa_teknisk_plan.md)"
 
-  - artifact: "Beroendekarta"
-    file_path: "3. Roadmap/Beroendekarta.md"
+  - artifact: "Teknisk plan"
+    file_path: "3. Roadmap/teknisk_plan.md"
     created:
-      sop_file: "06_Identifiera tekniska beroenden.md"
+      sop_file: "02_skapa_teknisk_plan.md"
       sop_section: "Roadmap"
-      markdown_link: "[SOP 6 (Roadmap): Identifiera tekniska beroenden](../../../SOP/3. Roadmap/06_Identifiera tekniska beroenden.md)"
-    updated: null
-    used_in: null
-
-  - artifact: "Sekvensplan"
-    file_path: "3. Roadmap/Sekvensplan.md"
-    created:
-      sop_file: "02_Strukturera story map till leveranspaket.md"
-      sop_section: "Roadmap"
-      markdown_link: "[SOP 2 (Roadmap): Strukturera story map till leveranspaket](../../../SOP/3. Roadmap/02_Strukturera story map till leveranspaket.md)"
+      markdown_link: "[SOP 2 (Roadmap): Skapa Teknisk plan](../../../SOP/3. Roadmap/02_skapa_teknisk_plan.md)"
     updated: null
     used_in: null
 
@@ -365,7 +194,7 @@ roadmap:
 # LEVERANS
 leverans:
   - artifact: "Sprint backlog"
-    file_path: "4. Leverans/Sprint backlog.md"
+    file_path: "4. Leverans/sprint_backlog.md"
     created:
       sop_file: "02_sprintplanering.md"
       sop_section: "Leverans"
@@ -374,37 +203,34 @@ leverans:
     used_in:
       - sop_file: "03_utveckling.md"
         sop_section: "Leverans"
-        markdown_link: "[SOP 3 (Leverans): Utveckling](../../../SOP/4. Leverans/03_utveckling.md)"
+        markdown_link: "[SOP 3 (Leverans): Utveckling och kodgranskning](../../../SOP/4. Leverans/03_utveckling.md)"
       - sop_file: "07_demo.md"
         sop_section: "Leverans"
         markdown_link: "[SOP 7 (Leverans): Demo](../../../SOP/4. Leverans/07_demo.md)"
 
   - artifact: "Produktinkrement"
-    file_path: "4. Leverans/Produktinkrement.md"
+    file_path: "4. Leverans/produktinkrement.md"
     created:
       sop_file: "03_utveckling.md"
       sop_section: "Leverans"
-      markdown_link: "[SOP 3 (Leverans): Utveckling](../../../SOP/4. Leverans/03_utveckling.md)"
+      markdown_link: "[SOP 3 (Leverans): Utveckling och kodgranskning](../../../SOP/4. Leverans/03_utveckling.md)"
     updated:
-      - sop_file: "04_kodgranskning.md"
-        sop_section: "Leverans"
-        markdown_link: "[SOP 4 (Leverans): Kodgranskning](../../../SOP/4. Leverans/04_kodgranskning.md)"
       - sop_file: "05_test.md"
         sop_section: "Leverans"
         markdown_link: "[SOP 5 (Leverans): Test](../../../SOP/4. Leverans/05_test.md)"
       - sop_file: "06_integration_och_bygg.md"
         sop_section: "Leverans"
         markdown_link: "[SOP 6 (Leverans): Integration & bygg](../../../SOP/4. Leverans/06_integration_och_bygg.md)"
-      - sop_file: "09_deployments.md"
+      - sop_file: "08_release.md"
         sop_section: "Leverans"
-        markdown_link: "[SOP 9 (Leverans): Deployments](../../../SOP/4. Leverans/09_deployments.md)"
+        markdown_link: "[SOP 8 (Leverans): Release och deployment](../../../SOP/4. Leverans/08_release.md)"
     used_in:
       - sop_file: "07_demo.md"
         sop_section: "Leverans"
         markdown_link: "[SOP 7 (Leverans): Demo](../../../SOP/4. Leverans/07_demo.md)"
       - sop_file: "08_release.md"
         sop_section: "Leverans"
-        markdown_link: "[SOP 8 (Leverans): Release](../../../SOP/4. Leverans/08_release.md)"
+        markdown_link: "[SOP 8 (Leverans): Release och deployment](../../../SOP/4. Leverans/08_release.md)"
       - sop_file: "10_uppdatera_dokumentation.md"
         sop_section: "Leverans"
         markdown_link: "[SOP 10 (Leverans): Uppdatera dokumentation](../../../SOP/4. Leverans/10_uppdatera_dokumentation.md)"
@@ -419,7 +245,7 @@ leverans:
         markdown_link: "[SOP 2 (Repeat): Utvärdera process & arbetssätt](../../../SOP/5. Repeat/02_utvardera_process_och_arbetssatt.md)"
 
   - artifact: "Testresultat"
-    file_path: "4. Leverans/Testresultat.md"
+    file_path: "4. Leverans/testresultat.md"
     created:
       sop_file: "05_test.md"
       sop_section: "Leverans"
@@ -431,24 +257,21 @@ leverans:
         markdown_link: "[SOP 6 (Leverans): Integration & bygg](../../../SOP/4. Leverans/06_integration_och_bygg.md)"
       - sop_file: "08_release.md"
         sop_section: "Leverans"
-        markdown_link: "[SOP 8 (Leverans): Release](../../../SOP/4. Leverans/08_release.md)"
+        markdown_link: "[SOP 8 (Leverans): Release och deployment](../../../SOP/4. Leverans/08_release.md)"
       - sop_file: "11_uppfoljning_och_forbattring.md"
         sop_section: "Leverans"
         markdown_link: "[SOP 11 (Leverans): Uppföljning & förbättring](../../../SOP/4. Leverans/11_uppfoljning_och_forbattring.md)"
 
   - artifact: "Releasepaket"
-    file_path: "4. Leverans/Releasepaket.md"
+    file_path: "4. Leverans/releasepaket.md"
     created:
       sop_file: "08_release.md"
       sop_section: "Leverans"
-      markdown_link: "[SOP 8 (Leverans): Release](../../../SOP/4. Leverans/08_release.md)"
+      markdown_link: "[SOP 8 (Leverans): Release och deployment](../../../SOP/4. Leverans/08_release.md)"
     updated:
       - sop_file: "07_demo.md"
         sop_section: "Leverans"
         markdown_link: "[SOP 7 (Leverans): Demo](../../../SOP/4. Leverans/07_demo.md)"
-      - sop_file: "09_deployments.md"
-        sop_section: "Leverans"
-        markdown_link: "[SOP 9 (Leverans): Deployments](../../../SOP/4. Leverans/09_deployments.md)"
     used_in:
       - sop_file: "10_uppdatera_dokumentation.md"
         sop_section: "Leverans"
@@ -461,7 +284,7 @@ leverans:
         markdown_link: "[SOP 1 (Repeat): Utvärdera leveransresultat](../../../SOP/5. Repeat/01_utvardera_leveransresultat.md)"
 
   - artifact: "Dokumentation"
-    file_path: "4. Leverans/Dokumentation.md"
+    file_path: "4. Leverans/dokumentation.md"
     created:
       sop_file: "10_uppdatera_dokumentation.md"
       sop_section: "Leverans"
@@ -470,7 +293,7 @@ leverans:
     used_in: null
 
   - artifact: "Förbättringsförslag"
-    file_path: "4. Leverans/Förbättringsförslag.md"
+    file_path: "4. Leverans/forbattringsforslag.md"
     created:
       sop_file: "11_uppfoljning_och_forbattring.md"
       sop_section: "Leverans"
@@ -483,18 +306,18 @@ leverans:
       - sop_file: "01_utvardera_leveransresultat.md"
         sop_section: "Repeat"
         markdown_link: "[SOP 1 (Repeat): Utvärdera leveransresultat](../../../SOP/5. Repeat/01_utvardera_leveransresultat.md)"
-      - sop_file: "03_samla_input_for_uppdaterad_kravstallning.md"
-        sop_section: "Repeat"
-        markdown_link: "[SOP 3 (Repeat): Samla input för uppdaterad kravställning](../../../SOP/5. Repeat/03_samla_input_for_uppdaterad_kravstallning.md)"
       - sop_file: "04_identifiera_arkitekturella_lardomar.md"
         sop_section: "Repeat"
         markdown_link: "[SOP 4 (Repeat): Identifiera arkitekturella lärdomar](../../../SOP/5. Repeat/04_identifiera_arkitekturella_lardomar.md)"
+      - sop_file: "06_Förbereda nästa cykel.md"
+        sop_section: "Repeat"
+        markdown_link: "[SOP 4 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda nästa cykel.md)"
 
 ---
 # REPEAT
 repeat:
   - artifact: "Leveransutvärdering"
-    file_path: "5. Repeat/Leveransutvärdering.md"
+    file_path: "5. Repeat/leveransutvardering.md"
     created:
       sop_file: "01_utvardera_leveransresultat.md"
       sop_section: "Repeat"
@@ -504,59 +327,44 @@ repeat:
       - sop_file: "02_utvardera_process_och_arbetssatt.md"
         sop_section: "Repeat"
         markdown_link: "[SOP 2 (Repeat): Utvärdera process & arbetssätt](../../../SOP/5. Repeat/02_utvardera_process_och_arbetssatt.md)"
-      - sop_file: "03_samla_input_for_uppdaterad_kravstallning.md"
-        sop_section: "Repeat"
-        markdown_link: "[SOP 3 (Repeat): Samla input för uppdaterad kravställning](../../../SOP/5. Repeat/03_samla_input_for_uppdaterad_kravstallning.md)"
       - sop_file: "06_Förbereda nästa cykel.md"
         sop_section: "Repeat"
-        markdown_link: "[SOP 6 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda nästa cykel.md)"
+        markdown_link: "[SOP 4 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda nästa cykel.md)"
 
   - artifact: "Processförbättringar"
-    file_path: "5. Repeat/Processförbättringar.md"
+    file_path: "5. Repeat/processforbattringar.md"
     created:
       sop_file: "02_utvardera_process_och_arbetssatt.md"
       sop_section: "Repeat"
       markdown_link: "[SOP 2 (Repeat): Utvärdera process & arbetssätt](../../../SOP/5. Repeat/02_utvardera_process_och_arbetssatt.md)"
     updated: null
     used_in:
-      - sop_file: "03_samla_input_for_uppdaterad_kravstallning.md"
-        sop_section: "Repeat"
-        markdown_link: "[SOP 3 (Repeat): Samla input för uppdaterad kravställning](../../../SOP/5. Repeat/03_samla_input_for_uppdaterad_kravstallning.md)"
       - sop_file: "06_Förbereda nästa cykel.md"
         sop_section: "Repeat"
-        markdown_link: "[SOP 6 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda nästa cykel.md)"
+        markdown_link: "[SOP 4 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda nästa cykel.md)"
 
   - artifact: "Arkitekturinsikter"
-    file_path: "5. Repeat/Arkitekturinsikter.md"
+    file_path: "5. Repeat/arkitekturinsikter.md"
     created:
       sop_file: "04_identifiera_arkitekturella_lardomar.md"
       sop_section: "Repeat"
       markdown_link: "[SOP 4 (Repeat): Identifiera arkitekturella lärdomar](../../../SOP/5. Repeat/04_identifiera_arkitekturella_lardomar.md)"
     updated: null
     used_in:
-      - sop_file: "05_Förbereda nästa roadmap‑iteration.md"
-        sop_section: "Repeat"
-        markdown_link: "[SOP 5 (Repeat): Förbereda nästa roadmap-iteration](../../../SOP/5. Repeat/05_Förbereda nästa roadmap‑iteration.md)"
       - sop_file: "06_Förbereda nästa cykel.md"
         sop_section: "Repeat"
-        markdown_link: "[SOP 6 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda nästa cykel.md)"
+        markdown_link: "[SOP 4 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda nästa cykel.md)"
       - sop_file: "01_backlog_refinement.md"
         sop_section: "Leverans"
         markdown_link: "[SOP 1 (Leverans): Backlog refinement](../../../SOP/4. Leverans/01_backlog_refinement.md)"
 
   - artifact: "Cykelstart-brief"
-    file_path: "5. Repeat/Cykelstart-brief.md"
+    file_path: "5. Repeat/cykelstart-brief.md"
     created:
       sop_file: "06_Förbereda nästa cykel.md"
       sop_section: "Repeat"
-      markdown_link: "[SOP 6 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda nästa cykel.md)"
-    updated:
-      - sop_file: "03_samla_input_for_uppdaterad_kravstallning.md"
-        sop_section: "Repeat"
-        markdown_link: "[SOP 3 (Repeat): Samla input för uppdaterad kravställning](../../../SOP/5. Repeat/03_samla_input_for_uppdaterad_kravstallning.md)"
-      - sop_file: "05_Förbereda nästa roadmap‑iteration.md"
-        sop_section: "Repeat"
-        markdown_link: "[SOP 5 (Repeat): Förbereda nästa roadmap-iteration](../../../SOP/5. Repeat/05_Förbereda nästa roadmap‑iteration.md)"
+      markdown_link: "[SOP 4 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda nästa cykel.md)"
+    updated: null
     used_in:
       - sop_file: "01_backlog_refinement.md"
         sop_section: "Leverans"

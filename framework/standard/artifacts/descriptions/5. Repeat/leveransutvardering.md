@@ -21,4 +21,4 @@ Versionshanterad artefakt
 
 ## Mall
 
-[Mall för Leveransutvärdering](../../templates/5.%20Repeat/Leveransutvärdering.md)
+[Mall för Leveransutvärdering](../../templates/5.%20Repeat/leveransutvardering.md)
