@@ -29,7 +29,7 @@ Lösningsarkitekt
 
 ## Skapas i delprocess
 
-[Definiera NFR](../../../SOP/2.%20Målarkitektur/09_definiera_nfr.md)
+[Etablera målarkitektur](../../../SOP/2.%20Målarkitektur/03_etablera%20malarkitektur.md)
 
 ## Format
 

@@ -1,128 +1,42 @@
 Role,SOP,Type of RACI
-Business Analyst,docs\SOP\1.Kravställning\01_vision_och_malbild.md,R
-Beställare,docs\SOP\1.Kravställning\01_vision_och_malbild.md,A
-Verksamhetsexperter,docs\SOP\1.Kravställning\01_vision_och_malbild.md,C
-Projektledare,docs\SOP\1.Kravställning\01_vision_och_malbild.md,I
-Business Analyst,docs\SOP\1.Kravställning\02_affarsmal_och_vardebild.md,R
-Beställare,docs\SOP\1.Kravställning\02_affarsmal_och_vardebild.md,A
-Verksamhetsexperter,docs\SOP\1.Kravställning\02_affarsmal_och_vardebild.md,C
-Projektledare,docs\SOP\1.Kravställning\02_affarsmal_och_vardebild.md,I
-Business Analyst,docs\SOP\1.Kravställning\03_scope_och_avgransningar.md,R
-Beställare,docs\SOP\1.Kravställning\03_scope_och_avgransningar.md,A
-Verksamhetsexperter,docs\SOP\1.Kravställning\03_scope_och_avgransningar.md,C
-Utvecklare,docs\SOP\1.Kravställning\03_scope_och_avgransningar.md,C
-Projektledare,docs\SOP\1.Kravställning\03_scope_och_avgransningar.md,I
-Business Analyst,docs\SOP\1.Kravställning\04_stakeholderkarta.md,R
-Beställare,docs\SOP\1.Kravställning\04_stakeholderkarta.md,A
-Verksamhetsexperter,docs\SOP\1.Kravställning\04_stakeholderkarta.md,C
-Projektledare,docs\SOP\1.Kravställning\04_stakeholderkarta.md,C
-Utvecklare,docs\SOP\1.Kravställning\04_stakeholderkarta.md,I
-Business Analyst,docs\SOP\1.Kravställning\05_domananalys.md,R
-Beställare,docs\SOP\1.Kravställning\05_domananalys.md,A
-Verksamhetsexperter,docs\SOP\1.Kravställning\05_domananalys.md,C
-Lösningsarkitekt,docs\SOP\1.Kravställning\05_domananalys.md,I
-UX,docs\SOP\1.Kravställning\06_user_journeys.md,R
-Beställare,docs\SOP\1.Kravställning\06_user_journeys.md,A
-Verksamhetsexperter,docs\SOP\1.Kravställning\06_user_journeys.md,C
-Användarrepresentanter,docs\SOP\1.Kravställning\06_user_journeys.md,C
-Business Analyst,docs\SOP\1.Kravställning\06_user_journeys.md,I
-Business Analyst,docs\SOP\1.Kravställning\07_skapa_story_map.md,R
-Beställare,docs\SOP\1.Kravställning\07_skapa_story_map.md,A
-UX,docs\SOP\1.Kravställning\07_skapa_story_map.md,C
-Verksamhetsexperter,docs\SOP\1.Kravställning\07_skapa_story_map.md,C
-Utvecklare,docs\SOP\1.Kravställning\07_skapa_story_map.md,I
-Business Analyst,docs\SOP\1.Kravställning\08_gruppera_i_epics_och_capabilities.md,R
-Beställare,docs\SOP\1.Kravställning\08_gruppera_i_epics_och_capabilities.md,A
-Verksamhetsexperter,docs\SOP\1.Kravställning\08_gruppera_i_epics_och_capabilities.md,C
-Utvecklare,docs\SOP\1.Kravställning\08_gruppera_i_epics_och_capabilities.md,I
-Business Analyst,docs\SOP\1.Kravställning\09_prioritera_backlog.md,R
-Beställare,docs\SOP\1.Kravställning\09_prioritera_backlog.md,A
-Verksamhetsexperter,docs\SOP\1.Kravställning\09_prioritera_backlog.md,C
-Utvecklare,docs\SOP\1.Kravställning\09_prioritera_backlog.md,I
-Business Analyst,docs\SOP\1.Kravställning\10_definiera_framgangskriterier.md,R
-Beställare,docs\SOP\1.Kravställning\10_definiera_framgangskriterier.md,A
-Verksamhetsexperter,docs\SOP\1.Kravställning\10_definiera_framgangskriterier.md,C
-Projektledare,docs\SOP\1.Kravställning\10_definiera_framgangskriterier.md,I
-Lösningsarkitekt,docs\SOP\2. Målarkitektur\01_Etablera arkitekturmål.md,R
-Enterprise Arkitekt,docs\SOP\2. Målarkitektur\01_Etablera arkitekturmål.md,A
-Beställare,docs\SOP\2. Målarkitektur\01_Etablera arkitekturmål.md,C
-Teknisk Lead,docs\SOP\2. Målarkitektur\01_Etablera arkitekturmål.md,C
-Business Analyst,docs\SOP\2. Målarkitektur\01_Etablera arkitekturmål.md,I
-Lösningsarkitekt,docs\SOP\2. Målarkitektur\02_Definiera systemlandskap.md,R
-Enterprise Arkitekt,docs\SOP\2. Målarkitektur\02_Definiera systemlandskap.md,A
-Teknisk Lead,docs\SOP\2. Målarkitektur\02_Definiera systemlandskap.md,C
-Verksamhetsexperter,docs\SOP\2. Målarkitektur\02_Definiera systemlandskap.md,C
-Beställare,docs\SOP\2. Målarkitektur\02_Definiera systemlandskap.md,I
-Business Analyst,docs\SOP\2. Målarkitektur\03_Definiera domänmodell.md,R
-Lösningsarkitekt,docs\SOP\2. Målarkitektur\03_Definiera domänmodell.md,A
-Verksamhetsexperter,docs\SOP\2. Målarkitektur\03_Definiera domänmodell.md,C
-Beställare,docs\SOP\2. Målarkitektur\03_Definiera domänmodell.md,I
-Lösningsarkitekt,docs\SOP\2. Målarkitektur\04_Definiera integrationsarkitektu.md,R
-Enterprise Arkitekt,docs\SOP\2. Målarkitektur\04_Definiera integrationsarkitektu.md,A
-Teknisk Lead,docs\SOP\2. Målarkitektur\04_Definiera integrationsarkitektu.md,C
-Beställare,docs\SOP\2. Målarkitektur\04_Definiera integrationsarkitektu.md,I
-Lösningsarkitekt,docs\SOP\2. Målarkitektur\05_Definiera API‑struktur.md,R
-Enterprise Arkitekt,docs\SOP\2. Målarkitektur\05_Definiera API‑struktur.md,A
-Teknisk Lead,docs\SOP\2. Målarkitektur\05_Definiera API‑struktur.md,C
-Utvecklare,docs\SOP\2. Målarkitektur\05_Definiera API‑struktur.md,C
-Beställare,docs\SOP\2. Målarkitektur\05_Definiera API‑struktur.md,I
-Dataarkitekt,docs\SOP\2. Målarkitektur\06_Definiera datamodell.md,R
-Lösningsarkitekt,docs\SOP\2. Målarkitektur\06_Definiera datamodell.md,A
-Teknisk Lead,docs\SOP\2. Målarkitektur\06_Definiera datamodell.md,C
-Beställare,docs\SOP\2. Målarkitektur\06_Definiera datamodell.md,I
-Lösningsarkitekt,docs\SOP\2. Målarkitektur\07_Definiera säkerhetsarkitektur.md,R
-Enterprise Arkitekt,docs\SOP\2. Målarkitektur\07_Definiera säkerhetsarkitektur.md,A
-Teknisk Lead,docs\SOP\2. Målarkitektur\07_Definiera säkerhetsarkitektur.md,C
-DevOps,docs\SOP\2. Målarkitektur\07_Definiera säkerhetsarkitektur.md,C
-Beställare,docs\SOP\2. Målarkitektur\07_Definiera säkerhetsarkitektur.md,I
-Lösningsarkitekt,docs\SOP\2. Målarkitektur\08_Fastställ arkitekturprinciper.md,R
-Enterprise Arkitekt,docs\SOP\2. Målarkitektur\08_Fastställ arkitekturprinciper.md,A
-Teknisk Lead,docs\SOP\2. Målarkitektur\08_Fastställ arkitekturprinciper.md,C
-Beställare,docs\SOP\2. Målarkitektur\08_Fastställ arkitekturprinciper.md,C
-Utvecklare,docs\SOP\2. Målarkitektur\08_Fastställ arkitekturprinciper.md,I
-Lösningsarkitekt,docs\SOP\2. Målarkitektur\09_Definiera NFR.md,R
-Enterprise Arkitekt,docs\SOP\2. Målarkitektur\09_Definiera NFR.md,A
-DevOps,docs\SOP\2. Målarkitektur\09_Definiera NFR.md,C
-Teknisk Lead,docs\SOP\2. Målarkitektur\09_Definiera NFR.md,C
-Beställare,docs\SOP\2. Målarkitektur\09_Definiera NFR.md,I
-Lösningsarkitekt,docs\SOP\2. Målarkitektur\10_Definiera teknisk plattform.md,R
-Enterprise Arkitekt,docs\SOP\2. Målarkitektur\10_Definiera teknisk plattform.md,A
-DevOps,docs\SOP\2. Målarkitektur\10_Definiera teknisk plattform.md,C
-Teknisk Lead,docs\SOP\2. Målarkitektur\10_Definiera teknisk plattform.md,C
-Beställare,docs\SOP\2. Målarkitektur\10_Definiera teknisk plattform.md,I
-Lösningsarkitekt,docs\SOP\2. Målarkitektur\11_ Dokumentera målarkitektur.md,R
-Enterprise Arkitekt,docs\SOP\2. Målarkitektur\11_ Dokumentera målarkitektur.md,A
-Dataarkitekt,docs\SOP\2. Målarkitektur\11_ Dokumentera målarkitektur.md,C
-Teknisk Lead,docs\SOP\2. Målarkitektur\11_ Dokumentera målarkitektur.md,C
-Beställare,docs\SOP\2. Målarkitektur\11_ Dokumentera målarkitektur.md,I
-Business Analyst,docs\SOP\3. Roadmap\01_skapa_mvp.md,R
-Beställare,docs\SOP\3. Roadmap\01_skapa_mvp.md,A
-Lösningsarkitekt,docs\SOP\3. Roadmap\01_skapa_mvp.md,C
-Verksamhetsexperter,docs\SOP\3. Roadmap\01_skapa_mvp.md,C
-Utvecklare,docs\SOP\3. Roadmap\01_skapa_mvp.md,I
-Business Analyst,docs\SOP\3. Roadmap\02_Strukturera story map till leveranspaket.md,R
-Beställare,docs\SOP\3. Roadmap\02_Strukturera story map till leveranspaket.md,A
-Lösningsarkitekt,docs\SOP\3. Roadmap\02_Strukturera story map till leveranspaket.md,C
-Utvecklare,docs\SOP\3. Roadmap\02_Strukturera story map till leveranspaket.md,I
-Business Analyst,docs\SOP\3. Roadmap\03_Skapa releaseplan.md,R
-Beställare,docs\SOP\3. Roadmap\03_Skapa releaseplan.md,A
-Lösningsarkitekt,docs\SOP\3. Roadmap\03_Skapa releaseplan.md,C
-Projektledare,docs\SOP\3. Roadmap\03_Skapa releaseplan.md,C
-Utvecklare,docs\SOP\3. Roadmap\03_Skapa releaseplan.md,I
-Business Analyst,docs\SOP\3. Roadmap\04_Skapa produktroadmap.md,R
-Beställare,docs\SOP\3. Roadmap\04_Skapa produktroadmap.md,A
-Lösningsarkitekt,docs\SOP\3. Roadmap\04_Skapa produktroadmap.md,C
-Projektledare,docs\SOP\3. Roadmap\04_Skapa produktroadmap.md,C
-Verksamhetsexperter,docs\SOP\3. Roadmap\04_Skapa produktroadmap.md,I
-Business Analyst,docs\SOP\3. Roadmap\05_Prioritera funktionalitet.md,R
-Beställare,docs\SOP\3. Roadmap\05_Prioritera funktionalitet.md,A
-Lösningsarkitekt,docs\SOP\3. Roadmap\05_Prioritera funktionalitet.md,C
-Verksamhetsexperter,docs\SOP\3. Roadmap\05_Prioritera funktionalitet.md,C
-Utvecklare,docs\SOP\3. Roadmap\05_Prioritera funktionalitet.md,I
-Teknisk Lead,docs\SOP\3. Roadmap\06_Identifiera tekniska beroenden.md,R
-Lösningsarkitekt,docs\SOP\3. Roadmap\06_Identifiera tekniska beroenden.md,A
-Utvecklare,docs\SOP\3. Roadmap\06_Identifiera tekniska beroenden.md,C
-Beställare,docs\SOP\3. Roadmap\06_Identifiera tekniska beroenden.md,I
+Beställare,docs\SOP\1.Kravställning\01_skapa_bestallning.md,R
+Produktägare,docs\SOP\1.Kravställning\01_skapa_bestallning.md,A
+Verksamhetsexperter,docs\SOP\1.Kravställning\01_skapa_bestallning.md,C
+Användarrepresentanter,docs\SOP\1.Kravställning\01_skapa_bestallning.md,C
+Business Analyst,docs\SOP\1.Kravställning\01_skapa_bestallning.md,I
+Projektledare,docs\SOP\1.Kravställning\01_skapa_bestallning.md,I
+Business Analyst,docs\SOP\1.Kravställning\02_sammanhallen_kravanalys.md,R
+Produktägare,docs\SOP\1.Kravställning\02_sammanhallen_kravanalys.md,A
+Verksamhetsexperter,docs\SOP\1.Kravställning\02_sammanhallen_kravanalys.md,C
+Användarrepresentanter,docs\SOP\1.Kravställning\02_sammanhallen_kravanalys.md,C
+Lösningsarkitekt,docs\SOP\1.Kravställning\02_sammanhallen_kravanalys.md,I
+Utvecklare,docs\SOP\1.Kravställning\02_sammanhallen_kravanalys.md,I
+Projektledare,docs\SOP\1.Kravställning\02_sammanhallen_kravanalys.md,I
+Lösningsarkitekt,docs\SOP\2. Målarkitektur\01_etablera_arkitekturell_grund.md,R
+Enterprise Arkitekt,docs\SOP\2. Målarkitektur\01_etablera_arkitekturell_grund.md,A
+Teknisk Lead,docs\SOP\2. Målarkitektur\01_etablera_arkitekturell_grund.md,C
+Verksamhetsexperter,docs\SOP\2. Målarkitektur\01_etablera_arkitekturell_grund.md,C
+Business Analyst,docs\SOP\2. Målarkitektur\01_etablera_arkitekturell_grund.md,I
+Business Analyst,docs\SOP\2. Målarkitektur\02_definiera_domanmodell.md,R
+Lösningsarkitekt,docs\SOP\2. Målarkitektur\02_definiera_domanmodell.md,A
+Verksamhetsexperter,docs\SOP\2. Målarkitektur\02_definiera_domanmodell.md,C
+Beställare,docs\SOP\2. Målarkitektur\02_definiera_domanmodell.md,I
+Lösningsarkitekt,docs\SOP\2. Målarkitektur\03_etablera malarkitektur.md,R
+Enterprise Arkitekt,docs\SOP\2. Målarkitektur\03_etablera malarkitektur.md,A
+Teknisk Lead,docs\SOP\2. Målarkitektur\03_etablera malarkitektur.md,C
+DevOps,docs\SOP\2. Målarkitektur\03_etablera malarkitektur.md,C
+Business Analyst,docs\SOP\2. Målarkitektur\03_etablera malarkitektur.md,C
+Beställare,docs\SOP\2. Målarkitektur\03_etablera malarkitektur.md,I
+Business Analyst,docs\SOP\3. Roadmap\01_skapa_roadmap.md,R
+Beställare,docs\SOP\3. Roadmap\01_skapa_roadmap.md,A
+Lösningsarkitekt,docs\SOP\3. Roadmap\01_skapa_roadmap.md,C
+Produktägare,docs\SOP\3. Roadmap\01_skapa_roadmap.md,C
+Verksamhetsexperter,docs\SOP\3. Roadmap\01_skapa_roadmap.md,I
+Utvecklare,docs\SOP\3. Roadmap\01_skapa_roadmap.md,I
+Teknisk Lead,docs\SOP\3. Roadmap\02_skapa_teknisk_plan.md,R
+Lösningsarkitekt,docs\SOP\3. Roadmap\02_skapa_teknisk_plan.md,A
+Utvecklare,docs\SOP\3. Roadmap\02_skapa_teknisk_plan.md,C
+Beställare,docs\SOP\3. Roadmap\02_skapa_teknisk_plan.md,I
 Business Analyst,docs\SOP\4. Leverans\01_backlog_refinement.md,R
 Beställare,docs\SOP\4. Leverans\01_backlog_refinement.md,A
 Utvecklare,docs\SOP\4. Leverans\01_backlog_refinement.md,C

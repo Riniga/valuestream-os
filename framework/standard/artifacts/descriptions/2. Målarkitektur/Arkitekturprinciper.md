@@ -6,8 +6,6 @@ Arkitektur
 
 ## Beskrivning
 
-## Beskrivning
-
 Definierar de vägledande principer som styr hur lösningen ska designas, byggas och utvecklas över tid.
 
 Arkitekturprinciperna anger riktlinjer för beslut inom områden som:
@@ -33,11 +31,11 @@ Lösningsarkitekt
 
 ## Skapas i delprocess
 
-[Etablera arkitekturmål](../../../SOP/2.%20Målarkitektur/01_etablera_arkitekturmal.md)
+[Etablera arkitekturell grund](../../../SOP/2.%20Målarkitektur/01_etablera_arkitekturell_grund.md)
 
 ## Uppdateras i delprocess
 
-[Fastställ arkitekturprinciper](../../../SOP/2.%20Målarkitektur/08_faststall_arkitekturprinciper.md)
+[Etablera målarkitektur](../../../SOP/2.%20Målarkitektur/03_etablera%20malarkitektur.md)
 
 ## Format
 

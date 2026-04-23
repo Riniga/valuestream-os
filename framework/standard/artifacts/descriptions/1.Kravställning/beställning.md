@@ -1,4 +1,4 @@
-# Artefakt: Övergripande behov
+# Artefakt: Beställning
 
 ## Typ
 
@@ -6,16 +6,16 @@ Krav
 
 ## Beskrivning
 
-Beskriver övergripande behov och problem som lösningen ska adressera utifrån verksamhets- och användarperspektiv.
-Syftet är att tydliggöra vad som behöver uppnås utan att gå in på detaljerad lösning, samt att skapa en grund för vidare nedbrytning till epics och user stories.
+Beskriver vilket behov som initierar arbetet, varför det är viktigt och vilket resultat verksamheten vill uppnå.
+Syftet är att ge en tydlig startpunkt för vidare analys utan att låsa lösningen i detalj.
 
-## Ägare (Skapar och uppdaterar)
+## Ägare
 
-Business Analyst
+Beställare
 
 ## Skapas i delprocess
 
-[User Journeys / huvudflöden](../../../SOP/1.Kravställning/07_user_journeys.md)
+[Skapa beställning](../../../SOP/1.Kravställning/01_skapa_bestallning.md)
 
 ## Format
 
@@ -27,4 +27,4 @@ GitHub (dokument-repository)
 
 ## Mall
 
-[Mall för Övergripande behov](../../templates/1.Kravställning/overgripande_behov.md)
+[Mall för Beställning](../../templates/1.Kravställning/bestallning.md)

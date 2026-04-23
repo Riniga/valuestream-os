@@ -46,4 +46,4 @@ Markdown (.md)
 GitHub (dokument-repository)
 
 ## Mall
-[Mall för Omfattning % Strukturerad Backlog](../../templates/1.Kravställning/Omfattning_Strukturerad_Backlog.md)
+[Mall för Omfattning och Strukturerad Backlog](../../templates/1.Kravställning/omfattning_och_strukturerad_backlog.md)

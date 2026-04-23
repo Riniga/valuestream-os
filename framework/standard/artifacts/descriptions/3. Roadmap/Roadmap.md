@@ -19,7 +19,7 @@ Business Analyst
 
 ## Skapas i delprocess
 
-[Skapa produktroadmap](../../../SOP/3.%20Roadmap/01_skapa_roadmap.md)
+[Skapa Roadmap](../../../SOP/3.%20Roadmap/01_skapa_roadmap.md)
 
 ## Format
 Textdokument (Markdown)
