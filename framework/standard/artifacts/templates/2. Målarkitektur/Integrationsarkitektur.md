@@ -5,7 +5,7 @@
 |------|------|
 | Artifakttyp | Arkitektur |
 | Ägare | Lösningsarkitekt |
-| Version | 1.0 |
+| Version | 2.0 |
 | Datum | |
 | Status | |
 
@@ -15,12 +15,21 @@
 | Fält | Innehåll |
 |------|----------|
 | Syfte | |
-| Referenser | |
+| Referenser (domänmodell, systemlandskap, backlog) | |
 | Sammanfattning | |
 
 ---
 
-## 2. Integrationsmönster
+## 2. Integrationsöversikt
+Beskriv vilka system som integrerar och varför.
+
+- Centrala integrationer:
+- Kritiska beroenden:
+- Externa system:
+
+---
+
+## 3. Integrationsmönster
 | Mönster | Användning | Motivering |
 |---------|------------|------------|
 | | | |
@@ -28,14 +37,23 @@
 
 ---
 
-## 3. Dataflöden (hög nivå)
-| Flöde | Källa | Mål | Frekvens / typ | Kommentar |
+## 4. Integrationer (översikt)
+| ID | Namn | System A | System B | Typ (API/Event/Batch) | Riktning | Kommentar |
+|----|------|----------|----------|------------------------|----------|-----------|
+| | | | | | | |
+| | | | | | | |
+
+---
+
+## 5. Dataflöden (hög nivå)
+| Flöde | Källa | Mål | Typ / frekvens | Kommentar |
 |-------|-------|-----|----------------|-----------|
+| | | | | |
 | | | | | |
 
 ---
 
-## 4. Ansvarsfördelning
+## 6. Ansvarsfördelning
 | Område | Ansvar (system / roll) | Kommentar |
 |--------|------------------------|-----------|
 | | | |
@@ -43,7 +61,15 @@
 
 ---
 
-## 5. Integrationsarkitektur – diagram
+## 7. API-struktur (hög nivå)
+| API / gränssnitt | Typ | Konsument | Leverantör | Beskrivning |
+|------------------|-----|-----------|-------------|-------------|
+| | | | | |
+| | | | | |
+
+---
+
+## 8. Visualisering
 
 ```mermaid
 flowchart LR
@@ -51,31 +77,31 @@ flowchart LR
 
 ---
 
-## 6. Antaganden
-- 
-- 
+## 9. Antaganden
+-
+-
 
 ---
 
-## 7. Risker / öppna frågor
+## 10. Risker / öppna frågor
 | Fråga / Risk | Påverkan | Nästa steg |
 |--------------|----------|------------|
+| | | |
 | | | |
 
 ---
 
-## 8. Koppling till vidare arbete
+## 11. Koppling till vidare arbete
 Denna artefakt används som input till:
 
-- Integrationspunkter
-- API-specifikation
-- Datamodell
-- Säkerhetsarkitektur
-- Målarkitektur (sammanställning)
+- Målarkitektur
+- Roadmap
+- Teknisk design
+- API-specifikation (senare steg)
 
 ---
 
-## 9. Godkännande
+## 12. Godkännande
 | Roll | Namn | Datum |
 |------|------|--------|
 | Enterprise Arkitekt | | |

@@ -6,9 +6,27 @@ Arkitektur
 
 ## Beskrivning
 
-Samlar vägledande principer som styr design och utveckling (t.ex. löskoppling, API-först, säkerhet som standard).
-Syftet är att säkerställa konsekventa beslut över tid och göra målarkitekturen operativ för team och leveranser.
+## Beskrivning
 
+Definierar de vägledande principer som styr hur lösningen ska designas, byggas och utvecklas över tid.
+
+Arkitekturprinciperna anger riktlinjer för beslut inom områden som:
+- systemdesign och struktur
+- integrationer
+- säkerhet
+- datahantering
+- drift och skalbarhet
+
+Principerna fungerar som ett gemensamt ramverk för att säkerställa konsekventa och hållbara beslut i både målarkitektur och implementation.
+
+### Syfte
+
+Syftet är att:
+- säkerställa en konsekvent arkitektur över tid
+- stödja beslut i design och utveckling
+- minska risken för suboptimerade lösningar
+- tydliggöra viktiga designval tidigt
+- skapa en gemensam riktning för team och intressenter
 ## Ägare (Skapar och uppdaterar)
 
 Lösningsarkitekt

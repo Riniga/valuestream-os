@@ -5,7 +5,7 @@
 |------|------|
 | Artifakttyp | Arkitektur |
 | Ägare | Lösningsarkitekt |
-| Version | 1.0 |
+| Version | 2.0 |
 | Datum | |
 | Status | |
 
@@ -15,59 +15,77 @@
 | Fält | Innehåll |
 |------|----------|
 | Syfte | |
-| Referenser | |
+| Referenser (arkitekturmål, NFR, integration) | |
 | Sammanfattning | |
 
 ---
 
 ## 2. Principer
-| Princip | Beskrivning | Konsekvens för design | Undantag |
-|---------|-------------|------------------------|----------|
-| | | | |
-| | | | |
+
+Varje princip ska vara kort, tydlig och vägledande för beslut.
+
+| Princip | Beskrivning | Motivering | Konsekvens för design | Undantag |
+|---------|-------------|------------|------------------------|----------|
+| | | | | |
+| | | | | |
 
 ---
 
-## 3. Koppling till arkitekturmål
+## 3. Kategorisering av principer
+
+| Område | Principer |
+|--------|-----------|
+| Systemdesign | |
+| Integration | |
+| Data | |
+| Säkerhet | |
+| Drift & skalbarhet | |
+
+---
+
+## 4. Koppling till arkitekturmål
 | Arkitekturmål | Stödjande principer |
 |---------------|---------------------|
+| | |
 | | |
 
 ---
 
-## 4. Koppling till lösningens delar
-| Område | Aktuella principer |
-|--------|-------------------|
-| Integration | |
-| Data | |
-| API | |
-| Säkerhet | |
+## 5. Exempel och tolkning (valfritt)
+
+Förtydliga hur principer ska tolkas i praktiken.
+
+Exempel:
+- API-first → alla integrationer ska exponeras via definierade gränssnitt
+- Löst kopplade system → undvik direkta databaskopplingar
 
 ---
 
-## 5. Antaganden
-- 
-- 
+## 6. Antaganden
+-
+-
 
 ---
 
-## 6. Förändringshistorik
-| Datum | Ändring | Ansvarig |
-|-------|--------|----------|
+## 7. Risker / konflikter
+| Risk / konflikt | Påverkan | Hantering |
+|----------------|----------|-----------|
+| | | |
 | | | |
 
 ---
 
-## 7. Koppling till vidare arbete
+## 8. Koppling till vidare arbete
 Denna artefakt används som input till:
 
-- Icke-funktionella krav (NFR)
-- Teknisk plattform
-- Målarkitektur (sammanställning)
+- Målarkitektur
+- Roadmap
+- Teknisk design
+- Beslutsfattande i utveckling
 
 ---
 
-## 8. Godkännande
+## 9. Godkännande
 | Roll | Namn | Datum |
 |------|------|--------|
 | Enterprise Arkitekt | | |

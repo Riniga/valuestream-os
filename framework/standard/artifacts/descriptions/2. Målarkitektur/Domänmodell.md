@@ -6,8 +6,15 @@ Arkitektur
 
 ## Beskrivning
 
-Beskriver centrala affärsobjekt, relationer och regler som lösningen ska stödja, på den nivå som krävs för målarkitektur och teknisk samordning.
-Syftet är att säkerställa spårbarhet från krav till en gemensam struktur som datamodell, integrationer och API kan anpassas mot.
+Beskriver de centrala begreppen, affärsobjekten och deras relationer inom verksamhetsdomänen på en nivå som stödjer målarkitektur och vidare planering.
+
+Artefakten kombinerar:
+- begreppsdefinitioner (terminologi)
+- affärsobjekt (entiteter)
+- relationer mellan objekt
+- övergripande informationsstruktur
+
+Domänmodellen utgör en gemensam begrepps- och strukturgrund för både verksamhet och teknik.
 
 ## Ägare (Skapar och uppdaterar)
 

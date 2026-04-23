@@ -1,11 +1,11 @@
-# Domänmodell (målarkitektur)
+# Domänmodell
 
 ## Metadata
 | Fält | Värde |
 |------|------|
 | Artifakttyp | Arkitektur |
 | Ägare | Business Analyst |
-| Version | 1.0 |
+| Version | 2.0 |
 | Datum | |
 | Status | |
 
@@ -15,7 +15,7 @@
 | Fält | Innehåll |
 |------|----------|
 | Syfte | |
-| Referenser (begreppsmodell, systemlandskap) | |
+| Referenser (vision, backlog) | |
 | Sammanfattning | |
 
 ---
@@ -27,15 +27,23 @@
 
 ---
 
-## 3. Centrala domänobjekt
-| Domänobjekt | Beskrivning | Ansvar / ägare (verksamhet) | Kommentar |
-|-------------|-------------|-------------------------------|-----------|
+## 3. Centrala begrepp (terminologi)
+| Begrepp | Definition | Kommentar | Källa |
+|---------|------------|-----------|-------|
 | | | | |
 | | | | |
 
 ---
 
-## 4. Relationer mellan domänobjekt
+## 4. Domänobjekt (affärsobjekt)
+| Objekt | Beskrivning | Ansvar (verksamhet) | Kopplat begrepp |
+|--------|-------------|---------------------|------------------|
+| | | | |
+| | | | |
+
+---
+
+## 5. Relationer mellan objekt
 | Från objekt | Relation | Till objekt | Beskrivning |
 |-------------|----------|-------------|-------------|
 | | | | |
@@ -43,7 +51,18 @@
 
 ---
 
-## 5. Domänmodell – visuell översikt
+## 6. Övergripande struktur (valfritt)
+
+Beskriv hur information hänger ihop på en övergripande nivå.
+
+Exempel:
+- huvudflöden
+- ansvarsfördelning
+- livscykler (kortfattat)
+
+---
+
+## 7. Visualisering
 
 ```mermaid
 classDiagram
@@ -51,37 +70,43 @@ classDiagram
 
 ---
 
-## 6. Regler och begränsningar
-- 
-- 
+## 8. Regler och principer
+-
+-
 
 ---
 
-## 7. Spårbarhet till krav / behov
-| Krav / behov | Domänelement |
-|--------------|--------------|
+## 9. Spårbarhet till krav
+| Backlog item (Epic/Story) | Domänelement |
+|---------------------------|--------------|
+| | |
 | | |
 
 ---
 
-## 8. Risker / öppna frågor
+## 10. Antaganden
+-
+-
+
+---
+
+## 11. Öppna frågor / risker
 | Fråga / Risk | Påverkan | Nästa steg |
 |--------------|----------|------------|
 | | | |
 
 ---
 
-## 9. Koppling till vidare arbete
+## 12. Koppling till vidare arbete
 Denna artefakt används som input till:
 
 - Integrationsarkitektur
-- API-specifikation
-- Datamodell
-- Målarkitektur (sammanställning)
+- Målarkitektur
+- Roadmap
 
 ---
 
-## 10. Godkännande
+## 13. Godkännande
 | Roll | Namn | Datum |
 |------|------|--------|
 | Lösningsarkitekt | | |

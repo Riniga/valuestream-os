@@ -6,8 +6,15 @@ Arkitektur
 
 ## Beskrivning
 
-Beskriver hur lösningen integrerar med omgivande system: mönster för kommunikation, dataflöden, ansvarsfördelning och övergripande integrationsregler.
-Syftet är att ge en stabil ram för API-kontrakt, datamodell och drift utan att låsa implementation i onödan.
+Beskriver hur lösningen samverkar med andra system genom att definiera integrationsmönster, dataflöden och ansvarsfördelning mellan system på en nivå som stödjer målarkitektur och vidare planering.
+
+Artefakten kombinerar:
+- övergripande integrationsmönster (t.ex. synkron/asynkron, eventdriven)
+- dataflöden mellan system
+- ansvarsfördelning vid integrationsgränser
+- API-struktur och principer på hög nivå
+
+Integrationsarkitekturen ger en sammanhängande bild av hur system kommunicerar utan att låsa implementation i detalj.
 
 ## Ägare (Skapar och uppdaterar)
 

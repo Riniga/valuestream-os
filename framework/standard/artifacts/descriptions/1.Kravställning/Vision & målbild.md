@@ -16,7 +16,7 @@ Business Analyst
 
 ## Skapas i
 
-[Sammanhållen kravanalys](../../../SOP/1.Kravställning/02_sammanhallen_kravanalys.md)
+[Sammanhallen Kravanalys](../../../SOP/1.Kravställning/02_sammanhallen_kravanalys.md)
 
 ## Format
 

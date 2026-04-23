@@ -5,7 +5,7 @@
 |------|------|
 | Artifakttyp | Krav |
 | Ägare | Business Analyst |
-| Version | 1.0 |
+| Version | 1.1 |
 | Datum | |
 | Status | |
 
@@ -64,11 +64,14 @@
 
 ---
 
-## 5. Backlog (översikt)
-| ID | Typ (Capability/Epic/Story) | Namn | Beskrivning | Prioritet | Status |
-|----|-----------------------------|------|-------------|-----------|--------|
-| | | | | | |
-| | | | | | |
+## 5. Backlog (User Stories)
+
+Primär backlog består av User Stories kopplade till Epics.
+
+| ID | Typ (Story/Enabler/Spike) | Epic | Namn | Beskrivning | Prioritet | Status |
+|----|---------------------------|------|------|-------------|-----------|--------|
+| | | | | | | |
+| | | | | | | |
 
 ---
 
@@ -88,7 +91,7 @@
 **Syfte / värde:**
 **Kopplad capability:**
 
-#### Ingående delar (features / stories)
+#### User Stories
 | ID | Namn | Beskrivning |
 |----|------|-------------|
 | | | |

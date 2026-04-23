@@ -1,11 +1,11 @@
-# Icke-funktionella krav (NFR)
+# NFR (Icke-funktionella krav)
 
 ## Metadata
 | Fält | Värde |
 |------|------|
 | Artifakttyp | Krav |
 | Ägare | Lösningsarkitekt |
-| Version | 1.0 |
+| Version | 2.0 |
 | Datum | |
 | Status | |
 
@@ -15,7 +15,7 @@
 | Fält | Innehåll |
 |------|----------|
 | Syfte | |
-| Referenser (arkitekturprinciper, säkerhet, data) | |
+| Referenser (arkitekturprinciper, domän, integration) | |
 | Sammanfattning | |
 
 ---
@@ -24,6 +24,7 @@
 | Krav | Mått | Målvärde | Kommentar |
 |------|------|----------|-----------|
 | | | | |
+| | | | |
 
 ---
 
@@ -31,19 +32,23 @@
 | Krav | Mått | Målvärde | Kommentar |
 |------|------|----------|-----------|
 | | | | |
-
----
-
-## 4. Säkerhet (NFR)
-| Krav | Mått | Målvärde | Kommentar |
-|------|------|----------|-----------|
 | | | | |
 
 ---
 
+## 4. Säkerhet (NFR)
+| Område | Krav | Mått / nivå | Kommentar |
+|--------|------|-------------|-----------|
+| Autentisering | | | |
+| Auktorisering | | | |
+| Dataskydd (transport/vila) | | | |
+| Loggning av åtkomst | | | |
+
+---
+
 ## 5. Observability
-| Krav | Mått | Målvärde | Kommentar |
-|------|------|----------|-----------|
+| Område | Krav | Mått | Kommentar |
+|--------|------|------|-----------|
 | Loggning | | | |
 | Mätetal / dashboards | | | |
 | Spårning | | | |
@@ -51,29 +56,39 @@
 ---
 
 ## 6. Driftbarhet och underhåll
-| Krav | Beskrivning |
-|------|-------------|
-| Deployment | |
-| Konfiguration | |
-| Backup / återställning | |
+| Område | Krav | Kommentar |
+|--------|------|-----------|
+| Deployment | | |
+| Konfiguration | | |
+| Backup / återställning | | |
 
 ---
 
 ## 7. Antaganden
-- 
-- 
+-
+-
 
 ---
 
-## 8. Koppling till vidare arbete
+## 8. Risker / öppna frågor
+| Fråga / Risk | Påverkan | Nästa steg |
+|--------------|----------|------------|
+| | | |
+| | | |
+
+---
+
+## 9. Koppling till vidare arbete
 Denna artefakt används som input till:
 
-- Teknisk plattform
-- Målarkitektur (sammanställning)
+- Målarkitektur
+- Roadmap
+- Teknisk design
+- Drift- och plattformsbeslut (senare steg)
 
 ---
 
-## 9. Godkännande
+## 10. Godkännande
 | Roll | Namn | Datum |
 |------|------|--------|
 | Enterprise Arkitekt | | |
