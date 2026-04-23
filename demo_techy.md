@@ -1,4 +1,4 @@
-# Demo av ValueStream OS för techpublik
+# Demo av ValueStream OS (tech edition)
 
 Agent Orchestration Framework for end-to-end value delivery
 
@@ -35,8 +35,6 @@ Presentationen bör upplevas som:
 5. **Hur det körs i CLI**
 6. **Vad man faktiskt får ut av en run**
 
-Viktigt: börja **inte** med detaljer om RACI eller enskilda artefakter. Publiken behöver först förstå helheten, annars känns resten som fristående delar i stället för ett sammanhängande system.
-
 ---
 
 # Upplägg: 25 minuter
@@ -45,7 +43,7 @@ Viktigt: börja **inte** med detaljer om RACI eller enskilda artefakter. Publike
 
 ### Visa
 
-- `README.md`
+- [`README.md`](https://github.com/Riniga/valuestream-os/blob/prepare-demo-2/README.md)
 
 ### Budskap
 
