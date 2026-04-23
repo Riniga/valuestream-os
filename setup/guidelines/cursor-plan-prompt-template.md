@@ -14,7 +14,7 @@ Task:
 Context:
 
 - The repository separates:
-  - `docs/` for framework definitions
+  - `framework/` for framework definitions
   - `setup/` for setup and development guidance
   - `src/` for implementation
   - `runs/` for runtime output
@@ -60,7 +60,7 @@ Create the first implementation of a base agent interface in Python.
 
 Context:
 
-- `docs/` contains framework definitions
+- `framework/` contains framework definitions
 - `src/` contains implementation
 - Keep strategy and implementation separated
 - Build step by step

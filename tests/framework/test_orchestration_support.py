@@ -1,6 +1,8 @@
 """Unit tests for pure orchestration helpers (no orchestrator or LLM)."""
 from __future__ import annotations
 
+import pytest
+
 from src.framework.models import ApprovalDecision, ArtifactStatus
 from src.framework.orchestration_support import (
     build_dry_run_output_filename,
@@ -35,9 +37,15 @@ def test_summarize_plain_text_truncates():
     assert out.endswith("...")
 
 
-def test_map_approval_decision_to_artifact_status_defaults_to_approved():
+def test_map_approval_decision_to_artifact_status_known_values():
     assert map_approval_decision_to_artifact_status("approved") == ArtifactStatus.approved
-    assert map_approval_decision_to_artifact_status("unknown") == ArtifactStatus.approved
+    assert map_approval_decision_to_artifact_status("approved_with_notes") == ArtifactStatus.approved_with_notes
+    assert map_approval_decision_to_artifact_status("rejected") == ArtifactStatus.rejected
+
+
+def test_map_approval_decision_to_artifact_status_rejects_unknown_value():
+    with pytest.raises(ValueError, match="Okänt approval-beslut"):
+        map_approval_decision_to_artifact_status("unknown")
 
 
 def test_build_dry_run_output_filename_prompt_suffix():
@@ -74,6 +82,19 @@ def test_parse_approval_decision_from_json_string():
     assert decision.decision == "approved_with_notes"
     assert decision.summary == "S"
     assert decision.changes_requested == ["x"]
+
+
+def test_parse_approval_decision_rejects_unknown_decision_value():
+    raw = '{"decision":"maybe","summary":"S","rationale":"R","changes_requested":[]}'
+    with pytest.raises(ValueError, match="Okänt approval-beslut"):
+        parse_approval_decision_from_llm_text(
+            step_id="s1",
+            artifact_name="A",
+            artifact_filename="a.md",
+            approver_agent_id="pa",
+            raw_text=raw,
+            dry_run=False,
+        )
 
 
 def test_format_approval_feedback_for_revision_in_support_module():

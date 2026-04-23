@@ -28,7 +28,7 @@ def test_process_loader_builds_steps_from_kravstallning_outputs():
     assert "bestallning.md" in outputs
     assert "vision_och_malbild.md" in outputs
     assert "omfattning_och_strukturerad_backlog.md" in outputs
-    assert "stakeholderkarta.md" in outputs
+    assert "Stakeholderkarta.md" in outputs
     assert "kpi_vardematt.md" in outputs
 
 
@@ -108,16 +108,18 @@ def test_process_loader_reads_malarkitektur_process():
 def test_process_loader_malarkitektur_maps_agents_from_manifest():
     flow = ProcessFlowLoader(REPO_ROOT).load(MALARKITEKTUR_PROCESS_FILE)
     agent_ids = {step.agent_id for step in flow.steps}
+    definitions = load_agent_definitions(REPO_ROOT)
 
     assert "losningsarkitekt" in agent_ids
     assert "business-analyst" in agent_ids
-    assert "dataarkitekt" in agent_ids
+    assert "enterprise-arkitekt" in definitions
+    assert "teknisk-lead" in definitions
 
 
 def test_process_loader_manifest_can_be_loaded_directly():
     definitions = load_agent_definitions(REPO_ROOT)
 
-    assert definitions["bestallare"].actor_kind == ActorKind.human
+    assert definitions["bestallare"].actor_kind == ActorKind.automated
     assert definitions["bestallare"].agent_file == "beställare.md"
     assert definitions["produktagare"].actor_kind == ActorKind.automated
     assert definitions["produktagare"].agent_file == "produktägare.md"

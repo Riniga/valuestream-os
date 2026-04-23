@@ -9,7 +9,7 @@ You are working in the ValueStream OS repository.
 Before doing anything else:
 
 1. Read and understand the repository structure
-   - docs/ → framework (process, SOPs, roles, artifacts)
+   - framework/ → framework (processes, SOPs, roles, RACI, artifacts)
    - setup/ → setup and development guidelines
    - src/ → implementation
    - runs/ → runtime output (must never be committed)

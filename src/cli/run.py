@@ -182,18 +182,24 @@ def _cmd_flow(repo_root: Path, process_file: str) -> None:
 
 async def _cmd_run_async(workspace: RunWorkspace, repo_root: Path, dry_run: bool, process_file: str) -> None:
     process_flow = ProcessFlowLoader(repo_root).load(process_file)
-    total = len(process_flow.steps)
+    run_state = RunStateStore(workspace.run_dir).load()
+    pending_steps = [
+        step
+        for step in process_flow.steps
+        if run_state is None
+        or run_state.flow_id != process_flow.flow_id
+        or run_state.step_statuses.get(step.step_id) != StepStatus.completed.value
+    ]
+    total = len(pending_steps)
     mode = " (dry-run)" if dry_run else ""
     print(f"\nKör flöde: {process_flow.flow_id}{mode}  ({total} steg)")
     print("─" * CONSOLE_WIDTH)
 
     orchestrator = Orchestrator(workspace=workspace, repo_root=repo_root, process_flow=process_flow)
 
-    # Use __anext__() so we can print "pågår..." before awaiting each step.
-    # run_stream_async yields results in the same order as process_flow.steps.
     results: list[StepResult] = []
     stream = orchestrator.run_stream_async(dry_run=dry_run)
-    for i, step in enumerate(process_flow.steps, 1):
+    for i, step in enumerate(pending_steps, 1):
         title = step.delprocess_title or step.step_id
         name = f"{title:<30} ({step.artifact_name})"
         print(f"  [{i}/{total}]  {name}  pågår...", flush=True)

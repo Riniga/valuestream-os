@@ -4,7 +4,9 @@ Repository layout helpers.
 Locates the ValueStream OS repository root (directory containing framework documentation)
 from a starting path, used by the CLI and other entry points.
 
-The framework location is configurable via the FRAMWORK environment variable (defaults to "standard").
+The framework location is configurable via the FRAMEWORK environment variable
+(defaults to "standard"). The legacy FRAMWORK name is still accepted for backward
+compatibility.
 This allows support for multiple framework variants (e.g., framework/standard, framework/light).
 """
 from __future__ import annotations
@@ -18,7 +20,8 @@ _DEFAULT_FRAMEWORK = "standard"
 
 def get_framework_variant() -> str:
     """
-    Get the configured framework variant from FRAMWORK environment variable.
+    Get the configured framework variant from FRAMEWORK environment variable.
+    Falls back to legacy FRAMWORK for backward compatibility.
     Defaults to "standard" if not set.
 
     Returns
@@ -26,7 +29,7 @@ def get_framework_variant() -> str:
     str
         The framework variant name (e.g., "standard", "light").
     """
-    return os.environ.get("FRAMWORK", _DEFAULT_FRAMEWORK)
+    return os.environ.get("FRAMEWORK") or os.environ.get("FRAMWORK", _DEFAULT_FRAMEWORK)
 
 
 def get_framework_root(repo_root: Path) -> Path:
@@ -46,11 +49,16 @@ def get_framework_root(repo_root: Path) -> Path:
     variant = get_framework_variant()
     framework_path = repo_root / "framework" / variant
 
-    # For backward compatibility, fall back to "docs" if framework variant doesn't exist
+    # For backward compatibility, fall back to "docs" if framework variant doesn't exist.
     if not framework_path.exists():
         docs_path = repo_root / "docs"
         if docs_path.exists():
             return docs_path
+
+    if not framework_path.exists():
+        raise FileNotFoundError(
+            f"Framework variant '{variant}' hittades inte under {repo_root / 'framework'}"
+        )
 
     return framework_path
 
@@ -61,8 +69,6 @@ def find_repository_root(start: Path | None = None, *, max_parent_hops: int = _D
 
     Looks for either the configured framework variant (framework/standard, framework/light, etc.)
     or falls back to the legacy "docs/" directory.
-
-    If none is found within ``max_parent_hops``, returns ``Path.cwd()``.
     """
     variant = get_framework_variant()
     candidate = (start or Path(__file__).resolve()).parent
@@ -75,4 +81,6 @@ def find_repository_root(start: Path | None = None, *, max_parent_hops: int = _D
         if (candidate / "docs").is_dir():
             return candidate
         candidate = candidate.parent
-    return Path.cwd()
+    raise FileNotFoundError(
+        f"Kunde inte hitta repository root från {start or Path(__file__).resolve()} inom {max_parent_hops} nivåer"
+    )

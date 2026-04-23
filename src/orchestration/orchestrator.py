@@ -718,11 +718,10 @@ class Orchestrator:
         artifact_content: str,
         decision: ApprovalDecision | None,
     ) -> None:
-        decision_summary = (
-            decision.summary or decision.rationale or decision.decision
-            if decision is not None
-            else "Artefakten är färdigställd och tillgänglig för kännedom."
-        )
+        if decision is None:
+            decision_summary = "Artefakten är färdigställd och tillgänglig för kännedom."
+        else:
+            decision_summary = decision.summary or decision.rationale or decision.decision
         for informed_agent_id in step.informed_agent_ids:
             actor_kind = step.informed_actor_kinds.get(informed_agent_id, ActorKind.automated)
             if actor_kind == ActorKind.human:

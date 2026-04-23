@@ -6,8 +6,8 @@ from the configured framework directory for any agent role.
 Parameterised by agent_file and raci_role_id so that the same code works for
 Business Analyst, UX, and future roles.
 
-The framework location is configurable via the FRAMWORK environment variable
-(defaults to "framework/standard").
+The framework location is configurable via the FRAMEWORK environment variable
+(legacy FRAMWORK is also supported; defaults to "framework/standard").
 """
 from __future__ import annotations
 
@@ -15,6 +15,7 @@ import re
 import unicodedata
 from dataclasses import dataclass, field
 from pathlib import Path
+from urllib.parse import unquote
 
 from src.framework.repo_layout import get_framework_root
 
@@ -120,13 +121,14 @@ class AgentContextLoader:
         return result
 
     def load_sop(self, filename: str) -> SopEntry:
-        matches = sorted((self.framework_root / "SOP").rglob(filename))
+        normalized_filename = unquote(filename)
+        matches = sorted((self.framework_root / "SOP").rglob(normalized_filename))
         if not matches:
-            raise FileNotFoundError(f"SOP file not found: {filename}")
+            raise FileNotFoundError(f"SOP file not found: {normalized_filename}")
         path = matches[0]
         content = path.read_text(encoding="utf-8")
         return SopEntry(
-            name=self._extract_sop_name(content, Path(filename).stem),
+            name=self._extract_sop_name(content, Path(normalized_filename).stem),
             path=path,
             content=content,
             inputs=self._extract_section_items(content, "3. Input"),

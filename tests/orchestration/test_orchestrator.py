@@ -131,6 +131,23 @@ def _make_raci_flow() -> list[FlowStep]:
     ]
 
 
+def _make_informing_only_raci_flow() -> list[FlowStep]:
+    return [
+        FlowStep(
+            step_id="ba-backlog-informed-only",
+            agent_id="business-analyst",
+            sop_filename="02_sammanhallen_kravanalys.md",
+            artifact_name="Omfattning och Strukturerad Backlog",
+            output_filename="omfattning_och_strukturerad_backlog.md",
+            input_filenames=["beställning.md"],
+            agent_actor_kind=ActorKind.automated,
+            informed_agent_ids=["utvecklare"],
+            informed_actor_kinds={"utvecklare": ActorKind.automated},
+            use_raci_workflow=True,
+        )
+    ]
+
+
 def _make_human_responsible_flow() -> list[FlowStep]:
     return [
         FlowStep(
@@ -375,6 +392,30 @@ def test_automated_product_owner_approval_is_persisted(workspace_with_backlog_in
     assert approval_decision.decision == "approved_with_notes"
 
     briefs = InformedRoleBriefStore(workspace_with_backlog_input.run_dir).load_for_step("ba-backlog")
+    assert len(briefs) == 1
+    assert briefs[0].role_agent_id == "utvecklare"
+
+
+def test_informing_only_raci_step_completes_without_approval(workspace_with_backlog_input):
+    orch = Orchestrator(
+        workspace=workspace_with_backlog_input,
+        repo_root=REPO_ROOT,
+        flow_steps=_make_informing_only_raci_flow(),
+        agent_definitions=_make_agents(),
+    )
+
+    results = orch.run(dry_run=True)
+
+    assert results[0].status == StepStatus.completed
+    assert results[0].approval_decision is None
+
+    artifact_state = ArtifactStateStore(workspace_with_backlog_input.run_dir).load()
+    assert artifact_state is not None
+    record = artifact_state.artifacts["omfattning_och_strukturerad_backlog.md"]
+    assert record.status == ArtifactStatus.published_to_informed_roles
+    assert record.approval_decision is None
+
+    briefs = InformedRoleBriefStore(workspace_with_backlog_input.run_dir).load_for_step("ba-backlog-informed-only")
     assert len(briefs) == 1
     assert briefs[0].role_agent_id == "utvecklare"
 
