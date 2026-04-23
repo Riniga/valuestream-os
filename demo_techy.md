@@ -44,6 +44,7 @@ Presentationen bör upplevas som:
 ### Visa
 
 - [`README.md`](https://github.com/Riniga/valuestream-os/blob/prepare-demo-2/README.md)
+- [`framework/standard/INDEX.md`](./framework/standard/INDEX.md)
 
 ### Budskap
 
@@ -92,11 +93,11 @@ Presentationen bör upplevas som:
 
 Lyft fram:
 
-- Kravställning
-- Målarkitektur
-- Roadmap
-- Leverans
-- Repeat
+- [Kravställning](./framework/standard/processes/1.%20Kravställning.md)
+- [Målarkitektur](./framework/standard/processes/2.%20Målarkitektur.md)
+- [Roadmap](./framework/standard/processes/3.%20Roadmap.md)
+- [Leverans](./framework/standard/processes/4.%20Leverans.md)
+- [Repeat](./framework/standard/processes/5.%20Repeat.md)
 
 Poängen här är:
 
@@ -109,11 +110,11 @@ vad behöver vi, hur ska det fungera, när gör vi vad, hur bygger vi, och vad l
 
 Lyft fram:
 
-- `agents/`
-- `processes/`
-- `RACI/`
-- `SOP/`
-- `artifacts/`
+- [agents/](./framework/standard/agents/)
+- [processes/](./framework/standard/processes/)
+- [RACI/](./framework/standard/RACI/)
+- [SOP/](./framework/standard/SOP/)
+- [artifacts/](./framework/standard/artifacts/)
 
 Poängen här är:
 
@@ -146,10 +147,13 @@ Poängen här är:
 
 ### Visa
 
-- `framework/standard/processes/1. Kravställning.md`
-- gärna kort ett RACI-dokument
-- gärna en agentfil, till exempel Business Analyst
-- gärna artefaktmall för `bestallning.md`
+- [process: Kravställning](./framework/standard/processes/1.%20Kravställning.md)
+- [RACI: Kravställning](./framework/standard/RACI/1.%20Kravställning.md)
+- [agent: Business Analyst](./framework/standard/agents/business-analyst.md)
+- [SOP: Skapa beställning](./framework/standard/SOP/1.Kravställning/01_skapa_bestallning.md)
+- [SOP: Sammanhållen kravanalys](./framework/standard/SOP/1.Kravställning/02_sammanhallen_kravanalys.md)
+- [artefaktmall: bestallning.md](./framework/standard/artifacts/templates/1.Kravställning/bestallning.md)
+- [artefaktbeskrivning: Beställning](./framework/standard/artifacts/descriptions/1.Kravställning/bestallning.md)
 
 ### Det här ska publiken förstå
 
@@ -184,6 +188,12 @@ Poängen här är:
 
 - terminal / kommandoprompt
 
+### Relevanta dokument att kunna öppna vid behov
+
+- [agentmanifest](./framework/standard/agents/manifest.json)
+- [processöversikt](./framework/standard/processes/Process.md)
+- [setup/README.md](./setup/README.md)
+
 ### Det här ska publiken förstå
 
 "All exekvering sker idag via CLI. Det är medvetet. För en teknisk publik är det här det snabbaste sättet att visa att systemet faktiskt fungerar och att allt är transparent."
@@ -212,8 +222,14 @@ Exempel på vad du kan visa:
 ### Visa
 
 - en ny run
-- `bestallning.md`
+- [mallen för `bestallning.md`](./framework/standard/artifacts/templates/1.Kravställning/bestallning.md)
 - kommandot för att köra
+
+### Relevanta dokument att visa i detta moment
+
+- [input-exempel: `runs/test-01/input/bestallning.md`](./runs/test-01/input/bestallning.md)
+- [process: Kravställning](./framework/standard/processes/1.%20Kravställning.md)
+- [SOP: Skapa beställning](./framework/standard/SOP/1.Kravställning/01_skapa_bestallning.md)
 
 ### Rekommenderat upplägg
 
@@ -244,7 +260,20 @@ Försök inte läsa hela beställningen i detalj. Visa bara att:
 
 ### Visa
 
-- `runs/test-01/output/INDEX.md`
+- [runs/test-01/output/INDEX.md](./runs/test-01/output/INDEX.md)
+
+### Relevanta dokument att kunna hoppa vidare till
+
+- [run state](./runs/test-01/run_state.json)
+- [artifact state](./runs/test-01/artifact_state.json)
+- [run log](./runs/test-01/run_log.json)
+- [approval decisions](./runs/test-01/approval_decisions.json)
+- [consultation requests](./runs/test-01/consultation_requests.json)
+- [consultation responses](./runs/test-01/consultation_responses.json)
+- [informed role briefs](./runs/test-01/informed_role_briefs.json)
+- [exempelartefakt: vision och målbild](./runs/test-01/output/vision_och_malbild.md)
+- [exempelartefakt: målarkitektur](./runs/test-01/output/malarkitektur.md)
+- [exempelartefakt: roadmap](./runs/test-01/output/Roadmap.md)
 
 ### Det här ska publiken förstå
 
@@ -317,11 +346,11 @@ Det här visar:
 
 Prioritera i denna ordning:
 
-1. `README.md`
-2. `framework/standard/INDEX.md`
-3. ett konkret exempel i `Kravställning`
+1. [README.md](./README.md)
+2. [framework/standard/INDEX.md](./framework/standard/INDEX.md)
+3. ett konkret exempel i [Kravställning](./framework/standard/processes/1.%20Kravställning.md)
 4. CLI-körning
-5. `runs/test-01/output/INDEX.md`
+5. [runs/test-01/output/INDEX.md](./runs/test-01/output/INDEX.md)
 
 Hoppa över djupdykning i enskilda RACI-tabeller eller enskilda artifact templates om du märker att publiken redan förstått modellen.
 
@@ -334,6 +363,13 @@ Bra spår att öppna vid frågor:
 - hur output index byggs upp
 - hur ett processsteg laddas från `framework/standard`
 - skillnaden mellan ramverk (`framework/`) och exekvering (`runs/`)
+
+Relevanta dokument för fördjupning:
+
+- [Output-indexspec](./framework/standard/Output_INDEX.md)
+- [exempel på output-index](./runs/test-01/output/INDEX.md)
+- [glossary](./framework/standard/GLOSSARY.md)
+- [agentmanifest](./framework/standard/agents/manifest.json)
 
 ## En enkel minnesregel under presentationen
 
