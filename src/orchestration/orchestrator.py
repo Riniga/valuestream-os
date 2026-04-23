@@ -55,6 +55,7 @@ from src.framework.stores import (
     RunStateStore,
 )
 from src.orchestration.agent_registry import load_agent_definitions
+from src.orchestration.output_index import publish_output_index
 from src.orchestration.process_loader import DEFAULT_PROCESS_FILE, ProcessFlowLoader
 
 
@@ -134,12 +135,14 @@ class Orchestrator:
                 continue
 
             result = await self._run_step_async(step, run_state, artifact_state, dry_run=dry_run)
+            self._publish_output_index(run_state)
             yield result
 
             if result.status == StepStatus.failed:
                 run_state.status = RunStatus.failed
                 self._run_state_store.save(run_state)
                 self._log.append({"event": "run_failed", "step_id": step.step_id})
+                self._publish_output_index(run_state)
                 break
 
             if result.status == StepStatus.paused:
@@ -152,6 +155,7 @@ class Orchestrator:
                         "human_task_id": result.human_task_id,
                     }
                 )
+                self._publish_output_index(run_state)
                 break
 
         if run_state.status == RunStatus.running:
@@ -161,6 +165,7 @@ class Orchestrator:
             run_state.pending_human_task_id = None
             self._run_state_store.save(run_state)
             self._log.append({"event": "run_finished", "status": run_state.status.value})
+            self._publish_output_index(run_state)
 
     def _load_or_initialize_state(self) -> tuple[RunState, ArtifactState, bool]:
         existing_run_state = self._run_state_store.load()
@@ -1062,6 +1067,13 @@ class Orchestrator:
     @staticmethod
     def _coerce_string(value: object) -> str:
         return value if isinstance(value, str) else ""
+
+    def _publish_output_index(self, run_state: RunState) -> None:
+        publish_output_index(
+            repo_root=self._repo_root,
+            workspace=self._workspace,
+            run_state=run_state,
+        )
 
     @staticmethod
     def _describe_human_responsible_action(phase: str) -> str:

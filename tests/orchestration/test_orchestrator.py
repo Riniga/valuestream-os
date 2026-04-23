@@ -547,6 +547,32 @@ def test_raci_step_uses_seeded_artifact_from_input_dir(tmp_path):
     assert results[0].output_path.read_text(encoding="utf-8") == seeded_content
 
 
+def test_output_index_is_published_and_groups_artifacts_by_process(tmp_path):
+    run_id = "output-index-run"
+    input_dir = tmp_path / "runs" / run_id / "input"
+    input_dir.mkdir(parents=True)
+    (input_dir / "bestallning.md").write_text("# Beställning\n\nUnderlag för output-index.", encoding="utf-8")
+    workspace = RunWorkspace(run_id=run_id, repo_root=tmp_path)
+    orch = Orchestrator(
+        workspace=workspace,
+        repo_root=REPO_ROOT,
+        flow_steps=_make_seeded_raci_flow(),
+        agent_definitions=_make_agents(),
+    )
+
+    results = orch.run(dry_run=True)
+
+    assert results[0].status == StepStatus.completed
+    output_index = workspace.output_path("INDEX.md")
+    assert output_index.exists()
+    content = output_index.read_text(encoding="utf-8")
+    assert f"# Output Index: {run_id}" in content
+    assert "## Runsammanfattning" in content
+    assert "### 1. Kravställning" in content
+    assert "[`bestallning.md`](./bestallning.md)" in content
+    assert "[`../run_state.json`](../run_state.json)" in content
+
+
 def test_raci_step_reports_missing_expected_seeded_artifact_filename(tmp_path):
     run_id = "seeded-raci-missing"
     input_dir = tmp_path / "runs" / run_id / "input"
