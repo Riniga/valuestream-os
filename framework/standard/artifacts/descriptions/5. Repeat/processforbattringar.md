@@ -21,4 +21,4 @@ Versionshanterad artefakt
 
 ## Mall
 
-[Mall för Processförbättringar](../../templates/5.%20Repeat/Processförbättringar.md)
+[Mall för Processförbättringar](../../templates/5.%20Repeat/processforbattringar.md)

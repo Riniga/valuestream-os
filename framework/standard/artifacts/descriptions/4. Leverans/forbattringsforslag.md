@@ -25,4 +25,4 @@ Versionshanterad artefakt
 
 ## Mall
 
-[Mall för Förbättringsförslag](../../templates/4.%20Leverans/Förbättringsförslag.md)
+[Mall för Förbättringsförslag](../../templates/4.%20Leverans/forbattringsforslag.md)

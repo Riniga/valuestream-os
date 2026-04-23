@@ -21,4 +21,4 @@ Versionshanterad artefakt
 
 ## Mall
 
-[Mall för Dokumentation](../../templates/4.%20Leverans/Dokumentation.md)
+[Mall för Dokumentation](../../templates/4.%20Leverans/dokumentation.md)

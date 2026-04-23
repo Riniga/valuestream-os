@@ -28,4 +28,4 @@ Versionshanterad artefakt
 
 ## Mall
 
-[Mall för Produktinkrement](../../templates/4.%20Leverans/Produktinkrement.md)
+[Mall för Produktinkrement](../../templates/4.%20Leverans/produktinkrement.md)

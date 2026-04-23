@@ -26,4 +26,4 @@ Versionshanterad artefakt
 
 ## Mall
 
-[Mall för Releasepaket](../../templates/4.%20Leverans/Releasepaket.md)
+[Mall för Releasepaket](../../templates/4.%20Leverans/releasepaket.md)

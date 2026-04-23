@@ -1,4 +1,4 @@
-﻿# Processförbättringar
+# Processförbättringar
 
 ## Metadata
 | Fält | Värde |
@@ -25,4 +25,3 @@
 | Beslut | När följs det upp | Kommentar |
 | --- | --- | --- |
 | | | |
-

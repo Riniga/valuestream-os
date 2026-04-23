@@ -365,7 +365,7 @@ roadmap:
 # LEVERANS
 leverans:
   - artifact: "Sprint backlog"
-    file_path: "4. Leverans/Sprint backlog.md"
+    file_path: "4. Leverans/sprint_backlog.md"
     created:
       sop_file: "02_sprintplanering.md"
       sop_section: "Leverans"
@@ -380,7 +380,7 @@ leverans:
         markdown_link: "[SOP 7 (Leverans): Demo](../../../SOP/4. Leverans/07_demo.md)"
 
   - artifact: "Produktinkrement"
-    file_path: "4. Leverans/Produktinkrement.md"
+    file_path: "4. Leverans/produktinkrement.md"
     created:
       sop_file: "03_utveckling.md"
       sop_section: "Leverans"
@@ -419,7 +419,7 @@ leverans:
         markdown_link: "[SOP 2 (Repeat): Utvärdera process & arbetssätt](../../../SOP/5. Repeat/02_utvardera_process_och_arbetssatt.md)"
 
   - artifact: "Testresultat"
-    file_path: "4. Leverans/Testresultat.md"
+    file_path: "4. Leverans/testresultat.md"
     created:
       sop_file: "05_test.md"
       sop_section: "Leverans"
@@ -437,7 +437,7 @@ leverans:
         markdown_link: "[SOP 11 (Leverans): Uppföljning & förbättring](../../../SOP/4. Leverans/11_uppfoljning_och_forbattring.md)"
 
   - artifact: "Releasepaket"
-    file_path: "4. Leverans/Releasepaket.md"
+    file_path: "4. Leverans/releasepaket.md"
     created:
       sop_file: "08_release.md"
       sop_section: "Leverans"
@@ -461,7 +461,7 @@ leverans:
         markdown_link: "[SOP 1 (Repeat): Utvärdera leveransresultat](../../../SOP/5. Repeat/01_utvardera_leveransresultat.md)"
 
   - artifact: "Dokumentation"
-    file_path: "4. Leverans/Dokumentation.md"
+    file_path: "4. Leverans/dokumentation.md"
     created:
       sop_file: "10_uppdatera_dokumentation.md"
       sop_section: "Leverans"
@@ -470,7 +470,7 @@ leverans:
     used_in: null
 
   - artifact: "Förbättringsförslag"
-    file_path: "4. Leverans/Förbättringsförslag.md"
+    file_path: "4. Leverans/forbattringsforslag.md"
     created:
       sop_file: "11_uppfoljning_och_forbattring.md"
       sop_section: "Leverans"
@@ -494,7 +494,7 @@ leverans:
 # REPEAT
 repeat:
   - artifact: "Leveransutvärdering"
-    file_path: "5. Repeat/Leveransutvärdering.md"
+    file_path: "5. Repeat/leveransutvardering.md"
     created:
       sop_file: "01_utvardera_leveransresultat.md"
       sop_section: "Repeat"
@@ -512,7 +512,7 @@ repeat:
         markdown_link: "[SOP 6 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda nästa cykel.md)"
 
   - artifact: "Processförbättringar"
-    file_path: "5. Repeat/Processförbättringar.md"
+    file_path: "5. Repeat/processforbattringar.md"
     created:
       sop_file: "02_utvardera_process_och_arbetssatt.md"
       sop_section: "Repeat"
@@ -527,7 +527,7 @@ repeat:
         markdown_link: "[SOP 6 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda nästa cykel.md)"
 
   - artifact: "Arkitekturinsikter"
-    file_path: "5. Repeat/Arkitekturinsikter.md"
+    file_path: "5. Repeat/arkitekturinsikter.md"
     created:
       sop_file: "04_identifiera_arkitekturella_lardomar.md"
       sop_section: "Repeat"
@@ -545,7 +545,7 @@ repeat:
         markdown_link: "[SOP 1 (Leverans): Backlog refinement](../../../SOP/4. Leverans/01_backlog_refinement.md)"
 
   - artifact: "Cykelstart-brief"
-    file_path: "5. Repeat/Cykelstart-brief.md"
+    file_path: "5. Repeat/cykelstart-brief.md"
     created:
       sop_file: "06_Förbereda nästa cykel.md"
       sop_section: "Repeat"

@@ -26,4 +26,4 @@ Versionshanterad artefakt
 
 ## Mall
 
-[Mall för Cykelstart-brief](../../templates/5.%20Repeat/Cykelstart-brief.md)
+[Mall för Cykelstart-brief](../../templates/5.%20Repeat/cykelstart-brief.md)

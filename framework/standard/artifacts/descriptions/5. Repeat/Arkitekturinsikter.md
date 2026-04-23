@@ -21,4 +21,4 @@ Versionshanterad artefakt
 
 ## Mall
 
-[Mall för Arkitekturinsikter](../../templates/5.%20Repeat/Arkitekturinsikter.md)
+[Mall för Arkitekturinsikter](../../templates/5.%20Repeat/arkitekturinsikter.md)

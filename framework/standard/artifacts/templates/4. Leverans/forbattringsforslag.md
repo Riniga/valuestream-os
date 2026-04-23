@@ -1,4 +1,4 @@
-﻿# Förbättringsförslag
+# Förbättringsförslag
 
 ## Metadata
 | Fält | Värde |
@@ -30,4 +30,3 @@
 - Det som bör tas upp i leveransutvärdering:
 - Det som bör tas upp i processförbättringar:
 - Det som bör tas upp i arkitekturinsikter:
-
