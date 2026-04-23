@@ -55,3 +55,5 @@ Jag har nu en ny fil i roten av standards ramverket Output_INDEX.md. Denna fil h
 1. Att mallen presenterar allt som genereras i en run. Men på ett enkelt sätt kanske inte behövs alla approvals och consultations etc. Men vore bra att gruppera det enligt processens 5 steg
 
 2. Denna index fil skall publiceras ut vid run.
+
+ett bra/komplett exempel att titta på är: runs\test-01

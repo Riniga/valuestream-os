@@ -72,7 +72,7 @@ class ProcessFlowLoader:
                 self._extract_raci_roles(sop.content, "I"),
                 sop_filename=section.sop_filename,
             )
-            input_filenames = self._resolve_input_filenames(
+            input_filenames, optional_input_filenames = self._resolve_input_filenames(
                 sop.inputs,
                 sop_filename=section.sop_filename,
             )
@@ -109,6 +109,7 @@ class ProcessFlowLoader:
                         artifact_name=output_name,
                         output_filename=template_path.name,
                         input_filenames=input_filenames,
+                        optional_input_filenames=optional_input_filenames,
                         delprocess_title=section.title,
                         agent_actor_kind=responsible_def.actor_kind,
                         consult_agent_ids=consult_agent_ids,
@@ -190,17 +191,42 @@ class ProcessFlowLoader:
             resolved.append(agent_id)
         return resolved
 
-    def _resolve_input_filenames(self, input_names: list[str], *, sop_filename: str) -> list[str]:
-        filenames: list[str] = []
-        seen: set[str] = set()
+    def _resolve_input_filenames(
+        self, input_names: list[str], *, sop_filename: str
+    ) -> tuple[list[str], list[str]]:
+        required_filenames: list[str] = []
+        optional_filenames: list[str] = []
+        seen_required: set[str] = set()
+        seen_optional: set[str] = set()
         for input_name in input_names:
-            template_path = self._require_template_path(input_name, sop_filename)
+            artifact_name, is_optional = self._parse_input_artifact(input_name)
+            template_path = self._require_template_path(artifact_name, sop_filename)
             resolved_name = template_path.name
-            if resolved_name in seen:
+            if is_optional:
+                if resolved_name in seen_optional or resolved_name in seen_required:
+                    continue
+                seen_optional.add(resolved_name)
+                optional_filenames.append(resolved_name)
                 continue
-            seen.add(resolved_name)
-            filenames.append(resolved_name)
-        return filenames
+
+            if resolved_name in seen_required:
+                continue
+            seen_required.add(resolved_name)
+            required_filenames.append(resolved_name)
+        return required_filenames, optional_filenames
+
+    @staticmethod
+    def _parse_input_artifact(input_name: str) -> tuple[str, bool]:
+        stripped = input_name.strip()
+        optional_patterns = (
+            r"^(?:optional|valfri)\s*:\s*(.+)$",
+            r"^(.+?)\s*\((?:optional|valfri)\)$",
+        )
+        for pattern in optional_patterns:
+            match = re.match(pattern, stripped, flags=re.IGNORECASE)
+            if match:
+                return match.group(1).strip(), True
+        return stripped, False
 
     @staticmethod
     def _should_use_raci_workflow(

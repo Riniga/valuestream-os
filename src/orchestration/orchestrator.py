@@ -973,9 +973,10 @@ class Orchestrator:
         )
 
     def _read_step_inputs(self, step: FlowStep) -> dict[str, str]:
+        all_input_filenames = step.input_filenames + step.optional_input_filenames
         return {
             filename: self._workspace.read_input(filename)
-            for filename in step.input_filenames
+            for filename in all_input_filenames
             if self._workspace.input_path(filename).exists()
         }
 

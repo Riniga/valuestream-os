@@ -12,8 +12,8 @@ Förbereda och förtydliga backloggen så att arbetet är redo för planering oc
 ## 3. Input
 
 - Roadmap
-- Cykelstart-brief
-- Arkitekturinsikter
+- Cykelstart-brief (valfri)
+- Arkitekturinsikter (valfri)
 
 ## 4. Output
 
@@ -28,7 +28,7 @@ Förbereda och förtydliga backloggen så att arbetet är redo för planering oc
 
 ## 6. Arbetssteg
 
-1. Gå igenom roadmap, cykelstart-brief och arkitekturinsikter för att identifiera stories för kommande arbete.
+1. Gå igenom roadmap, cykelstart-brief om den finns, och arkitekturinsikter för att identifiera stories för kommande arbete.
 2. Förtydliga user stories i dialog med utvecklingsteamet.
 3. Bryt ner stories i mindre delar vid behov.
 4. Definiera och komplettera acceptance criteria.

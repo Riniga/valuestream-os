@@ -55,6 +55,20 @@ def _make_flow() -> list[FlowStep]:
     ]
 
 
+def _make_flow_with_optional_input() -> list[FlowStep]:
+    return [
+        FlowStep(
+            step_id="ba-vision-optional",
+            agent_id="business-analyst",
+            sop_filename="02_sammanhallen_kravanalys.md",
+            artifact_name="Vision & målbild",
+            output_filename="vision_och_malbild.md",
+            input_filenames=["beställning.md"],
+            optional_input_filenames=["cykelstart-brief.md"],
+        )
+    ]
+
+
 def _make_agents() -> dict[str, AgentDefinition]:
     return {
         "business-analyst": AgentDefinition(
@@ -259,6 +273,45 @@ def test_dry_run_prompt_contains_expected_sections(workspace_with_input):
     assert "Rendermall" in content
 
 
+def test_optional_input_missing_does_not_skip_step(workspace_with_input):
+    orch = Orchestrator(
+        workspace=workspace_with_input,
+        repo_root=REPO_ROOT,
+        flow_steps=_make_flow_with_optional_input(),
+        agent_definitions=_make_agents(),
+    )
+
+    results = orch.run(dry_run=True)
+
+    assert results[0].status == StepStatus.completed
+
+
+def test_optional_input_is_included_when_available(tmp_path):
+    run_id = "optional-input-run"
+    input_dir = tmp_path / "runs" / run_id / "input"
+    input_dir.mkdir(parents=True)
+    (input_dir / "beställning.md").write_text("# Beställning\n\nTestunderlag.", encoding="utf-8")
+    (input_dir / "cykelstart-brief.md").write_text(
+        "# Cykelstart-brief\n\nHär finns frivillig input från Repeat.",
+        encoding="utf-8",
+    )
+    workspace = RunWorkspace(run_id=run_id, repo_root=tmp_path)
+    orch = Orchestrator(
+        workspace=workspace,
+        repo_root=REPO_ROOT,
+        flow_steps=_make_flow_with_optional_input(),
+        agent_definitions=_make_agents(),
+    )
+
+    results = orch.run(dry_run=True)
+
+    assert results[0].status == StepStatus.completed
+    assert results[0].output_path is not None
+    prompt = results[0].output_path.read_text(encoding="utf-8")
+    assert "cykelstart-brief.md" in prompt
+    assert "frivillig input från Repeat" in prompt
+
+
 def test_default_orchestrator_loads_process_driven_flow(workspace_with_input):
     orch = Orchestrator(
         workspace=workspace_with_input,
@@ -270,6 +323,14 @@ def test_default_orchestrator_loads_process_driven_flow(workspace_with_input):
     assert orch._process_flow.flow_id == flow.flow_id
     assert len(orch._process_flow.steps) == len(flow.steps)
     assert orch._process_flow.steps[0].sop_filename == "01_skapa_bestallning.md"
+
+
+def test_process_loader_parses_optional_input_marker_for_delivery():
+    flow = ProcessFlowLoader(REPO_ROOT).load("4. Leverans.md")
+
+    assert flow.steps[0].sop_filename == "01_backlog_refinement.md"
+    assert "cykelstart-brief.md" not in flow.steps[0].input_filenames
+    assert "cykelstart-brief.md" in flow.steps[0].optional_input_filenames
 
 
 def test_automated_product_owner_approval_completes_raci_step(workspace_with_backlog_input):

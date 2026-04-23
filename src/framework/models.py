@@ -80,6 +80,7 @@ class FlowStep:
     artifact_name: str     # human-readable artifact name, e.g. "Vision & målbild"
     output_filename: str   # output file name, e.g. "vision_och_malbild.md"
     input_filenames: list[str]  # required input files for this step
+    optional_input_filenames: list[str] = field(default_factory=list)
     delprocess_title: str = ""  # subprocess display name, e.g. "Affärsmål och värdebild"
     agent_actor_kind: ActorKind = ActorKind.automated
     consult_agent_ids: list[str] = field(default_factory=list)

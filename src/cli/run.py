@@ -154,6 +154,8 @@ def _cmd_flow(repo_root: Path, process_file: str) -> None:
         print(f"    Artefakt   : {step.artifact_name}")
         print(f"    Output     : {step.output_filename}")
         print(f"    Input      : {', '.join(step.input_filenames)}")
+        if step.optional_input_filenames:
+            print(f"    Valfri input: {', '.join(step.optional_input_filenames)}")
         if step.consult_agent_ids:
             consult = ", ".join(
                 f"{agent_id} ({step.consult_actor_kinds.get(agent_id).value})"
