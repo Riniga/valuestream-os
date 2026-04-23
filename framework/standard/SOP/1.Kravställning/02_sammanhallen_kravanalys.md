@@ -14,7 +14,6 @@ Ta en beställning och omvandla den till ett komplett, strukturerat och kvalitet
 ---
 
 ## 3. Input
-
 - Beställning
 
 ---

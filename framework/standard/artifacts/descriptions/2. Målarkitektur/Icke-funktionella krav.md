@@ -1,4 +1,4 @@
-# Artefakt: Icke-funktionella krav (NFR)
+# Artefakt: Icke-funktionella krav
 
 ## Typ
 

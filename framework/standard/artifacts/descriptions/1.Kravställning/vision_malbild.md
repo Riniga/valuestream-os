@@ -1,4 +1,4 @@
-# Artefakt: Vision & målbild
+# Artefakt: Vision & Målbild
 
 ## Typ
 

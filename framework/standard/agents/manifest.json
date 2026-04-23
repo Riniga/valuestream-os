@@ -12,7 +12,7 @@
       "display_name": "Beställare",
       "raci_role_id": "Beställare",
       "agent_file": "beställare.md",
-      "actor_kind": "human"
+      "actor_kind": "automated"
     },
     {
       "agent_id": "produktagare",

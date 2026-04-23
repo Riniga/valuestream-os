@@ -1,86 +1,122 @@
-﻿# Teknisk plattform
+﻿# Roadmap
 
 ## Metadata
-| FÃ¤lt | VÃ¤rde |
+| Fält | Värde |
 |------|------|
-| Artifakttyp | Arkitektur |
-| Ã„gare | LÃ¶sningsarkitekt |
-| Version | 1.0 |
+| Artifakttyp | Plan |
+| Ägare | Business Analyst |
+| Version | 1.1 |
 | Datum | |
 | Status | |
 
 ---
 
-## 1. Ã–versikt
-| FÃ¤lt | InnehÃ¥ll |
+## 1. Översikt
+| Fält | Innehåll |
 |------|----------|
-| Syfte | |
-| Referenser (NFR, integrationspunkter, arkitekturprinciper) | |
+| Syfte | Beskriva vad som ska levereras, i vilken ordning och när |
+| Referenser | Vision & målbild, Strukturerad backlog, Målarkitektur, KPI |
 | Sammanfattning | |
 
 ---
 
-## 2. MiljÃ¶er
-| MiljÃ¶ | Syfte | Kommentar |
-|-------|-------|-----------|
+## 2. MVP (Minimum Viable Product)
+
+### 2.1 Syfte
+Beskriv vilket värde MVP ska leverera och varför
+
+### 2.2 Innehåll
+| Epic / Feature | Beskrivning | Koppling till KPI |
+|----------------|------------|------------------|
 | | | |
+
+### 2.3 Avgränsningar
+Vad ingår inte i MVP
+
+-
+-
+
+---
+
+## 3. Prioritering (övergripande)
+
+| Prioritet | Epic / Feature | Värde | Kommentar |
+|----------|----------------|------|----------|
+| 1 | | | |
+| 2 | | | |
+| 3 | | | |
+
+---
+
+## 4. Releaseplan
+
+### 4.1 Översikt
+| Release | Syfte | Innehåll (kort) | Kommentar |
+|--------|------|-----------------|----------|
+| MVP | | | |
+| R2 | | | |
+| R3 | | | |
+
+---
+
+### 4.2 Release 1 (MVP)
+| Epic / Feature | Beskrivning | Kommentar |
+|----------------|------------|----------|
 | | | |
 
 ---
 
-## 3. Plattformsval
-| OmrÃ¥de | Val | Motivering |
-|--------|-----|------------|
-| Runtime / sprÃ¥k | | |
-| Integration | | |
-| Data / lagring | | |
-| Identitet / sÃ¤kerhet | | |
+### 4.3 Release 2
+| Epic / Feature | Beskrivning | Kommentar |
+|----------------|------------|----------|
+| | | |
 
 ---
 
-## 4. CI/CD (principer)
-| Princip | Beskrivning |
-|---------|-------------|
-| Branching | |
-| Build / test | |
-| Release | |
+### 4.4 Release 3
+| Epic / Feature | Beskrivning | Kommentar |
+|----------------|------------|----------|
+| | | |
 
 ---
 
-## 5. Driftmodell
-| Aspekt | Beskrivning |
-|--------|-------------|
-| Hosting | |
-| Skalning | |
-| Ã–vervakning | |
+## 5. Beroenden (översikt)
+
+| Beroende | Typ | Påverkan | Kommentar |
+|----------|-----|----------|----------|
+| | | | |
 
 ---
 
 ## 6. Antaganden
-- 
-- 
+
+-
+-
 
 ---
 
 ## 7. Risker
-| Risk | PÃ¥verkan | Ã…tgÃ¤rd |
+
+| Risk | Påverkan | Åtgärd |
 |------|----------|--------|
 | | | |
 
 ---
 
-## 8. Koppling till vidare arbete
-Denna artefakt anvÃ¤nds som input till:
+## 8. Koppling till leverans
 
-- MÃ¥larkitektur (sammanstÃ¤llning)
-- Leverans och roadmap
+Denna artefakt används som input till:
+
+- Leveransplanering
+- Implementation (t.ex. Cursor-planer)
+- Sprint- / iterationplanering
 
 ---
 
-## 9. GodkÃ¤nnande
+## 9. Godkännande
+
 | Roll | Namn | Datum |
 |------|------|--------|
-| Enterprise Arkitekt | | |
-| LÃ¶sningsarkitekt | | |
-| DevOps | | |
-
+| Beställare | | |
+| Produktägare | | |
+| Lösningsarkitekt | | |

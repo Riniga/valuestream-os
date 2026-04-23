@@ -194,12 +194,8 @@ class ProcessFlowLoader:
         filenames: list[str] = []
         seen: set[str] = set()
         for input_name in input_names:
-            template_path = self._context_loader.find_template_path(input_name)
-            resolved_name = (
-                template_path.name
-                if template_path is not None
-                else self._fallback_input_filename(input_name)
-            )
+            template_path = self._require_template_path(input_name, sop_filename)
+            resolved_name = template_path.name
             if resolved_name in seen:
                 continue
             seen.add(resolved_name)

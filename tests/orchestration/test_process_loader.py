@@ -18,18 +18,17 @@ def test_process_loader_reads_kravstallning_process():
 
     assert flow.process_file == "1. Kravställning.md"
     assert "Kravställning" in flow.process_title
-    assert len(flow.steps) >= 6
+    assert len(flow.steps) >= 5
 
 
 def test_process_loader_builds_steps_from_kravstallning_outputs():
     flow = ProcessFlowLoader(REPO_ROOT).load(DEFAULT_PROCESS_FILE)
     outputs = {step.output_filename for step in flow.steps}
 
-    assert "beställning.md" in outputs
+    assert "bestallning.md" in outputs
     assert "vision_och_malbild.md" in outputs
-    assert "scope_och_avgransningar.md" in outputs
-    assert "Stakeholderkarta.md" in outputs
-    assert "strukturerad_backlog.md" in outputs
+    assert "omfattning_och_strukturerad_backlog.md" in outputs
+    assert "stakeholderkarta.md" in outputs
     assert "kpi_vardematt.md" in outputs
 
 
@@ -44,11 +43,11 @@ def test_process_loader_uses_manifest_driven_agents():
 
 def test_process_loader_resolves_human_roles_from_manifest():
     flow = ProcessFlowLoader(REPO_ROOT).load(DEFAULT_PROCESS_FILE)
-    bestallning_step = next(step for step in flow.steps if step.output_filename == "beställning.md")
+    bestallning_step = next(step for step in flow.steps if step.output_filename == "bestallning.md")
     vision_step = next(step for step in flow.steps if step.output_filename == "vision_och_malbild.md")
 
     assert bestallning_step.agent_id == "bestallare"
-    assert bestallning_step.agent_actor_kind == ActorKind.human
+    assert bestallning_step.agent_actor_kind == ActorKind.automated
     assert bestallning_step.approver_agent_id == "produktagare"
     assert bestallning_step.approver_actor_kind == ActorKind.automated
 
@@ -63,13 +62,13 @@ def test_process_loader_uses_process_section_order():
     first_step = flow.steps[0]
 
     assert first_step.sop_filename == "01_skapa_bestallning.md"
-    assert first_step.output_filename == "beställning.md"
+    assert first_step.output_filename == "bestallning.md"
 
 
 def test_process_loader_builds_raci_metadata_for_backlog():
     flow = ProcessFlowLoader(REPO_ROOT).load(DEFAULT_PROCESS_FILE)
     backlog_step = next(
-        step for step in flow.steps if step.output_filename == "strukturerad_backlog.md"
+        step for step in flow.steps if step.output_filename == "omfattning_och_strukturerad_backlog.md"
     )
 
     assert backlog_step.agent_id == "business-analyst"
