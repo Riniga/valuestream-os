@@ -130,11 +130,8 @@ Sprint backlog,docs\SOP\4. Leverans\02_sprintplanering.md,output,Scrum Master
 Sprint backlog,docs\SOP\4. Leverans\03_utveckling.md,input,
 Arkitekturprinciper,docs\SOP\4. Leverans\03_utveckling.md,input,
 Målarkitektur,docs\SOP\4. Leverans\03_utveckling.md,input,
+Kodstandarder,docs\SOP\4. Leverans\03_utveckling.md,input,
 Produktinkrement,docs\SOP\4. Leverans\03_utveckling.md,output,Utvecklare
-Produktinkrement,docs\SOP\4. Leverans\04_kodgranskning.md,input,
-Arkitekturprinciper,docs\SOP\4. Leverans\04_kodgranskning.md,input,
-Kodstandarder,docs\SOP\4. Leverans\04_kodgranskning.md,input,
-Produktinkrement,docs\SOP\4. Leverans\04_kodgranskning.md,output,Utvecklare
 Produktinkrement,docs\SOP\4. Leverans\05_test.md,input,
 User Stories,docs\SOP\4. Leverans\05_test.md,input,
 Teststrategi,docs\SOP\4. Leverans\05_test.md,input,
@@ -152,11 +149,9 @@ Förbättringsförslag,docs\SOP\4. Leverans\07_demo.md,output,Utvecklare
 Produktinkrement,docs\SOP\4. Leverans\08_release.md,input,
 Testresultat,docs\SOP\4. Leverans\08_release.md,input,
 Releasepaket,docs\SOP\4. Leverans\08_release.md,input,
+Miljökonfiguration,docs\SOP\4. Leverans\08_release.md,input,
 Releasepaket,docs\SOP\4. Leverans\08_release.md,output,DevOps
-Releasepaket,docs\SOP\4. Leverans\09_deployments.md,input,
-Miljökonfiguration,docs\SOP\4. Leverans\09_deployments.md,input,
-Produktinkrement,docs\SOP\4. Leverans\09_deployments.md,output,DevOps
-Releasepaket,docs\SOP\4. Leverans\09_deployments.md,output,DevOps
+Produktinkrement,docs\SOP\4. Leverans\08_release.md,output,DevOps
 Releasepaket,docs\SOP\4. Leverans\10_uppdatera_dokumentation.md,input,
 Produktinkrement,docs\SOP\4. Leverans\10_uppdatera_dokumentation.md,input,
 API-specifikation,docs\SOP\4. Leverans\10_uppdatera_dokumentation.md,input,
@@ -175,23 +170,16 @@ Produktinkrement,docs\SOP\5. Repeat\02_utvardera_process_och_arbetssatt.md,input
 Tekniska hinder,docs\SOP\5. Repeat\02_utvardera_process_och_arbetssatt.md,input,
 Leveransutvärdering,docs\SOP\5. Repeat\02_utvardera_process_och_arbetssatt.md,input,
 Processförbättringar,docs\SOP\5. Repeat\02_utvardera_process_och_arbetssatt.md,output,Scrum Master
-Leveransutvärdering,docs\SOP\5. Repeat\03_samla_input_for_uppdaterad_kravstallning.md,input,
-Processförbättringar,docs\SOP\5. Repeat\03_samla_input_for_uppdaterad_kravstallning.md,input,
-Förbättringsförslag,docs\SOP\5. Repeat\03_samla_input_for_uppdaterad_kravstallning.md,input,
-Övergripande behov,docs\SOP\5. Repeat\03_samla_input_for_uppdaterad_kravstallning.md,input,
-Underlag till Cykelstart-brief,docs\SOP\5. Repeat\03_samla_input_for_uppdaterad_kravstallning.md,output,Business Analyst
 Tekniska hinder,docs\SOP\5. Repeat\04_identifiera_arkitekturella_lardomar.md,input,
 Leveransutvärdering,docs\SOP\5. Repeat\04_identifiera_arkitekturella_lardomar.md,input,
 Förbättringsförslag,docs\SOP\5. Repeat\04_identifiera_arkitekturella_lardomar.md,input,
 Arkitekturinsikter,docs\SOP\5. Repeat\04_identifiera_arkitekturella_lardomar.md,output,Lösningsarkitekt
-Arkitekturinsikter,docs\SOP\5. Repeat\05_Förbereda nästa roadmap‑iteration.md,input,
-Beroendekarta,docs\SOP\5. Repeat\05_Förbereda nästa roadmap‑iteration.md,input,
-Risker,docs\SOP\5. Repeat\05_Förbereda nästa roadmap‑iteration.md,input,
-Prioriterad backlog,docs\SOP\5. Repeat\05_Förbereda nästa roadmap‑iteration.md,input,
-Underlag till Cykelstart-brief,docs\SOP\5. Repeat\05_Förbereda nästa roadmap‑iteration.md,output,Business Analyst
 Arkitekturinsikter,docs\SOP\5. Repeat\06_Förbereda nästa cykel.md,input,
 Leveransutvärdering,docs\SOP\5. Repeat\06_Förbereda nästa cykel.md,input,
 Processförbättringar,docs\SOP\5. Repeat\06_Förbereda nästa cykel.md,input,
-Underlag från kravställningsuppdatering,docs\SOP\5. Repeat\06_Förbereda nästa cykel.md,input,
-Underlag från roadmap-iteration,docs\SOP\5. Repeat\06_Förbereda nästa cykel.md,input,
+Förbättringsförslag,docs\SOP\5. Repeat\06_Förbereda nästa cykel.md,input,
+Övergripande behov,docs\SOP\5. Repeat\06_Förbereda nästa cykel.md,input,
+Beroendekarta,docs\SOP\5. Repeat\06_Förbereda nästa cykel.md,input,
+Risker,docs\SOP\5. Repeat\06_Förbereda nästa cykel.md,input,
+Prioriterad backlog,docs\SOP\5. Repeat\06_Förbereda nästa cykel.md,input,
 Cykelstart-brief,docs\SOP\5. Repeat\06_Förbereda nästa cykel.md,output,Business Analyst

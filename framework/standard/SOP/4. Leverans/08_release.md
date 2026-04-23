@@ -1,23 +1,25 @@
-# SOP 8: Release
+# SOP 8: Release och deployment
 
 ## 1. Syfte
 
-Förbereda och godkänna en release för deployment genom att paketera artefakter och säkerställa att releasen är redo för driftsättning.
+Förbereda, godkänna och driftsätta en release i en sammanhållen DevOps-sittning.
 
 ## 2. Kontext
 
 - Processteg: Leverans
-- Delprocess: Release
+- Delprocess: Release och deployment
 
 ## 3. Input
 
 - Produktinkrement
 - Testresultat
 - Releasepaket
+- Miljökonfiguration
 
 ## 4. Output
 
 - Releasepaket
+- Produktinkrement
 
 ## 5. RACI
 
@@ -35,3 +37,7 @@ Förbereda och godkänna en release för deployment genom att paketera artefakte
 5. Säkerställ att releasen uppfyller krav för driftsättning.
 6. Validera release med beställare och teknisk lead.
 7. Godkänn releasepaketet för deployment (beslut av A).
+8. Genomför deployment enligt definierad process och miljö.
+9. Verifiera att system och integrationer fungerar efter deployment.
+10. Dokumentera deployment-loggar och faktisk driftsättningsstatus i releasepaketet.
+11. Uppdatera produktinkrementet med genomförd deployment.

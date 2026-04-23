@@ -135,10 +135,6 @@ Utvecklare,docs\SOP\4. Leverans\03_utveckling.md,R
 Teknisk Lead,docs\SOP\4. Leverans\03_utveckling.md,A
 Lösningsarkitekt,docs\SOP\4. Leverans\03_utveckling.md,C
 Beställare,docs\SOP\4. Leverans\03_utveckling.md,I
-Utvecklare,docs\SOP\4. Leverans\04_kodgranskning.md,R
-Teknisk Lead,docs\SOP\4. Leverans\04_kodgranskning.md,A
-Lösningsarkitekt,docs\SOP\4. Leverans\04_kodgranskning.md,C
-Beställare,docs\SOP\4. Leverans\04_kodgranskning.md,I
 Testare,docs\SOP\4. Leverans\05_test.md,R
 Teknisk Lead,docs\SOP\4. Leverans\05_test.md,A
 Utvecklare,docs\SOP\4. Leverans\05_test.md,C
@@ -156,10 +152,6 @@ Beställare,docs\SOP\4. Leverans\08_release.md,A
 Utvecklare,docs\SOP\4. Leverans\08_release.md,C
 Teknisk Lead,docs\SOP\4. Leverans\08_release.md,C
 Verksamhetsexperter,docs\SOP\4. Leverans\08_release.md,I
-DevOps,docs\SOP\4. Leverans\09_deployments.md,R
-Teknisk Lead,docs\SOP\4. Leverans\09_deployments.md,A
-Utvecklare,docs\SOP\4. Leverans\09_deployments.md,C
-Beställare,docs\SOP\4. Leverans\09_deployments.md,I
 Business Analyst,docs\SOP\4. Leverans\10_uppdatera_dokumentation.md,R
 Beställare,docs\SOP\4. Leverans\10_uppdatera_dokumentation.md,A
 Utvecklare,docs\SOP\4. Leverans\10_uppdatera_dokumentation.md,C
@@ -176,21 +168,13 @@ Scrum Master,docs\SOP\5. Repeat\02_utvardera_process_och_arbetssatt.md,R
 Beställare,docs\SOP\5. Repeat\02_utvardera_process_och_arbetssatt.md,A
 Utvecklare,docs\SOP\5. Repeat\02_utvardera_process_och_arbetssatt.md,C
 Business Analyst,docs\SOP\5. Repeat\02_utvardera_process_och_arbetssatt.md,I
-Business Analyst,docs\SOP\5. Repeat\03_samla_input_for_uppdaterad_kravstallning.md,R
-Beställare,docs\SOP\5. Repeat\03_samla_input_for_uppdaterad_kravstallning.md,A
-Verksamhetsexperter,docs\SOP\5. Repeat\03_samla_input_for_uppdaterad_kravstallning.md,C
-Utvecklare,docs\SOP\5. Repeat\03_samla_input_for_uppdaterad_kravstallning.md,I
 Lösningsarkitekt,docs\SOP\5. Repeat\04_identifiera_arkitekturella_lardomar.md,R
 Enterprise Arkitekt,docs\SOP\5. Repeat\04_identifiera_arkitekturella_lardomar.md,A
 Teknisk Lead,docs\SOP\5. Repeat\04_identifiera_arkitekturella_lardomar.md,C
 Beställare,docs\SOP\5. Repeat\04_identifiera_arkitekturella_lardomar.md,I
-Business Analyst,docs\SOP\5. Repeat\05_Förbereda nästa roadmap‑iteration.md,R
-Beställare,docs\SOP\5. Repeat\05_Förbereda nästa roadmap‑iteration.md,A
-Lösningsarkitekt,docs\SOP\5. Repeat\05_Förbereda nästa roadmap‑iteration.md,C
-Projektledare,docs\SOP\5. Repeat\05_Förbereda nästa roadmap‑iteration.md,C
-Utvecklare,docs\SOP\5. Repeat\05_Förbereda nästa roadmap‑iteration.md,I
 Business Analyst,docs\SOP\5. Repeat\06_Förbereda nästa cykel.md,R
 Beställare,docs\SOP\5. Repeat\06_Förbereda nästa cykel.md,A
 Lösningsarkitekt,docs\SOP\5. Repeat\06_Förbereda nästa cykel.md,C
 Verksamhetsexperter,docs\SOP\5. Repeat\06_Förbereda nästa cykel.md,C
+Projektledare,docs\SOP\5. Repeat\06_Förbereda nästa cykel.md,C
 Utvecklare,docs\SOP\5. Repeat\06_Förbereda nästa cykel.md,I

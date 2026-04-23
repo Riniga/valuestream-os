@@ -374,7 +374,7 @@ leverans:
     used_in:
       - sop_file: "03_utveckling.md"
         sop_section: "Leverans"
-        markdown_link: "[SOP 3 (Leverans): Utveckling](../../../SOP/4. Leverans/03_utveckling.md)"
+        markdown_link: "[SOP 3 (Leverans): Utveckling och kodgranskning](../../../SOP/4. Leverans/03_utveckling.md)"
       - sop_file: "07_demo.md"
         sop_section: "Leverans"
         markdown_link: "[SOP 7 (Leverans): Demo](../../../SOP/4. Leverans/07_demo.md)"
@@ -384,27 +384,24 @@ leverans:
     created:
       sop_file: "03_utveckling.md"
       sop_section: "Leverans"
-      markdown_link: "[SOP 3 (Leverans): Utveckling](../../../SOP/4. Leverans/03_utveckling.md)"
+      markdown_link: "[SOP 3 (Leverans): Utveckling och kodgranskning](../../../SOP/4. Leverans/03_utveckling.md)"
     updated:
-      - sop_file: "04_kodgranskning.md"
-        sop_section: "Leverans"
-        markdown_link: "[SOP 4 (Leverans): Kodgranskning](../../../SOP/4. Leverans/04_kodgranskning.md)"
       - sop_file: "05_test.md"
         sop_section: "Leverans"
         markdown_link: "[SOP 5 (Leverans): Test](../../../SOP/4. Leverans/05_test.md)"
       - sop_file: "06_integration_och_bygg.md"
         sop_section: "Leverans"
         markdown_link: "[SOP 6 (Leverans): Integration & bygg](../../../SOP/4. Leverans/06_integration_och_bygg.md)"
-      - sop_file: "09_deployments.md"
+      - sop_file: "08_release.md"
         sop_section: "Leverans"
-        markdown_link: "[SOP 9 (Leverans): Deployments](../../../SOP/4. Leverans/09_deployments.md)"
+        markdown_link: "[SOP 8 (Leverans): Release och deployment](../../../SOP/4. Leverans/08_release.md)"
     used_in:
       - sop_file: "07_demo.md"
         sop_section: "Leverans"
         markdown_link: "[SOP 7 (Leverans): Demo](../../../SOP/4. Leverans/07_demo.md)"
       - sop_file: "08_release.md"
         sop_section: "Leverans"
-        markdown_link: "[SOP 8 (Leverans): Release](../../../SOP/4. Leverans/08_release.md)"
+        markdown_link: "[SOP 8 (Leverans): Release och deployment](../../../SOP/4. Leverans/08_release.md)"
       - sop_file: "10_uppdatera_dokumentation.md"
         sop_section: "Leverans"
         markdown_link: "[SOP 10 (Leverans): Uppdatera dokumentation](../../../SOP/4. Leverans/10_uppdatera_dokumentation.md)"
@@ -431,7 +428,7 @@ leverans:
         markdown_link: "[SOP 6 (Leverans): Integration & bygg](../../../SOP/4. Leverans/06_integration_och_bygg.md)"
       - sop_file: "08_release.md"
         sop_section: "Leverans"
-        markdown_link: "[SOP 8 (Leverans): Release](../../../SOP/4. Leverans/08_release.md)"
+        markdown_link: "[SOP 8 (Leverans): Release och deployment](../../../SOP/4. Leverans/08_release.md)"
       - sop_file: "11_uppfoljning_och_forbattring.md"
         sop_section: "Leverans"
         markdown_link: "[SOP 11 (Leverans): Uppföljning & förbättring](../../../SOP/4. Leverans/11_uppfoljning_och_forbattring.md)"
@@ -441,14 +438,11 @@ leverans:
     created:
       sop_file: "08_release.md"
       sop_section: "Leverans"
-      markdown_link: "[SOP 8 (Leverans): Release](../../../SOP/4. Leverans/08_release.md)"
+      markdown_link: "[SOP 8 (Leverans): Release och deployment](../../../SOP/4. Leverans/08_release.md)"
     updated:
       - sop_file: "07_demo.md"
         sop_section: "Leverans"
         markdown_link: "[SOP 7 (Leverans): Demo](../../../SOP/4. Leverans/07_demo.md)"
-      - sop_file: "09_deployments.md"
-        sop_section: "Leverans"
-        markdown_link: "[SOP 9 (Leverans): Deployments](../../../SOP/4. Leverans/09_deployments.md)"
     used_in:
       - sop_file: "10_uppdatera_dokumentation.md"
         sop_section: "Leverans"
@@ -483,12 +477,12 @@ leverans:
       - sop_file: "01_utvardera_leveransresultat.md"
         sop_section: "Repeat"
         markdown_link: "[SOP 1 (Repeat): Utvärdera leveransresultat](../../../SOP/5. Repeat/01_utvardera_leveransresultat.md)"
-      - sop_file: "03_samla_input_for_uppdaterad_kravstallning.md"
-        sop_section: "Repeat"
-        markdown_link: "[SOP 3 (Repeat): Samla input för uppdaterad kravställning](../../../SOP/5. Repeat/03_samla_input_for_uppdaterad_kravstallning.md)"
       - sop_file: "04_identifiera_arkitekturella_lardomar.md"
         sop_section: "Repeat"
         markdown_link: "[SOP 4 (Repeat): Identifiera arkitekturella lärdomar](../../../SOP/5. Repeat/04_identifiera_arkitekturella_lardomar.md)"
+      - sop_file: "06_Förbereda nästa cykel.md"
+        sop_section: "Repeat"
+        markdown_link: "[SOP 4 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda nästa cykel.md)"
 
 ---
 # REPEAT
@@ -504,12 +498,9 @@ repeat:
       - sop_file: "02_utvardera_process_och_arbetssatt.md"
         sop_section: "Repeat"
         markdown_link: "[SOP 2 (Repeat): Utvärdera process & arbetssätt](../../../SOP/5. Repeat/02_utvardera_process_och_arbetssatt.md)"
-      - sop_file: "03_samla_input_for_uppdaterad_kravstallning.md"
-        sop_section: "Repeat"
-        markdown_link: "[SOP 3 (Repeat): Samla input för uppdaterad kravställning](../../../SOP/5. Repeat/03_samla_input_for_uppdaterad_kravstallning.md)"
       - sop_file: "06_Förbereda nästa cykel.md"
         sop_section: "Repeat"
-        markdown_link: "[SOP 6 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda nästa cykel.md)"
+        markdown_link: "[SOP 4 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda nästa cykel.md)"
 
   - artifact: "Processförbättringar"
     file_path: "5. Repeat/processforbattringar.md"
@@ -519,12 +510,9 @@ repeat:
       markdown_link: "[SOP 2 (Repeat): Utvärdera process & arbetssätt](../../../SOP/5. Repeat/02_utvardera_process_och_arbetssatt.md)"
     updated: null
     used_in:
-      - sop_file: "03_samla_input_for_uppdaterad_kravstallning.md"
-        sop_section: "Repeat"
-        markdown_link: "[SOP 3 (Repeat): Samla input för uppdaterad kravställning](../../../SOP/5. Repeat/03_samla_input_for_uppdaterad_kravstallning.md)"
       - sop_file: "06_Förbereda nästa cykel.md"
         sop_section: "Repeat"
-        markdown_link: "[SOP 6 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda nästa cykel.md)"
+        markdown_link: "[SOP 4 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda nästa cykel.md)"
 
   - artifact: "Arkitekturinsikter"
     file_path: "5. Repeat/arkitekturinsikter.md"
@@ -534,12 +522,9 @@ repeat:
       markdown_link: "[SOP 4 (Repeat): Identifiera arkitekturella lärdomar](../../../SOP/5. Repeat/04_identifiera_arkitekturella_lardomar.md)"
     updated: null
     used_in:
-      - sop_file: "05_Förbereda nästa roadmap‑iteration.md"
-        sop_section: "Repeat"
-        markdown_link: "[SOP 5 (Repeat): Förbereda nästa roadmap-iteration](../../../SOP/5. Repeat/05_Förbereda nästa roadmap‑iteration.md)"
       - sop_file: "06_Förbereda nästa cykel.md"
         sop_section: "Repeat"
-        markdown_link: "[SOP 6 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda nästa cykel.md)"
+        markdown_link: "[SOP 4 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda nästa cykel.md)"
       - sop_file: "01_backlog_refinement.md"
         sop_section: "Leverans"
         markdown_link: "[SOP 1 (Leverans): Backlog refinement](../../../SOP/4. Leverans/01_backlog_refinement.md)"
@@ -549,14 +534,8 @@ repeat:
     created:
       sop_file: "06_Förbereda nästa cykel.md"
       sop_section: "Repeat"
-      markdown_link: "[SOP 6 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda nästa cykel.md)"
-    updated:
-      - sop_file: "03_samla_input_for_uppdaterad_kravstallning.md"
-        sop_section: "Repeat"
-        markdown_link: "[SOP 3 (Repeat): Samla input för uppdaterad kravställning](../../../SOP/5. Repeat/03_samla_input_for_uppdaterad_kravstallning.md)"
-      - sop_file: "05_Förbereda nästa roadmap‑iteration.md"
-        sop_section: "Repeat"
-        markdown_link: "[SOP 5 (Repeat): Förbereda nästa roadmap-iteration](../../../SOP/5. Repeat/05_Förbereda nästa roadmap‑iteration.md)"
+      markdown_link: "[SOP 4 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda nästa cykel.md)"
+    updated: null
     used_in:
       - sop_file: "01_backlog_refinement.md"
         sop_section: "Leverans"

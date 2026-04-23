@@ -15,10 +15,10 @@ Teknisk Lead
 
 ## Uppdateras i
 
-- [Kodgranskning](../../../SOP/4.%20Leverans/04_kodgranskning.md)
+- [Utveckling och kodgranskning](../../../SOP/4.%20Leverans/03_utveckling.md)
 - [Test](../../../SOP/4.%20Leverans/05_test.md)
 - [Integration & bygg](../../../SOP/4.%20Leverans/06_integration_och_bygg.md)
-- [Deployments](../../../SOP/4.%20Leverans/09_deployments.md)
+- [Release och deployment](../../../SOP/4.%20Leverans/08_release.md)
 
 ## Format
 Textdokument (Markdown)

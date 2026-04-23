@@ -16,7 +16,7 @@ DevOps
 ## Uppdateras i
 
 - [Demo](../../../SOP/4.%20Leverans/07_demo.md)
-- [Deployments](../../../SOP/4.%20Leverans/09_deployments.md)
+- [Release och deployment](../../../SOP/4.%20Leverans/08_release.md)
 
 ## Format
 Textdokument (Markdown)

@@ -28,19 +28,15 @@ docs\SOP\3. Roadmap\05_Prioritera funktionalitet.md,Prioritera funktionalitet,Ro
 docs\SOP\3. Roadmap\06_Identifiera tekniska beroenden.md,Identifiera tekniska beroenden,Roadmap
 docs\SOP\4. Leverans\01_backlog_refinement.md,Backlog refinement,Leverans
 docs\SOP\4. Leverans\02_sprintplanering.md,Sprintplanering,Leverans
-docs\SOP\4. Leverans\03_utveckling.md,Utveckling,Leverans
-docs\SOP\4. Leverans\04_kodgranskning.md,Kodgranskning,Leverans
+docs\SOP\4. Leverans\03_utveckling.md,Utveckling och kodgranskning,Leverans
 docs\SOP\4. Leverans\05_test.md,Test,Leverans
 docs\SOP\4. Leverans\06_integration_och_bygg.md,Integration & bygg (CI/CD),Leverans
 docs\SOP\4. Leverans\07_demo.md,Demo,Leverans
-docs\SOP\4. Leverans\08_release.md,Release,Leverans
-docs\SOP\4. Leverans\09_deployments.md,Deployments,Leverans
+docs\SOP\4. Leverans\08_release.md,Release och deployment,Leverans
 docs\SOP\4. Leverans\10_uppdatera_dokumentation.md,Uppdatera dokumentation,Leverans
 docs\SOP\4. Leverans\11_uppfoljning_och_forbattring.md,Uppföljning & förbättring,Leverans
 docs\SOP\5. Repeat\01_utvardera_leveransresultat.md,Utvärdera leveransresultat,Repeat
 docs\SOP\5. Repeat\02_utvardera_process_och_arbetssatt.md,Utvärdera process & arbetssätt,Repeat
-docs\SOP\5. Repeat\03_samla_input_for_uppdaterad_kravstallning.md,Samla input för uppdaterad kravställning,Repeat
 docs\SOP\5. Repeat\04_identifiera_arkitekturella_lardomar.md,Identifiera arkitekturella lärdomar,Repeat
-docs\SOP\5. Repeat\05_Förbereda nästa roadmap‑iteration.md,Förbereda nästa roadmap-iteration,Repeat
 docs\SOP\5. Repeat\06_Förbereda nästa cykel.md,Förbereda nästa cykel,Repeat
 docs\SOP\sop-conventions-discovery.md,,
