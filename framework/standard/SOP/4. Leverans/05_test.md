@@ -12,8 +12,7 @@ Verifiera att funktionalitet uppfyller krav och acceptanskriterier samt håller 
 ## 3. Input
 
 - Produktinkrement
-- User Stories
-- Teststrategi
+- Sprint backlog
 
 ## 4. Output
 

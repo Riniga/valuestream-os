@@ -11,14 +11,13 @@ Förbereda och förtydliga backloggen så att arbetet är redo för planering oc
 
 ## 3. Input
 
-- Prioriterad backlog
+- Roadmap
 - Cykelstart-brief
 - Arkitekturinsikter
 
 ## 4. Output
 
-- User Stories
-- Underlag till Sprint backlog
+- Sprint backlog
 
 ## 5. RACI
 
@@ -29,7 +28,7 @@ Förbereda och förtydliga backloggen så att arbetet är redo för planering oc
 
 ## 6. Arbetssteg
 
-1. Gå igenom prioriterad backlog och identifiera stories för kommande arbete.
+1. Gå igenom roadmap, cykelstart-brief och arkitekturinsikter för att identifiera stories för kommande arbete.
 2. Förtydliga user stories i dialog med utvecklingsteamet.
 3. Bryt ner stories i mindre delar vid behov.
 4. Definiera och komplettera acceptance criteria.
@@ -37,4 +36,4 @@ Förbereda och förtydliga backloggen så att arbetet är redo för planering oc
 6. Identifiera tekniska beroenden och risker kopplade till stories.
 7. Estimera stories tillsammans med utvecklingsteamet.
 8. Markera stories som redo för iterationens planering.
-9. Lämna ett sammanhållet planeringsunderlag till sprintplaneringen.
+9. Uppdatera sprint backlog med ett sammanhållet planeringsunderlag för sprintplaneringen.

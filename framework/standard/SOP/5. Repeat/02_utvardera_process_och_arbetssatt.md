@@ -12,7 +12,6 @@ Utvärdera arbetssätt och processer för att identifiera förbättringar som ö
 ## 3. Input
 
 - Produktinkrement
-- Tekniska hinder
 - Leveransutvärdering
 
 ## 4. Output

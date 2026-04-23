@@ -21,7 +21,7 @@ Ta en beställning och omvandla den till ett komplett, strukturerat och kvalitet
 ## 4. Output
 
 - Vision & målbild
-- Omfattning & Strukturerad Backlog
+- Omfattning och Strukturerad Backlog
 - Stakeholderkarta
 - KPI / värdemått
 

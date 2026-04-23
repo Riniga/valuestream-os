@@ -1,4 +1,4 @@
-# Vision & Målbild
+# Vision & målbild
 
 ## Metadata
 | Fält | Värde |

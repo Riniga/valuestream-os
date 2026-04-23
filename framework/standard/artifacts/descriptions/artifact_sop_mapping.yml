@@ -180,6 +180,12 @@ roadmap:
       - sop_file: "02_skapa_teknisk_plan.md"
         sop_section: "Roadmap"
         markdown_link: "[SOP 2 (Roadmap): Skapa Teknisk plan](../../../SOP/3. Roadmap/02_skapa_teknisk_plan.md)"
+      - sop_file: "01_backlog_refinement.md"
+        sop_section: "Leverans"
+        markdown_link: "[SOP 1 (Leverans): Backlog refinement](../../../SOP/4. Leverans/01_backlog_refinement.md)"
+      - sop_file: "06_Förbereda nästa cykel.md"
+        sop_section: "Repeat"
+        markdown_link: "[SOP 4 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda nästa cykel.md)"
 
   - artifact: "Teknisk plan"
     file_path: "3. Roadmap/teknisk_plan.md"
@@ -188,7 +194,10 @@ roadmap:
       sop_section: "Roadmap"
       markdown_link: "[SOP 2 (Roadmap): Skapa Teknisk plan](../../../SOP/3. Roadmap/02_skapa_teknisk_plan.md)"
     updated: null
-    used_in: null
+    used_in:
+      - sop_file: "06_Förbereda nästa cykel.md"
+        sop_section: "Repeat"
+        markdown_link: "[SOP 4 (Repeat): Förbereda nästa cykel](../../../SOP/5. Repeat/06_Förbereda nästa cykel.md)"
 
 ---
 # LEVERANS
@@ -196,14 +205,20 @@ leverans:
   - artifact: "Sprint backlog"
     file_path: "4. Leverans/sprint_backlog.md"
     created:
-      sop_file: "02_sprintplanering.md"
+      sop_file: "01_backlog_refinement.md"
       sop_section: "Leverans"
-      markdown_link: "[SOP 2 (Leverans): Sprintplanering](../../../SOP/4. Leverans/02_sprintplanering.md)"
-    updated: null
+      markdown_link: "[SOP 1 (Leverans): Backlog refinement](../../../SOP/4. Leverans/01_backlog_refinement.md)"
+    updated:
+      - sop_file: "02_sprintplanering.md"
+        sop_section: "Leverans"
+        markdown_link: "[SOP 2 (Leverans): Sprintplanering](../../../SOP/4. Leverans/02_sprintplanering.md)"
     used_in:
       - sop_file: "03_utveckling.md"
         sop_section: "Leverans"
         markdown_link: "[SOP 3 (Leverans): Utveckling och kodgranskning](../../../SOP/4. Leverans/03_utveckling.md)"
+      - sop_file: "05_test.md"
+        sop_section: "Leverans"
+        markdown_link: "[SOP 5 (Leverans): Test](../../../SOP/4. Leverans/05_test.md)"
       - sop_file: "07_demo.md"
         sop_section: "Leverans"
         markdown_link: "[SOP 7 (Leverans): Demo](../../../SOP/4. Leverans/07_demo.md)"

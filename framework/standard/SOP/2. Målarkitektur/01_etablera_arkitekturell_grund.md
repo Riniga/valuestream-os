@@ -16,7 +16,7 @@ Syftet är att skapa en stabil grund för vidare arbete i målarkitektur och sä
 - Delprocess: Etablera arkitekturell grund
 
 ## 3. Input
-- Omfattning & Strukturerad Backlog
+- Omfattning och Strukturerad Backlog
 - Vision & målbild
 
 ## 4. Output

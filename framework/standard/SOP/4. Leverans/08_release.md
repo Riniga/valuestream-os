@@ -14,7 +14,6 @@ Förbereda, godkänna och driftsätta en release i en sammanhållen DevOps-sittn
 - Produktinkrement
 - Testresultat
 - Releasepaket
-- Miljökonfiguration
 
 ## 4. Output
 

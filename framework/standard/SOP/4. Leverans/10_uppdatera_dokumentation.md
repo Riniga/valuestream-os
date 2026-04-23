@@ -13,7 +13,6 @@ Säkerställa att dokumentation är aktuell och speglar senaste förändringar i
 
 - Releasepaket
 - Produktinkrement
-- API-specifikation
 
 ## 4. Output
 

@@ -15,10 +15,8 @@ Säkerställa att nästa cykel kan startas effektivt med rätt underlag, tydlig 
 - Leveransutvärdering
 - Processförbättringar
 - Förbättringsförslag
-- Övergripande behov
-- Beroendekarta
-- Risker
-- Prioriterad backlog
+- Roadmap
+- Teknisk plan
 
 ## 4. Output
 
@@ -35,7 +33,7 @@ Säkerställa att nästa cykel kan startas effektivt med rätt underlag, tydlig 
 
 1. Sammanställ input från leveransutvärdering, processförbättringar och förbättringsförslag.
 2. Strukturera kravsignaler, omprioriteringar och ej levererade behov som ska tas in i nästa kravställning.
-3. Analysera arkitekturinsikter, beroenden och risker som påverkar nästa roadmap-varv.
+3. Analysera arkitekturinsikter samt påverkan från roadmap och teknisk plan på nästa roadmap-varv.
 4. Sammanställ planeringspåverkan för nästa cykel utan att uppdatera roadmapen i detalj.
 5. Definiera övergripande mål och fokus för nästa cykel.
 6. Säkerställ alignment mellan verksamhet, arkitektur och team.

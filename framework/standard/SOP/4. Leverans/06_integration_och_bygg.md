@@ -13,8 +13,6 @@ Säkerställa att kod byggs, integreras och paketeras korrekt i CI/CD-flödet f�
 
 - Produktinkrement
 - Testresultat
-- CI/CD-pipeline
-- Miljökonfiguration
 
 ## 4. Output
 

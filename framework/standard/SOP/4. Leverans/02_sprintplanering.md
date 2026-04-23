@@ -11,9 +11,7 @@ Planera sprintens innehåll så att teamet arbetar med rätt saker baserat på p
 
 ## 3. Input
 
-- Underlag från backlog refinement
-- Teamkapacitet
-- Prioriterad backlog
+- Sprint backlog
 
 ## 4. Output
 

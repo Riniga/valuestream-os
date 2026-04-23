@@ -41,4 +41,4 @@ GitHub (dokument-repository)
 
 ## Mall
 
-[Mall för Icke-funktionella krav (NFR)](../../templates/2.%20Målarkitektur/icke_funktionella_krav_nfr.md)
+[Mall för Icke-funktionella krav](../../templates/2.%20Målarkitektur/icke-funktionella_krav.md)

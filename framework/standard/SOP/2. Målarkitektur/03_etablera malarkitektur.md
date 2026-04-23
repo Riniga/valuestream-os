@@ -15,10 +15,9 @@ Etablera en sammanhängande målarkitektur genom att definiera integrationer, pr
 
 ## 3. Input
 
-Primär:
 - Systemlandskap
 - Domänmodell
-- Omfattning & strukturerad backlog
+- Omfattning och Strukturerad Backlog
 
 
 ---

@@ -1,4 +1,4 @@
-# NFR (Icke-funktionella krav)
+# Icke-funktionella krav
 
 ## Metadata
 | Fält | Värde |

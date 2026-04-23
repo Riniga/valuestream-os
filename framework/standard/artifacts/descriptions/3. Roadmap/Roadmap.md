@@ -21,6 +21,12 @@ Business Analyst
 
 [Skapa Roadmap](../../../SOP/3.%20Roadmap/01_skapa_roadmap.md)
 
+## Används i
+
+- [Skapa Teknisk plan](../../../SOP/3.%20Roadmap/02_skapa_teknisk_plan.md)
+- [Backlog refinement](../../../SOP/4.%20Leverans/01_backlog_refinement.md)
+- [Förbereda nästa cykel](../../../SOP/5.%20Repeat/06_Förbereda%20nästa%20cykel.md)
+
 ## Format
 Textdokument (Markdown)
 

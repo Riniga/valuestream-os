@@ -11,7 +11,6 @@ Identifiera och strukturera arkitekturella insikter och tekniska förbättringso
 
 ## 3. Input
 
-- Tekniska hinder
 - Leveransutvärdering
 - Förbättringsförslag
 

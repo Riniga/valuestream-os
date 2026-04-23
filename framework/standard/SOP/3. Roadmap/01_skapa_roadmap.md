@@ -11,13 +11,12 @@ Ta fram en genomförbar roadmap som strukturerar, prioriterar och sekvenserar fu
 
 ## 3. Input
 
-- Vision & Målbild
+- Vision & målbild
 - Omfattning och Strukturerad Backlog
 - KPI / värdemått
 - Målarkitektur
 - Integrationsarkitektur
 - Icke-funktionella krav
--
 ## 4. Output
 
 - Roadmap

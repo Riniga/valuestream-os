@@ -14,7 +14,6 @@ Implementera funktionalitet enligt definierade krav, arkitektur och kvalitetspri
 - Sprint backlog
 - Arkitekturprinciper
 - Målarkitektur
-- Kodstandarder
 
 ## 4. Output
 
