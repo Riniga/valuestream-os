@@ -105,7 +105,7 @@ Använd följande kommandon för att se och slutföra mänskliga uppgifter:
 python -m src.cli.run --run-id test-01 human-tasks
 
 # Slutför en mänsklig uppgift med en fil som redan finns på disk
-python -m src.cli.run --run-id test-01 complete-human-task 1-kravstallning-01-bestallning-draft-bestallare --artifact-file runs/test-01/input/beställning.md
+python -m src.cli.run --run-id test-01 complete-human-task 1-kravstallning-01-bestallning-draft-bestallare --artifact-file runs/test-01/input/bestallning.md
 
 # Slutför en mänsklig uppgift med inline-text (bra för kort feedback eller svar)
 python -m src.cli.run --run-id test-01 complete-human-task 1-kravstallning-01-bestallning-draft-bestallare --artifact-content "# Beställning`n`n..."

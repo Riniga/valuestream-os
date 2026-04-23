@@ -4,99 +4,96 @@
 | Fält | Värde |
 |------|------|
 | Artifakttyp | Krav |
-| Ägare | Business Analyst |
-| Version | 1.0 |
+| Ägare | Beställare |
 | Datum | |
-| Status | |
+| Status | Utkast |
 
 ---
 
-## 1. Översikt
+## 1. Kort sammanfattning
+Beskriv kort vad beställningen gäller och varför den är viktig.
+
 | Fält | Innehåll |
 |------|----------|
-| Syfte | |
-| Referenser | |
-| Sammanfattning | |
+| Initiativ / arbetsnamn | |
+| Beställare / verksamhetsområde | |
+| Kort sammanfattning | |
 
 ---
 
-## 2. Identifierade behov
-| ID | Behov | Beskrivning | Källa (stakeholder/journey) | Prioritet (H/M/L) |
-|----|-------|-------------|-----------------------------|-------------------|
-| | | | | |
-| | | | | |
+## 2. Bakgrund och problem
+Beskriv nuläget, vilket problem som finns och varför det behöver hanteras.
+
+### Vilket problem eller behov vill ni lösa?
+
+### Varför är detta viktigt nu?
+
+### Vad händer om vi inte gör något?
 
 ---
 
-## 3. Problem som adresseras
-| Problem | Påverkan | Berörda |
-|---------|----------|---------|
-| | | |
-| | | |
+## 3. Önskat resultat
+Beskriv vad verksamheten vill uppnå, utan att låsa lösningen i detalj.
+
+### Vad vill ni att initiativet ska leda till?
+
+### Vilken nytta ska uppnås för verksamheten?
+
+### Vilken nytta ska uppnås för användare eller kunder?
 
 ---
 
-## 4. Mål kopplat till behov
-| Behov | Mål | Mätetal (KPI) |
-|-------|-----|---------------|
-| | | |
-| | | |
+## 4. Berörda
+Lista de viktigaste grupperna, rollerna eller funktionerna som påverkas.
+
+| Berörd grupp / roll | Hur de påverkas |
+|---------------------|-----------------|
+| | |
+| | |
+| | |
 
 ---
 
-## 5. Kategorisering av behov
-| Kategori | Beskrivning | Behov |
-|----------|-------------|-------|
-| Verksamhet | | |
-| Användare | | |
-| Teknik | | |
+## 5. Omfattning på övergripande nivå
+Beskriv vad som ingår och inte ingår i beställningen just nu.
 
----
-
-## 6. Prioriteringsgrund
-- Affärsvärde
-- Användarnytta
-- Riskreduktion
-- Genomförbarhet
-
----
-
-## 7. Avgränsningar
 ### Ingår
--
+- 
+- 
 
 ### Ingår inte
--
+- 
+- 
 
 ---
 
-## 8. Antaganden
--
--
+## 6. Ramar och förutsättningar
+Beskriv sådant som påverkar arbetet, till exempel tid, regelkrav, beroenden eller andra viktiga förutsättningar.
+
+### Kända begränsningar eller ramar
+- 
+
+### Viktiga beroenden
+- 
+
+### Relevanta regler, policys eller krav
+- 
 
 ---
 
-## 9. Risker
-| Risk | Påverkan | Åtgärd |
-|------|----------|--------|
-| | | |
-| | | |
+## 7. Risker och osäkerheter
+Beskriv sådant som kan försvåra arbetet eller skapa osäkerhet i nuläget.
+
+| Risk eller osäkerhet | Påverkan |
+|----------------------|----------|
+| | |
+| | |
 
 ---
 
-## 10. Koppling till vidare arbete
-Denna artefakt används som input till:
+## 8. Övrigt som är bra att känna till
+Ange eventuell kompletterande information eller länkar till befintligt underlag.
 
-- Epics & Capabilities
-- Story map
-- Prioriterad backlog
-- Målarkitektur
-
----
-
-## 11. Godkännande
-| Roll | Namn | Datum |
-|------|------|--------|
-| Business Analyst | | |
-| Beställare | | |
-| Övriga | | |
+- Referenser / länkar:
+- Relaterade initiativ:
+- Övriga kommentarer:

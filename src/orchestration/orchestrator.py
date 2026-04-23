@@ -328,6 +328,11 @@ class Orchestrator:
         )
 
     async def _execute_step_async(self, step: FlowStep, dry_run: bool) -> Path:
+        seeded_artifact = self._load_seeded_artifact(step)
+        if seeded_artifact is not None:
+            _, path = seeded_artifact
+            return path
+
         if step.agent_actor_kind == ActorKind.human:
             _, path = await self._run_human_responsible_phase(step=step, dry_run=dry_run)
             return path
@@ -545,6 +550,10 @@ class Orchestrator:
         dry_run: bool,
         input_content: dict[str, str],
     ) -> tuple[str, Path]:
+        seeded_artifact = self._load_seeded_artifact(step)
+        if seeded_artifact is not None:
+            return seeded_artifact
+
         if step.agent_actor_kind == ActorKind.human:
             return await self._run_human_responsible_phase(step=step, dry_run=dry_run)
 
@@ -969,6 +978,25 @@ class Orchestrator:
             for filename in step.input_filenames
             if self._workspace.input_path(filename).exists()
         }
+
+    def _load_seeded_artifact(self, step: FlowStep) -> tuple[str, Path] | None:
+        if step.input_filenames:
+            return None
+
+        expected_path = self._workspace.input_path(step.output_filename)
+        if expected_path.is_file():
+            content = expected_path.read_text(encoding="utf-8")
+            return content, self._workspace.write_output(step.output_filename, content)
+
+        available_markdown_files = sorted(path.name for path in self._workspace.input_dir.glob("*.md"))
+        if available_markdown_files:
+            available_list = ", ".join(available_markdown_files)
+            raise FileNotFoundError(
+                f"Artifakt med namn '{step.output_filename}' saknas i input-mappen "
+                f"'{self._workspace.input_dir}'. Tillgängliga filer: {available_list}"
+            )
+
+        return None
 
     async def _run_agent_prompt_async(
         self,

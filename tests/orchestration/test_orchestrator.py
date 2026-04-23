@@ -102,8 +102,8 @@ def _make_raci_flow() -> list[FlowStep]:
             step_id="ba-backlog",
             agent_id="business-analyst",
             sop_filename="02_sammanhallen_kravanalys.md",
-            artifact_name="Strukturerad backlog",
-            output_filename="strukturerad_backlog.md",
+            artifact_name="Omfattning och Strukturerad Backlog",
+            output_filename="omfattning_och_strukturerad_backlog.md",
             input_filenames=["beställning.md"],
             agent_actor_kind=ActorKind.automated,
             consult_agent_ids=["verksamhetsexperter"],
@@ -124,9 +124,26 @@ def _make_human_responsible_flow() -> list[FlowStep]:
             agent_id="bestallare",
             sop_filename="01_skapa_bestallning.md",
             artifact_name="Beställning",
-            output_filename="beställning.md",
+            output_filename="bestallning.md",
             input_filenames=[],
             agent_actor_kind=ActorKind.human,
+        )
+    ]
+
+
+def _make_seeded_raci_flow() -> list[FlowStep]:
+    return [
+        FlowStep(
+            step_id="seeded-bestallning",
+            agent_id="bestallare",
+            sop_filename="01_skapa_bestallning.md",
+            artifact_name="Beställning",
+            output_filename="bestallning.md",
+            input_filenames=[],
+            agent_actor_kind=ActorKind.automated,
+            approver_agent_id="produktagare",
+            approver_actor_kind=ActorKind.automated,
+            use_raci_workflow=True,
         )
     ]
 
@@ -274,7 +291,7 @@ def test_automated_product_owner_approval_completes_raci_step(workspace_with_bac
 
     artifact_state = ArtifactStateStore(workspace_with_backlog_input.run_dir).load()
     assert artifact_state is not None
-    record = artifact_state.artifacts["strukturerad_backlog.md"]
+    record = artifact_state.artifacts["omfattning_och_strukturerad_backlog.md"]
     assert record.status == ArtifactStatus.published_to_informed_roles
     assert record.approver_agent_id == "produktagare"
     assert record.approval_decision == "approved_with_notes"
@@ -349,7 +366,7 @@ def test_human_responsible_step_can_resume_from_artifact_path(tmp_path):
     task_id = first_results[0].human_task_id
     assert task_id is not None
 
-    artifact_path = input_dir / "beställning.md"
+    artifact_path = input_dir / "bestallning.md"
     artifact_path.write_text("# Beställning\n\nInnehåll från filreferens.", encoding="utf-8")
 
     task_store = HumanTaskStore(workspace.run_dir)
@@ -429,7 +446,7 @@ def test_human_responsible_step_uses_existing_run_input_file_when_completed(tmp_
     task_id = first_results[0].human_task_id
     assert task_id is not None
 
-    (input_dir / "beställning.md").write_text(
+    (input_dir / "bestallning.md").write_text(
         "# Beställning\n\nInnehåll från befintlig input-fil.",
         encoding="utf-8",
     )
@@ -446,6 +463,49 @@ def test_human_responsible_step_uses_existing_run_input_file_when_completed(tmp_
     assert resumed_results[0].status == StepStatus.completed
     assert resumed_results[0].output_path is not None
     assert "befintlig input-fil" in resumed_results[0].output_path.read_text(encoding="utf-8")
+
+
+def test_raci_step_uses_seeded_artifact_from_input_dir(tmp_path):
+    run_id = "seeded-raci"
+    input_dir = tmp_path / "runs" / run_id / "input"
+    input_dir.mkdir(parents=True)
+    seeded_content = "# Beställning\n\nDetta innehåll kommer från förinlagd bestallning.md."
+    (input_dir / "bestallning.md").write_text(seeded_content, encoding="utf-8")
+    workspace = RunWorkspace(run_id=run_id, repo_root=tmp_path)
+    orch = Orchestrator(
+        workspace=workspace,
+        repo_root=REPO_ROOT,
+        flow_steps=_make_seeded_raci_flow(),
+        agent_definitions=_make_agents(),
+    )
+
+    results = orch.run(dry_run=True)
+
+    assert results[0].status == StepStatus.completed
+    assert results[0].output_path is not None
+    assert results[0].output_path.read_text(encoding="utf-8") == seeded_content
+
+
+def test_raci_step_reports_missing_expected_seeded_artifact_filename(tmp_path):
+    run_id = "seeded-raci-missing"
+    input_dir = tmp_path / "runs" / run_id / "input"
+    input_dir.mkdir(parents=True)
+    (input_dir / "beställning.md").write_text("# Beställning\n\nFel filnamn.", encoding="utf-8")
+    workspace = RunWorkspace(run_id=run_id, repo_root=tmp_path)
+    orch = Orchestrator(
+        workspace=workspace,
+        repo_root=REPO_ROOT,
+        flow_steps=_make_seeded_raci_flow(),
+        agent_definitions=_make_agents(),
+    )
+
+    results = orch.run(dry_run=True)
+
+    assert results[0].status == StepStatus.failed
+    assert results[0].error is not None
+    assert "bestallning.md" in results[0].error
+    assert "beställning.md" in results[0].error
+    assert "saknas" in results[0].error
 
 
 def test_update_document_status_maps_approval_decisions():
@@ -478,8 +538,8 @@ def test_expert_context_is_filtered_to_same_artifact(workspace_with_backlog_inpu
     orch._approval_store.append(
         ApprovalDecision(
             step_id="same-artifact",
-            artifact_name="Strukturerad backlog",
-            artifact_filename="strukturerad_backlog.md",
+            artifact_name="Omfattning och Strukturerad Backlog",
+            artifact_filename="omfattning_och_strukturerad_backlog.md",
             approver_agent_id="produktagare",
             decision="approved_with_notes",
             summary="Behov av förtydligad MVP.",
@@ -501,7 +561,7 @@ def test_expert_context_is_filtered_to_same_artifact(workspace_with_backlog_inpu
         ConsultationResponse(
             request_id="req-1",
             step_id="same-artifact",
-            artifact_name="Strukturerad backlog",
+            artifact_name="Omfattning och Strukturerad Backlog",
             consultant_agent_id="verksamhetsexperter",
             response_text="Förtydliga beroenden.",
             summary="Förtydliga beroenden.",
@@ -524,7 +584,7 @@ def test_expert_context_is_filtered_to_same_artifact(workspace_with_backlog_inpu
         input_content={"beställning.md": "Beställningstext"},
     )
 
-    assert "Strukturerad backlog" in context.context_text
+    assert "Omfattning och Strukturerad Backlog" in context.context_text
     assert "Förtydliga beroenden." in context.context_text
     assert "Behov av förtydligad MVP." in context.context_text
     assert "Annan artefakt ska inte läcka in." not in context.context_text

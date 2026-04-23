@@ -44,7 +44,14 @@ python -m src.cli.run --run-id pernilla --process "1. Kravställning.md" flow
 ## TODO
 
 - saknas en fil även bestallning.md p.g.a. får man inte fel att filen saknas utan att filen avslagits.
+
 - output run ska gå till separat repp
 - Itterate: Om vi kör om ett processsteg. Tillse att vi uppdaterar utifrån tidigare insikter och inte bygger om från början....
 
 Uppdatera artifacts_sop_mapping.yml
+
+Jag har nu en ny fil i roten av standards ramverket Output_INDEX.md. Denna fil har jag använt för att förklara resultatet som genereras i en run men den tar inte in allt. JAg önskar nu att vi justerar:
+
+1. Att mallen presenterar allt som genereras i en run. Men på ett enkelt sätt kanske inte behövs alla approvals och consultations etc. Men vore bra att gruppera det enligt processens 5 steg
+
+2. Denna index fil skall publiceras ut vid run.
