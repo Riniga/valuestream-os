@@ -40,6 +40,50 @@ WHAT → HOW → WHEN → BUILD → LEARN → WHAT → ...
 
 ---
 
+## 🧩 From framework to model (simplified)
+
+High-level picture of how **markdown framework**, **orchestration**, **LLM execution**, and **run data** fit together. This is intentionally generalized for context; a more detailed view with extra components is in [`setup/architecture/05-ai-architecture.md`](setup/architecture/05-ai-architecture.md).
+
+```mermaid
+flowchart TB
+    subgraph FW["Process & framework (markdown)"]
+        P["Processes, SOPs, RACI"]
+        R["Roles / agents"]
+        T["Artifact templates & descriptions"]
+    end
+
+    subgraph ORCH["Orchestration (code)"]
+        CLI["CLI"]
+        O["Orchestrator"]
+    end
+
+    subgraph AI["AI runtime"]
+        MAF["AgentRunner / MAF"]
+        LLM["LLM"]
+    end
+
+    subgraph DATA["Data layer (runs)"]
+        RUN["runs/ — input, output, state"]
+    end
+
+    subgraph OPT["Extensions (optional)"]
+        MCP["MCP tools"]
+        SEM["Semantic layer"]
+    end
+
+    FW --> CLI
+    CLI --> O
+    O --> MAF
+    MAF --> LLM
+    LLM --> MAF
+    MAF --> O
+    O --> RUN
+    LLM -.-> MCP
+    RUN -.-> SEM
+```
+
+---
+
 ## 🧠 Key Concepts
 
 ### 1. SOP-driven execution
