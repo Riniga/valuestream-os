@@ -12,6 +12,7 @@ It is intentionally separated from the framework content to distinguish between:
 ## 📁 Structure
 ```
 setup/
+├── architecture/ → Code architecture diagrams for src/
 ├── environment/ → Runtime and environment setup
 ├── guidelines/ → Development principles and instructions
 ```
@@ -44,6 +45,26 @@ These documents describe:
 - How agents, SOPs and processes should be designed  
 
 👉 Read this if you want to **contribute or extend the framework**
+
+---
+
+## 🧭 Architecture
+
+Located in: `setup/architecture/`
+
+Contains:
+- `README.md` → Entry point and diagram index
+- `01-overview.md` → Simplified runtime overview of `src/`
+- `02-runtime-detail.md` → Detailed class diagram for the orchestration core
+- `03-domain-models.md` → Core runtime contracts and state models
+- `04-persistence-and-output.md` → Stores, run files and output publishing
+
+These documents are intended for:
+- technical demos
+- onboarding into the codebase
+- understanding how markdown-driven framework data becomes executable orchestration
+
+👉 Open this when you want to **present or understand the code structure under `src/`**
 
 ---
 
