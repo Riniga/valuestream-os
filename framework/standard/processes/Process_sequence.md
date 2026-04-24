@@ -1,70 +1,95 @@
 ## Processflöde
 
-Detta sekvensdiagram visar **hur en run faktiskt exekveras i dagens lösning**.
+Detta sekvensdiagram visar **hur roller/agenter tar vid och skapar huvudartefakterna i ordning** genom en hel processcykel.
 
-Fokus här är inte en idealiserad persona-kedja, utan hur:
+Det är en förenklad bild som fokuserar på:
 
-- en användare startar en körning
-- process och SOP:er laddas från `framework/standard`
-- orchestration kör steg för steg
-- roller konsulteras och godkänner vid behov
-- state, logg och output sparas i `runs/`
+- vilken roll som driver nästa steg
+- vilka huvudartefakter som skapas
+- hur resultat från ett steg blir input till nästa
 
 ```mermaid
 sequenceDiagram
-    participant U as Beställare / användare
-    participant CLI as CLI
-    participant PFL as ProcessFlowLoader
-    participant FW as framework/standard
-    participant O as Orchestrator
-    participant RR as Ansvarig roll / agent
-    participant CR as Konsulterande roller
-    participant AR as A-roll / godkännare
-    participant RUN as runs/<run-id>
+    participant BE as Beställare
+    participant PO as Produktägare
+    participant BA as Business Analyst
+    participant LA as Lösningsarkitekt
+    participant TL as Teknisk Lead
+    participant SM as Scrum Master
+    participant UT as Utvecklare
+    participant TE as Testare
+    participant DE as DevOps
+    participant EA as Enterprise Arkitekt
 
-    U->>CLI: Starta run med input
-    CLI->>PFL: load(process_file)
-    PFL->>FW: Läs process, SOP, RACI och artefaktmallar
-    FW-->>PFL: ProcessFlow + FlowSteps
-    CLI->>O: Kör flödet för aktuell run
-    O->>RUN: Initiera run_state, artifact_state och run_log
-
-    loop För varje processsteg
-        O->>O: Validera input och välj nästa steg
-        O->>RR: Bygg prompt och kör ansvarig roll
-        RR-->>O: Utkast / artefakt
-        O->>RUN: Spara output och uppdatera state
-
-        alt Steget använder RACI-flöde
-            O->>CR: Skicka konsultationsunderlag
-            CR-->>O: Återkoppling
-            O->>RR: Begär revidering
-            RR-->>O: Reviderad artefakt
-
-            opt A-roll finns
-                O->>AR: Begär beslut / godkännande
-                AR-->>O: approved / approved_with_notes / rejected
-            end
-
-            O->>RUN: Spara consultations, approvals och briefs
-        end
-
-        alt Mänsklig uppgift krävs
-            O->>RUN: Skapa human_tasks/*.json
-            O-->>CLI: Pausa körningen
-            U->>CLI: complete-human-task
-            CLI->>O: Återuppta run
-        end
-
-        O->>RUN: Publicera eller uppdatera output/INDEX.md
+    rect rgb(245,248,255)
+        Note over BE,PO: 1. Kravställning
+        BE->>BE: Skapar Beställning
+        BE->>BA: Överlämnar Beställning
+        BA->>BA: Skapar Vision & målbild
+        BA->>BA: Skapar Omfattning och Strukturerad Backlog
+        BA->>BA: Skapar Stakeholderkarta
+        BA->>BA: Skapar KPI / värdemått
+        BA->>PO: Förankrar kravbild
+        PO-->>BA: Godkännande / återkoppling
     end
 
-    CLI-->>U: Visa status, resultat och nästa steg
+    rect rgb(248,255,248)
+        Note over BA,EA: 2. Målarkitektur
+        BA->>LA: Överlämnar kravunderlag
+        LA->>LA: Skapar Arkitekturmål
+        LA->>LA: Skapar Systemlandskap
+        BA->>BA: Skapar Domänmodell
+        BA->>LA: Överlämnar Domänmodell
+        LA->>TL: Inhämtar teknisk input
+        TL-->>LA: Beroenden och genomförbarhet
+        LA->>LA: Skapar Integrationsarkitektur
+        LA->>LA: Uppdaterar Arkitekturprinciper
+        LA->>LA: Definierar Icke-funktionella krav
+        LA->>LA: Sammanställer Målarkitektur
+        LA->>EA: Förankrar målarkitektur
+        EA-->>LA: Godkännande / återkoppling
+    end
+
+    rect rgb(255,250,240)
+        Note over BA,TL: 3. Roadmap
+        LA->>BA: Överlämnar Målarkitektur
+        BA->>BA: Skapar Roadmap
+        BA->>TL: Beställer teknisk plan
+        TL->>TL: Skapar Teknisk plan
+        TL-->>BA: Teknisk plan
+        BA->>BE: Förankrar Roadmap
+        BE-->>BA: Prioritering / godkännande
+    end
+
+    rect rgb(255,245,245)
+        Note over BA,DE: 4. Leverans
+        BA->>SM: Överlämnar Roadmap och backlog
+        SM->>SM: Skapar Sprint backlog
+        SM->>UT: Planerar iteration
+        UT->>UT: Skapar Produktinkrement
+        UT->>TE: Överlämnar för test
+        TE->>TE: Skapar Testresultat
+        TE-->>UT: Verifierad leverans
+        UT->>DE: Överlämnar releasbart inkrement
+        DE->>DE: Skapar Releasepaket och genomför release
+        DE-->>BE: Levererad funktionalitet
+        BA->>BA: Uppdaterar Dokumentation
+        SM->>SM: Skapar Förbättringsförslag
+    end
+
+    rect rgb(245,245,255)
+        Note over BA,EA: 5. Repeat
+        BA->>BA: Skapar Leveransutvärdering
+        SM->>SM: Skapar Processförbättringar
+        LA->>LA: Skapar Arkitekturinsikter
+        BA->>BA: Skapar Cykelstart-brief
+        BA-->>BE: Underlag för nästa cykel
+    end
 ```
 
 ## Att tänka på i presentation
 
-- Diagrammet visar **runtime-flödet**, inte hela organisationssamspelet.
-- Roller som `Business Analyst`, `UX` eller `Lösningsarkitekt` uppträder här som **ansvariga eller konsulterande roller i ett steg**.
-- Samma struktur kan användas både för automatiserade agentroller och för mänskliga handoffs.
-- `runs/<run-id>` är navet för spårbarhet: input, output, state, logg, approvals och human tasks.
+- Diagrammet visar **process- och artefaktflödet**, inte kodflödet.
+- Fokus är på huvudartefakterna, inte alla möjliga mellanleverabler.
+- Samma logik kan användas både när rollerna utförs av människor och när de utförs av agenter.
+- Den viktiga rörelsen är: **behov -> kravbild -> målarkitektur -> roadmap -> leverans -> lärande -> nästa cykel**.
