@@ -20,6 +20,13 @@ pwsh ./scripts/bootstrap.ps1
 
 This may be executed within VS Code by running Task: Bootstrap
 
+## Manuellt
+
+1. conda create -n
+2. conda env create -n valuesstream-os -f environment.yml
+3. conda activate valuesstream-os
+4. cursor/code .
+
 ## Work
 
 To start working in the project we have this script:

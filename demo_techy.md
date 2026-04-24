@@ -2,113 +2,193 @@
 
 Agent Orchestration Framework for end-to-end value delivery
 
-## Syfte med denna demo
+Detta dokument är ett **presentatörsstöd för dig**, inte ett manus för åhörarna.
 
-På cirka 25 minuter ska du få en tekniskt trovärdig och inspirerande bild av:
+Använd det för att:
 
-- vad ValueStream OS faktiskt är
-- hur `framework/standard` hänger ihop
-- hur CLI och körning fungerar i praktiken
-- vad en run faktiskt producerar
+- hålla tempo och struktur
+- veta vad du vill få fram i varje del
+- ha stödord att tala fritt utifrån
+- snabbt hitta tillbaka om du scrollar fel
 
-Efter demon ska du ha en tydlig bild av att detta inte bara är "några agenter", utan ett explicit system där process, roller, ansvar, artefakter och körning hänger ihop.
+---
 
-## Målgrupp och ton
+# Presentationens fokus
 
-- Teknikintresserad publik
-- Van vid kod, arkitektur, automatisering och AI/agent-koncept
-- Intresserad av struktur, spårbarhet och hur lösningen faktiskt fungerar
+## Målgrupp
 
-Presentationen bör upplevas som:
+- teknikintresserad publik
+- vana vid kod, arkitektur, automation och AI/agent-koncept
+- vill förstå struktur, styrning, spårbarhet och faktisk körbarhet
+
+## Scope för denna presentation
+
+Detta fokus ska vara tydligt direkt i början:
+
+- visa att ValueStream OS är ett **sammanhängande system**
+- visa hur **README -> ramverk -> körning -> resultat** hänger ihop
+- visa att detta är **körbart i praktiken**, inte bara beskrivningar i markdown
+- visa att struktur, roller, SOP:er, artefakter och runs ger **kontroll**
+
+Detta är **inte** fokus i denna presentation:
+
+- full teknisk implementation i `src/`
+- all intern logik eller all kod bakom CLI:t
+- full genomgång av varje enskild fil i ramverket
+
+## Önskad känsla
 
 - konkret
+- lugn
+- kontrollerad
 - transparent
-- ingen powerpoint, bara repo, markdown och CLI
-- visa att lösningen är begriplig och praktiskt användbar
+- text-first, repo-first, CLI-first
 
-## Agenda
+## Innehåll
 
-1. **Varför denna lösning finns**
-2. **Den övergripande modellen**: process + repo + text-first
-3. **Hur standardramverket är uppbyggt**
-4. **Hur ansvar och exekvering kopplas ihop**: RACI -> roller -> agenter -> SOP -> artefakter
-5. **Hur det körs i CLI**
-6. **Vad man faktiskt får ut av en run**
+Total tid: cirka **25 min**
+
+1. Projektet README - **4 min**
+2. Ramverket / Processen - **7 min**
+3. Live demo - CLI - **6 min**
+4. Resultatet - **5 min**
+5. Tekniken - **3 min**
 
 ---
 
-# Upplägg: 25 minuter
+# 0. Intro och inramning
 
-## 0. Öppning och framing - 2 min
+**Tid:** 2 min
 
-### Visa
+**Syfte med sektionen:** Sätta målgrupp, scope och röd tråd innan du går in i detaljer.
+
+## Punkt 0.1 - Vad publiken ska titta efter
+
+**Tid:** 1 min
+
+**Syfte:** Hjälpa publiken att förstå vad presentationen fokuserar på.
+
+**Stödord:**
+
+- detta är inte "bara AI"
+- detta är ett arbetssätt + ramverk + körning
+- fokus på struktur, styrning, spårbarhet
+- jag visar sammanhang, inte varje detalj
+
+## Punkt 0.2 - Röd tråd för resten av presentationen
+
+**Tid:** 1 min
+
+**Syfte:** Ge en enkel karta att återkomma till genom hela presentationen.
+
+**Stödord:**
+
+- från behov till levererat värde
+- README sätter bilden
+- ramverket beskriver modellen
+- CLI visar att modellen går att köra
+- resultatet visar vad en run faktiskt ger
+
+---
+
+# 1. Projektet README
+
+**Tid:** 4 min
+
+**Syfte med sektionen:** Förankra vad ValueStream OS är på hög nivå innan du zoomar in i detaljer.
+
+**Visa:**
 
 - [`README.md`](https://github.com/Riniga/valuestream-os/blob/prepare-demo-2/README.md)
-- [`framework/standard/INDEX.md`](./framework/standard/INDEX.md)
 
-### Budskap
+## Punkt 1.1 - Vad projektet är
 
-"Det här är ett ramverk för att gå från idé till levererat värde med hjälp av agenter, men på ett kontrollerat sätt."
+**Tid:** 1 min
 
-### Det här ska du få med dig
+**Syfte:** Sätta den övergripande definitionen av ValueStream OS.
 
-"Här blir det tydligt att det inte bara handlar om att generera dokument med AI. Det intressanta är att vi har byggt ett sammanhängande system där process, roller, ansvar, instruktioner och resultat hänger ihop."
+**Stödord:**
 
-"Det innebär att utvecklingsarbete kan bedrivas på ett mer strukturerat, spårbart och repeterbart sätt."
+- agent orchestration framework
+- från idé till levererat värde
+- inte bara prompts
+- kontrollerad exekvering
 
-### Lyft fram i README
+## Punkt 1.2 - Den cirkulära modellen
 
-- syftet
-- den cirkulära modellen
+**Tid:** 1 min
+
+**Syfte:** Visa att modellen bygger på ett återkommande flöde, inte en engångskedja.
+
+**Stödord:**
+
 - `WHAT -> HOW -> WHEN -> BUILD -> LEARN -> WHAT`
-- repository-strukturen:
-  - `framework/`
-  - `src/`
-  - `runs/`
-  - `setup/`
+- lärande tillbaka in i nästa cykel
+- repeat som del av modellen
 
-### Kärnpoäng att landa i
+## Punkt 1.3 - Hur repot är uppdelat
 
-- `framework/` är hjärnan
-- `src/` är motorn
-- `runs/` är exekveringen och tillståndet
+**Tid:** 1 min
+
+**Syfte:** Ge en enkel mental modell av repots huvuddelar.
+
+**Stödord:**
+
+- `framework/` = styrmodell
+- `src/` = implementation/motor
+- `runs/` = körningar, tillstånd, output
+- `setup/` = setup och utvecklingsstöd
+
+## Punkt 1.4 - Vad publiken ska ta med sig från README
+
+**Tid:** 1 min
+
+**Syfte:** Avsluta sektionen med en tydlig landning innan du går vidare.
+
+**Stödord:**
+
+- README beskriver varför och helheten
+- nu går vi från idé till faktisk struktur
+- nästa steg: hur ramverket organiserar arbetet
 
 ---
 
-## 1. Förklaring av ramverket: standard - 6 min
+# 2. Ramverket / Processen
 
-### Visa
+**Tid:** 7 min
 
-- `framework/standard/INDEX.md`
+**Syfte med sektionen:** Visa att ramverket är explicit uppbyggt kring process, ansvar, instruktioner och artefakter.
 
-### Det här ska du förstå
+**Visa:**
 
-"README beskriver idén. Standardramverket beskriver hur arbetet faktiskt ska gå till."
-
-"Det viktiga här är att utgångspunkten inte är kod, utan verksamhetsflöde, ansvar och definierade resultat."
-
-### Gå igenom i denna ordning
-
-#### A. De 5 processstegen
-
-Lyft fram:
-
+- [`framework/standard/INDEX.md`](./framework/standard/INDEX.md)
 - [Kravställning](./framework/standard/processes/1.%20Kravställning.md)
 - [Målarkitektur](./framework/standard/processes/2.%20Målarkitektur.md)
 - [Roadmap](./framework/standard/processes/3.%20Roadmap.md)
 - [Leverans](./framework/standard/processes/4.%20Leverans.md)
 - [Repeat](./framework/standard/processes/5.%20Repeat.md)
 
-Poängen här är:
+## Punkt 2.1 - De fem processstegen
 
-"De här fem stegen motsvarar egentligen fem olika frågor:
-vad behöver vi, hur ska det fungera, när gör vi vad, hur bygger vi, och vad lärde vi oss."
+**Tid:** 2 min
 
-"Det fina är att Repeat inte är slutet, utan input till nästa cykel."
+**Syfte:** Göra processlogiken tydlig och enkel att följa.
 
-#### B. Strukturen i ramverket
+**Stödord:**
 
-Lyft fram:
+- vad behöver vi
+- hur ska det fungera
+- när gör vi vad
+- hur bygger vi
+- vad lärde vi oss
+
+## Punkt 2.2 - Ramverkets delar
+
+**Tid:** 2 min
+
+**Syfte:** Visa att olika dokumenttyper har tydliga roller i samma system.
+
+**Visa även vid behov:**
 
 - [agents/](./framework/standard/agents/)
 - [processes/](./framework/standard/processes/)
@@ -116,36 +196,21 @@ Lyft fram:
 - [SOP/](./framework/standard/SOP/)
 - [artifacts/](./framework/standard/artifacts/)
 
-Poängen här är:
+**Stödord:**
 
-"Det här är den viktiga modellen:
-processen beskriver flödet,
-RACI beskriver ansvar,
-SOP beskriver hur ett steg utförs,
-artefakterna beskriver vad som kommer in och ut,
-och agenterna är de roller som utför arbetet."
+- process = flöde
+- RACI = ansvar
+- SOP = hur ett steg körs
+- artifacts = input/output
+- agents = roller som utför
 
-#### C. Förklarar begreppen i rätt relation
+## Punkt 2.3 - Ett konkret spår: Kravställning
 
-En enkel förklaring att använda:
+**Tid:** 2 min
 
-- **Process** = i vilken ordning saker händer
-- **RACI** = vem som ansvarar, godkänner, konsulteras och informeras
-- **Agent/roll** = vem som faktiskt utför ett steg
-- **SOP** = instruktionen för en sittning
-- **Artefakt** = resultatet eller underlaget
+**Syfte:** Visa hur delarna faktiskt kopplas ihop i praktiken.
 
-Poängen här är:
-
-"Det viktiga är att de här inte är separata dokumenttyper. De är kopplade till varandra."
-
-"En agent kör en SOP, inom ett processsteg, med en viss RACI-kontext, och producerar definierade artefakter."
-
----
-
-## 2. Visa ett konkret spår i ramverket - 4 min
-
-### Visa
+**Visa:**
 
 - [process: Kravställning](./framework/standard/processes/1.%20Kravställning.md)
 - [RACI: Kravställning](./framework/standard/RACI/1.%20Kravställning.md)
@@ -155,114 +220,105 @@ Poängen här är:
 - [artefaktmall: bestallning.md](./framework/standard/artifacts/templates/1.Kravställning/bestallning.md)
 - [artefaktbeskrivning: Beställning](./framework/standard/artifacts/descriptions/1.Kravställning/bestallning.md)
 
-### Det här ska publiken förstå
+**Stödord:**
 
-"Nu zoomar vi in på ett enda konkret spår, så att man ser hur allt hänger ihop i praktiken."
+- process säger när/varför
+- SOP säger hur
+- RACI säger vem
+- artefakt säger vad som produceras
+- agenten utför i rätt kontext
 
-### Rekommenderad ordning
+## Punkt 2.4 - Kärnbudskapet i ramverket
 
-1. Visa processfilen för `1. Kravställning`
-2. Visa att delprocess pekar mot SOP
-3. Visa RACI för samma område
-4. Visa agent/roll, till exempel Business Analyst
-5. Visa artefaktmall eller artefaktbeskrivning
+**Tid:** 1 min
 
-### Det publiken ska förstå
+**Syfte:** Få publiken att förstå varför denna struktur är viktig.
 
-- Processen beskriver _varför och i vilken ordning_
-- SOP beskriver _hur_
-- RACI beskriver _vem_
-- Artefakten beskriver _vad som produceras_
+**Stödord:**
 
-### Formulering att kunna använda
-
-"Om man bara har prompts får man ofta magi men låg styrning. Här försöker vi i stället göra exekveringen explicit."
-
-"Det är därför vi kan få både bättre kvalitet och bättre spårbarhet."
+- mindre improvisation
+- mer explicit styrning
+- bättre spårbarhet
+- mer repeterbart arbetssätt
 
 ---
 
-## 3. Introducera CLI och hur man kör - 3 min
+# 3. Live demo - CLI
 
-### Visa
+**Tid:** 6 min
+
+**Syfte med sektionen:** Visa att ramverket inte bara är beskrivet utan faktiskt går att köra.
+
+**Visa:**
 
 - terminal / kommandoprompt
 
-### Relevanta dokument att kunna öppna vid behov
+**Bra länkar att ha redo:**
 
 - [agentmanifest](./framework/standard/agents/manifest.json)
 - [processöversikt](./framework/standard/processes/Process.md)
 - [setup/README.md](./setup/README.md)
 
-### Det här ska publiken förstå
+## Punkt 3.1 - CLI som exekveringsyta
 
-"All exekvering sker idag via CLI. Det är medvetet. För en teknisk publik är det här det snabbaste sättet att visa att systemet faktiskt fungerar och att allt är transparent."
+**Tid:** 1 min
 
-### Visa några kommandon
+**Syfte:** Sätta förväntan på varför du visar terminalen.
 
-Välj det som finns tillgängligt hos dig, men håll det kort.
+**Stödord:**
 
-Exempel på vad du kan visa:
+- transparent
+- snabbt för teknisk publik
+- visar att modellen är körbar
+- poängen är inte UI, poängen är exekvering
 
-- att lista agenter
-- att visa process/flöde
-- att starta en run
-- att visa status för en run
+## Punkt 3.2 - Visa några grundkommandon
 
-### Viktigt budskap
+**Tid:** 2 min
 
-"Poängen är inte CLI:t i sig. Poängen är att ramverket är körbart."
+**Syfte:** Ge känslan av att systemet har verkliga kommandon och tillstånd.
 
-"Det här är alltså inte bara dokumentation, utan en exekverbar modell."
+**Stödord:**
 
----
+- lista agenter
+- visa process/flöde
+- starta run
+- visa status
 
-## 4. Live demo: skapa beställning och starta run - 4 min
+## Punkt 3.3 - Starta en enkel run
 
-### Visa
+**Tid:** 3 min
 
-- en ny run
+**Syfte:** Visa hur en beställning blir input till en faktisk körning.
+
+**Visa:**
+
 - [mallen för `bestallning.md`](./framework/standard/artifacts/templates/1.Kravställning/bestallning.md)
-- kommandot för att köra
-
-### Relevanta dokument att visa i detta moment
-
 - [input-exempel: `runs/test-01/input/bestallning.md`](./runs/test-01/input/bestallning.md)
 - [process: Kravställning](./framework/standard/processes/1.%20Kravställning.md)
 - [SOP: Skapa beställning](./framework/standard/SOP/1.Kravställning/01_skapa_bestallning.md)
 
-### Rekommenderat upplägg
+**Stödord:**
 
-1. Börja från ett behov
-2. Visa att du använder mallen för `bestallning.md`
-3. Lägg filen i en ny runs input-mapp
-4. Starta körningen i CLI
-
-### Det här ska publiken få se
-
-"Demot börjar inte i kod, utan i ett verkligt verksamhetsbehov."
-
-"Det första steget är att formulera en beställning i en enkel mall. Den blir startpunkten för hela flödet."
-
-"När den läggs in i en run kan ramverket ta vid och producera nästa lager av underlag."
-
-### Tips
-
-Försök inte läsa hela beställningen i detalj. Visa bara att:
-
-- den är enkel att förstå
-- den är tillräckligt strukturerad
-- den kan användas som input till körningen
+- börja i behov, inte kod
+- enkel mall
+- lägg input i run
+- starta körning
+- ramverket tar över nästa steg
 
 ---
 
-## 5. Medan runnen kör: hoppa till tidigare resultat - 4 min
+# 4. Resultatet
 
-### Visa
+**Tid:** 5 min
+
+**Syfte med sektionen:** Visa vad en run faktiskt producerar och varför resultatet är användbart.
+
+**Visa:**
 
 - [runs/test-01/output/INDEX.md](./runs/test-01/output/INDEX.md)
 
-### Relevanta dokument att kunna hoppa vidare till
+**Bra länkar att ha redo:**
 
 - [run state](./runs/test-01/run_state.json)
 - [artifact state](./runs/test-01/artifact_state.json)
@@ -275,39 +331,39 @@ Försök inte läsa hela beställningen i detalj. Visa bara att:
 - [exempelartefakt: målarkitektur](./runs/test-01/output/malarkitektur.md)
 - [exempelartefakt: roadmap](./runs/test-01/output/Roadmap.md)
 
-### Det här ska publiken förstå
+## Punkt 4.1 - Output-index som ingång
 
-"I stället för att vänta på att allt ska köras klart kan vi titta på en tidigare körning och se vad systemet faktiskt producerar."
+**Tid:** 2 min
 
-"Det här är en viktig poäng: outputen är inte bara en hög med filer. Vi har nu ett index som gör runnen begriplig."
+**Syfte:** Visa att resultatet går att överblicka och navigera.
 
-### Gå igenom output-INDEX i denna ordning
-
-#### A. Runsammanfattning
-
-Lyft fram:
+**Stödord:**
 
 - run id
 - status
 - senaste process
 - antal huvudartefakter
-- approvals / consultations / briefs
+- snabb överblick
 
-Det här visar:
+## Punkt 4.2 - Resultat grupperat per processsteg
 
-"Det här ger direkt en överblick över vad som faktiskt hänt i runnen."
+**Tid:** 1 min
 
-#### B. Genererat innehåll per processsteg
+**Syfte:** Visa att outputen följer verksamhetsflödet, inte bara filstruktur.
 
-Lyft fram att output är grupperat enligt de fem processerna.
+**Stödord:**
 
-Det här visar:
+- grupperat enligt processen
+- mänskligt läsbart
+- lätt att förstå vart man är
 
-"Det här är viktigt för att resultatet ska vara läsbart även för människor. Vi ser inte bara filer, utan resultat grupperat enligt verksamhetsflödet."
+## Punkt 4.3 - Metadata och spårbarhet
 
-#### C. Metadata och spårbarhet
+**Tid:** 2 min
 
-Lyft kort fram:
+**Syfte:** Visa varför detta är mer robust än bara genererade dokument.
+
+**Stödord:**
 
 - `run_state.json`
 - `artifact_state.json`
@@ -316,65 +372,147 @@ Lyft kort fram:
 - consultations
 - informed briefs
 
-Det här visar:
+---
 
-"För techfolk är det här kanske den mest intressanta delen: vi har inte bara producerat artefakter, utan också spår av beslut, konsultationer och status."
+# 5. Tekniken
 
-"Det gör lösningen mer användbar i verkligheten än om man bara genererar slutdokument."
+**Tid:** 3 min
+
+**Syfte med sektionen:** Runda av med den tekniska betydelsen och visa tillräckligt mycket implementation för att det ska kännas verkligt för en teknisk publik.
+
+## Punkt 5.1 - Kodstruktur: hur detta är uppbyggt i kod
+
+**Tid:** 1 min
+
+**Syfte:** Visa hur repots struktur går från markdown-ramverk till körbar orchestration i `src/`.
+
+**Visa:**
+
+- [`src/orchestration/orchestrator.py`](./src/orchestration/orchestrator.py)
+- [`src/orchestration/process_loader.py`](./src/orchestration/process_loader.py)
+- [`src/orchestration/agent_registry.py`](./src/orchestration/agent_registry.py)
+- [`src/framework/models.py`](./src/framework/models.py)
+
+**Stödord:**
+
+- `framework/` beskriver modellen
+- `src/orchestration/` gör modellen körbar
+- `process_loader` läser process + SOP + RACI
+- `agent_registry` mappar roller till agenter via manifest
+- `models.py` håller gemensamma kontrakt för run, steg, artefakter, approvals
+
+## Punkt 5.2 - MAF: vad det är och hur det används här
+
+**Tid:** 1 min
+
+**Syfte:** Förklara kort varför Microsoft Agent Framework är relevant i lösningen.
+
+**Visa:**
+
+- [`src/framework/maf_adapter.py`](./src/framework/maf_adapter.py)
+- [`src/agents/ux/agent.py`](./src/agents/ux/agent.py)
+
+**Stödord:**
+
+- MAF = Microsoft Agent Framework
+- används som exekveringslager för agentanrop
+- vi har lagt det bakom en tunn adapter
+- preview-detaljer isoleras i en fil
+- övrig orchestration behöver inte känna till SDK-detaljer
+
+## Punkt 5.3 - Azure OpenAI och OpenAI: plattform och modellval
+
+**Tid:** 1 min
+
+**Syfte:** Visa att plattform och modell går att byta utan att skriva om orchestrationen.
+
+**Visa:**
+
+- [`src/framework/maf_adapter.py`](./src/framework/maf_adapter.py)
+- [`setup/environment/.env.example`](./setup/environment/.env.example)
+
+**Stödord:**
+
+- stöd för både `Azure OpenAI` och `OpenAI`
+- val sker via environment variables
+- Azure: endpoint, deployment, API-version
+- OpenAI: API key + modellnamn
+- modellval är konfigurerat, inte hårdkodat i flödet
+
+## Punkt 5.4 - Vad som skiljer detta från "bara prompts"
+
+**Tid:** 1 min
+
+**Syfte:** Tydliggöra differensen mot enklare AI-användning.
+
+**Stödord:**
+
+- mindre magi
+- mer struktur
+- mindre ad hoc
+- mer kontroll
+- lättare att följa upp
+
+## Punkt 5.5 - Avslutande landning
+
+**Tid:** 1 min
+
+**Syfte:** Ge publiken ett tydligt sista budskap.
+
+**Stödord:**
+
+- exekverbart ramverk
+- gemensam struktur för människor och agenter
+- användbart + spårbart
+- går att börja enkelt och skala upp
 
 ---
 
-## 6. Avslutning: vad som är nytt och varför det spelar roll - 2 min
-
-### Sammanfatta med 3 poänger
-
-1. **Det här är ett exekverbart ramverk, inte bara dokumentation**
-2. **AI används inom en tydlig struktur med roller, SOP:er, RACI och artefakter**
-3. **Resultatet blir både användbart och spårbart**
-
-### Det här ska publiken ta med sig
-
-"Det centrala att ta med sig är att detta inte handlar om att låta en agent improvisera fram utvecklingsarbete."
-
-"Det handlar om att göra utvecklingsflödet explicit nog för att både människor och agenter ska kunna arbeta inom samma struktur."
-
-"Det gör det möjligt att börja enkelt och sedan successivt öka robusthet, standardisering och automation."
-
----
-
-## Om tiden blir knapp
+# Om tiden blir knapp
 
 Prioritera i denna ordning:
 
 1. [README.md](./README.md)
 2. [framework/standard/INDEX.md](./framework/standard/INDEX.md)
-3. ett konkret exempel i [Kravställning](./framework/standard/processes/1.%20Kravställning.md)
+3. [Kravställning](./framework/standard/processes/1.%20Kravställning.md)
 4. CLI-körning
 5. [runs/test-01/output/INDEX.md](./runs/test-01/output/INDEX.md)
 
-Hoppa över djupdykning i enskilda RACI-tabeller eller enskilda artifact templates om du märker att publiken redan förstått modellen.
+Hoppa över:
 
-## Om publiken vill gå djupare tekniskt
+- djupdykning i alla RACI-varianter
+- för många detaljer i enskilda SOP:er
+- för mycket implementation i `src/`
 
-Bra spår att öppna vid frågor:
+---
+
+# Om publiken vill gå djupare tekniskt
+
+Bra spår att öppna:
 
 - hur optional artifacts fungerar
 - hur approvals / consultations / informed briefs lagras
 - hur output index byggs upp
 - hur ett processsteg laddas från `framework/standard`
 - skillnaden mellan ramverk (`framework/`) och exekvering (`runs/`)
+- hur agentval och RACI-roll kopplas via manifest
+- hur provider- och modellval styrs via `.env`
 
-Relevanta dokument för fördjupning:
+Relevanta länkar:
 
 - [Output-indexspec](./framework/standard/Output_INDEX.md)
 - [exempel på output-index](./runs/test-01/output/INDEX.md)
 - [glossary](./framework/standard/GLOSSARY.md)
 - [agentmanifest](./framework/standard/agents/manifest.json)
+- [`src/framework/maf_adapter.py`](./src/framework/maf_adapter.py)
+- [`src/orchestration/orchestrator.py`](./src/orchestration/orchestrator.py)
+- [`src/orchestration/process_loader.py`](./src/orchestration/process_loader.py)
+- [`setup/environment/.env.example`](./setup/environment/.env.example)
 
-## En enkel minnesregel under presentationen
+---
 
-Om du känner att du tappar tråden, gå tillbaka till denna sekvens:
+# Snabb minnesregel
 
-**Varför -> Process -> Ansvar -> Instruktion -> Körning -> Resultat**
+Om du tappar tråden, gå tillbaka hit:
 
-Det är den röda tråden i hela demon.
+**README -> Process -> Roller -> SOP -> Körning -> Resultat -> Teknisk poäng**
