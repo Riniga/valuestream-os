@@ -1,32 +1,70 @@
 ## Processflöde
 
-Övergripande bild för olika personas/agenter
+Detta sekvensdiagram visar **hur en run faktiskt exekveras i dagens lösning**.
+
+Fokus här är inte en idealiserad persona-kedja, utan hur:
+
+- en användare startar en körning
+- process och SOP:er laddas från `framework/standard`
+- orchestration kör steg för steg
+- roller konsulteras och godkänner vid behov
+- state, logg och output sparas i `runs/`
 
 ```mermaid
 sequenceDiagram
-    participant B as Beställare
-    participant BA as Business Arkitekt
-    participant UX as User Experience
+    participant U as Beställare / användare
+    participant CLI as CLI
+    participant PFL as ProcessFlowLoader
+    participant FW as framework/standard
+    participant O as Orchestrator
+    participant RR as Ansvarig roll / agent
+    participant CR as Konsulterande roller
+    participant AR as A-roll / godkännare
+    participant RUN as runs/<run-id>
 
-    participant LA as Lösningsarkitekt
-    participant DA as Dataarkitekt
+    U->>CLI: Starta run med input
+    CLI->>PFL: load(process_file)
+    PFL->>FW: Läs process, SOP, RACI och artefaktmallar
+    FW-->>PFL: ProcessFlow + FlowSteps
+    CLI->>O: Kör flödet för aktuell run
+    O->>RUN: Initiera run_state, artifact_state och run_log
 
-    participant TL as Teknisk Lead
+    loop För varje processsteg
+        O->>O: Validera input och välj nästa steg
+        O->>RR: Bygg prompt och kör ansvarig roll
+        RR-->>O: Utkast / artefakt
+        O->>RUN: Spara output och uppdatera state
 
-    participant U as Utvecklarteam
+        alt Steget använder RACI-flöde
+            O->>CR: Skicka konsultationsunderlag
+            CR-->>O: Återkoppling
+            O->>RR: Begär revidering
+            RR-->>O: Reviderad artefakt
 
-    B->>BA: Ett behov beskrivs
-    BA->>LA: Funktionalitet (VAD)
-    UX->>LA: Upplevelse (VAD)
-    LA->>DA: Arktitktur
+            opt A-roll finns
+                O->>AR: Begär beslut / godkännande
+                AR-->>O: approved / approved_with_notes / rejected
+            end
 
-    LA->>TL: Arktitktur
-    DA->>LA: Informationsarkitektur
-    TL->>LA: Modeller
+            O->>RUN: Spara consultations, approvals och briefs
+        end
 
-    LA->>BA: Målarkitektur (HUR)
+        alt Mänsklig uppgift krävs
+            O->>RUN: Skapa human_tasks/*.json
+            O-->>CLI: Pausa körningen
+            U->>CLI: complete-human-task
+            CLI->>O: Återuppta run
+        end
 
-    BA->>U: Roadmap (NÄR)
-    U->>B: Leverans
+        O->>RUN: Publicera eller uppdatera output/INDEX.md
+    end
 
+    CLI-->>U: Visa status, resultat och nästa steg
 ```
+
+## Att tänka på i presentation
+
+- Diagrammet visar **runtime-flödet**, inte hela organisationssamspelet.
+- Roller som `Business Analyst`, `UX` eller `Lösningsarkitekt` uppträder här som **ansvariga eller konsulterande roller i ett steg**.
+- Samma struktur kan användas både för automatiserade agentroller och för mänskliga handoffs.
+- `runs/<run-id>` är navet för spårbarhet: input, output, state, logg, approvals och human tasks.
