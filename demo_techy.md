@@ -392,6 +392,7 @@ Total tid: cirka **25 min**
 - [`src/orchestration/process_loader.py`](./src/orchestration/process_loader.py)
 - [`src/orchestration/agent_registry.py`](./src/orchestration/agent_registry.py)
 - [`src/framework/models.py`](./src/framework/models.py)
+- [AI-arkitektur och datalager](./setup/architecture/05-ai-architecture.md)
 
 **Stödord:**
 
@@ -497,9 +498,11 @@ Bra spår att öppna:
 - skillnaden mellan ramverk (`framework/`) och exekvering (`runs/`)
 - hur agentval och RACI-roll kopplas via manifest
 - hur provider- och modellval styrs via `.env`
+- hur AI-lagren hänger ihop med ramverk och kod
 
 Relevanta länkar:
 
+- [AI-arkitektur och datalager](./setup/architecture/05-ai-architecture.md)
 - [Output-indexspec](./framework/standard/Output_INDEX.md)
 - [exempel på output-index](./runs/test-01/output/INDEX.md)
 - [glossary](./framework/standard/GLOSSARY.md)

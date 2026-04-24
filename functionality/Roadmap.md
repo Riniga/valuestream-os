@@ -53,17 +53,17 @@
 
 Mål: göra lösningen mer flexibel och driftsbar.
 [ ] Välja model(er) och förstå kostnader, qoutas etc.... Kunna exekvera gratis
-[ ] Stöd för OpenAI
+[X] Stöd för OpenAI
 [ ] Stöd för OpenRouter och MiniMax https://openrouter.ai/models?q=minimax
 [ ] Modellval, kostnadsstyrning och fallback-strategier
 
 ## Roadmap
 
-[ ] Fungerande flöde för Roadmap
+[X] Fungerande flöde för Roadmap
 
-## Etapp 5: Bygg övergripande behov
+## Etapp 5: Bygg beställning
 
-[ ] Skapa Övergripande Behov genom att ställa massor av frågor till användaren
+[ ] Skapa beställning genom att ställa massor av frågor till användaren. Kanske via Copilot Agent
 
 ## Etapp 5: Bygga och publicera fungerande kod
 
@@ -79,3 +79,5 @@ Mål: göra lösningen mer flexibel och driftsbar.
 ## Övrigt
 
 [ ] Beroenden av artifakter skall kunna vara frivilligt, alltså inte tvingande för vissa. Om dom finns så används dom annars försöker agenten klara sig utan.
+
+[ ] Jag behöver :-) pengar till verktyg och LLMer: Cursor exempelvis

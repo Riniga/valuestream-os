@@ -21,6 +21,7 @@ This documentation therefore uses:
 - one more detailed class diagram for the orchestration core
 - one focused diagram for runtime contracts
 - one focused diagram for persistence and output publishing
+- one AI-focused view that connects orchestration, LLM boundary, data and optional extensions
 
 ## Diagram index
 
@@ -40,12 +41,17 @@ This documentation therefore uses:
    - File-backed stores and output index publishing
    - Best for explaining transparency and traceability
 
+5. [`05-ai-architecture.md`](./05-ai-architecture.md)
+   - AI architecture: orchestration, agents, LLM, data and optional MCP / semantic layer
+   - Best when the audience wants the end-to-end AI story with pointers into `framework/` and `src/`
+
 ## Suggested presentation order
 
 1. Start with [`01-overview.md`](./01-overview.md)
 2. Jump to [`02-runtime-detail.md`](./02-runtime-detail.md)
 3. Use [`03-domain-models.md`](./03-domain-models.md) if the audience asks about runtime state
 4. Use [`04-persistence-and-output.md`](./04-persistence-and-output.md) if the audience asks about traceability or run files
+5. Use [`05-ai-architecture.md`](./05-ai-architecture.md) when you want to connect the process framework to LLM execution and future tool or data integrations
 
 ## Source references
 

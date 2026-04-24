@@ -58,6 +58,7 @@ Contains:
 - `02-runtime-detail.md` → Detailed class diagram for the orchestration core
 - `03-domain-models.md` → Core runtime contracts and state models
 - `04-persistence-and-output.md` → Stores, run files and output publishing
+- `05-ai-architecture.md` → AI architecture: orchestration, LLM, data, optional MCP and semantic layer
 
 These documents are intended for:
 - technical demos
