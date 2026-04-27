@@ -1,10 +1,10 @@
-# 🚀 ValueStream OS
+# 🚀 Agent-Driven Workflow Framework
 
-**Agent Orchestration Framework for end-to-end value delivery**
+**A framework for orchestrating development workflows with agent-driven process execution**
 
-ValueStream OS is an open framework for structuring, orchestrating, and executing software development work using agents.
+Agent-Driven Workflow Framework helps organizations structure, coordinate and execute software development work using agents and text-driven processes.
 
-It connects **process, roles, and execution** into a unified, repeatable system that turns ideas into delivered value — continuously.
+It connects **process, roles, and execution** into a repeatable framework for documentation, planning, delivery and continuous learning.
 
 ---
 
