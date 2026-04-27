@@ -15,10 +15,10 @@ To create a **clear, scalable and executable model** for how organizations move 
 > **Idea → Architecture → Plan → Build → Learn → Repeat**
 
 The framework is designed to:
-- Reduce ambiguity in development processes  
-- Make work **explicit, structured and traceable**  
-- Enable **agent-driven execution of defined workflows**  
-- Support continuous improvement through iterative cycles  
+- Reduce ambiguity in development processes
+- Make work **explicit, structured and traceable**
+- Enable **agent-driven execution of defined workflows**
+- Support continuous improvement through iterative cycles
 
 ---
 
@@ -88,10 +88,10 @@ flowchart TB
 
 ### 1. SOP-driven execution
 All work is defined as **Standard Operating Procedures (SOPs)**:
-- Clear purpose  
-- Defined input/output  
-- Explicit steps  
-- Connected to roles (RACI)  
+- Clear purpose
+- Defined input/output
+- Explicit steps
+- Connected to roles (RACI)
 
 👉 SOPs are the bridge between **process and execution**
 
@@ -99,11 +99,11 @@ All work is defined as **Standard Operating Procedures (SOPs)**:
 
 ### 2. Roles → Agents
 Each role in the process can be implemented as an **agent**:
-- Product Owner  
-- Architect  
-- Developer  
-- QA  
-- etc.  
+- Product Owner
+- Architect
+- Developer
+- QA
+- etc.
 
 Agents follow SOPs to produce consistent, high-quality output.
 
@@ -111,29 +111,29 @@ Agents follow SOPs to produce consistent, high-quality output.
 
 ### 3. Artifacts as first-class citizens
 Everything is built around **artifacts**:
-- Requirements  
-- Architecture descriptions  
-- Roadmaps  
-- Code  
-- Learnings  
+- Requirements
+- Architecture descriptions
+- Roadmaps
+- Code
+- Learnings
 
 Artifacts are:
-- Structured  
-- Traceable  
-- Reusable  
+- Structured
+- Traceable
+- Reusable
 
 ---
 
 ### 4. Text-first architecture
 The system is intentionally **text-based**:
-- Markdown-driven  
-- Transparent  
-- Easy to version and inspect  
+- Markdown-driven
+- Transparent
+- Easy to version and inspect
 
 This makes it ideal for:
-- AI/agent interaction  
-- Collaboration  
-- Incremental evolution  
+- AI/agent interaction
+- Collaboration
+- Incremental evolution
 
 ---
 
